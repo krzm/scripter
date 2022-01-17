@@ -1,5 +1,6 @@
 ﻿using CommandDotNet;
 using CommandDotNet.Repl;
+using System.Diagnostics.CodeAnalysis;
 using Unity;
 
 namespace Scripter;
@@ -18,7 +19,10 @@ public class AppProgram : Console.Modern.Lib.AppProgramUnity<AppProgram>
     }
 
     [DefaultCommand()]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "CommandDotNet needs instance member")]
+    [SuppressMessage(
+        "Performance"
+        , "CA1822:Mark members as static"
+        , Justification = "CommandDotNet needs instance member")]
     public void StartSession(
         CommandContext context
         , ReplSession replSession)
@@ -41,7 +45,6 @@ public class AppProgram : Console.Modern.Lib.AppProgramUnity<AppProgram>
         var commandClassTypes = appRunner.GetCommandClassTypes();
         var registeredExplicitly = new Type[]
         {
-            //typeof()
         };
         foreach (var type in commandClassTypes)
         {
