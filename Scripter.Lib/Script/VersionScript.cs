@@ -1,17 +1,20 @@
-﻿namespace Scripter;
+﻿using System.Text;
 
-public class VersionScript
+namespace Scripter;
+
+public class VersionScript : IVersionScript
 {
-    private readonly IScriptVariables folders;
+    private readonly IScriptVariables scriptVariables;
 
-    public VersionScript(IScriptVariables folders)
+    public VersionScript(IScriptVariables scriptVariables)
     {
-        this.folders = folders;
+        this.scriptVariables = scriptVariables;
     }
 
-    //public string GetScript()
-    //{
-    //    //var sb = new StringBuilder();
-    //    //sb.AppendLine(@"$scriptFolder =" )
-    //};
+    public string GetScript()
+    {
+        var sb = new StringBuilder();
+        sb.Append($"$scriptFolder = {scriptVariables.ScriptPath}\\r\\n");
+        return sb.ToString();
+    }
 }

@@ -9,9 +9,9 @@ public class ScriptVariablesTests
     [InlineData(@"Log.Modern.ConsoleApp")]
     public void TestCorrectnessOfProjectName(string expected)
     {
-        IScriptVariables folders = new ScriptVariables(expected);
+        IScriptVariables scriptVariables = new ScriptVariables(expected);
 
-        Assert.Equal(folders.ProjectName, expected);
+        Assert.Equal(scriptVariables.ProjectName, expected);
     }
 
     [Theory]
@@ -25,35 +25,35 @@ public class ScriptVariablesTests
     [Fact]
     public void TestCorrectnessOfVerionFileName()
     {
-        IScriptVariables folders = new ScriptVariables("Log.Modern.ConsoleApp");
+        IScriptVariables scriptVariables = new ScriptVariables("Log.Modern.ConsoleApp");
 
-        Assert.Equal("Version.xml", folders.VersionFileName);
+        Assert.Equal("Version.xml", scriptVariables.VersionFileName);
     }
 
     [Theory]
     [InlineData(@"C:\kmazanek@gmail.com\Code\PowerShell\Log.Modern.ConsoleApp")]
     public void TestCorrectnessOfScriptPath(string expected)
     {
-        IScriptVariables folders = new ScriptVariables("Log.Modern.ConsoleApp");
+        IScriptVariables scriptVariables = new ScriptVariables("Log.Modern.ConsoleApp");
 
-        Assert.Equal(expected, folders.ScriptPath);
+        Assert.Equal(expected, scriptVariables.ScriptPath);
     }
 
     [Theory]
     [InlineData(@"C:\kmazanek@gmail.com\Apps")]
     public void TestCorrectnessOfAppsPath(string expected)
     {
-        IScriptVariables folders = new ScriptVariables("Log.Modern.ConsoleApp");
+        IScriptVariables scriptVariables = new ScriptVariables("Log.Modern.ConsoleApp");
 
-        Assert.Equal(expected, folders.BuildPath);
+        Assert.Equal(expected, scriptVariables.BuildPath);
     }
 
     [Theory]
     [InlineData(@"C:\kmazanek@gmail.com\Code\Log.Modern.ConsoleApp")]
     public void TestCorrectnessOfRepoPath(string expected)
     {
-        IScriptVariables folders = new ScriptVariables("Log.Modern.ConsoleApp");
+        IScriptVariables scriptVariables = new ScriptVariables("Log.Modern.ConsoleApp");
 
-        Assert.Equal(expected, folders.RepoPath);
+        Assert.Equal(expected, scriptVariables.RepoPath);
     }
 }
