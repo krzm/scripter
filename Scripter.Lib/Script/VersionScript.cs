@@ -14,7 +14,10 @@ public class VersionScript : IVersionScript
     public string GetScript()
     {
         var sb = new StringBuilder();
-        sb.Append($"$scriptFolder = {scriptVariables.ScriptPath}\\r\\n");
+        sb.Append($"$scriptPath = {scriptVariables.ScriptPath}\\r\\n");
+        sb.Append($"$appsPath = {scriptVariables.BuildPath}\\r\\n");
+        sb.Append($"$repoPath = {scriptVariables.RepoPath}\\r\\n");
+
         return sb.ToString();
     }
 }
