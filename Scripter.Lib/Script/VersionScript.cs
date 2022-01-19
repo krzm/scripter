@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Scripter;
+﻿namespace Scripter;
 
 public class VersionScript : IVersionScript
 {
@@ -11,13 +9,13 @@ public class VersionScript : IVersionScript
         this.scriptVariables = scriptVariables;
     }
 
-    public string GetScript()
+    public string[] GetScript()
     {
-        var sb = new StringBuilder();
-        sb.Append($"$scriptPath = {scriptVariables.ScriptPath}\\r\\n");
-        sb.Append($"$appsPath = {scriptVariables.BuildPath}\\r\\n");
-        sb.Append($"$repoPath = {scriptVariables.RepoPath}\\r\\n");
-
-        return sb.ToString();
+        return new string[]
+        {
+            $"$projectName = \"{scriptVariables.ProjectName}\"{Environment.NewLine}"
+            , $"$versionFileName = \"{scriptVariables.VersionFileName}\"{Environment.NewLine}"
+            , $"$buildPath = \"{scriptVariables.BuildPath}\"{Environment.NewLine}"
+        };
     }
 }
