@@ -16,6 +16,14 @@ public class VersionScript : IVersionScript
             $"$projectName = \"{scriptVariables.ProjectName}\"{Environment.NewLine}"
             , $"$versionFileName = \"{scriptVariables.VersionFileName}\"{Environment.NewLine}"
             , $"$buildPath = \"{scriptVariables.BuildPath}\"{Environment.NewLine}"
+            , $"$scriptPath = \"{scriptVariables.ScriptPath}\"{Environment.NewLine}"
+            , $"$repoPath = \"{scriptVariables.RepoPath}\"{Environment.NewLine}"
+            , Environment.NewLine
+            , $"Set-Location -Path $repoPath{Environment.NewLine}"
+            , $"$sh1 = git rev-parse HEAD{Environment.NewLine}"
+            , Environment.NewLine
+            , $"Set-Location -Path $buildPath{Environment.NewLine}"
+            //, $"$versionFileName = $buildPath + \"\\\" + $versionFileName"
         };
     }
 }
