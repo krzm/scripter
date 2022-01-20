@@ -8,15 +8,15 @@ public class CompileScriptTests
     [Theory]
     [InlineData(
         0
-        , $"Set-Location -Path \"C:\\kmazanek@gmail.com\\Code\\Log.Modern.ConsoleApp\"\r\n"
+        , $"Set-Location -Path \"C:\\kmazanek@gmail.com\\Code\\Log.Modern.ConsoleApp\""
         )]
     [InlineData(
         1
-        , $"dotnet build\r\n"
+        , $"dotnet build"
         )]
     [InlineData(
         2
-        , $"dotnet publish -c Release\r\n"
+        , $"dotnet publish -c Release"
         )]
     [InlineData(
         3

@@ -25,12 +25,14 @@ public class ScriptCommand : ICommand
         {
             "Log.Modern.ConsoleApp"
         };
-        for (int i = 0; i < projects.Length; i++)
+        foreach (var project in projects)
         {
-            scriptVariables.ProjectName = projects[i];
-            var script = scripts[i].GetScript();
-            var filePath = Path.Combine(scriptVariables.ScriptPath, scripts[i].File);
-            File.WriteAllLines(filePath, script);
+            scriptVariables.ProjectName = project;
+            foreach (var script in scripts)
+            {
+                var filePath = Path.Combine(scriptVariables.ScriptPath, script.File);
+                File.WriteAllLines(filePath, script.GetScript());
+            }
         }
     }
 }

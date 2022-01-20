@@ -15,20 +15,20 @@ public class VersionScript : IScript
     {
         return new string[]
         {
-            $"$projectName = \"{scriptVariables.ProjectName}\"{Environment.NewLine}"
-            , $"$versionFileName = \"{scriptVariables.VersionFileName}\"{Environment.NewLine}"
-            , $"$buildPath = \"{scriptVariables.BuildPath}\"{Environment.NewLine}"
-            , $"$scriptPath = \"{scriptVariables.ScriptPath}\"{Environment.NewLine}"
-            , $"$repoPath = \"{scriptVariables.RepoPath}\"{Environment.NewLine}"
-            , Environment.NewLine
-            , $"Set-Location -Path $repoPath{Environment.NewLine}"
-            , $"$sh1 = git rev-parse HEAD{Environment.NewLine}"
-            , Environment.NewLine
-            , $"Set-Location -Path $buildPath{Environment.NewLine}"
-            , $"$versionFilePath = $buildPath + \"\\\" + $versionFileName{Environment.NewLine}"
-            , $"$hashTable = Import-Clixml $versionFilePath{Environment.NewLine}"
-            , $"$hashTable[$projectName] = $sh1{Environment.NewLine}"
-            , $"$hashTable | Export-Clixml -Path $versionFilePath{Environment.NewLine}"
+            $"$projectName = \"{scriptVariables.ProjectName}\""
+            , $"$versionFileName = \"{scriptVariables.VersionFileName}\""
+            , $"$buildPath = \"{scriptVariables.BuildPath}\""
+            , $"$scriptPath = \"{scriptVariables.ScriptPath}\""
+            , $"$repoPath = \"{scriptVariables.RepoPath}\""
+            , ""
+            , $"Set-Location -Path $repoPath"
+            , $"$sh1 = git rev-parse HEAD"
+            , ""
+            , $"Set-Location -Path $buildPath"
+            , $"$versionFilePath = $buildPath + \"\\\" + $versionFileName"
+            , $"$hashTable = Import-Clixml $versionFilePath"
+            , $"$hashTable[$projectName] = $sh1"
+            , $"$hashTable | Export-Clixml -Path $versionFilePath"
             , $"Set-Location -Path $scriptPath"
         };
     }

@@ -8,59 +8,59 @@ public class VersionScriptTests
     [Theory]
     [InlineData(
         0
-        , "$projectName = \"Log.Modern.ConsoleApp\"\r\n"
+        , "$projectName = \"Log.Modern.ConsoleApp\""
         )]
     [InlineData(
         1
-        , "$versionFileName = \"Version.xml\"\r\n"
+        , "$versionFileName = \"Version.xml\""
         )]
     [InlineData(
         2
-        , "$buildPath = \"C:\\kmazanek@gmail.com\\Apps\"\r\n"
+        , "$buildPath = \"C:\\kmazanek@gmail.com\\Apps\""
         )]
     [InlineData(
         3
-        , "$scriptPath = \"C:\\kmazanek@gmail.com\\Code\\PowerShell\\Log.Modern.ConsoleApp\"\r\n"
+        , "$scriptPath = \"C:\\kmazanek@gmail.com\\Code\\PowerShell\\Log.Modern.ConsoleApp\""
         )]
     [InlineData(
         4
-        , "$repoPath = \"C:\\kmazanek@gmail.com\\Code\\Log.Modern.ConsoleApp\"\r\n"
+        , "$repoPath = \"C:\\kmazanek@gmail.com\\Code\\Log.Modern.ConsoleApp\""
         )]
     [InlineData(
         5
-        , "\r\n"
+        , ""
         )]
     [InlineData(
         6
-        , "Set-Location -Path $repoPath\r\n"
+        , "Set-Location -Path $repoPath"
         )]
     [InlineData(
         7
-        , "$sh1 = git rev-parse HEAD\r\n"
+        , "$sh1 = git rev-parse HEAD"
         )]
     [InlineData(
         8
-        , "\r\n"
+        , ""
         )]
     [InlineData(
         9
-        , "Set-Location -Path $buildPath\r\n"
+        , "Set-Location -Path $buildPath"
         )]
     [InlineData(
         10
-        , "$versionFilePath = $buildPath + \"\\\" + $versionFileName\r\n"
+        , "$versionFilePath = $buildPath + \"\\\" + $versionFileName"
         )]
     [InlineData(
         11
-        , "$hashTable = Import-Clixml $versionFilePath\r\n"
+        , "$hashTable = Import-Clixml $versionFilePath"
         )]
     [InlineData(
         12
-        , "$hashTable[$projectName] = $sh1\r\n"
+        , "$hashTable[$projectName] = $sh1"
         )]
     [InlineData(
         13
-        , "$hashTable | Export-Clixml -Path $versionFilePath\r\n"
+        , "$hashTable | Export-Clixml -Path $versionFilePath"
         )]
     [InlineData(
         14

@@ -15,9 +15,9 @@ public class CompileScript : IScript
     {
         return new string[]
         {
-            $"Set-Location -Path \"{scriptVariables.RepoPath}\"{Environment.NewLine}"
-            , $"dotnet build{Environment.NewLine}"
-            , $"dotnet publish -c Release{Environment.NewLine}"
+            $"Set-Location -Path \"{scriptVariables.RepoPath}\""
+            , $"dotnet build"
+            , $"dotnet publish -c Release"
             , $"dotnet build --configuration Release"
         };
     }

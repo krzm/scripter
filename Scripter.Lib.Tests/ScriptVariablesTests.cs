@@ -1,4 +1,3 @@
-using System;
 using Xunit;
 
 namespace Scripter.Lib.Tests;
@@ -6,54 +5,54 @@ namespace Scripter.Lib.Tests;
 public class ScriptVariablesTests
 {
     [Theory]
-    [InlineData(@"Log.Modern.ConsoleApp")]
+    [InlineData("Log.Modern.ConsoleApp")]
     public void TestCorrectnessOfProjectName(string expected)
     {
-        IScriptVariables scriptVariables = new ScriptVariables(expected);
+        IScriptVariables sut = GetSut();
 
-        Assert.Equal(scriptVariables.ProjectName, expected);
+        Assert.Equal(sut.ProjectName, expected);
     }
 
-    [Theory]
-    [InlineData(null)]
-    [InlineData("")]
-    public void TestProjectNameNullException(string param)
+    private static IScriptVariables GetSut()
     {
-        Assert.Throws<ArgumentNullException>(() => new ScriptVariables(param));
+        return new ScriptVariables
+        {
+            ProjectName = "Log.Modern.ConsoleApp"
+        };
     }
 
     [Fact]
     public void TestCorrectnessOfVerionFileName()
     {
-        IScriptVariables scriptVariables = new ScriptVariables("Log.Modern.ConsoleApp");
+        IScriptVariables sut = GetSut();
 
-        Assert.Equal("Version.xml", scriptVariables.VersionFileName);
+        Assert.Equal("Version.xml", sut.VersionFileName);
     }
 
     [Theory]
     [InlineData(@"C:\kmazanek@gmail.com\Code\PowerShell\Log.Modern.ConsoleApp")]
     public void TestCorrectnessOfScriptPath(string expected)
     {
-        IScriptVariables scriptVariables = new ScriptVariables("Log.Modern.ConsoleApp");
+        IScriptVariables sut = GetSut();
 
-        Assert.Equal(expected, scriptVariables.ScriptPath);
+        Assert.Equal(expected, sut.ScriptPath);
     }
 
     [Theory]
     [InlineData(@"C:\kmazanek@gmail.com\Apps")]
     public void TestCorrectnessOfAppsPath(string expected)
     {
-        IScriptVariables scriptVariables = new ScriptVariables("Log.Modern.ConsoleApp");
+        IScriptVariables sut = GetSut();
 
-        Assert.Equal(expected, scriptVariables.BuildPath);
+        Assert.Equal(expected, sut.BuildPath);
     }
 
     [Theory]
     [InlineData(@"C:\kmazanek@gmail.com\Code\Log.Modern.ConsoleApp")]
     public void TestCorrectnessOfRepoPath(string expected)
     {
-        IScriptVariables scriptVariables = new ScriptVariables("Log.Modern.ConsoleApp");
+        IScriptVariables sut = GetSut();
 
-        Assert.Equal(expected, scriptVariables.RepoPath);
+        Assert.Equal(expected, sut.RepoPath);
     }
 }
