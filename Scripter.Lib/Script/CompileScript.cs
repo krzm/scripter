@@ -4,6 +4,8 @@ public class CompileScript : IScript
 {
     private readonly IScriptVariables scriptVariables;
 
+    public string File => "Compile.ps1";
+
     public CompileScript(IScriptVariables scriptVariables)
     {
         this.scriptVariables = scriptVariables;

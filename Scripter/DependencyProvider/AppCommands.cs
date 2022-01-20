@@ -16,8 +16,8 @@ public class AppCommands : UnityDependencyProvider
     public override void RegisterDependencies()
     {
         Container.RegisterSingleton<IScriptVariables, ScriptVariables>();
-        Container.RegisterSingleton<IScript, VersionScript>();
-        Container.RegisterSingleton<IScript, CompileScript>();
+        Container.RegisterSingleton<IScript, VersionScript>(nameof(VersionScript));
+        Container.RegisterSingleton<IScript, CompileScript>(nameof(CompileScript));
 
         Container.RegisterSingleton<ICommand, ScriptCommand>();
     }

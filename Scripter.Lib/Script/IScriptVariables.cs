@@ -2,7 +2,7 @@
 
 public interface IScriptVariables
 {
-    string ProjectName { get; }
+    string? ProjectName { get; set; }
 
     string VersionFileName { get; }
 
