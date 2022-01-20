@@ -46,24 +46,37 @@ public class VersionScriptTests
         9
         , "Set-Location -Path $buildPath\r\n"
         )]
+    [InlineData(
+        10
+        , "$versionFilePath = $buildPath + \"\\\" + $versionFileName\r\n"
+        )]
+    [InlineData(
+        11
+        , "$hashTable = Import-Clixml $versionFilePath\r\n"
+        )]
+    [InlineData(
+        12
+        , "$hashTable[$projectName] = $sh1\r\n"
+        )]
+    [InlineData(
+        13
+        , "$hashTable | Export-Clixml -Path $versionFilePath\r\n"
+        )]
+    [InlineData(
+        14
+        , "Set-Location -Path $scriptPath"
+        )]
     public void TestCorrectnessOfScript(
         int index
         , string expected)
     {
         var moq = new Mock<IScriptVariables>();
         SetupParams(moq);
-        IVersionScript script = new VersionScript(moq.Object);
+        IScript script = new VersionScript(moq.Object);
 
         var acctual = GetLine(script, index);
 
         Assert.Equal(expected, acctual);
-    }
-
-    private static string GetLine(
-        IVersionScript script
-        , int index)
-    {
-        return script.GetScript()[index];
     }
 
     private static void SetupParams(
@@ -79,5 +92,12 @@ public class VersionScriptTests
             @"C:\kmazanek@gmail.com\Code\PowerShell\Log.Modern.ConsoleApp");
         moq.Setup(m => m.RepoPath).Returns(
             @"C:\kmazanek@gmail.com\Code\Log.Modern.ConsoleApp");
+    }
+
+    private static string GetLine(
+        IScript script
+        , int index)
+    {
+        return script.GetScript()[index];
     }
 }

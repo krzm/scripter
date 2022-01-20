@@ -1,6 +1,6 @@
 ﻿namespace Scripter;
 
-public class VersionScript : IVersionScript
+public class VersionScript : IScript
 {
     private readonly IScriptVariables scriptVariables;
 
@@ -23,7 +23,11 @@ public class VersionScript : IVersionScript
             , $"$sh1 = git rev-parse HEAD{Environment.NewLine}"
             , Environment.NewLine
             , $"Set-Location -Path $buildPath{Environment.NewLine}"
-            //, $"$versionFileName = $buildPath + \"\\\" + $versionFileName"
+            , $"$versionFilePath = $buildPath + \"\\\" + $versionFileName{Environment.NewLine}"
+            , $"$hashTable = Import-Clixml $versionFilePath{Environment.NewLine}"
+            , $"$hashTable[$projectName] = $sh1{Environment.NewLine}"
+            , $"$hashTable | Export-Clixml -Path $versionFilePath{Environment.NewLine}"
+            , $"Set-Location -Path $scriptPath"
         };
     }
 }

@@ -1,6 +1,6 @@
 using System.Windows.Input;
 
-namespace Scripter;
+namespace Scripter.Lib;
 
 public class ScriptCommand : ICommand
 {
@@ -10,6 +10,6 @@ public class ScriptCommand : ICommand
 
     public void Execute(object? parameter)
     {
-    
+        
     }
 }

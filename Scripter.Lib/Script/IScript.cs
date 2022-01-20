@@ -1,6 +1,6 @@
 namespace Scripter;
 
-public interface IVersionScript
+public interface IScript
 {
     string[] GetScript();
 }
