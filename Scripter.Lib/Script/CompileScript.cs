@@ -19,6 +19,7 @@ public class CompileScript : IScript
             , $"dotnet build"
             , $"dotnet publish -c Release"
             , $"dotnet build --configuration Release"
+            , $"dotnet test"
         };
     }
 }

@@ -22,6 +22,10 @@ public class CompileScriptTests
         3
         , $"dotnet build --configuration Release"
         )]
+    [InlineData(
+        4
+        , $"dotnet test"
+        )]
     public void TestCorrectnessOfScript(
         int index
         , string expected)
