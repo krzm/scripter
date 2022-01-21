@@ -1,6 +1,6 @@
 ﻿namespace Scripter;
 
-public interface IScriptVariables
+public interface IScriptParam
 {
     string? ProjectName { get; set; }
 

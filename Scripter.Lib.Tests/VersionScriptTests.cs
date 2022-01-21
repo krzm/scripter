@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Scripter.Lib.Tests;
 
-public class VersionScriptTests
+public class VersionScriptTests : ScriptTests
 {
     [Theory]
     [InlineData(
@@ -70,34 +70,12 @@ public class VersionScriptTests
         int index
         , string expected)
     {
-        var moq = new Mock<IScriptVariables>();
+        var moq = new Mock<IScriptParam>();
         SetupParams(moq);
         IScript script = new VersionScript(moq.Object);
 
         var acctual = GetLine(script, index);
 
         Assert.Equal(expected, acctual);
-    }
-
-    private static void SetupParams(
-        Mock<IScriptVariables> moq)
-    {
-        moq.Setup(m => m.ProjectName).Returns(
-            "Log.Modern.ConsoleApp");
-        moq.Setup(m => m.VersionFileName).Returns(
-            "Version.xml");
-        moq.Setup(m => m.BuildPath).Returns(
-            @"C:\kmazanek@gmail.com\Apps");
-        moq.Setup(m => m.ScriptPath).Returns(
-            @"C:\kmazanek@gmail.com\Code\PowerShell\Log.Modern.ConsoleApp");
-        moq.Setup(m => m.RepoPath).Returns(
-            @"C:\kmazanek@gmail.com\Code\Log.Modern.ConsoleApp");
-    }
-
-    private static string GetLine(
-        IScript script
-        , int index)
-    {
-        return script.GetScript()[index];
     }
 }

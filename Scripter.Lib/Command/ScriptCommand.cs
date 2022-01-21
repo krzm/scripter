@@ -4,13 +4,13 @@ namespace Scripter.Lib;
 
 public class ScriptCommand : ICommand
 {
-    private readonly IScriptVariables scriptVariables;
+    private readonly IScriptParam scriptVariables;
     private readonly List<IScript> scripts;
 
     public event EventHandler? CanExecuteChanged;
 
     public ScriptCommand(
-        IScriptVariables scriptVariables
+        IScriptParam scriptVariables
         , List<IScript> scripts)
     {
         this.scriptVariables = scriptVariables;

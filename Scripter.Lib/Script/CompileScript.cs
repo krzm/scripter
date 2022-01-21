@@ -2,11 +2,11 @@
 
 public class CompileScript : IScript
 {
-    private readonly IScriptVariables scriptVariables;
+    private readonly IScriptParam scriptVariables;
 
     public string File => "Compile.ps1";
 
-    public CompileScript(IScriptVariables scriptVariables)
+    public CompileScript(IScriptParam scriptVariables)
     {
         this.scriptVariables = scriptVariables;
     }

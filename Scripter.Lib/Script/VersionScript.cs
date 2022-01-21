@@ -2,11 +2,11 @@
 
 public class VersionScript : IScript
 {
-    private readonly IScriptVariables scriptVariables;
+    private readonly IScriptParam scriptVariables;
 
     public string File => "Version.ps1";
 
-    public VersionScript(IScriptVariables scriptVariables)
+    public VersionScript(IScriptParam scriptVariables)
     {
         this.scriptVariables = scriptVariables;
     }
