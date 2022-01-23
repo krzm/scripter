@@ -2,24 +2,24 @@
 
 public class VersionScript : IScript
 {
-    private readonly IScriptParam scriptVariables;
+    private readonly IScriptParam scriptParam;
 
-    public string File => "Version.ps1";
+    public string File => $"{scriptParam.ProjectName}.Version.ps1";
 
-    public VersionScript(IScriptParam scriptVariables)
+    public VersionScript(IScriptParam scriptParam)
     {
-        this.scriptVariables = scriptVariables;
+        this.scriptParam = scriptParam;
     }
 
     public string[] GetScript()
     {
         return new string[]
         {
-            $"$projectName = \"{scriptVariables.ProjectName}\""
-            , $"$versionFileName = \"{scriptVariables.VersionFileName}\""
-            , $"$buildPath = \"{scriptVariables.BuildPath}\""
-            , $"$scriptPath = \"{scriptVariables.ScriptPath}\""
-            , $"$repoPath = \"{scriptVariables.RepoPath}\""
+            $"$projectName = \"{scriptParam.ProjectName}\""
+            , $"$versionFileName = \"{scriptParam.VersionFileName}\""
+            , $"$buildPath = \"{scriptParam.BuildPath}\""
+            , $"$scriptPath = \"{scriptParam.ScriptPath}\""
+            , $"$repoPath = \"{scriptParam.RepoPath}\""
             , ""
             , $"Set-Location -Path $repoPath"
             , $"$sh1 = git rev-parse HEAD"

@@ -6,7 +6,7 @@ public class ScriptParam : IScriptParam
 
     public string VersionFileName => "Version.xml";
 
-    public string ScriptPath => @$"{PowerShell}\{ProjectName}";
+    public string ScriptPath => @$"{PowerShell}\Build";
 
     public string BuildPath => @$"{Root}\Apps";
 

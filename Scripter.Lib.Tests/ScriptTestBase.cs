@@ -2,8 +2,12 @@
 
 namespace Scripter.Lib.Tests;
 
-public abstract class ScriptTests
+public abstract class ScriptTestBase
 {
+    public abstract void TestScriptContent(
+        int index
+        , string expected);
+
     protected static void SetupParams(
        Mock<IScriptParam> moq)
     {

@@ -4,16 +4,16 @@ namespace Scripter.Lib;
 
 public class ScriptCommand : ICommand
 {
-    private readonly IScriptParam scriptVariables;
+    private readonly IScriptParam scriptParam;
     private readonly List<IScript> scripts;
 
     public event EventHandler? CanExecuteChanged;
 
     public ScriptCommand(
-        IScriptParam scriptVariables
+        IScriptParam scriptParam
         , List<IScript> scripts)
     {
-        this.scriptVariables = scriptVariables;
+        this.scriptParam = scriptParam;
         this.scripts = scripts;
     }
 
@@ -27,10 +27,10 @@ public class ScriptCommand : ICommand
         };
         foreach (var project in projects)
         {
-            scriptVariables.ProjectName = project;
+            scriptParam.ProjectName = project;
             foreach (var script in scripts)
             {
-                var filePath = Path.Combine(scriptVariables.ScriptPath, script.File);
+                var filePath = Path.Combine(scriptParam.ScriptPath, script.File);
                 File.WriteAllLines(filePath, script.GetScript());
             }
         }
