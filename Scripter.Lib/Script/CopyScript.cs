@@ -16,7 +16,7 @@ public class CopyScript : IScript
         return new string[]
         {
             $"Remove-Item \"{Path.Combine(scriptParam.BuildPath, scriptParam.ProjectName)}\\*\" -Recurse"
-            , $"Copy-Item -Path \"{Path.Combine(scriptParam.RepoPath, scriptParam.ProjectName)}\\bin\\Release\\net6.0\\publish\\*\" -Destination \"C:\\kmazanek@gmail.com\\Apps\\Log.Modern.ConsoleApp\" -Recurse"
+            , $"Copy-Item -Path \"{Path.Combine(scriptParam.RepoPath, scriptParam.ProjectName)}\\bin\\Release\\net6.0\\publish\\*\" -Destination \"C:\\kmazanek@gmail.com\\Apps\\{scriptParam.ProjectName}\" -Recurse"
         };
     }
 }

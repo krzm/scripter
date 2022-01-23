@@ -4,15 +4,18 @@ namespace Scripter.Lib;
 
 public class ScriptCommand : ICommand
 {
+    public event EventHandler? CanExecuteChanged;
+
+    private readonly IList<ProjectDTO> projects;
     private readonly IScriptParam scriptParam;
     private readonly List<IScript> scripts;
 
-    public event EventHandler? CanExecuteChanged;
-
     public ScriptCommand(
-        IScriptParam scriptParam
+        IList<ProjectDTO> projects
+        , IScriptParam scriptParam
         , List<IScript> scripts)
     {
+        this.projects = projects;
         this.scriptParam = scriptParam;
         this.scripts = scripts;
     }
@@ -21,13 +24,9 @@ public class ScriptCommand : ICommand
 
     public void Execute(object? parameter)
     {
-        var projects = new string[]
-        {
-            "Log.Modern.ConsoleApp"
-        };
         foreach (var project in projects)
         {
-            scriptParam.ProjectName = project;
+            scriptParam.ProjectName = project.ProjectName;
             foreach (var script in scripts)
             {
                 var filePath = Path.Combine(scriptParam.ScriptPath, script.File);
