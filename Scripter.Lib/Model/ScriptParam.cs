@@ -2,19 +2,25 @@ namespace Scripter;
 
 public class ScriptParam : IScriptParam
 {
-    public string? ProjectName { get; set; }
+    private const string RootPath = @"C:\kmazanek@gmail.com";
 
-    public string VersionFileName => "Version.xml";
+    private const string AppsFolder = "Apps";
 
-    public string ScriptPath => @$"{PowerShell}\Build";
+    private const string CodeFolder = "Code";
 
-    public string BuildPath => @$"{Root}\Apps";
+    private const string PowerShellFolder = "PowerShell";
 
-    public string RepoPath => @$"{Code}\{ProjectName}";
+    private const string BuildFolder = "Build";
 
-    private static string PowerShell => @$"{Code}\PowerShell";
+    private const string VersionFileNameConst = "Version.xml";
 
-    private static string Code => @$"{Root}\Code";
+    public ProjectDTO? Project { get; set; }
 
-    private static string Root => @"C:\kmazanek@gmail.com";
+    public string VersionFileName => VersionFileNameConst;
+
+    public string ScriptPath => Path.Combine(RootPath, CodeFolder, PowerShellFolder, BuildFolder);
+
+    public string BuildPath => Path.Combine(RootPath, AppsFolder);
+
+    public string RepoPath => Path.Combine(RootPath, CodeFolder, Project.RepoFolder);
 }

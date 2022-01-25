@@ -4,7 +4,7 @@ public class VersionScript : IScript
 {
     private readonly IScriptParam scriptParam;
 
-    public string File => $"{scriptParam.ProjectName}.Version.ps1";
+    public string File => $"{scriptParam.Project.RepoFolder}.Version.ps1";
 
     public VersionScript(IScriptParam scriptParam)
     {
@@ -15,7 +15,7 @@ public class VersionScript : IScript
     {
         return new string[]
         {
-            $"$projectName = \"{scriptParam.ProjectName}\""
+            $"$projectName = \"{scriptParam.Project.RepoFolder}\""
             , $"$versionFileName = \"{scriptParam.VersionFileName}\""
             , $"$buildPath = \"{scriptParam.BuildPath}\""
             , $"$scriptPath = \"{scriptParam.ScriptPath}\""

@@ -6,9 +6,9 @@ namespace Scripter.Lib.Tests;
 public class BuildScriptTests : ScriptTestBase
 {
     [Theory]
-    [InlineData(0, $"& \"$PSScriptRoot\\Log.Modern.ConsoleApp.Compile.ps1\"")]
-    [InlineData(1, $"& \"$PSScriptRoot\\Log.Modern.ConsoleApp.Version.ps1\"")]
-    [InlineData(2, $"& \"$PSScriptRoot\\Log.Modern.ConsoleApp.Copy.ps1\"")]
+    [InlineData(0, $"& \"$PSScriptRoot\\AppStarter.Compile.ps1\"")]
+    [InlineData(1, $"& \"$PSScriptRoot\\AppStarter.Version.ps1\"")]
+    [InlineData(2, $"& \"$PSScriptRoot\\AppStarter.Copy.ps1\"")]
     public override void TestScriptContent(
         int index
         , string expected)

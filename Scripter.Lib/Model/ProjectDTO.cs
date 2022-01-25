@@ -1,3 +1,5 @@
 ﻿namespace Scripter;
 
-public record ProjectDTO(string ProjectName);
+public record ProjectDTO(
+    string RepoFolder
+    , string AppProjFolder);

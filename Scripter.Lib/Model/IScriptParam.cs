@@ -2,7 +2,7 @@
 
 public interface IScriptParam
 {
-    string? ProjectName { get; set; }
+    ProjectDTO? Project { get; set; }
 
     string VersionFileName { get; }
 

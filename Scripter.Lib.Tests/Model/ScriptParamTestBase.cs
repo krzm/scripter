@@ -12,7 +12,9 @@ public abstract class ScriptParamTestBase
     {
         return new ScriptParam
         {
-            ProjectName = "Log.Modern.ConsoleApp"
+            Project = new ProjectDTO(
+                RepoFolder: "AppStarter"
+                , AppProjFolder: "AppStarter.ConsoleApp")
         };
     }
 
@@ -22,8 +24,10 @@ public abstract class ScriptParamTestBase
     {
         switch(name)
         {
-            case nameof(ScriptParam.ProjectName):
-                return scriptParam.ProjectName;
+            case nameof(ScriptParam.Project.RepoFolder):
+                return scriptParam.Project.RepoFolder;
+            case nameof(ScriptParam.Project.AppProjFolder):
+                return scriptParam.Project.AppProjFolder;
             case nameof(ScriptParam.BuildPath):
                 return scriptParam.BuildPath;
             case nameof(ScriptParam.RepoPath):

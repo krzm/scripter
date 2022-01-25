@@ -26,7 +26,7 @@ public class ScriptCommand : ICommand
     {
         foreach (var project in projects)
         {
-            scriptParam.ProjectName = project.ProjectName;
+            scriptParam.Project = new ProjectDTO(project.RepoFolder, project.AppProjFolder);
             foreach (var script in scripts)
             {
                 var filePath = Path.Combine(scriptParam.ScriptPath, script.File);
