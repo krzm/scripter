@@ -15,11 +15,17 @@ public class CopyScript : IScript
     {
         var repoFolder = scriptParam.Project.RepoFolder;
         var appFolder = scriptParam.Project.AppProjFolder;
+        var buildPath = scriptParam.BuildPath;
+        var repoPath = scriptParam.RepoPath;
+        var repoBuildPath = Path.Combine(buildPath, repoFolder);
+        var appProjPath = Path.Combine(repoPath, appFolder);
+        var appProjBuildPath = Path.Combine(buildPath, repoFolder, appFolder);
         return new string[]
         {
-            $"Remove-Item \"{Path.Combine(scriptParam.BuildPath, repoFolder)}\\*\" -Recurse"
-            , $"Copy-Item -Path \"{Path.Combine(scriptParam.RepoPath, appFolder)}\\bin\\Release\\net6.0\\publish\\*\" "
-                + $"-Destination \"{Path.Combine(scriptParam.BuildPath, repoFolder, appFolder)}\" -Recurse"
+            $"Remove-Item \"{repoBuildPath}\\*\" -Recurse"
+            , $"New-Item -Path \"{repoBuildPath}\\\" -Name \"{appFolder}\" -ItemType \"directory\""
+            , $"Copy-Item -Path \"{appProjPath}\\bin\\Release\\net6.0\\publish\\*\" "
+                + $"-Destination \"{appProjBuildPath}\" -Recurse"
         };
     }
 }
