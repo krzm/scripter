@@ -33,6 +33,9 @@
 		<Reference Include="CLI.Core.Lib">
 			<HintPath>..\..\Console\CLI.Core.Lib\bin\Release\net6.0\CLI.Core.Lib.dll</HintPath>
 		</Reference>
+		<Reference Include="DIHelper">
+			<HintPath>..\..\DIHelper\DIHelper\bin\Release\net6.0\DIHelper.dll</HintPath>
+		</Reference>
 		<Reference Include="DataToTable">
 			<HintPath>..\..\DataToTable\DataToTable\bin\Release\net6.0\DataToTable.dll</HintPath>
 		</Reference>

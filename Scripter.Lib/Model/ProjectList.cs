@@ -8,6 +8,8 @@ public class ProjectList : List<ProjectDTO>
         Add(new ProjectDTO("Core", "Core"));
         Add(new ProjectDTO("Console", "Console.Lib.TestApp"));
         Add(new ProjectDTO("DataToTable", "DataToTable"));
+        Add(new ProjectDTO("CLIHelper", "CLIHelper"));
+        Add(new ProjectDTO("DIHelper", "DIHelper"));
 
         //apps
         Add(new ProjectDTO("AppStarter", "AppStarter.ConsoleApp"));

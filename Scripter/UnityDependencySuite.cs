@@ -3,9 +3,10 @@ using Unity;
 
 namespace Scripter;
 
-public class UnityDependencyCollection : CLI.Core.Lib.UnityDependencyCollection
+public class UnityDependencySuite
+    : DIHelper.Unity.UnityDependencySuite
 {
-    public UnityDependencyCollection(
+    public UnityDependencySuite(
         IUnityContainer container)
         : base(container)
     {
@@ -13,7 +14,7 @@ public class UnityDependencyCollection : CLI.Core.Lib.UnityDependencyCollection
 
     protected override void RegisterCommands()
     {
-        RegisterDependencyProvider<AppCommands>();
+        RegisterSet<AppCommands>();
     }
 
     protected override void RegisterProgram() =>

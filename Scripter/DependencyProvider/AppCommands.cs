@@ -1,11 +1,12 @@
 using System.Windows.Input;
-using Core.Lib;
+using DIHelper.Unity;
 using Scripter.Lib;
 using Unity;
 
 namespace Scripter;
 
-public class AppCommands : UnityDependencyProvider
+public class AppCommands 
+    : UnityDependencySet
 {
     public AppCommands(
         IUnityContainer container) 
@@ -13,7 +14,7 @@ public class AppCommands : UnityDependencyProvider
     {
     }
 
-    public override void RegisterDependencies()
+    public override void Register()
     {
         Container.RegisterSingleton<IList<ProjectDTO>, ProjectList>();
         Container.RegisterSingleton<IScriptParam, ScriptParam>();
