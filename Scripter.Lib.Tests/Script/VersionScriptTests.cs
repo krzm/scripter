@@ -6,11 +6,11 @@ namespace Scripter.Lib.Tests;
 public class VersionScriptTests : ScriptTestBase
 {
     [Theory]
-    [InlineData(0, "$projectName = \"AppStarter\"")]
+    [InlineData(0, "$projectName = \"CLIHelper\"")]
     [InlineData(1, "$versionFileName = \"Version.xml\"")]
-    [InlineData(2, "$buildPath = \"C:\\kmazanek@gmail.com\\Apps\"")]
-    [InlineData(3, "$scriptPath = \"C:\\kmazanek@gmail.com\\Code\\PowerShell\\Build\"")]
-    [InlineData(4, "$repoPath = \"C:\\kmazanek@gmail.com\\Code\\AppStarter\"")]
+    [InlineData(2, "$buildPath = \"C:\\kmazanek@gmail.com\\Code\\build\\Build\"")]
+    [InlineData(3, "$scriptPath = \"C:\\kmazanek@gmail.com\\Code\\build\\Script\"")]
+    [InlineData(4, "$repoPath = \"C:\\kmazanek@gmail.com\\Code\\cli-helper\"")]
     [InlineData(5, "")]
     [InlineData(6, "Set-Location -Path $repoPath")]
     [InlineData(7, "$sh1 = git rev-parse HEAD")]

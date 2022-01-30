@@ -13,8 +13,8 @@ public abstract class ScriptParamTestBase
         return new ScriptParam
         {
             Project = new ProjectDTO(
-                RepoFolder: "AppStarter"
-                , AppProjFolder: "AppStarter.ConsoleApp")
+                RepoFolder: "cli-helper"
+                , AppProjFolder: "CLIHelper")
         };
     }
 

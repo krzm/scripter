@@ -4,7 +4,7 @@ public class BuildScript : IScript
 {
     private readonly IScriptParam scriptParam;
 
-    public string File => $"{scriptParam.Project.RepoFolder}.Build.ps1";
+    public string File => $"{scriptParam.Project.AppProjFolder}.Build.ps1";
 
     public BuildScript(IScriptParam scriptParam)
     {
@@ -13,12 +13,12 @@ public class BuildScript : IScript
 
     public string[] GetScript()
     {
-        var repoFolder = scriptParam.Project.RepoFolder;
+        var scriptName = scriptParam.Project.AppProjFolder;
         return new string[]
         {
-            $"& \"$PSScriptRoot\\{repoFolder}.Compile.ps1\""
-            , $"& \"$PSScriptRoot\\{repoFolder}.Version.ps1\""
-            , $"& \"$PSScriptRoot\\{repoFolder}.Copy.ps1\""
+            $"& \"$PSScriptRoot\\{scriptName}.Compile.ps1\""
+            , $"& \"$PSScriptRoot\\{scriptName}.Version.ps1\""
+            , $"& \"$PSScriptRoot\\{scriptName}.Copy.ps1\""
         };
     }
 }

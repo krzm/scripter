@@ -1,4 +1,4 @@
-﻿using DIHelper.Bootstraper;
+﻿using DIHelper;
 using Unity;
 
 namespace Scripter;

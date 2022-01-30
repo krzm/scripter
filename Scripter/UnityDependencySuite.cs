@@ -1,4 +1,4 @@
-﻿using CLI.Core;
+﻿using DIHelper;
 using Unity;
 
 namespace Scripter;

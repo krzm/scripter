@@ -4,7 +4,7 @@ public class CopyScript : IScript
 {
     private readonly IScriptParam scriptParam;
 
-    public string File => $"{scriptParam.Project.RepoFolder}.Copy.ps1";
+    public string File => $"{scriptParam.Project.AppProjFolder}.Copy.ps1";
 
     public CopyScript(IScriptParam scriptParam)
     {

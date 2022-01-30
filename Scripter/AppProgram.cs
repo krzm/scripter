@@ -5,7 +5,8 @@ using Unity;
 
 namespace Scripter;
 
-public class AppProgram : Console.Modern.Lib.AppProgramUnity<AppProgram>
+public class AppProgram 
+    : CommandDotNet.Helper.AppProgramUnity<AppProgram>
 {
     private static bool inSession;
 
