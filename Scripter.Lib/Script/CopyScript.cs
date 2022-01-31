@@ -22,8 +22,16 @@ public class CopyScript : IScript
         var appProjBuildPath = Path.Combine(buildPath, repoFolder, appFolder);
         return new string[]
         {
-            $"Remove-Item \"{repoBuildPath}\\*\" -Recurse"
-            , $"New-Item -Path \"{repoBuildPath}\\\" -Name \"{appFolder}\" -ItemType \"directory\""
+            $"$path = \"{repoBuildPath}\""
+            , "if (-not (Test-Path $path))"
+            , "{"
+            , $"New-Item -Path \"{buildPath}\" -Name \"{repoFolder}\" -ItemType \"directory\""
+            , "}"
+            , $"Remove-Item \"{repoBuildPath}\\*\" -Recurse"
+            , $"$path = \"{appProjBuildPath}\""
+            , "{"
+            , $"New-Item -Path \"{repoBuildPath}\" -Name \"{appFolder}\" -ItemType \"directory\""
+            , "}"
             , $"Copy-Item -Path \"{appProjPath}\\bin\\Release\\net6.0\\publish\\*\" "
                 + $"-Destination \"{appProjBuildPath}\" -Recurse"
         };

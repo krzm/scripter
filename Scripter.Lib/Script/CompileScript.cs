@@ -20,6 +20,7 @@ public class CompileScript : IScript
             , $"dotnet build --configuration Release"
             , $"dotnet test"
             , $"dotnet publish -c Release"
+            , $"Set-Location -Path \"{scriptParam.ScriptPath}\""
         };
     }
 }
