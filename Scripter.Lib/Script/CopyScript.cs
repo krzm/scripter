@@ -29,6 +29,7 @@ public class CopyScript : IScript
             , "}"
             , $"Remove-Item \"{repoBuildPath}\\*\" -Recurse"
             , $"$path = \"{appProjBuildPath}\""
+            , "if (-not (Test-Path $path))"
             , "{"
             , $"New-Item -Path \"{repoBuildPath}\" -Name \"{appFolder}\" -ItemType \"directory\""
             , "}"
