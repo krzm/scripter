@@ -21,16 +21,16 @@
 
 	<ItemGroup>
 		<Reference Include="CommandDotNet.Helper">
-			<HintPath>..\..\commanddotnet-helper\CommandDotNet.Helper\bin\Release\net6.0\CommandDotNet.Helper.dll</HintPath>
+			<HintPath>..\..\build\Build\commanddotnet-helper\CommandDotNet.Helper\CommandDotNet.Helper.dll</HintPath>
 		</Reference>
 		<Reference Include="CommandDotNet.IoC.Unity">
-			<HintPath>..\..\di-helper\CommandDotNet.IoC.Unity\bin\Release\net6.0\CommandDotNet.IoC.Unity.dll</HintPath>
+			<HintPath>..\..\build\Build\di-helper\CommandDotNet.IoC.Unity\CommandDotNet.IoC.Unity.dll</HintPath>
 		</Reference>
 		<Reference Include="DIHelper">
-			<HintPath>..\..\di-helper\DIHelper\bin\Release\net6.0\DIHelper.dll</HintPath>
+			<HintPath>..\..\build\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
 		</Reference>
 		<Reference Include="DataToTable">
-			<HintPath>..\..\datatotable\DataToTable\bin\Release\net6.0\DataToTable.dll</HintPath>
+			<HintPath>..\..\build\Build\datatotable\DataToTable\DataToTable.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 </Project>
