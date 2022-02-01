@@ -13,8 +13,8 @@ public class ProjectList : List<ProjectDTO>
         Add(new ProjectDTO("datatotable", "DataToTable"));
         Add(new ProjectDTO("scripter", "Scripter"));
 
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
+        Add(new ProjectDTO("efcore-helper", "EFCoreHelper"));
+        Add(new ProjectDTO("log-data", "Log.Data"));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
