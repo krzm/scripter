@@ -15,13 +15,16 @@ public class ProjectList : List<ProjectDTO>
 
         Add(new ProjectDTO("efcore-helper", "EFCoreHelper"));
         Add(new ProjectDTO("log-data", "Log.Data"));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
+        
+        Add(new ProjectDTO("crud-command-helper", "CRUDCommandHelper"));
+        Add(new ProjectDTO("cli-wizard-helper", "CLIWizardHelper"));
+        Add(new ProjectDTO("cli-framework", "CLIFramework"));
+        Add(new ProjectDTO("cli-framework", "CLIFramework.TestApp"));
+
+        Add(new ProjectDTO("log-wizard-lib", "Log.Wizard.Lib"));
+        Add(new ProjectDTO("dotnet-extension", "DotNetExtension"));
+        Add(new ProjectDTO("log-modern-lib", "Log.Modern.Lib"));
+        Add(new ProjectDTO("log-console-lib", "Log.Console.Lib"));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
