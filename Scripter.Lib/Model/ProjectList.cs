@@ -25,10 +25,10 @@ public class ProjectList : List<ProjectDTO>
         Add(new ProjectDTO("dotnet-extension", "DotNetExtension"));
         Add(new ProjectDTO("log-modern-lib", "Log.Modern.Lib"));
         Add(new ProjectDTO("log-console-lib", "Log.Console.Lib"));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
+        Add(new ProjectDTO("log-modern-consoleapp", "Log.Modern.ConsoleApp"));
+        Add(new ProjectDTO("log-console-lib-console-app", "Log.ConsoleApp"));
+        Add(new ProjectDTO("log-modern-mdi-consoleapp", "Log.Modern.MDI.ConsoleApp"));
+        Add(new ProjectDTO("log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
