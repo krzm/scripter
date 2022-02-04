@@ -29,10 +29,13 @@ public class ProjectList : List<ProjectDTO>
         Add(new ProjectDTO("log-console-lib-console-app", "Log.ConsoleApp"));
         Add(new ProjectDTO("log-modern-mdi-consoleapp", "Log.Modern.MDI.ConsoleApp"));
         Add(new ProjectDTO("log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
+
+        Add(new ProjectDTO("app-starter", "AppStarter.ConsoleApp"));
+        Add(new ProjectDTO("dotnet-tool", "DotNetTool"));
+
+        Add(new ProjectDTO("inventory-data", "Inventory.Data"));
+        Add(new ProjectDTO("inventory-wizard-lib", "Inventory.Wizard.Lib"));
+        Add(new ProjectDTO("inventory-console-lib", "Inventory.Console.Lib"));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
