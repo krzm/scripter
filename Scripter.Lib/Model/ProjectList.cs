@@ -36,11 +36,13 @@ public class ProjectList : List<ProjectDTO>
         Add(new ProjectDTO("inventory-data", "Inventory.Data"));
         Add(new ProjectDTO("inventory-wizard-lib", "Inventory.Wizard.Lib"));
         Add(new ProjectDTO("inventory-console-lib", "Inventory.Console.Lib"));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
+        
+        Add(new ProjectDTO("inventory-modern-lib", "Inventory.Modern.Lib"));
+        Add(new ProjectDTO("inventory-consolelib-consoleapp", "Inventory.ConsoleLib.ConsoleApp"));
+        Add(new ProjectDTO("inventory-modern-consoleapp", "Inventory.Modern.ConsoleApp"));
+        
+        Add(new ProjectDTO("diy-box", "Diybox.ConsoleApp"));
+        Add(new ProjectDTO("game-data", "GameData.ConsoleApp"));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
