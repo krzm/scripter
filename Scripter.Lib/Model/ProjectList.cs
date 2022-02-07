@@ -43,11 +43,13 @@ public class ProjectList : List<ProjectDTO>
         
         Add(new ProjectDTO("diy-box", "Diybox.ConsoleApp"));
         Add(new ProjectDTO("game-data", "GameData.ConsoleApp"));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
+        Add(new ProjectDTO("commander", "Commander"));
+        //this dosent build with cli commands on mashine without VS
+        //Add(new ProjectDTO("mp3", "Mp3.ConsoleApp"));
+        Add(new ProjectDTO("timco-retail", "TRMApi"));
+        //neds new target param in script
+        //Add(new ProjectDTO("timco-retail", "TRMDesktopUI"));
+        Add(new ProjectDTO("timco-retail", "Portal"));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
