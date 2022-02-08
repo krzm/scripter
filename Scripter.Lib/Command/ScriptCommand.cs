@@ -9,18 +9,18 @@ public class ScriptCommand : ICommand
     private readonly IList<ProjectDTO> projects;
     private readonly IScriptParam scriptParam;
     private readonly List<IScript> scripts;
-    private readonly IBuildAllScript buildAllScript;
+    private readonly List<IBuildScript> buildScripts;
 
     public ScriptCommand(
         IList<ProjectDTO> projects
         , IScriptParam scriptParam
         , List<IScript> scripts
-        , IBuildAllScript buildAllScript)
+        , List<IBuildScript> buildScripts)
     {
         this.projects = projects;
         this.scriptParam = scriptParam;
         this.scripts = scripts;
-        this.buildAllScript = buildAllScript;
+        this.buildScripts = buildScripts;
     }
 
     public bool CanExecute(object? parameter) => true;
@@ -28,7 +28,8 @@ public class ScriptCommand : ICommand
     public void Execute(object? parameter)
     {
         WriteProjectScripts();
-        WriteBuildAllScript();
+        WriteBuildAllScript(buildScripts[0]);
+        WriteBuildModernLogScript(buildScripts[1]);
     }
 
     private void WriteProjectScripts()
@@ -45,10 +46,24 @@ public class ScriptCommand : ICommand
         }
     }
     
-    private void WriteBuildAllScript()
+    private void WriteBuildAllScript(IBuildScript buildScript)
+    {
+        if (buildScript is not BuildAllScript)
+            throw new ArgumentException("Wrong script");
+        WriteScript(buildScript);
+    }
+
+    private void WriteScript(IBuildScript buildScript)
     {
         File.WriteAllLines(
-            Path.Combine(scriptParam.ScriptPath, buildAllScript.File)
-            , buildAllScript.GetScript());
+            Path.Combine(scriptParam.ScriptPath, buildScript.File)
+            , buildScript.GetScript());
+    }
+
+    private void WriteBuildModernLogScript(IBuildScript buildScript)
+    {
+        if(buildScript is not BuildModernLogScript)
+            throw new ArgumentException("Wrong script");
+        WriteScript(buildScript);
     }
 }

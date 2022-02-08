@@ -17,6 +17,7 @@ public class AppCommands
     public override void Register()
     {
         Container.RegisterSingleton<IList<ProjectDTO>, ProjectList>();
+        Container.RegisterSingleton<IModernLogBuild, ModernLogBuild>();
 
         Container.RegisterSingleton<IScriptParam, ScriptParam>();
         
@@ -24,8 +25,9 @@ public class AppCommands
         Container.RegisterSingleton<IScript, VersionScript>(nameof(VersionScript));
         Container.RegisterSingleton<IScript, CopyScript>(nameof(CopyScript));
         Container.RegisterSingleton<IScript, BuildScript>(nameof(BuildScript));
-        
-        Container.RegisterSingleton<IBuildAllScript, BuildAllScript>();
+
+        Container.RegisterSingleton<IBuildScript, BuildAllScript>(nameof(BuildAllScript));
+        Container.RegisterSingleton<IBuildScript, BuildModernLogScript>(nameof(BuildModernLogScript));
 
         Container.RegisterSingleton<ICommand, ScriptCommand>();
     }

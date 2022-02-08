@@ -12,9 +12,9 @@ public class ScriptParam : IScriptParam
 
     public string VersionFileName => VersionFile;
 
-    public string ScriptPath => @"C:\kmazanek@gmail.com\Code\build\Script";
+    public string ScriptPath => @"C:\kmazanek@gmail.com\Build.Script";
 
-    public string BuildPath => @"C:\kmazanek@gmail.com\Code\build\Build";
+    public string BuildPath => @"C:\kmazanek@gmail.com\Build";
 
     public string RepoPath => Path.Combine(RootPath, CodeFolder, Project.RepoFolder);
 }

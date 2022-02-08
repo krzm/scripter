@@ -1,6 +1,6 @@
 namespace Scripter;
 
-public class BuildAllScript : IBuildAllScript
+public class BuildAllScript : IBuildScript
 {
     private readonly IList<ProjectDTO> projectList;
 
