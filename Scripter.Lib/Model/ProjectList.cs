@@ -57,7 +57,5 @@ public class ProjectList : List<ProjectDTO>
         Add(new ProjectDTO("unitycontainer-examples", "UnityContainer.Tests"));
         Add(new ProjectDTO("commanddotnet-examples", "CommandDotNet.Examples.App"));
         //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
     }
 }

@@ -17,11 +17,15 @@ public class AppCommands
     public override void Register()
     {
         Container.RegisterSingleton<IList<ProjectDTO>, ProjectList>();
+
         Container.RegisterSingleton<IScriptParam, ScriptParam>();
+        
         Container.RegisterSingleton<IScript, CompileScript>(nameof(CompileScript));
         Container.RegisterSingleton<IScript, VersionScript>(nameof(VersionScript));
         Container.RegisterSingleton<IScript, CopyScript>(nameof(CopyScript));
         Container.RegisterSingleton<IScript, BuildScript>(nameof(BuildScript));
+        
+        Container.RegisterSingleton<IBuildAllScript, BuildAllScript>();
 
         Container.RegisterSingleton<ICommand, ScriptCommand>();
     }
