@@ -50,11 +50,12 @@ public class ProjectList : List<ProjectDTO>
         //neds new target param in script
         //Add(new ProjectDTO("timco-retail", "TRMDesktopUI"));
         Add(new ProjectDTO("timco-retail", "Portal"));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
-        //Add(new ProjectDTO("", ""));
+        
+        Add(new ProjectDTO("wpf-helper", "WpfHelper"));
+        Add(new ProjectDTO("pattern", "Pattern"));
+        Add(new ProjectDTO("dotnet-examples", "Net.Examples"));
+        Add(new ProjectDTO("unitycontainer-examples", "UnityContainer.Tests"));
+        Add(new ProjectDTO("commanddotnet-examples", "CommandDotNet.Examples.App"));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
         //Add(new ProjectDTO("", ""));
