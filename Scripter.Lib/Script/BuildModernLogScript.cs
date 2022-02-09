@@ -2,23 +2,50 @@ namespace Scripter;
 
 public class BuildModernLogScript : IBuildScript
 {
-    private readonly IModernLogBuild modernLogBuild;
+    private readonly IProjectData projectData;
+    private List<string> script;
 
-    public string File => "BuildModernLog.ps1";
+    public string File => "ModernLog.Build.ps1";
 
-    public BuildModernLogScript(IModernLogBuild modernLogBuild)
+    public BuildModernLogScript(IProjectData projectData)
     {
-        this.modernLogBuild = modernLogBuild;
+        this.projectData = projectData;
     }
 
     public string[] GetScript()
     {
-        var sb = new List<string>();
-        foreach (var project in modernLogBuild.Libs)
+        script = new List<string>();
+        foreach (var project in projectData)
         {
-            sb.Add($"& \"$PSScriptRoot\\{project.AppProjFolder}.Build.ps1\"");
+            AddScript(project);
         }
-        sb.Add($"& \"$PSScriptRoot\\{modernLogBuild.App}.Build.ps1\"");
-        return sb.ToArray();
+        return script.ToArray();
+    }
+
+    private void AddScript(ProjectDTO project)
+    {
+        if (project.Dependencies != null)
+        {
+            foreach (var library in project.Dependencies)
+            {
+                AddScript(library);
+            }
+        }
+        if(IsNotInScript(project))
+            AddLine(project);
+    }
+
+    private bool IsNotInScript(ProjectDTO project)
+    {
+        foreach (var line in script)
+        {
+            if(line.Contains(project.AppProjFolder)) return false;
+        }
+        return true;
+    }
+
+    private void AddLine(ProjectDTO project)
+    {
+        script.Add($"& \"$PSScriptRoot\\{project.AppProjFolder}.Build.ps1\"");
     }
 }

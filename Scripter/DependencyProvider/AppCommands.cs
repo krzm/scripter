@@ -18,6 +18,7 @@ public class AppCommands
     {
         Container.RegisterSingleton<IList<ProjectDTO>, ProjectList>();
         Container.RegisterSingleton<IModernLogBuild, ModernLogBuild>();
+        Container.RegisterSingleton<IProjectData, ProjectData>();
 
         Container.RegisterSingleton<IScriptParam, ScriptParam>();
         
