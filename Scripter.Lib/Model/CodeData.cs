@@ -1,57 +1,57 @@
 namespace Scripter;
 
-public class CodeData : CodeDataBase
+public abstract class CodeData 
+    : Dictionary<string,ProjectDTO>
+        , ICodeData
 {
-    protected override void SetIndependent()
+    protected ProjectDTO? ModelHelper;
+    protected ProjectDTO? EFCoreHelper;
+    protected ProjectDTO? DotNetExtension;
+    protected ProjectDTO? CliHelper;
+    protected ProjectDTO? DataToTable;
+    protected ProjectDTO? CliReader;
+    protected ProjectDTO? CommandDotNetUnity;
+    protected ProjectDTO? DIHelper;
+    protected ProjectDTO? CommandDotNetHelper;
+    protected ProjectDTO? CrudCommandHelper;
+    protected ProjectDTO? Scripter;
+    protected ProjectDTO? LogData;
+    protected ProjectDTO? LogModernLib;
+    protected ProjectDTO? LogModernConsoleApp;
+
+    public CodeData()
     {
-        ModelHelper = Set(
-            "model-helper", "ModelHelper");
-        EFCoreHelper = Set(
-            "efcore-helper", "EFCoreHelper");
-        DotNetExtension = Set(
-            "dotnet-extension", "DotNetExtension");
-        CommandDotNetUnity = Set(
-            "di-helper", "CommandDotNet.IoC.Unity");
+        SetAll();
     }
 
-    protected override void SetOneDependancy()
+    private void SetAll()
     {
-        CliHelper = Set(
-            "cli-helper", "CLIHelper"
-            , ModelHelper);
-        DataToTable = Set(
-            "datatotable", "DataToTable"
-            , ModelHelper);
-        CliReader = Set(
-            "cli-reader", "CLIReader"
-            , CliHelper);
+        SetIndependentLib();
+        SetOneDependancyLib();
+        SetTwoDependancyLib();
+        SetManyDependancyLib();
+        SetApps();
     }
 
-    protected override void SetTwoDependancy()
+    protected abstract void SetIndependentLib();
+    protected abstract void SetOneDependancyLib();
+    protected abstract void SetTwoDependancyLib();
+    protected abstract void SetManyDependancyLib();
+    protected virtual void SetApps(){}
+
+    protected ProjectDTO Set(string repo, string project)
     {
-        LogData = Set(
-            "log-data", "Log.Data"
-            , ModelHelper, EFCoreHelper);
-        DiHelper = Set(
-            "di-helper", "DIHelper"
-            , CliHelper, CliReader);
-        CommandDotNetHelper = Set(
-            "commanddotnet-helper", "CommandDotNet.Helper"
-            , DiHelper, CommandDotNetUnity);
+        var proj = new ProjectDTO(repo, project);
+        Add(proj.AppProjFolder, proj);
+        return proj;
     }
 
-    protected override void SetManyDependancy()
+    protected ProjectDTO Set(string repo, string project
+        , params ProjectDTO[] libs)
     {
-        CrudCommandHelper = Set(
-            "crud-command-helper", "CRUDCommandHelper"
-            , ModelHelper, EFCoreHelper, CliHelper, DataToTable);
-        LogModernLib = Set(
-            "log-modern-lib", "Log.Modern.Lib"
-            , ModelHelper, EFCoreHelper, LogData, DotNetExtension
-            , CliHelper, DataToTable, CrudCommandHelper);
-        LogModernConsoleApp = Set(
-            "log-modern-consoleapp", "Log.Modern.ConsoleApp"
-            , ModelHelper, EFCoreHelper, LogData, DataToTable
-            , CrudCommandHelper, DiHelper, CommandDotNetHelper, LogModernLib);
-    }  
+        var proj = new ProjectDTO(repo, project
+            , new List<ProjectDTO>(libs));
+        Add(proj.AppProjFolder, proj);
+        return proj;
+    }
 }

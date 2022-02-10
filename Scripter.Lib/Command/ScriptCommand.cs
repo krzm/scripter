@@ -8,19 +8,19 @@ public class ScriptCommand : ICommand
 
     private readonly IList<ProjectDTO> projects;
     private readonly IScriptParam scriptParam;
-    private readonly List<IScript> scripts;
-    private readonly List<IBuildAll> buildScripts;
+    private readonly List<IScript> projectScripts;
+    private readonly List<IBuildAll> buildAllScripts;
 
     public ScriptCommand(
         IList<ProjectDTO> projects
         , IScriptParam scriptParam
-        , List<IScript> scripts
-        , List<IBuildAll> buildScripts)
+        , List<IScript> projectScripts
+        , List<IBuildAll> buildAllScripts)
     {
         this.projects = projects;
         this.scriptParam = scriptParam;
-        this.scripts = scripts;
-        this.buildScripts = buildScripts;
+        this.projectScripts = projectScripts;
+        this.buildAllScripts = buildAllScripts;
     }
 
     public bool CanExecute(object? parameter) => true;
@@ -28,8 +28,7 @@ public class ScriptCommand : ICommand
     public void Execute(object? parameter)
     {
         WriteProjectScripts();
-        WriteBuildAllScript(buildScripts[0]);
-        WriteBuildModernLogScript(buildScripts[1]);
+        WriteBuildAllScripts();
     }
 
     private void WriteProjectScripts()
@@ -37,7 +36,7 @@ public class ScriptCommand : ICommand
         foreach (var project in projects)
         {
             scriptParam.Project = new ProjectDTO(project.RepoFolder, project.AppProjFolder);
-            foreach (var script in scripts)
+            foreach (var script in projectScripts)
             {
                 File.WriteAllLines(
                     Path.Combine(scriptParam.ScriptPath, script.File)
@@ -46,11 +45,12 @@ public class ScriptCommand : ICommand
         }
     }
     
-    private void WriteBuildAllScript(IBuildAll buildScript)
+    private void WriteBuildAllScripts()
     {
-        if (buildScript is not BuildAllScript)
-            throw new ArgumentException("Wrong script");
-        WriteScript(buildScript);
+        foreach (var script in buildAllScripts)
+        {
+            WriteScript(script);   
+        }
     }
 
     private void WriteScript(IBuildAll buildScript)
@@ -58,12 +58,5 @@ public class ScriptCommand : ICommand
         File.WriteAllLines(
             Path.Combine(scriptParam.ScriptPath, buildScript.File)
             , buildScript.GetScript());
-    }
-
-    private void WriteBuildModernLogScript(IBuildAll buildScript)
-    {
-        if(buildScript is not ModernLogBuildAll)
-            throw new ArgumentException("Wrong script");
-        WriteScript(buildScript);
     }
 }

@@ -1,6 +1,7 @@
 namespace Scripter;
 
-public interface ICodeData : IDictionary<string,ProjectDTO>
+public interface ICodeData 
+    : IDictionary<string,ProjectDTO>
 {
 
 }
