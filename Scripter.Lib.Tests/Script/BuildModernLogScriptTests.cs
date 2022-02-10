@@ -4,7 +4,8 @@ namespace Scripter.Lib.Tests;
 
 public class BuildModernLogScriptTests : ScriptTestBase
 {
-    private static IProjectData projectData = new ProjectData();
+    private static IModernLogData projectData
+        = new ModernLogData(new CodeData());
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]
@@ -24,7 +25,7 @@ public class BuildModernLogScriptTests : ScriptTestBase
         int index
         , string expected)
     {
-        IScript script = new BuildModernLogScript(projectData);
+        IScript script = new ModernLogBuildAll(projectData);
 
         var acctual = GetLine(script, index);
 

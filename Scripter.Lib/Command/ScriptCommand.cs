@@ -9,13 +9,13 @@ public class ScriptCommand : ICommand
     private readonly IList<ProjectDTO> projects;
     private readonly IScriptParam scriptParam;
     private readonly List<IScript> scripts;
-    private readonly List<IBuildScript> buildScripts;
+    private readonly List<IBuildAll> buildScripts;
 
     public ScriptCommand(
         IList<ProjectDTO> projects
         , IScriptParam scriptParam
         , List<IScript> scripts
-        , List<IBuildScript> buildScripts)
+        , List<IBuildAll> buildScripts)
     {
         this.projects = projects;
         this.scriptParam = scriptParam;
@@ -46,23 +46,23 @@ public class ScriptCommand : ICommand
         }
     }
     
-    private void WriteBuildAllScript(IBuildScript buildScript)
+    private void WriteBuildAllScript(IBuildAll buildScript)
     {
         if (buildScript is not BuildAllScript)
             throw new ArgumentException("Wrong script");
         WriteScript(buildScript);
     }
 
-    private void WriteScript(IBuildScript buildScript)
+    private void WriteScript(IBuildAll buildScript)
     {
         File.WriteAllLines(
             Path.Combine(scriptParam.ScriptPath, buildScript.File)
             , buildScript.GetScript());
     }
 
-    private void WriteBuildModernLogScript(IBuildScript buildScript)
+    private void WriteBuildModernLogScript(IBuildAll buildScript)
     {
-        if(buildScript is not BuildModernLogScript)
+        if(buildScript is not ModernLogBuildAll)
             throw new ArgumentException("Wrong script");
         WriteScript(buildScript);
     }

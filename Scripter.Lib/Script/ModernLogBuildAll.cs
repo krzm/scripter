@@ -1,13 +1,13 @@
 namespace Scripter;
 
-public class BuildModernLogScript : IBuildScript
+public class ModernLogBuildAll : IBuildAll
 {
-    private readonly IProjectData projectData;
+    private readonly IModernLogData projectData;
     private List<string> script;
 
     public string File => "ModernLog.Build.ps1";
 
-    public BuildModernLogScript(IProjectData projectData)
+    public ModernLogBuildAll(IModernLogData projectData)
     {
         this.projectData = projectData;
     }
