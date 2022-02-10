@@ -18,6 +18,9 @@ public abstract class CodeData
     protected ProjectDTO? LogData;
     protected ProjectDTO? LogModernLib;
     protected ProjectDTO? LogModernConsoleApp;
+    protected ProjectDTO? InventoryData;
+    protected ProjectDTO? InventoryModernLib;
+    protected ProjectDTO? InventoryModernConsoleApp;
 
     public CodeData()
     {

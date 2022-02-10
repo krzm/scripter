@@ -29,6 +29,7 @@ public class AppCommands
         Container.RegisterSingleton<IBuildAll, BuildAllScript>(nameof(BuildAllScript));
         Container.RegisterSingleton<IBuildAll, ScripterBuildAll>(nameof(ScripterBuildAll));
         Container.RegisterSingleton<IBuildAll, ModernLogBuildAll>(nameof(ModernLogBuildAll));
+        Container.RegisterSingleton<IBuildAll, ModernInventoryBuildAll>(nameof(ModernInventoryBuildAll));
 
         Container.RegisterSingleton<ICommand, ScriptCommand>();
     }

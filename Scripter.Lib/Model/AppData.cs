@@ -6,6 +6,7 @@ public class AppData : LibData
     {
         SetScripter();
         SetModernLog();
+        SetModernInventory();
     }
 
     private void SetScripter()
@@ -28,5 +29,20 @@ public class AppData : LibData
             "log-modern-consoleapp", "Log.Modern.ConsoleApp"
             , ModelHelper, EFCoreHelper, DataToTable, DIHelper
             , CommandDotNetHelper, CrudCommandHelper, LogData, LogModernLib);
+    }
+
+    private void SetModernInventory()
+    {
+        InventoryData = Set(
+            "inventory-data", "Inventory.Data"
+            , ModelHelper, EFCoreHelper);
+        InventoryModernLib = Set(
+            "inventory-modern-lib", "Inventory.Modern.Lib"
+            , ModelHelper, EFCoreHelper, DotNetExtension, CliHelper
+            , DataToTable, CrudCommandHelper, InventoryData);
+        InventoryModernConsoleApp = Set(
+            "inventory-modern-consoleapp", "Inventory.Modern.ConsoleApp"
+            , ModelHelper, EFCoreHelper, DataToTable, DIHelper
+            , CommandDotNetHelper, CrudCommandHelper, InventoryData, InventoryModernLib);
     }  
 }

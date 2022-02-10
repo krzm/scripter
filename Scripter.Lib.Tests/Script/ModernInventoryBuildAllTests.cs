@@ -2,7 +2,7 @@ using Xunit;
 
 namespace Scripter.Lib.Tests;
 
-public class ModernLogBuildAllTests 
+public class ModernInventoryBuildAllTests 
     : ScriptTestBase
 {
     private static ICodeData appData
@@ -18,15 +18,15 @@ public class ModernLogBuildAllTests
     [InlineData(6, $"& \"$PSScriptRoot\\CommandDotNet.IoC.Unity.Build.ps1\"")]
     [InlineData(7, $"& \"$PSScriptRoot\\CommandDotNet.Helper.Build.ps1\"")]
     [InlineData(8, $"& \"$PSScriptRoot\\CRUDCommandHelper.Build.ps1\"")]
-    [InlineData(9, $"& \"$PSScriptRoot\\Log.Data.Build.ps1\"")]
+    [InlineData(9, $"& \"$PSScriptRoot\\Inventory.Data.Build.ps1\"")]
     [InlineData(10, $"& \"$PSScriptRoot\\DotNetExtension.Build.ps1\"")]
-    [InlineData(11, $"& \"$PSScriptRoot\\Log.Modern.Lib.Build.ps1\"")]
-    [InlineData(12, $"& \"$PSScriptRoot\\Log.Modern.ConsoleApp.Build.ps1\"")]
+    [InlineData(11, $"& \"$PSScriptRoot\\Inventory.Modern.Lib.Build.ps1\"")]
+    [InlineData(12, $"& \"$PSScriptRoot\\Inventory.Modern.ConsoleApp.Build.ps1\"")]
     public override void TestScriptContent(
         int index
         , string expected)
     {
-        IScript script = new ModernLogBuildAll(appData);
+        IScript script = new ModernInventoryBuildAll(appData);
 
         var acctual = GetLine(script, index);
 
