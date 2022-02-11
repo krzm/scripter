@@ -6,6 +6,7 @@ public class AppData : LibData
     {
         SetScripter();
         SetModernLog();
+        SetModernLogWizard();
         SetModernInventory();
         SetAppStarter();
         SetDiyBox();
@@ -31,6 +32,20 @@ public class AppData : LibData
             "log-modern-consoleapp", "Log.Modern.ConsoleApp"
             , ModelHelper, EFCoreHelper, DataToTable, DIHelper
             , CommandDotNetHelper, CRUDCommandHelper, LogData, LogModernLib);
+    }
+
+    private void SetModernLogWizard()
+    {
+        LogWizardLib = Set(
+            "log-wizard-lib", "Log.Wizard.Lib"
+            , EFCoreHelper, CLIHelper, CLIReader, LogData
+            , CLIWizardHelper);
+        LogModernWizard = Set(
+            "log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"
+            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
+            , CLIReader, DataToTable, DIHelper, CommandDotNetHelper
+            , CLIWizardHelper, CRUDCommandHelper, LogData, LogWizardLib
+            , LogModernLib);
     }
 
     private void SetModernInventory()
