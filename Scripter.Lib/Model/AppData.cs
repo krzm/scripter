@@ -8,6 +8,7 @@ public class AppData : LibData
         SetModernLog();
         SetModernInventory();
         SetAppStarter();
+        SetDiyBox();
     }
 
     private void SetScripter()
@@ -63,5 +64,15 @@ public class AppData : LibData
             , CLIReader, DotNetTool, DIHelper, DataToTable
             , CommandDotNetHelper, CRUDCommandHelper, CLIFramework, AppStarterData
             , AppStarterModernLib);
+    }  
+
+    private void SetDiyBox()
+    {
+        DiyBoxCore = Set(
+            "diy-box", "DiyBox.Core"
+            , CLIFramework);
+        DiyBoxConsoleApp = Set(
+            "diy-box", "DiyBox.ConsoleApp"
+            , DIHelper, CommandDotNetHelper, CLIFramework);
     }  
 }

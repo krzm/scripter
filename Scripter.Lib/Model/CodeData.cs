@@ -27,6 +27,8 @@ public abstract class CodeData
     protected ProjectDTO? AppStarterData;
     protected ProjectDTO? AppStarterModernLib;
     protected ProjectDTO? AppStarterConsoleApp;
+    protected ProjectDTO? DiyBoxCore;
+    protected ProjectDTO? DiyBoxConsoleApp;
 
     public CodeData()
     {
