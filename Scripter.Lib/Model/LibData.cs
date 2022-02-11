@@ -10,29 +10,31 @@ public class LibData : CodeData
             "efcore-helper", "EFCoreHelper");
         DotNetExtension = Set(
             "dotnet-extension", "DotNetExtension");
+        DotNetTool = Set(
+            "dotnet-tool", "DotNetTool");
     }
 
     protected override void SetOneDependancyLib()
     {
-        CliHelper = Set(
+        CLIHelper = Set(
             "cli-helper", "CLIHelper"
             , ModelHelper);
         DataToTable = Set(
             "datatotable", "DataToTable"
             , ModelHelper);
-        CliReader = Set(
+        CLIReader = Set(
             "cli-reader", "CLIReader"
-            , CliHelper);
+            , CLIHelper);
     }
 
     protected override void SetTwoDependancyLib()
     {
         CommandDotNetUnity = Set(
             "di-helper", "CommandDotNet.IoC.Unity"
-            , CliHelper, CliReader);
+            , CLIHelper, CLIReader);
         DIHelper = Set(
             "di-helper", "DIHelper"
-            , CliHelper, CliReader);
+            , CLIHelper, CLIReader);
         CommandDotNetHelper = Set(
             "commanddotnet-helper", "CommandDotNet.Helper"
             , DIHelper, CommandDotNetUnity);
@@ -40,8 +42,14 @@ public class LibData : CodeData
 
     protected override void SetManyDependancyLib()
     {
-        CrudCommandHelper = Set(
+        CRUDCommandHelper = Set(
             "crud-command-helper", "CRUDCommandHelper"
-            , ModelHelper, EFCoreHelper, CliHelper, DataToTable);
+            , ModelHelper, EFCoreHelper, CLIHelper, DataToTable);
+        CLIWizardHelper = Set(
+            "cli-wizard-helper", "CLIWizardHelper"
+            , ModelHelper, EFCoreHelper, CLIHelper, CLIReader);
+        CLIFramework = Set(
+            "cli-framework", "CLIFramework"
+            , CLIHelper, DIHelper, CRUDCommandHelper, CLIWizardHelper);
     }
 }

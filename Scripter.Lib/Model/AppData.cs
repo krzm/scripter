@@ -7,6 +7,7 @@ public class AppData : LibData
         SetScripter();
         SetModernLog();
         SetModernInventory();
+        SetAppStarter();
     }
 
     private void SetScripter()
@@ -23,12 +24,12 @@ public class AppData : LibData
             , ModelHelper, EFCoreHelper);
         LogModernLib = Set(
             "log-modern-lib", "Log.Modern.Lib"
-            , ModelHelper, EFCoreHelper, DotNetExtension, CliHelper
-            , DataToTable, CrudCommandHelper, LogData);
+            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
+            , DataToTable, CRUDCommandHelper, LogData);
         LogModernConsoleApp = Set(
             "log-modern-consoleapp", "Log.Modern.ConsoleApp"
             , ModelHelper, EFCoreHelper, DataToTable, DIHelper
-            , CommandDotNetHelper, CrudCommandHelper, LogData, LogModernLib);
+            , CommandDotNetHelper, CRUDCommandHelper, LogData, LogModernLib);
     }
 
     private void SetModernInventory()
@@ -38,11 +39,29 @@ public class AppData : LibData
             , ModelHelper, EFCoreHelper);
         InventoryModernLib = Set(
             "inventory-modern-lib", "Inventory.Modern.Lib"
-            , ModelHelper, EFCoreHelper, DotNetExtension, CliHelper
-            , DataToTable, CrudCommandHelper, InventoryData);
+            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
+            , DataToTable, CRUDCommandHelper, InventoryData);
         InventoryModernConsoleApp = Set(
             "inventory-modern-consoleapp", "Inventory.Modern.ConsoleApp"
             , ModelHelper, EFCoreHelper, DataToTable, DIHelper
-            , CommandDotNetHelper, CrudCommandHelper, InventoryData, InventoryModernLib);
+            , CommandDotNetHelper, CRUDCommandHelper, InventoryData, InventoryModernLib);
+    }  
+
+    private void SetAppStarter()
+    {
+        AppStarterData = Set(
+            "app-starter", "AppStarter.Data"
+            , ModelHelper, EFCoreHelper);
+        AppStarterModernLib = Set(
+            "app-starter", "AppStarter.Lib"
+            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
+            , CLIReader, DotNetTool, DIHelper, DataToTable
+            , CommandDotNetHelper, CRUDCommandHelper, CLIFramework, AppStarterData);
+        AppStarterConsoleApp = Set(
+            "app-starter", "AppStarter.ConsoleApp"
+            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
+            , CLIReader, DotNetTool, DIHelper, DataToTable
+            , CommandDotNetHelper, CRUDCommandHelper, CLIFramework, AppStarterData
+            , AppStarterModernLib);
     }  
 }

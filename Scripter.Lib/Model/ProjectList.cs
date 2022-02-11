@@ -30,6 +30,8 @@ public class ProjectList : List<ProjectDTO>
         Add(new ProjectDTO("log-modern-mdi-consoleapp", "Log.Modern.MDI.ConsoleApp"));
         Add(new ProjectDTO("log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"));
 
+        Add(new ProjectDTO("app-starter", "AppStarter.Data"));
+        Add(new ProjectDTO("app-starter", "AppStarter.Lib"));
         Add(new ProjectDTO("app-starter", "AppStarter.ConsoleApp"));
         Add(new ProjectDTO("dotnet-tool", "DotNetTool"));
 
