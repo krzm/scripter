@@ -20,17 +20,24 @@ public class LogData : AppData
 
     private void SetConsoleLog()
     {
-        LogConsoleLib = Set("log-console-lib", "Log.Console.Lib"
+        LogConsoleLib = Set(
+            "log-console-lib", "Log.Console.Lib"
             , CLIHelper, CRUDCommandHelper, CLIWizardHelper, CLIFramework
             , LogData, LogModernLib);
-    }
-
-    private void SetModernLogWizard()
-    {
         LogWizardLib = Set(
             "log-wizard-lib", "Log.Wizard.Lib"
             , EFCoreHelper, CLIHelper, CLIReader, LogData
             , CLIWizardHelper);
+        LogConsoleLibConsoleApp = Set(
+            "log-console-lib-console-app", "Log.ConsoleApp"
+            , ModelHelper, EFCoreHelper, DotNetExtension, DataToTable
+            , CLIHelper, CLIReader, DIHelper, CRUDCommandHelper
+            , CommandDotNetHelper, CLIWizardHelper, CLIFramework, LogData
+            , LogWizardLib, LogModernLib, LogConsoleLib);
+    }
+
+    private void SetModernLogWizard()
+    {
         LogModernWizard = Set(
             "log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper

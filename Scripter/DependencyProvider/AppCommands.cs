@@ -32,6 +32,7 @@ public class AppCommands
         Container.RegisterSingleton<IBuildAll, ConsoleLogBuildAll>(nameof(ConsoleLogBuildAll));
         Container.RegisterSingleton<IBuildAll, ModernLogWizardBuildAll>(nameof(ModernLogWizardBuildAll));
         Container.RegisterSingleton<IBuildAll, ModernLogBuildAll>(nameof(ModernLogBuildAll));
+        
         Container.RegisterSingleton<IBuildAll, ModernInventoryBuildAll>(nameof(ModernInventoryBuildAll));
         Container.RegisterSingleton<IBuildAll, AppStarterBuildAll>(nameof(AppStarterBuildAll));
         Container.RegisterSingleton<IBuildAll, DiyBoxBuildAll>(nameof(DiyBoxBuildAll));

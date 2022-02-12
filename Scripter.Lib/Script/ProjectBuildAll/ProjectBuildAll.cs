@@ -17,7 +17,10 @@ public abstract class ProjectBuildAll : IBuildAll
     public string[] GetScript()
     {
         script = new List<string>();
-        AddScript(appData[Project]);
+        var project = appData[Project];
+        if (project == null) 
+            throw new ArgumentException($"{project} not found");
+        AddScript(project);
         return script.ToArray();
     }
 
@@ -27,6 +30,8 @@ public abstract class ProjectBuildAll : IBuildAll
         {
             foreach (var library in project.Dependencies)
             {
+                if (library == null) 
+                    throw new NullReferenceException($"{library} is null");
                 AddScript(library);
             }
         }
