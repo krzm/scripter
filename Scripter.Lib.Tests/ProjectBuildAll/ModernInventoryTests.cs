@@ -2,7 +2,7 @@ using Xunit;
 
 namespace Scripter.Lib.Tests;
 
-public class ModernInventoryBuildAllTests 
+public class ModernInventoryTests 
     : ScriptTestBase
 {
     private static ICodeData appData

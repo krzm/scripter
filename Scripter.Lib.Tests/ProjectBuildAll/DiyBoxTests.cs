@@ -2,7 +2,7 @@ using Xunit;
 
 namespace Scripter.Lib.Tests;
 
-public class DiyBoxBuildAllTests 
+public class DiyBoxTests 
     : ScriptTestBase
 {
     private static ICodeData appData
@@ -20,7 +20,7 @@ public class DiyBoxBuildAllTests
     [InlineData(8, $"& \"$PSScriptRoot\\CRUDCommandHelper.Build.ps1\"")]
     [InlineData(9, $"& \"$PSScriptRoot\\CLIWizardHelper.Build.ps1\"")]
     [InlineData(10, $"& \"$PSScriptRoot\\CLIFramework.Build.ps1\"")]
-    [InlineData(12, $"& \"$PSScriptRoot\\DiyBox.ConsoleApp.Build.ps1\"")]
+    [InlineData(11, $"& \"$PSScriptRoot\\DiyBox.ConsoleApp.Build.ps1\"")]
     public override void TestScriptContent(
         int index
         , string expected)

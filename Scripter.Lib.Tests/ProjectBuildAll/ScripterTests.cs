@@ -2,7 +2,8 @@ using Xunit;
 
 namespace Scripter.Lib.Tests;
 
-public class ScripterBuildAllTests : ScriptTestBase
+public class ScripterTests 
+    : ScriptTestBase
 {
     private static ICodeData appData
         = new AppData();

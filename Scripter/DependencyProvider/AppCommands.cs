@@ -17,7 +17,7 @@ public class AppCommands
     public override void Register()
     {
         Container.RegisterSingleton<IList<ProjectDTO>, ProjectList>();
-        Container.RegisterSingleton<ICodeData, AppData>();
+        Container.RegisterSingleton<ICodeData, LogData>();
 
         Container.RegisterSingleton<IScriptParam, ScriptParam>();
         
@@ -28,11 +28,13 @@ public class AppCommands
 
         Container.RegisterSingleton<IBuildAll, BuildAllScript>(nameof(BuildAllScript));
         Container.RegisterSingleton<IBuildAll, ScripterBuildAll>(nameof(ScripterBuildAll));
+
+        Container.RegisterSingleton<IBuildAll, ConsoleLogBuildAll>(nameof(ConsoleLogBuildAll));
+        Container.RegisterSingleton<IBuildAll, ModernLogWizardBuildAll>(nameof(ModernLogWizardBuildAll));
         Container.RegisterSingleton<IBuildAll, ModernLogBuildAll>(nameof(ModernLogBuildAll));
         Container.RegisterSingleton<IBuildAll, ModernInventoryBuildAll>(nameof(ModernInventoryBuildAll));
         Container.RegisterSingleton<IBuildAll, AppStarterBuildAll>(nameof(AppStarterBuildAll));
         Container.RegisterSingleton<IBuildAll, DiyBoxBuildAll>(nameof(DiyBoxBuildAll));
-        Container.RegisterSingleton<IBuildAll, ModernLogWizardBuildAll>(nameof(ModernLogWizardBuildAll));
 
         Container.RegisterSingleton<ICommand, ScriptCommand>();
     }
