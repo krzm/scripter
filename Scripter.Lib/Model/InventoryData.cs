@@ -1,66 +1,54 @@
 namespace Scripter;
 
-public class LogData : LibData
+public class InventoryData : LibData
 {
     private ProjectDTO? dataLib;
     private ProjectDTO? modernLib;
     private ProjectDTO? consoleLib;
     private ProjectDTO? wizardLib;
-    private ProjectDTO? consoleLibCLIApp;
-    private ProjectDTO? modernMDICLIApp;
-    private ProjectDTO? modernWizardCLIApp;
     private ProjectDTO? modernCLIApp;
+    private ProjectDTO? consoleLibCLIApp;
 
     protected override void SetApps()
     {
         base.SetApps();
         SetCommon();
         SetModern();
-        SetModernMDI();
-        SetConsoleLib();
+        SetConsole();
         SetModernWizard();
     }
 
     private void SetCommon()
     {
         dataLib = Set(
-            "log-data", "Log.Data"
+            "inventory-data", "Inventory.Data"
             , ModelHelper, EFCoreHelper);
     }
 
     private void SetModern()
     {
         modernLib = Set(
-            "log-modern-lib", "Log.Modern.Lib"
+            "inventory-modern-lib", "Inventory.Modern.Lib"
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , DataToTable, CRUDCommandHelper, dataLib);
         modernCLIApp = Set(
-            "log-modern-consoleapp", "Log.Modern.ConsoleApp"
+            "inventory-modern-consoleapp", "Inventory.Modern.ConsoleApp"
             , ModelHelper, EFCoreHelper, DataToTable, DIHelper
             , CommandDotNetHelper, CRUDCommandHelper, dataLib, modernLib);
     }
 
-    private void SetModernMDI()
-    {
-        modernMDICLIApp =  Set(
-            "log-modern-mdi-consoleapp", "Log.Modern.MDI.ConsoleApp"
-            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , DataToTable, DIHelper, CommandDotNetHelper, CRUDCommandHelper
-            , dataLib, modernLib);
-    }
-    
-    private void SetConsoleLib()
+    private void SetConsole()
     {
         consoleLib = Set(
-            "log-console-lib", "Log.Console.Lib"
+            "inventory-console-lib", "Inventory.Console.Lib"
             , CLIHelper, CRUDCommandHelper, CLIWizardHelper, CLIFramework
             , dataLib, modernLib);
         wizardLib = Set(
-            "log-wizard-lib", "Log.Wizard.Lib"
+            "inventory-wizard-lib", "Inventory.Wizard.Lib"
             , EFCoreHelper, CLIHelper, CLIReader, CLIWizardHelper
             , dataLib);
         consoleLibCLIApp = Set(
-            "log-console-lib-console-app", "Log.ConsoleApp"
+            "inventory-consolelib-consoleapp", "Inventory.ConsoleLib.ConsoleApp"
             , ModelHelper, EFCoreHelper, DotNetExtension, DataToTable
             , CLIHelper, CLIReader, DIHelper, CRUDCommandHelper
             , CommandDotNetHelper, CLIWizardHelper, CLIFramework, dataLib
@@ -69,11 +57,6 @@ public class LogData : LibData
 
     private void SetModernWizard()
     {
-        modernWizardCLIApp = Set(
-            "log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"
-            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , CLIReader, DataToTable, DIHelper, CommandDotNetHelper
-            , CLIWizardHelper, CRUDCommandHelper, dataLib, wizardLib
-            , modernLib);
+        
     }
 }

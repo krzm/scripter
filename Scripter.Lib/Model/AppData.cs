@@ -2,60 +2,51 @@ namespace Scripter;
 
 public class AppData : LibData
 {
+    private ProjectDTO? scripter;
+    private ProjectDTO? appStarterData;
+    private ProjectDTO? appStarterModernLib;
+    private ProjectDTO? appStarterConsoleApp;
+    private ProjectDTO? diyBoxCore;
+    private ProjectDTO? diyBoxConsoleApp;
+
     protected override void SetApps()
     {
         SetScripter();
-        SetModernInventory();
         SetAppStarter();
         SetDiyBox();
     }
 
     private void SetScripter()
     {
-        Scripter = Set(
+        scripter = Set(
             "scripter", "Scripter"
             , DataToTable, CommandDotNetUnity, DIHelper, CommandDotNetHelper);
     }
 
-    private void SetModernInventory()
-    {
-        InventoryData = Set(
-            "inventory-data", "Inventory.Data"
-            , ModelHelper, EFCoreHelper);
-        InventoryModernLib = Set(
-            "inventory-modern-lib", "Inventory.Modern.Lib"
-            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , DataToTable, CRUDCommandHelper, InventoryData);
-        InventoryModernConsoleApp = Set(
-            "inventory-modern-consoleapp", "Inventory.Modern.ConsoleApp"
-            , ModelHelper, EFCoreHelper, DataToTable, DIHelper
-            , CommandDotNetHelper, CRUDCommandHelper, InventoryData, InventoryModernLib);
-    }  
-
     private void SetAppStarter()
     {
-        AppStarterData = Set(
+        appStarterData = Set(
             "app-starter", "AppStarter.Data"
             , ModelHelper, EFCoreHelper);
-        AppStarterModernLib = Set(
+        appStarterModernLib = Set(
             "app-starter", "AppStarter.Lib"
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , CLIReader, DotNetTool, DIHelper, DataToTable
-            , CommandDotNetHelper, CRUDCommandHelper, CLIFramework, AppStarterData);
-        AppStarterConsoleApp = Set(
+            , CommandDotNetHelper, CRUDCommandHelper, CLIFramework, appStarterData);
+        appStarterConsoleApp = Set(
             "app-starter", "AppStarter.ConsoleApp"
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , CLIReader, DotNetTool, DIHelper, DataToTable
-            , CommandDotNetHelper, CRUDCommandHelper, CLIFramework, AppStarterData
-            , AppStarterModernLib);
+            , CommandDotNetHelper, CRUDCommandHelper, CLIFramework, appStarterData
+            , appStarterModernLib);
     }  
 
     private void SetDiyBox()
     {
-        DiyBoxCore = Set(
+        diyBoxCore = Set(
             "diy-box", "DiyBox.Core"
             , CLIFramework);
-        DiyBoxConsoleApp = Set(
+        diyBoxConsoleApp = Set(
             "diy-box", "DiyBox.ConsoleApp"
             , DIHelper, CommandDotNetHelper, CLIFramework);
     }  

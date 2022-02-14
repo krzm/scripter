@@ -6,7 +6,7 @@ public class ModernInventoryTests
     : ScriptTestBase
 {
     private static ICodeData appData
-        = new AppData();
+        = new InventoryData();
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]

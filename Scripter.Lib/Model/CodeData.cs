@@ -1,7 +1,7 @@
 namespace Scripter;
 
 public abstract class CodeData 
-    : CodeProject
+    : Dictionary<string,ProjectDTO>
         , ICodeData
 {
     public CodeData()

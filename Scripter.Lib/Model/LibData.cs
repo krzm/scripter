@@ -2,6 +2,20 @@ namespace Scripter;
 
 public class LibData : CodeData
 {
+    protected ProjectDTO? ModelHelper;
+    protected ProjectDTO? EFCoreHelper;
+    protected ProjectDTO? DotNetExtension;
+    protected ProjectDTO? DotNetTool;
+    protected ProjectDTO? CLIHelper;
+    protected ProjectDTO? DataToTable;
+    protected ProjectDTO? CLIReader;
+    protected ProjectDTO? CommandDotNetUnity;
+    protected ProjectDTO? DIHelper;
+    protected ProjectDTO? CommandDotNetHelper;
+    protected ProjectDTO? CRUDCommandHelper;
+    protected ProjectDTO? CLIWizardHelper;
+    protected ProjectDTO? CLIFramework;
+    
     protected override void SetIndependentLib()
     {
         ModelHelper = Set(
