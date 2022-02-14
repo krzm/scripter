@@ -7,6 +7,7 @@ public class LogData : AppData
         base.SetApps();
         SetLog();
         SetModernLog();
+        SetModernMDILog();
         SetConsoleLog();
         SetModernLogWizard();
     }
@@ -18,6 +19,27 @@ public class LogData : AppData
             , ModelHelper, EFCoreHelper);
     }
 
+    private void SetModernLog()
+    {
+        LogModernLib = Set(
+            "log-modern-lib", "Log.Modern.Lib"
+            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
+            , DataToTable, CRUDCommandHelper, LogData);
+        LogModernConsoleApp = Set(
+            "log-modern-consoleapp", "Log.Modern.ConsoleApp"
+            , ModelHelper, EFCoreHelper, DataToTable, DIHelper
+            , CommandDotNetHelper, CRUDCommandHelper, LogData, LogModernLib);
+    }
+
+    private void SetModernMDILog()
+    {
+        LogModernMDICLIApp =  Set(
+            "log-modern-mdi-consoleapp", "Log.Modern.MDI.ConsoleApp"
+            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
+            , DataToTable, DIHelper, CommandDotNetHelper, CRUDCommandHelper
+            , LogData, LogModernLib);
+    }
+    
     private void SetConsoleLog()
     {
         LogConsoleLib = Set(
@@ -38,23 +60,11 @@ public class LogData : AppData
 
     private void SetModernLogWizard()
     {
-        LogModernWizard = Set(
+        LogModernWizardConsoleApp = Set(
             "log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , CLIReader, DataToTable, DIHelper, CommandDotNetHelper
             , CLIWizardHelper, CRUDCommandHelper, LogData, LogWizardLib
             , LogModernLib);
-    }
-    
-    private void SetModernLog()
-    {
-        LogModernLib = Set(
-            "log-modern-lib", "Log.Modern.Lib"
-            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , DataToTable, CRUDCommandHelper, LogData);
-        LogModernConsoleApp = Set(
-            "log-modern-consoleapp", "Log.Modern.ConsoleApp"
-            , ModelHelper, EFCoreHelper, DataToTable, DIHelper
-            , CommandDotNetHelper, CRUDCommandHelper, LogData, LogModernLib);
     }
 }

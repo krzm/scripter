@@ -21,9 +21,10 @@ public abstract class CodeProject
     protected ProjectDTO? LogModernLib;
     protected ProjectDTO? LogConsoleLib;
     protected ProjectDTO? LogConsoleLibConsoleApp;
+    protected ProjectDTO? LogModernMDICLIApp;
     protected ProjectDTO? LogModernConsoleApp;
     protected ProjectDTO? LogWizardLib;
-    protected ProjectDTO? LogModernWizard;
+    protected ProjectDTO? LogModernWizardConsoleApp;
     protected ProjectDTO? InventoryData;
     protected ProjectDTO? InventoryModernLib;
     protected ProjectDTO? InventoryModernConsoleApp;
