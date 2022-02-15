@@ -37,6 +37,8 @@ public class AppCommands
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(AppData))));
         Container.RegisterSingleton<IBuildAll, DiyBoxBuildAll>(nameof(DiyBoxBuildAll)
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(AppData))));
+        Container.RegisterSingleton<IBuildAll, GameDataBuildAll>(nameof(GameDataBuildAll)
+            , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(AppData))));
 
         Container.RegisterSingleton<IBuildAll, ConsoleLogBuildAll>(nameof(ConsoleLogBuildAll)
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(LogData))));

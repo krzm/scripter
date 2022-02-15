@@ -44,6 +44,8 @@ public class ProjectList : List<ProjectDTO>
         Add(new ProjectDTO("inventory-modern-consoleapp", "Inventory.Modern.ConsoleApp"));
         
         Add(new ProjectDTO("diy-box", "Diybox.ConsoleApp"));
+        Add(new ProjectDTO("game-data", "GameData.Data.Lib"));
+        Add(new ProjectDTO("game-data", "GameData.Lib"));
         Add(new ProjectDTO("game-data", "GameData.ConsoleApp"));
         Add(new ProjectDTO("commander", "Commander"));
         Add(new ProjectDTO("timco-retail", "TRMApi"));

@@ -5,15 +5,19 @@ public class AppData : LibData
     private ProjectDTO? scripter;
     private ProjectDTO? appStarterData;
     private ProjectDTO? appStarterModernLib;
-    private ProjectDTO? appStarterConsoleApp;
+    private ProjectDTO? appStarterCLIApp;
     private ProjectDTO? diyBoxCore;
-    private ProjectDTO? diyBoxConsoleApp;
+    private ProjectDTO? diyBoxCLIApp;
+    private ProjectDTO? gameData;
+    private ProjectDTO? gameDataLib;
+    private ProjectDTO? gameDataCLIApp;
 
     protected override void SetApps()
     {
         SetScripter();
         SetAppStarter();
         SetDiyBox();
+        SetGameData();
     }
 
     private void SetScripter()
@@ -33,7 +37,7 @@ public class AppData : LibData
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , CLIReader, DotNetTool, DIHelper, DataToTable
             , CommandDotNetHelper, CRUDCommandHelper, CLIFramework, appStarterData);
-        appStarterConsoleApp = Set(
+        appStarterCLIApp = Set(
             "app-starter", "AppStarter.ConsoleApp"
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , CLIReader, DotNetTool, DIHelper, DataToTable
@@ -46,8 +50,25 @@ public class AppData : LibData
         diyBoxCore = Set(
             "diy-box", "DiyBox.Core"
             , CLIFramework);
-        diyBoxConsoleApp = Set(
+        diyBoxCLIApp = Set(
             "diy-box", "DiyBox.ConsoleApp"
             , DIHelper, CommandDotNetHelper, CLIFramework);
+    }
+
+    private void SetGameData()
+    {
+        gameData = Set(
+            "game-data", "GameData.Data.Lib"
+            , ModelHelper, EFCoreHelper);
+        gameDataLib = Set(
+            "game-data", "GameData.Lib"
+            , CLIHelper, EFCoreHelper, CLIReader, CRUDCommandHelper
+            , CLIWizardHelper, CLIFramework, gameData);
+        gameDataCLIApp = Set(
+            "game-data", "GameData.ConsoleApp"
+            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
+            , DataToTable, CLIReader, CRUDCommandHelper, DIHelper
+            , CommandDotNetHelper, CLIWizardHelper, CLIFramework, gameData
+            , gameDataLib);
     }  
 }
