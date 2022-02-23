@@ -5,10 +5,10 @@ namespace Scripter.Lib.Tests;
 
 public class CopyScriptTests : ScriptTestBase
 {
-    private const string buildPath = @"C:\kmazanek@gmail.com\Code\build\Build";
+    private const string buildPath = @"C:\kmazanek@gmail.com\Build";
     private const string repoFolder = "cli-helper";
     private const string appProjFolder = "CLIHelper";
-    private const string repoBuildPath = @"C:\kmazanek@gmail.com\Code\build\Build\cli-helper";  
+    private const string repoBuildPath = @"C:\kmazanek@gmail.com\Build\cli-helper";  
     private const string appBuildPath = $@"{repoBuildPath}\{appProjFolder}";  
     
     [Theory]
@@ -26,7 +26,7 @@ public class CopyScriptTests : ScriptTestBase
     [InlineData(11, "{")]
     [InlineData(12, $"Remove-Item \"{appBuildPath}\\*\" -Recurse")]
     [InlineData(13, "}")]
-    [InlineData(14, $"Copy-Item -Path \"C:\\kmazanek@gmail.com\\Code\\cli-helper\\CLIHelper\\bin\\Release\\net6.0\\publish\\*\" -Destination \"C:\\kmazanek@gmail.com\\Code\\build\\Build\\cli-helper\\CLIHelper\" -Recurse")]
+    [InlineData(14, $"Copy-Item -Path \"C:\\kmazanek@gmail.com\\Code\\cli-helper\\CLIHelper\\bin\\Release\\net6.0\\publish\\*\" -Destination \"C:\\kmazanek@gmail.com\\Build\\cli-helper\\CLIHelper\" -Recurse")]
     public override void TestScriptContent(
         int index
         , string expected)

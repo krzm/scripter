@@ -21,8 +21,8 @@ public abstract class ScriptTestBase
 
         moq.Setup(m => m.Project).Returns(new ProjectDTO(repoFolder, appProjFolder));
         moq.Setup(m => m.VersionFileName).Returns(versionFileName);
-        moq.Setup(m => m.BuildPath).Returns(@"C:\kmazanek@gmail.com\Code\build\Build");
-        moq.Setup(m => m.ScriptPath).Returns(@"C:\kmazanek@gmail.com\Code\build\Script");
+        moq.Setup(m => m.BuildPath).Returns(@"C:\kmazanek@gmail.com\Build");
+        moq.Setup(m => m.ScriptPath).Returns(@"C:\kmazanek@gmail.com\Build.Script");
         moq.Setup(m => m.RepoPath).Returns(repoPath);
     }
 
