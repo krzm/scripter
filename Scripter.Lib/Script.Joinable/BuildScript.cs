@@ -13,12 +13,15 @@ public class BuildScript : IScript
 
     public string[] GetScript()
     {
-        var scriptName = scriptParam.Project.ProjFolder;
-        return new string[]
+        var name = scriptParam.Project.ProjFolder;
+        var list = new List<string>
         {
-            $"& \"$PSScriptRoot\\{scriptName}.Compile.ps1\""
-            , $"& \"$PSScriptRoot\\{scriptName}.Version.ps1\""
-            , $"& \"$PSScriptRoot\\{scriptName}.Copy.ps1\""
+             $"& \"$PSScriptRoot\\{name}.Compile.ps1\""
+            , $"& \"$PSScriptRoot\\{name}.Version.ps1\""
+            , $"& \"$PSScriptRoot\\{name}.Copy.ps1\""
         };
+        if(scriptParam.Project.IsApp)
+            list.Add($"& \"$PSScriptRoot\\{name}.CopyApp.ps1\"");
+        return list.ToArray();
     }
 }

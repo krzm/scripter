@@ -3,7 +3,8 @@ using Xunit;
 
 namespace Scripter.Lib.Tests;
 
-public class BuildScriptTests : ScriptTestBase
+public class BuildScriptTests 
+    : LibTest
 {
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\CLIHelper.Compile.ps1\"")]

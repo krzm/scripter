@@ -3,7 +3,8 @@ using Xunit;
 
 namespace Scripter.Lib.Tests;
 
-public class VersionScriptTests : ScriptTestBase
+public class VersionScriptTests 
+    : LibTest
 {
     [Theory]
     [InlineData(0, "$projectName = \"CLIHelper\"")]

@@ -3,7 +3,7 @@ using Xunit;
 namespace Scripter.Lib.Tests.BuildAll.Log;
 
 public class ConsoleLogTests 
-    : ScriptTestBase
+    : LibTest
 {
     private static readonly ICodeData appData
         = new LogData();

@@ -1,15 +1,12 @@
-﻿using Moq;
+using Moq;
 using System.IO;
 
 namespace Scripter.Lib.Tests;
 
-public abstract class ScriptTestBase
+public abstract class LibTest
+    : ScriptTestBase
 {
-    public abstract void TestScriptContent(
-        int index
-        , string expected);
-
-    protected static void SetupParams(
+    protected override void SetupParams(
        Mock<IScriptParam> moq)
     {
         var repoFolder = "cli-helper";
@@ -24,12 +21,5 @@ public abstract class ScriptTestBase
         moq.Setup(m => m.BuildPath).Returns(@"C:\kmazanek@gmail.com\Build");
         moq.Setup(m => m.ScriptPath).Returns(@"C:\kmazanek@gmail.com\Build.Script");
         moq.Setup(m => m.RepoPath).Returns(repoPath);
-    }
-
-    protected static string GetLine(
-        IScript script
-        , int index)
-    {
-        return script.GetScript()[index];
     }
 }

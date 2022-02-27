@@ -3,7 +3,7 @@ using Xunit;
 namespace Scripter.Lib.Tests;
 
 public class ScripterTests 
-    : ScriptTestBase
+    : LibTest
 {
     private static ICodeData appData
         = new AppData();

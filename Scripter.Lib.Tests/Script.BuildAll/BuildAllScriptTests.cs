@@ -2,7 +2,8 @@ using Xunit;
 
 namespace Scripter.Lib.Tests;
 
-public class BuildAllScriptTests : ScriptTestBase
+public class BuildAllScriptTests 
+    : LibTest
 {
     private static ProjectList projectList = new ProjectList();
 

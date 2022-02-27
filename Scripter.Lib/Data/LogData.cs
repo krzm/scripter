@@ -31,13 +31,28 @@ public class LogData : LibData
     private void SetModern()
     {
         modernLib = Set(
-            "log-modern-lib", "Log.Modern.Lib"
-            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , DataToTable, CRUDCommandHelper, dataLib);
+            "log-modern-lib"
+            , "Log.Modern.Lib"
+            , ModelHelper
+            , EFCoreHelper
+            , DotNetExtension
+            , CLIHelper
+            , DataToTable
+            , CRUDCommandHelper
+            , dataLib);
+
         modernCLIApp = Set(
-            "log-modern-consoleapp", "Log.Modern.ConsoleApp"
-            , ModelHelper, EFCoreHelper, DataToTable, DIHelper
-            , CommandDotNetHelper, CRUDCommandHelper, dataLib, modernLib);
+            "log-modern-consoleapp"
+            , "Log.Modern.ConsoleApp"
+            , true
+            , ModelHelper
+            , EFCoreHelper
+            , DataToTable
+            , DIHelper
+            , CommandDotNetHelper
+            , CRUDCommandHelper
+            , dataLib
+            , modernLib);
     }
 
     private void SetModernMDI()

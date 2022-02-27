@@ -35,9 +35,14 @@ public class ScriptCommand : ICommand
     {
         foreach (var project in projects)
         {
-            scriptParam.Project = new ProjectDTO(project.RepoFolder, project.ProjFolder);
+            scriptParam.Project = new ProjectDTO(
+                project.RepoFolder
+                , project.ProjFolder
+                , IsApp: project.IsApp);
             foreach (var script in projectScripts)
             {
+                if(scriptParam.Project.IsApp == false
+                    && script is CopyAppScript) continue;
                 File.WriteAllLines(
                     Path.Combine(scriptParam.ScriptPath, script.File)
                     , script.GetScript());

@@ -3,7 +3,8 @@ using Xunit;
 
 namespace Scripter.Lib.Tests;
 
-public class CopyAppScriptTests : ScriptTestBase
+public class CopyAppScriptTests 
+    : LibTest
 {
     [Theory]
     [InlineData(0, "$buildPath1 = \"C:\\kmazanek@gmail.com\\Build\\cli-helper\\CLIHelper\"")]
