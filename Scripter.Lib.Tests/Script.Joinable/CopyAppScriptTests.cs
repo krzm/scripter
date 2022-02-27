@@ -11,9 +11,9 @@ public class CopyAppScriptTests : ScriptTestBase
     [InlineData(2, "$buildPath2 = \"C:\\kmazanek@gmail.com\\Build\\cli-helper\\CLIHelper\\*\"")]
     [InlineData(3, "$appsPath2 = \"C:\\kmazanek@gmail.com\\Apps\\CLIHelper\"")]
     [InlineData(4, "$buildPath3 = \"C:\\kmazanek@gmail.com\\Build\\Version.csv\"")]
-    [InlineData(5, "Copy-Item -Path $buildPath1 -Destination $appsPath1")]
-    [InlineData(6, "Copy-Item -Path $buildPath2 -Destination $appsPath2 -Recurse")]
-    [InlineData(7, "Copy-Item -Path $buildPath3 -Destination $appsPath1")]
+    [InlineData(5, "Copy-Item -Path $buildPath1 -Destination $appsPath1 -Force")]
+    [InlineData(6, "Copy-Item -Path $buildPath2 -Destination $appsPath2 -Recurse -Force")]
+    [InlineData(7, "Copy-Item -Path $buildPath3 -Destination $appsPath1 -Force")]
     public override void TestScriptContent(
         int index
         , string expected)
