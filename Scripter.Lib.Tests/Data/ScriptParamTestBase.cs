@@ -14,7 +14,7 @@ public abstract class ScriptParamTestBase
         {
             Project = new ProjectDTO(
                 RepoFolder: "cli-helper"
-                , AppProjFolder: "CLIHelper")
+                , ProjFolder: "CLIHelper")
         };
     }
 
@@ -26,8 +26,8 @@ public abstract class ScriptParamTestBase
         {
             case nameof(ScriptParam.Project.RepoFolder):
                 return scriptParam.Project.RepoFolder;
-            case nameof(ScriptParam.Project.AppProjFolder):
-                return scriptParam.Project.AppProjFolder;
+            case nameof(ScriptParam.Project.ProjFolder):
+                return scriptParam.Project.ProjFolder;
             case nameof(ScriptParam.BuildPath):
                 return scriptParam.BuildPath;
             case nameof(ScriptParam.RepoPath):

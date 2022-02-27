@@ -24,19 +24,40 @@ public abstract class CodeData
     protected abstract void SetManyDependancyLib();
     protected virtual void SetApps(){}
 
-    protected ProjectDTO Set(string repo, string project)
+    protected ProjectDTO Set(
+        string repo
+        , string project)
     {
         var proj = new ProjectDTO(repo, project);
-        Add(proj.AppProjFolder, proj);
+        Add(proj.ProjFolder, proj);
         return proj;
     }
 
-    protected ProjectDTO Set(string repo, string project
+    protected ProjectDTO Set(
+        string repo
+        , string project
         , params ProjectDTO[] libs)
     {
-        var proj = new ProjectDTO(repo, project
+        var proj = new ProjectDTO(
+            repo
+            , project
             , new List<ProjectDTO>(libs));
-        Add(proj.AppProjFolder, proj);
+        Add(proj.ProjFolder, proj);
+        return proj;
+    }
+
+    protected ProjectDTO Set(
+        string repo
+        , string project
+        , bool isApp = false
+        , params ProjectDTO[] libs)
+    {
+        var proj = new ProjectDTO(
+            repo
+            , project
+            , new List<ProjectDTO>(libs)
+            , isApp);
+        Add(proj.ProjFolder, proj);
         return proj;
     }
 }

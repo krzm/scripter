@@ -23,52 +23,109 @@ public class AppData : LibData
     private void SetScripter()
     {
         scripter = Set(
-            "scripter", "Scripter"
-            , DataToTable, CommandDotNetUnity, DIHelper, CommandDotNetHelper);
+            "scripter"
+            , "Scripter"
+            , true
+            , DataToTable
+            , CommandDotNetUnity
+            , DIHelper
+            , CommandDotNetHelper);
     }
 
     private void SetAppStarter()
     {
         appStarterData = Set(
-            "app-starter", "AppStarter.Data"
-            , ModelHelper, EFCoreHelper);
+            "app-starter"
+            , "AppStarter.Data"
+            , ModelHelper
+            , EFCoreHelper);
+
         appStarterModernLib = Set(
-            "app-starter", "AppStarter.Lib"
-            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , CLIReader, DotNetTool, DIHelper, DataToTable
-            , CommandDotNetHelper, CRUDCommandHelper, CLIFramework, appStarterData);
+            "app-starter"
+            , "AppStarter.Lib"
+            , ModelHelper
+            , EFCoreHelper
+            , DotNetExtension
+            , CLIHelper
+            , CLIReader
+            , DotNetTool
+            , DIHelper
+            , DataToTable
+            , CommandDotNetHelper
+            , CRUDCommandHelper
+            , CLIFramework
+            , appStarterData);
+
         appStarterCLIApp = Set(
-            "app-starter", "AppStarter.ConsoleApp"
-            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , CLIReader, DotNetTool, DIHelper, DataToTable
-            , CommandDotNetHelper, CRUDCommandHelper, CLIFramework, appStarterData
+            "app-starter"
+            , "AppStarter.ConsoleApp"
+            , true
+            , ModelHelper
+            , EFCoreHelper
+            , DotNetExtension
+            , CLIHelper
+            , CLIReader
+            , DotNetTool
+            , DIHelper
+            , DataToTable
+            , CommandDotNetHelper
+            , CRUDCommandHelper
+            , CLIFramework
+            , appStarterData
             , appStarterModernLib);
     }  
 
     private void SetDiyBox()
     {
         diyBoxCore = Set(
-            "diy-box", "DiyBox.Core"
+            "diy-box"
+            , "DiyBox.Core"
             , CLIFramework);
+
         diyBoxCLIApp = Set(
-            "diy-box", "DiyBox.ConsoleApp"
-            , DIHelper, CommandDotNetHelper, CLIFramework);
+            "diy-box"
+            , "DiyBox.ConsoleApp"
+            , true
+            , DIHelper
+            , CommandDotNetHelper
+            , CLIFramework);
     }
 
     private void SetGameData()
     {
         gameData = Set(
-            "game-data", "GameData.Data.Lib"
-            , ModelHelper, EFCoreHelper);
+            "game-data"
+            , "GameData.Data.Lib"
+            , ModelHelper
+            , EFCoreHelper);
+
         gameDataLib = Set(
-            "game-data", "GameData.Lib"
-            , CLIHelper, EFCoreHelper, CLIReader, CRUDCommandHelper
-            , CLIWizardHelper, CLIFramework, gameData);
+            "game-data"
+            , "GameData.Lib"
+            , CLIHelper
+            , EFCoreHelper
+            , CLIReader
+            , CRUDCommandHelper
+            , CLIWizardHelper
+            , CLIFramework
+            , gameData);
+
         gameDataCLIApp = Set(
-            "game-data", "GameData.ConsoleApp"
-            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , DataToTable, CLIReader, CRUDCommandHelper, DIHelper
-            , CommandDotNetHelper, CLIWizardHelper, CLIFramework, gameData
+            "game-data"
+            , "GameData.ConsoleApp"
+            , true
+            , ModelHelper
+            , EFCoreHelper
+            , DotNetExtension
+            , CLIHelper
+            , DataToTable
+            , CLIReader
+            , CRUDCommandHelper
+            , DIHelper
+            , CommandDotNetHelper
+            , CLIWizardHelper
+            , CLIFramework
+            , gameData
             , gameDataLib);
     }  
 }

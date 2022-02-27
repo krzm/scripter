@@ -2,5 +2,6 @@
 
 public record ProjectDTO(
     string RepoFolder
-    , string AppProjFolder
-    , List<ProjectDTO>? Dependencies = default);
+    , string ProjFolder
+    , List<ProjectDTO>? Dependencies = default
+    , bool IsApp = false);

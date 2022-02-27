@@ -4,7 +4,7 @@ public class CompileScript : IScript
 {
     private readonly IScriptParam scriptParam;
 
-    public string File => $"{scriptParam.Project.AppProjFolder}.Compile.ps1";
+    public string File => $"{scriptParam.Project.ProjFolder}.Compile.ps1";
 
     public CompileScript(IScriptParam scriptParam)
     {

@@ -35,7 +35,7 @@ public class ScriptCommand : ICommand
     {
         foreach (var project in projects)
         {
-            scriptParam.Project = new ProjectDTO(project.RepoFolder, project.AppProjFolder);
+            scriptParam.Project = new ProjectDTO(project.RepoFolder, project.ProjFolder);
             foreach (var script in projectScripts)
             {
                 File.WriteAllLines(

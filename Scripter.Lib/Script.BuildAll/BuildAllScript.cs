@@ -16,7 +16,7 @@ public class BuildAllScript : IBuildAll
         var sb = new List<string>();
         foreach (var project in projectList)
         {
-            sb.Add($"& \"$PSScriptRoot\\{project.AppProjFolder}.Build.ps1\"");
+            sb.Add($"& \"$PSScriptRoot\\{project.ProjFolder}.Build.ps1\"");
         }
         return sb.ToArray();
     }

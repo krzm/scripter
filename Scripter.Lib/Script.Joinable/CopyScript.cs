@@ -4,7 +4,7 @@ public class CopyScript : IScript
 {
     private readonly IScriptParam scriptParam;
 
-    public string File => $"{scriptParam.Project.AppProjFolder}.Copy.ps1";
+    public string File => $"{scriptParam.Project.ProjFolder}.Copy.ps1";
 
     public CopyScript(IScriptParam scriptParam)
     {
@@ -14,7 +14,7 @@ public class CopyScript : IScript
     public string[] GetScript()
     {
         var repoFolder = scriptParam.Project.RepoFolder;
-        var appFolder = scriptParam.Project.AppProjFolder;
+        var appFolder = scriptParam.Project.ProjFolder;
         var buildPath = scriptParam.BuildPath;
         var repoPath = scriptParam.RepoPath;
         var repoBuildPath = Path.Combine(buildPath, repoFolder);

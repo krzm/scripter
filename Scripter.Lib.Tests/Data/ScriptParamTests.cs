@@ -6,7 +6,7 @@ public class ScriptParamTests : ScriptParamTestBase
 {
     [Theory]
     [InlineData(nameof(ScriptParam.Project.RepoFolder), "cli-helper")]
-    [InlineData(nameof(ScriptParam.Project.AppProjFolder), "CLIHelper")]
+    [InlineData(nameof(ScriptParam.Project.ProjFolder), "CLIHelper")]
     [InlineData(nameof(ScriptParam.VersionFileName), "Version.xml")]
     [InlineData(nameof(ScriptParam.ScriptPath), @"C:\kmazanek@gmail.com\Build.Script")]
     [InlineData(nameof(ScriptParam.BuildPath), @"C:\kmazanek@gmail.com\Build")]

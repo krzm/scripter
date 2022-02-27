@@ -43,13 +43,13 @@ public abstract class ProjectBuildAll : IBuildAll
     {
         foreach (var line in script)
         {
-            if(line.Contains(project.AppProjFolder)) return false;
+            if(line.Contains(project.ProjFolder)) return false;
         }
         return true;
     }
 
     private void AddLine(ProjectDTO project)
     {
-        script.Add($"& \"$PSScriptRoot\\{project.AppProjFolder}.Build.ps1\"");
+        script.Add($"& \"$PSScriptRoot\\{project.ProjFolder}.Build.ps1\"");
     }
 }
