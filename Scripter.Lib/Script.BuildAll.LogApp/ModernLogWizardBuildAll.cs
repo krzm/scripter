@@ -7,8 +7,9 @@ public class ModernLogWizardBuildAll
     public override string Project => "Log.Modern.Wizard.ConsoleApp";
 
     public ModernLogWizardBuildAll(
-        ICodeData appData) 
-        : base(appData)
+        IProjectExtractor projectExtractor
+        , ICodeData appData) 
+            : base(projectExtractor, appData)
     {
     }
 }

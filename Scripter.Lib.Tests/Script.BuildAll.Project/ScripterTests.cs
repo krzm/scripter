@@ -21,7 +21,7 @@ public class ScripterTests
         int index
         , string expected)
     {
-        IScript script = new ScripterBuildAll(appData);
+        IScript script = new ScripterBuildAll(new ProjectExtractor(), appData);
 
         var acctual = GetLine(script, index);
 

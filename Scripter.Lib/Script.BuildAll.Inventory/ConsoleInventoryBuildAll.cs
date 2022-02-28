@@ -7,8 +7,9 @@ public class ConsoleInventoryBuildAll
     public override string Project => "Inventory.ConsoleLib.ConsoleApp";
     
     public ConsoleInventoryBuildAll(
-        ICodeData appData) 
-        : base(appData)
+        IProjectExtractor projectExtractor
+        , ICodeData appData) 
+            : base(projectExtractor, appData)
     {
     }
 }

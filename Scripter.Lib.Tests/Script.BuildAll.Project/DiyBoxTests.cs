@@ -25,7 +25,7 @@ public class DiyBoxTests
         int index
         , string expected)
     {
-        IScript script = new DiyBoxBuildAll(appData);
+        IScript script = new DiyBoxBuildAll(new ProjectExtractor(), appData);
 
         var acctual = GetLine(script, index);
 

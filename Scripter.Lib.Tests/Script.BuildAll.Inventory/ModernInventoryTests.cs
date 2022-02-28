@@ -26,7 +26,7 @@ public class ModernInventoryTests
         int index
         , string expected)
     {
-        IScript script = new ModernInventoryBuildAll(appData);
+        IScript script = new ModernInventoryBuildAll(new ProjectExtractor(), appData);
 
         var acctual = GetLine(script, index);
 

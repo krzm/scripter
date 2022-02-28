@@ -26,7 +26,7 @@ public class ModernMDILogTests
         int index
         , string expected)
     {
-        IScript script = new ModernMDILogBuildAll(appData);
+        IScript script = new ModernMDILogBuildAll(new ProjectExtractor(), appData);
 
         var acctual = GetLine(script, index);
 

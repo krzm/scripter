@@ -7,8 +7,9 @@ public class ModernMDILogBuildAll
     public override string Project => "Log.Modern.MDI.ConsoleApp";
 
     public ModernMDILogBuildAll(
-        ICodeData appData) 
-        : base(appData)
+        IProjectExtractor projectExtractor
+        , ICodeData appData) 
+            : base(projectExtractor, appData)
     {
     }
 }

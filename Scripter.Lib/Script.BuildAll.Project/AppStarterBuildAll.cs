@@ -7,8 +7,9 @@ public class AppStarterBuildAll
     public override string Project => "AppStarter.ConsoleApp";
 
     public AppStarterBuildAll(
-        ICodeData appData) 
-        : base(appData)
+        IProjectExtractor projectExtractor
+        , ICodeData appData) 
+            : base(projectExtractor, appData)
     {
     }
 }

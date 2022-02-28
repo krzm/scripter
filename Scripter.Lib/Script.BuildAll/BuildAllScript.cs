@@ -3,11 +3,12 @@ namespace Scripter;
 public class BuildAllScript 
     : BuildAllBase
 {
-    private readonly List<ICodeData> codedata;
+    private readonly IProjectList projectList;
 
-    public BuildAllScript(List<ICodeData> codedata)
+    public BuildAllScript(
+        IProjectList projectList)
     {
-        this.codedata = codedata;
+        this.projectList = projectList;
     }
 
     public override string File => "BuildAll.ps1";
@@ -15,12 +16,9 @@ public class BuildAllScript
     public override string[] GetScript()
     {
         Script = new List<string>();
-        foreach (var data in codedata)
+        foreach (var project in projectList.Projects)
         {
-            foreach (var projData in data.Values)
-            {
-                SelectScript(projData);
-            }
+            AddLine(project);
         }
         return Script.ToArray();
     }

@@ -28,7 +28,7 @@ public class GameDataTests
         int index
         , string expected)
     {
-        IScript script = new GameDataBuildAll(appData);
+        IScript script = new GameDataBuildAll(new ProjectExtractor(), appData);
 
         var acctual = GetLine(script, index);
 

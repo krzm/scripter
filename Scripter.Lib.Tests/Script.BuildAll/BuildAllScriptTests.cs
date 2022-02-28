@@ -6,14 +6,16 @@ namespace Scripter.Lib.Tests;
 public class BuildAllScriptTests 
     : LibTest
 {
-    private static  List<ICodeData> codeData
-        = new List<ICodeData>
+    private static  IProjectList codeData
+        = new ProjectList(
+            new ProjectExtractor()
+            , new List<ICodeData> 
             {
                 new LibData()
                 , new AppData()
                 , new LogData(),
                 new InventoryData()
-            };
+            });
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]

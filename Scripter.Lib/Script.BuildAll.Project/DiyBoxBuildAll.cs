@@ -7,8 +7,9 @@ public class DiyBoxBuildAll
     public override string Project => "DiyBox.ConsoleApp";
 
     public DiyBoxBuildAll(
-        ICodeData appData) 
-        : base(appData)
+        IProjectExtractor projectExtractor
+        , ICodeData codeData) 
+            : base(projectExtractor, codeData)
     {
     }
 }

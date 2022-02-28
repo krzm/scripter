@@ -7,8 +7,9 @@ public class ConsoleLogBuildAll
     public override string Project => "Log.ConsoleApp";
     
     public ConsoleLogBuildAll(
-        ICodeData appData) 
-        : base(appData)
+        IProjectExtractor projectExtractor
+        , ICodeData appData) 
+            : base(projectExtractor, appData)
     {
     }
 }

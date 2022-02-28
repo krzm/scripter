@@ -30,7 +30,7 @@ public class ConsoleLogTests
         int index
         , string expected)
     {
-        IScript script = new ConsoleLogBuildAll(appData);
+        IScript script = new ConsoleLogBuildAll(new ProjectExtractor(), appData);
 
         var acctual = GetLine(script, index);
 

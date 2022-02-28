@@ -29,7 +29,7 @@ public class AppStarterTests
         int index
         , string expected)
     {
-        IScript script = new AppStarterBuildAll(appData);
+        IScript script = new AppStarterBuildAll(new ProjectExtractor(), appData);
 
         var acctual = GetLine(script, index);
 

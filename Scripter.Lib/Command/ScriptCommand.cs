@@ -6,23 +6,27 @@ public class ScriptCommand : ICommand
 {
     public event EventHandler? CanExecuteChanged;
 
+    private readonly IProjectList projectList;
     private readonly List<ICodeData> codeData;
     private readonly IScriptParam scriptParam;
     private readonly List<IScript> projectScripts;
     private readonly List<IProjBuildAll> projBuildAllScripts;
-    private List<ProjectDTO> projects;
+    private readonly IBuildAll buildAllScript;
 
     public ScriptCommand(
-        List<ICodeData> codeData
+        IProjectList projectList
+        , List<ICodeData> codeData
         , IScriptParam scriptParam
         , List<IScript> projectScripts
-        , List<IProjBuildAll> projBuildAllScripts)
+        , List<IProjBuildAll> projBuildAllScripts
+        , IBuildAll buildAllScript)
     {
+        this.projectList = projectList;
         this.codeData = codeData;
         this.scriptParam = scriptParam;
         this.projectScripts = projectScripts;
         this.projBuildAllScripts = projBuildAllScripts;
-        projects = new List<ProjectDTO>();
+        this.buildAllScript = buildAllScript;
     }
 
     public bool CanExecute(object? parameter) => true;
@@ -31,54 +35,36 @@ public class ScriptCommand : ICommand
     {
         WriteProjectScripts();
         WriteBuildAllScripts();
+        WriteScript(buildAllScript);
     }
 
     private void WriteProjectScripts()
     {
-        projects.Clear();
-        foreach (var data in codeData)
+        foreach (var project in projectList.Projects)
         {
-            foreach (var proj in data.Values)
-            {
-                SelectProjects(proj);
-            }
-        }
-
-        foreach (var project in projects)
-        {
-            scriptParam.Project = new ProjectDTO(
-                project.RepoFolder
-                , project.ProjFolder
-                , IsApp: project.IsApp);
+            SetProject(project);
             foreach (var script in projectScripts)
             {
-                if(scriptParam.Project.IsApp == false
+                if (scriptParam.Project.IsApp == false
                     && script is CopyAppScript) continue;
-                File.WriteAllLines(
-                    Path.Combine(scriptParam.ScriptPath, script.File)
-                    , script.GetScript());
+                WriteScript(script);
             }
         }
-    }
-    
-    private void SelectProjects(ProjectDTO project)
-    {
-        if (project.Dependencies != null)
-        {
-            foreach (var library in project.Dependencies)
-            {
-                if (library == null) 
-                    throw new NullReferenceException($"{library} is null");
-                SelectProjects(library);
-            }
-        }
-        if(IsNotInScript(project))
-            projects.Add(project);
     }
 
-    private bool IsNotInScript(ProjectDTO project)
+    private void SetProject(ProjectDTO project)
     {
-        return projects.Contains(project) == false;
+        scriptParam.Project = new ProjectDTO(
+                        project.RepoFolder
+                        , project.ProjFolder
+                        , IsApp: project.IsApp);
+    }
+
+    private void WriteScript(IScript script)
+    {
+        File.WriteAllLines(
+            Path.Combine(scriptParam.ScriptPath, script.File)
+            , script.GetScript());
     }
 
     private void WriteBuildAllScripts()

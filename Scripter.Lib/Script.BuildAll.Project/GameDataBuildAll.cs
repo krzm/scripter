@@ -7,8 +7,9 @@ public class GameDataBuildAll
     public override string Project => "GameData.ConsoleApp";
 
     public GameDataBuildAll(
-        ICodeData appData) 
-        : base(appData)
+        IProjectExtractor projectExtractor
+        , ICodeData codeData) 
+            : base(projectExtractor, codeData)
     {
     }
 }

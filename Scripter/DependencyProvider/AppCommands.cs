@@ -22,7 +22,7 @@ public class AppCommands
         SetProjectBuildAll();
         SetLogBuildAll();
         SetInventoryBuildAll();
-        Container.RegisterSingleton<IBuildAll, BuildAllScript>(nameof(BuildAllScript));
+        Container.RegisterSingleton<IBuildAll, BuildAllScript>();
         Container.RegisterSingleton<ICommand, ScriptCommand>();
     }
 
@@ -32,6 +32,10 @@ public class AppCommands
         Container.RegisterSingleton<ICodeData, AppData>(nameof(AppData));
         Container.RegisterSingleton<ICodeData, LogData>(nameof(LogData));
         Container.RegisterSingleton<ICodeData, InventoryData>(nameof(InventoryData));
+
+        Container.RegisterType<IProjectExtractor, ProjectExtractor>();
+        
+        Container.RegisterSingleton<IProjectList, ProjectList>();
     }
 
     private void SetJoinable()
@@ -47,33 +51,34 @@ public class AppCommands
 
     private void SetProjectBuildAll()
     {
-        Container.RegisterSingleton<IProjBuildAll, ScripterBuildAll>(nameof(ScripterBuildAll)
-                    , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(AppData))));
-        Container.RegisterSingleton<IProjBuildAll, AppStarterBuildAll>(nameof(AppStarterBuildAll)
-            , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(AppData))));
-        Container.RegisterSingleton<IProjBuildAll, DiyBoxBuildAll>(nameof(DiyBoxBuildAll)
-            , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(AppData))));
-        Container.RegisterSingleton<IProjBuildAll, GameDataBuildAll>(nameof(GameDataBuildAll)
-            , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(AppData))));
+        RegisterProjBuildAll<ScripterBuildAll, AppData>();
+        RegisterProjBuildAll<AppStarterBuildAll, AppData>();
+        RegisterProjBuildAll<DiyBoxBuildAll, AppData>();
+        RegisterProjBuildAll<GameDataBuildAll, AppData>();
+    }
+
+    private void RegisterProjBuildAll<TScript, TData>()
+        where TScript : IProjBuildAll
+        where TData : ICodeData
+    {
+        Container.RegisterSingleton<IProjBuildAll, TScript>(
+                    typeof(TScript).Name
+                    , new InjectionConstructor(
+                        Container.Resolve<IProjectExtractor>()
+                        , Container.Resolve<ICodeData>(typeof(TData).Name)));
     }
 
     private void SetLogBuildAll()
     {
-        Container.RegisterSingleton<IProjBuildAll, ConsoleLogBuildAll>(nameof(ConsoleLogBuildAll)
-            , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(LogData))));
-        Container.RegisterSingleton<IProjBuildAll, ModernMDILogBuildAll>(nameof(ModernMDILogBuildAll)
-            , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(LogData))));
-        Container.RegisterSingleton<IProjBuildAll, ModernLogWizardBuildAll>(nameof(ModernLogWizardBuildAll)
-            , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(LogData))));
-        Container.RegisterSingleton<IProjBuildAll, ModernLogBuildAll>(nameof(ModernLogBuildAll)
-            , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(LogData))));
+        RegisterProjBuildAll<ConsoleLogBuildAll, LogData>();
+        RegisterProjBuildAll<ModernMDILogBuildAll, LogData>();
+        RegisterProjBuildAll<ModernLogWizardBuildAll, LogData>();
+        RegisterProjBuildAll<ModernLogBuildAll, LogData>();
     }
 
     private void SetInventoryBuildAll()
     {
-        Container.RegisterSingleton<IProjBuildAll, ConsoleInventoryBuildAll>(nameof(ConsoleInventoryBuildAll)
-            , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(InventoryData))));
-        Container.RegisterSingleton<IProjBuildAll, ModernInventoryBuildAll>(nameof(ModernInventoryBuildAll)
-            , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(InventoryData))));
+        RegisterProjBuildAll<ConsoleInventoryBuildAll, InventoryData>();
+        RegisterProjBuildAll<ModernInventoryBuildAll, InventoryData>();
     }   
 }

@@ -6,8 +6,9 @@ public class ScripterBuildAll : ProjBuildAllScript
     public override string Project => "Scripter";
 
     public ScripterBuildAll(
-        ICodeData appData) 
-        : base(appData)
+        IProjectExtractor projectExtractor
+        , ICodeData codeData) 
+            : base(projectExtractor, codeData)
     {
     }
 }

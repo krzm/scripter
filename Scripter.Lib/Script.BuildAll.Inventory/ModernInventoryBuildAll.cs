@@ -7,8 +7,9 @@ public class ModernInventoryBuildAll
     public override string Project => "Inventory.Modern.ConsoleApp";
 
     public ModernInventoryBuildAll(
-        ICodeData appData) 
-        : base(appData)
+        IProjectExtractor projectExtractor
+        , ICodeData appData) 
+            : base(projectExtractor, appData)
     {
     }
 }

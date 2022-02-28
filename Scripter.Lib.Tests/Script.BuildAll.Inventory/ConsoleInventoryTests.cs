@@ -5,7 +5,7 @@ namespace Scripter.Lib.Tests.BuildAll.Log;
 public class ConsoleInventoryTests 
     : LibTest
 {
-    private static readonly ICodeData appData
+    private static readonly ICodeData codeData
         = new InventoryData();
 
     [Theory]
@@ -30,7 +30,7 @@ public class ConsoleInventoryTests
         int index
         , string expected)
     {
-        IScript script = new ConsoleInventoryBuildAll(appData);
+        IScript script = new ConsoleInventoryBuildAll(new ProjectExtractor(), codeData);
 
         var acctual = GetLine(script, index);
 
