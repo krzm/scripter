@@ -5,7 +5,7 @@ namespace Scripter.Lib.Tests.BuildAll.Log;
 public class ModernLogWizardTests 
     : LibTest
 {
-    private static ICodeData appData
+    private static ICodeData codeData
         = new LogData();
 
     [Theory]
@@ -28,7 +28,13 @@ public class ModernLogWizardTests
         int index
         , string expected)
     {
-        IScript script = new ModernLogWizardBuildAll(new ProjectExtractor(), appData);
+        IScript script = new ProjBuildAllScript(
+            new ProjectExtractor()
+            , codeData
+            , new ProjBuildAllDTO(
+                "ModernLogWizard.BuildAll.ps1"
+                , "Log.Modern.Wizard.ConsoleApp"
+            ));
 
         var acctual = GetLine(script, index);
 

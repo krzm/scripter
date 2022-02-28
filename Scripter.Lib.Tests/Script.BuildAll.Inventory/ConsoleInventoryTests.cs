@@ -30,7 +30,13 @@ public class ConsoleInventoryTests
         int index
         , string expected)
     {
-        IScript script = new ConsoleInventoryBuildAll(new ProjectExtractor(), codeData);
+        IScript script = new ProjBuildAllScript(
+            new ProjectExtractor()
+            , codeData
+            , new ProjBuildAllDTO(
+                "ConsoleLibInventory.BuildAll.ps1"
+                , "Inventory.ConsoleLib.ConsoleApp"
+            ));
 
         var acctual = GetLine(script, index);
 

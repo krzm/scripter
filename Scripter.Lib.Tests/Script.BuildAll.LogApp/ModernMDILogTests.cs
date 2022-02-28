@@ -5,7 +5,7 @@ namespace Scripter.Lib.Tests.BuildAll.Log;
 public class ModernMDILogTests 
     : LibTest
 {
-    private static ICodeData appData
+    private static ICodeData codeData
         = new LogData();
 
     [Theory]
@@ -26,7 +26,13 @@ public class ModernMDILogTests
         int index
         , string expected)
     {
-        IScript script = new ModernMDILogBuildAll(new ProjectExtractor(), appData);
+        IScript script = new ProjBuildAllScript(
+            new ProjectExtractor()
+            , codeData
+            , new ProjBuildAllDTO(
+                "ModernMDILog.BuildAll.ps1"
+                , "Log.Modern.MDI.ConsoleApp"
+            ));
 
         var acctual = GetLine(script, index);
 

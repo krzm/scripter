@@ -22,7 +22,10 @@ public class AppCommands
         SetProjectBuildAll();
         SetLogBuildAll();
         SetInventoryBuildAll();
-        Container.RegisterSingleton<IBuildAll, BuildAllScript>();
+        Container.RegisterSingleton<IBuildAll, BuildAllScript>(
+            new InjectionConstructor(
+                Container.Resolve<IProjectList>()
+                , new BuildAllDTO("BuildAll.ps1")));
         Container.RegisterSingleton<ICommand, ScriptCommand>();
     }
 
@@ -51,34 +54,56 @@ public class AppCommands
 
     private void SetProjectBuildAll()
     {
-        RegisterProjBuildAll<ScripterBuildAll, AppData>();
-        RegisterProjBuildAll<AppStarterBuildAll, AppData>();
-        RegisterProjBuildAll<DiyBoxBuildAll, AppData>();
-        RegisterProjBuildAll<GameDataBuildAll, AppData>();
+        RegisterProjBuildAll<AppData>(
+            "Scripter.BuildAll.ps1"
+            , "Scripter");
+        RegisterProjBuildAll<AppData>(
+            "AppStarter.BuildAll.ps1"
+            , "AppStarter.ConsoleApp");
+        RegisterProjBuildAll<AppData>(
+            "DiyBox.BuildAll.ps1"
+            , "DiyBox.ConsoleApp");
+        RegisterProjBuildAll<AppData>(
+            "GameData.BuildAll.ps1"
+            , "GameData.ConsoleApp");
     }
 
-    private void RegisterProjBuildAll<TScript, TData>()
-        where TScript : IProjBuildAll
-        where TData : ICodeData
+    private void RegisterProjBuildAll<TData>(
+        string scriptfileName
+        , string project)
+            where TData : ICodeData
     {
-        Container.RegisterSingleton<IProjBuildAll, TScript>(
-                    typeof(TScript).Name
-                    , new InjectionConstructor(
-                        Container.Resolve<IProjectExtractor>()
-                        , Container.Resolve<ICodeData>(typeof(TData).Name)));
+        Container.RegisterSingleton<IProjBuildAll, ProjBuildAllScript>(
+            $"{project}BuildAllScript"
+            , new InjectionConstructor(
+                Container.Resolve<IProjectExtractor>()
+                , Container.Resolve<ICodeData>(typeof(TData).Name)
+                , new ProjBuildAllDTO(scriptfileName, project)));
     }
 
     private void SetLogBuildAll()
     {
-        RegisterProjBuildAll<ConsoleLogBuildAll, LogData>();
-        RegisterProjBuildAll<ModernMDILogBuildAll, LogData>();
-        RegisterProjBuildAll<ModernLogWizardBuildAll, LogData>();
-        RegisterProjBuildAll<ModernLogBuildAll, LogData>();
+        RegisterProjBuildAll<LogData>(
+            "ConsoleLibLog.BuildAll.ps1"
+            , "Log.ConsoleApp");
+        RegisterProjBuildAll<LogData>(
+            "ModernMDILog.BuildAll.ps1"
+            , "Log.Modern.MDI.ConsoleApp");
+        RegisterProjBuildAll<LogData>(
+            "ModernLogWizard.BuildAll.ps1"
+            , "Log.Modern.Wizard.ConsoleApp");
+        RegisterProjBuildAll<LogData>(
+            "ModernLog.BuildAll.ps1"
+            , "Log.Modern.ConsoleApp");
     }
 
     private void SetInventoryBuildAll()
     {
-        RegisterProjBuildAll<ConsoleInventoryBuildAll, InventoryData>();
-        RegisterProjBuildAll<ModernInventoryBuildAll, InventoryData>();
+        RegisterProjBuildAll<InventoryData>(
+            "ConsoleLibInventory.BuildAll.ps1"
+            , "Inventory.ConsoleLib.ConsoleApp");
+        RegisterProjBuildAll<InventoryData>(
+            "ModernInventory.BuildAll.ps1"
+            , "Inventory.Modern.ConsoleApp");
     }   
 }

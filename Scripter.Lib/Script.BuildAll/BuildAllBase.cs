@@ -4,8 +4,15 @@ public abstract class BuildAllBase
     : IBuildAll
 {
     protected List<string> Script;
+    protected readonly BuildAllDTO BuildAllDTO;
 
-    public abstract string File { get; }
+    public string File => BuildAllDTO.File;
+
+    public BuildAllBase(
+        BuildAllDTO buildAllDTO)
+    {
+        BuildAllDTO = buildAllDTO;
+    }
 
     public abstract string[] GetScript();
 

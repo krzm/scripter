@@ -5,7 +5,7 @@ namespace Scripter.Lib.Tests;
 public class ModernInventoryTests 
     : LibTest
 {
-    private static ICodeData appData
+    private static ICodeData codeData
         = new InventoryData();
 
     [Theory]
@@ -26,7 +26,13 @@ public class ModernInventoryTests
         int index
         , string expected)
     {
-        IScript script = new ModernInventoryBuildAll(new ProjectExtractor(), appData);
+        IScript script = new ProjBuildAllScript(
+            new ProjectExtractor()
+            , codeData
+            , new ProjBuildAllDTO(
+                "ModernInventory.BuildAll.ps1"
+                , "Inventory.Modern.ConsoleApp"
+            ));
 
         var acctual = GetLine(script, index);
 

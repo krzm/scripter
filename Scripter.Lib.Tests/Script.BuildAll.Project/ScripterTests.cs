@@ -5,7 +5,7 @@ namespace Scripter.Lib.Tests;
 public class ScripterTests 
     : LibTest
 {
-    private static ICodeData appData
+    private static ICodeData codeData
         = new AppData();
 
     [Theory]
@@ -21,7 +21,13 @@ public class ScripterTests
         int index
         , string expected)
     {
-        IScript script = new ScripterBuildAll(new ProjectExtractor(), appData);
+        IScript script = new ProjBuildAllScript(
+            new ProjectExtractor()
+            , codeData
+            , new ProjBuildAllDTO(
+                "Scripter.BuildAll.ps1"
+                , "Scripter"
+            ));
 
         var acctual = GetLine(script, index);
 

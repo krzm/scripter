@@ -5,7 +5,7 @@ namespace Scripter.Lib.Tests;
 public class DiyBoxTests 
     : LibTest
 {
-    private static ICodeData appData
+    private static ICodeData codeData
         = new AppData();
 
     [Theory]
@@ -25,7 +25,13 @@ public class DiyBoxTests
         int index
         , string expected)
     {
-        IScript script = new DiyBoxBuildAll(new ProjectExtractor(), appData);
+        IScript script = new ProjBuildAllScript(
+            new ProjectExtractor()
+            , codeData
+            , new ProjBuildAllDTO(
+                "DiyBox.BuildAll.ps1"
+                , "DiyBox.ConsoleApp"
+            ));
 
         var acctual = GetLine(script, index);
 

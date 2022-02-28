@@ -6,7 +6,7 @@ namespace Scripter.Lib.Tests;
 public class BuildAllScriptTests 
     : LibTest
 {
-    private static  IProjectList codeData
+    private static IProjectList codeData
         = new ProjectList(
             new ProjectExtractor()
             , new List<ICodeData> 
@@ -69,7 +69,9 @@ public class BuildAllScriptTests
         int index
         , string expected)
     {
-        IScript script = new BuildAllScript(codeData);
+        IScript script = new BuildAllScript(
+            codeData
+            , new BuildAllDTO("BuildAll.ps1"));
    
         var acctual = GetLine(script, index);
 

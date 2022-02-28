@@ -6,12 +6,12 @@ public class BuildAllScript
     private readonly IProjectList projectList;
 
     public BuildAllScript(
-        IProjectList projectList)
+        IProjectList projectList
+        , BuildAllDTO buildAllDTO)
+            : base(buildAllDTO)
     {
         this.projectList = projectList;
     }
-
-    public override string File => "BuildAll.ps1";
 
     public override string[] GetScript()
     {

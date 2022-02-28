@@ -5,7 +5,7 @@ namespace Scripter.Lib.Tests.BuildAll.Log;
 public class ConsoleLogTests 
     : LibTest
 {
-    private static readonly ICodeData appData
+    private static readonly ICodeData codeData
         = new LogData();
 
     [Theory]
@@ -30,7 +30,13 @@ public class ConsoleLogTests
         int index
         , string expected)
     {
-        IScript script = new ConsoleLogBuildAll(new ProjectExtractor(), appData);
+        IScript script = new ProjBuildAllScript(
+            new ProjectExtractor()
+            , codeData
+            , new ProjBuildAllDTO(
+                "ConsoleLibLog.BuildAll.ps1"
+                , "Log.ConsoleApp"
+            ));
 
         var acctual = GetLine(script, index);
 

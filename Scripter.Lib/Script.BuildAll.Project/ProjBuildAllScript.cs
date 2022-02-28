@@ -1,26 +1,28 @@
 namespace Scripter;
 
-public abstract class ProjBuildAllScript 
+public class ProjBuildAllScript 
     : BuildAllBase
         , IProjBuildAll
 {
     private readonly IProjectExtractor projectExtractor;
     private readonly ICodeData codeData;
-
-    public abstract string Project { get; }
+    private readonly ProjBuildAllDTO scriptDTO;
 
     public ProjBuildAllScript(
         IProjectExtractor projectExtractor
-        , ICodeData codeData)
+        , ICodeData codeData
+        , ProjBuildAllDTO scriptDTO)
+            : base(scriptDTO)
     {
         this.projectExtractor = projectExtractor;
         this.codeData = codeData;
+        this.scriptDTO = scriptDTO;
     }
 
     public override string[] GetScript()
     {
         Script = new List<string>();
-        var app = codeData[Project];
+        var app = codeData[scriptDTO.Project];
         if (app == null) 
             throw new ArgumentException($"{app} not found");
         projectExtractor.ExtractProjects(app);
