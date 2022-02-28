@@ -59,6 +59,7 @@ public class LogData : LibData
     {
         modernMDICLIApp =  Set(
             "log-modern-mdi-consoleapp", "Log.Modern.MDI.ConsoleApp"
+            , true
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , DataToTable, DIHelper, CommandDotNetHelper, CRUDCommandHelper
             , dataLib, modernLib);
@@ -76,6 +77,7 @@ public class LogData : LibData
             , dataLib);
         consoleLibCLIApp = Set(
             "log-console-lib-console-app", "Log.ConsoleApp"
+            , true
             , ModelHelper, EFCoreHelper, DotNetExtension, DataToTable
             , CLIHelper, CLIReader, DIHelper, CRUDCommandHelper
             , CommandDotNetHelper, CLIWizardHelper, CLIFramework, dataLib
@@ -86,6 +88,7 @@ public class LogData : LibData
     {
         modernWizardCLIApp = Set(
             "log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"
+            , true
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , CLIReader, DataToTable, DIHelper, CommandDotNetHelper
             , CLIWizardHelper, CRUDCommandHelper, dataLib, wizardLib

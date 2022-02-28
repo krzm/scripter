@@ -6,21 +6,23 @@ public class ScriptCommand : ICommand
 {
     public event EventHandler? CanExecuteChanged;
 
-    private readonly IList<ProjectDTO> projects;
+    private readonly List<ICodeData> codeData;
     private readonly IScriptParam scriptParam;
     private readonly List<IScript> projectScripts;
-    private readonly List<IBuildAll> buildAllScripts;
+    private readonly List<IProjBuildAll> projBuildAllScripts;
+    private List<ProjectDTO> projects;
 
     public ScriptCommand(
-        IList<ProjectDTO> projects
+        List<ICodeData> codeData
         , IScriptParam scriptParam
         , List<IScript> projectScripts
-        , List<IBuildAll> buildAllScripts)
+        , List<IProjBuildAll> projBuildAllScripts)
     {
-        this.projects = projects;
+        this.codeData = codeData;
         this.scriptParam = scriptParam;
         this.projectScripts = projectScripts;
-        this.buildAllScripts = buildAllScripts;
+        this.projBuildAllScripts = projBuildAllScripts;
+        projects = new List<ProjectDTO>();
     }
 
     public bool CanExecute(object? parameter) => true;
@@ -33,6 +35,15 @@ public class ScriptCommand : ICommand
 
     private void WriteProjectScripts()
     {
+        projects.Clear();
+        foreach (var data in codeData)
+        {
+            foreach (var proj in data.Values)
+            {
+                SelectProjects(proj);
+            }
+        }
+
         foreach (var project in projects)
         {
             scriptParam.Project = new ProjectDTO(
@@ -50,9 +61,29 @@ public class ScriptCommand : ICommand
         }
     }
     
+    private void SelectProjects(ProjectDTO project)
+    {
+        if (project.Dependencies != null)
+        {
+            foreach (var library in project.Dependencies)
+            {
+                if (library == null) 
+                    throw new NullReferenceException($"{library} is null");
+                SelectProjects(library);
+            }
+        }
+        if(IsNotInScript(project))
+            projects.Add(project);
+    }
+
+    private bool IsNotInScript(ProjectDTO project)
+    {
+        return projects.Contains(project) == false;
+    }
+
     private void WriteBuildAllScripts()
     {
-        foreach (var script in buildAllScripts)
+        foreach (var script in projBuildAllScripts)
         {
             WriteScript(script);   
         }

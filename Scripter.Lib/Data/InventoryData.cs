@@ -33,6 +33,7 @@ public class InventoryData : LibData
             , DataToTable, CRUDCommandHelper, dataLib);
         modernCLIApp = Set(
             "inventory-modern-consoleapp", "Inventory.Modern.ConsoleApp"
+            , true
             , ModelHelper, EFCoreHelper, DataToTable, DIHelper
             , CommandDotNetHelper, CRUDCommandHelper, dataLib, modernLib);
     }
@@ -49,6 +50,7 @@ public class InventoryData : LibData
             , dataLib);
         consoleLibCLIApp = Set(
             "inventory-consolelib-consoleapp", "Inventory.ConsoleLib.ConsoleApp"
+            , true
             , ModelHelper, EFCoreHelper, DotNetExtension, DataToTable
             , CLIHelper, CLIReader, DIHelper, CRUDCommandHelper
             , CommandDotNetHelper, CLIWizardHelper, CLIFramework, dataLib

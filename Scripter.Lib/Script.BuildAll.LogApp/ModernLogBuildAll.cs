@@ -1,7 +1,7 @@
 namespace Scripter;
 
 public class ModernLogBuildAll 
-    : ProjectBuildAll
+    : ProjBuildAllScript
 {
     public override string File => "ModernLog.BuildAll.ps1";
     public override string Project => "Log.Modern.ConsoleApp";

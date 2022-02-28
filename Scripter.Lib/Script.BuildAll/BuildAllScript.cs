@@ -1,23 +1,27 @@
 namespace Scripter;
 
-public class BuildAllScript : IBuildAll
+public class BuildAllScript 
+    : BuildAllBase
 {
-    private readonly IList<ProjectDTO> projectList;
+    private readonly List<ICodeData> codedata;
 
-    public string File => "BuildAll.ps1";
-
-    public BuildAllScript(IList<ProjectDTO> projectList)
+    public BuildAllScript(List<ICodeData> codedata)
     {
-        this.projectList = projectList;
+        this.codedata = codedata;
     }
 
-    public string[] GetScript()
+    public override string File => "BuildAll.ps1";
+
+    public override string[] GetScript()
     {
-        var sb = new List<string>();
-        foreach (var project in projectList)
+        Script = new List<string>();
+        foreach (var data in codedata)
         {
-            sb.Add($"& \"$PSScriptRoot\\{project.ProjFolder}.Build.ps1\"");
+            foreach (var projData in data.Values)
+            {
+                SelectScript(projData);
+            }
         }
-        return sb.ToArray();
+        return Script.ToArray();
     }
 }

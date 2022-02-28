@@ -1,7 +1,7 @@
 namespace Scripter;
 
 public class DiyBoxBuildAll 
-    : ProjectBuildAll
+    : ProjBuildAllScript
 {
     public override string File => "DiyBox.BuildAll.ps1";
     public override string Project => "DiyBox.ConsoleApp";

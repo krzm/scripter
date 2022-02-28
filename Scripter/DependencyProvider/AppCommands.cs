@@ -28,8 +28,6 @@ public class AppCommands
 
     private void SetData()
     {
-        Container.RegisterSingleton<IList<ProjectDTO>, ProjectList>();
-
         Container.RegisterSingleton<ICodeData, LibData>(nameof(LibData));
         Container.RegisterSingleton<ICodeData, AppData>(nameof(AppData));
         Container.RegisterSingleton<ICodeData, LogData>(nameof(LogData));
@@ -49,33 +47,33 @@ public class AppCommands
 
     private void SetProjectBuildAll()
     {
-        Container.RegisterSingleton<IBuildAll, ScripterBuildAll>(nameof(ScripterBuildAll)
+        Container.RegisterSingleton<IProjBuildAll, ScripterBuildAll>(nameof(ScripterBuildAll)
                     , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(AppData))));
-        Container.RegisterSingleton<IBuildAll, AppStarterBuildAll>(nameof(AppStarterBuildAll)
+        Container.RegisterSingleton<IProjBuildAll, AppStarterBuildAll>(nameof(AppStarterBuildAll)
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(AppData))));
-        Container.RegisterSingleton<IBuildAll, DiyBoxBuildAll>(nameof(DiyBoxBuildAll)
+        Container.RegisterSingleton<IProjBuildAll, DiyBoxBuildAll>(nameof(DiyBoxBuildAll)
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(AppData))));
-        Container.RegisterSingleton<IBuildAll, GameDataBuildAll>(nameof(GameDataBuildAll)
+        Container.RegisterSingleton<IProjBuildAll, GameDataBuildAll>(nameof(GameDataBuildAll)
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(AppData))));
     }
 
     private void SetLogBuildAll()
     {
-        Container.RegisterSingleton<IBuildAll, ConsoleLogBuildAll>(nameof(ConsoleLogBuildAll)
+        Container.RegisterSingleton<IProjBuildAll, ConsoleLogBuildAll>(nameof(ConsoleLogBuildAll)
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(LogData))));
-        Container.RegisterSingleton<IBuildAll, ModernMDILogBuildAll>(nameof(ModernMDILogBuildAll)
+        Container.RegisterSingleton<IProjBuildAll, ModernMDILogBuildAll>(nameof(ModernMDILogBuildAll)
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(LogData))));
-        Container.RegisterSingleton<IBuildAll, ModernLogWizardBuildAll>(nameof(ModernLogWizardBuildAll)
+        Container.RegisterSingleton<IProjBuildAll, ModernLogWizardBuildAll>(nameof(ModernLogWizardBuildAll)
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(LogData))));
-        Container.RegisterSingleton<IBuildAll, ModernLogBuildAll>(nameof(ModernLogBuildAll)
+        Container.RegisterSingleton<IProjBuildAll, ModernLogBuildAll>(nameof(ModernLogBuildAll)
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(LogData))));
     }
 
     private void SetInventoryBuildAll()
     {
-        Container.RegisterSingleton<IBuildAll, ConsoleInventoryBuildAll>(nameof(ConsoleInventoryBuildAll)
+        Container.RegisterSingleton<IProjBuildAll, ConsoleInventoryBuildAll>(nameof(ConsoleInventoryBuildAll)
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(InventoryData))));
-        Container.RegisterSingleton<IBuildAll, ModernInventoryBuildAll>(nameof(ModernInventoryBuildAll)
+        Container.RegisterSingleton<IProjBuildAll, ModernInventoryBuildAll>(nameof(ModernInventoryBuildAll)
             , new InjectionConstructor(Container.Resolve<ICodeData>(nameof(InventoryData))));
     }   
 }

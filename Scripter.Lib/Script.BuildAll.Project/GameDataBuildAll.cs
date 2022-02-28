@@ -1,7 +1,7 @@
 namespace Scripter;
 
 public class GameDataBuildAll 
-    : ProjectBuildAll
+    : ProjBuildAllScript
 {
     public override string File => "GameData.BuildAll.ps1";
     public override string Project => "GameData.ConsoleApp";

@@ -1,7 +1,7 @@
 namespace Scripter;
 
 public class ConsoleInventoryBuildAll 
-    : ProjectBuildAll
+    : ProjBuildAllScript
 {
     public override string File => "ConsoleLibInventory.BuildAll.ps1";
     public override string Project => "Inventory.ConsoleLib.ConsoleApp";

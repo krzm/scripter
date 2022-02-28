@@ -1,6 +1,6 @@
 namespace Scripter;
 
-public class ScripterBuildAll : ProjectBuildAll
+public class ScripterBuildAll : ProjBuildAllScript
 {
     public override string File => "Scripter.BuildAll.ps1";
     public override string Project => "Scripter";
