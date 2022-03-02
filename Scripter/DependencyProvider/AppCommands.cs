@@ -17,7 +17,6 @@ public class AppCommands
 
     public override void Register()
     {
-        SetData();
         SetJoinable();
         SetProjectBuildAll();
         SetLogBuildAll();
@@ -27,18 +26,6 @@ public class AppCommands
                 Container.Resolve<IProjectList>()
                 , new BuildAllDTO("BuildAll.ps1")));
         Container.RegisterSingleton<ICommand, ScriptCommand>();
-    }
-
-    private void SetData()
-    {
-        Container.RegisterSingleton<ICodeData, LibData>(nameof(LibData));
-        Container.RegisterSingleton<ICodeData, AppData>(nameof(AppData));
-        Container.RegisterSingleton<ICodeData, LogData>(nameof(LogData));
-        Container.RegisterSingleton<ICodeData, InventoryData>(nameof(InventoryData));
-
-        Container.RegisterType<IProjectExtractor, ProjectExtractor>();
-        
-        Container.RegisterSingleton<IProjectList, ProjectList>();
     }
 
     private void SetJoinable()

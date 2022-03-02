@@ -11,9 +11,9 @@ public class LogData : LibData
     private ProjectDTO? modernWizardCLIApp;
     private ProjectDTO? modernCLIApp;
 
-    protected override void SetApps()
+    protected override void SetAllData()
     {
-        base.SetApps();
+        base.SetAllData();
         SetCommon();
         SetModern();
         SetModernMDI();

@@ -6,24 +6,11 @@ public abstract class CodeData
 {
     public CodeData()
     {
-        SetAll();
+        SetAllData();
     }
 
-    private void SetAll()
-    {
-        SetIndependentLib();
-        SetOneDependancyLib();
-        SetTwoDependancyLib();
-        SetManyDependancyLib();
-        SetApps();
-    }
-
-    protected abstract void SetIndependentLib();
-    protected abstract void SetOneDependancyLib();
-    protected abstract void SetTwoDependancyLib();
-    protected abstract void SetManyDependancyLib();
-    protected virtual void SetApps(){}
-
+    protected abstract void SetAllData();
+    
     protected ProjectDTO Set(
         string repo
         , string project)

@@ -1,6 +1,7 @@
 namespace Scripter;
 
-public class LibData : CodeData
+public class LibData 
+    : CodeData
 {
     protected ProjectDTO? ModelHelper;
     protected ProjectDTO? EFCoreHelper;
@@ -16,7 +17,15 @@ public class LibData : CodeData
     protected ProjectDTO? CLIWizardHelper;
     protected ProjectDTO? CLIFramework;
     
-    protected override void SetIndependentLib()
+    protected override void SetAllData()
+    {
+        SetIndependentLib();
+        SetOneDependancyLib();
+        SetTwoDependancyLib();
+        SetManyDependancyLib();
+    }
+
+    private void SetIndependentLib()
     {
         ModelHelper = Set(
             "model-helper", "ModelHelper");
@@ -28,7 +37,7 @@ public class LibData : CodeData
             "dotnet-tool", "DotNetTool");
     }
 
-    protected override void SetOneDependancyLib()
+    private void SetOneDependancyLib()
     {
         CLIHelper = Set(
             "cli-helper", "CLIHelper"
@@ -41,7 +50,7 @@ public class LibData : CodeData
             , CLIHelper);
     }
 
-    protected override void SetTwoDependancyLib()
+    private void SetTwoDependancyLib()
     {
         CommandDotNetUnity = Set(
             "di-helper", "CommandDotNet.IoC.Unity"
@@ -54,7 +63,7 @@ public class LibData : CodeData
             , DIHelper, CommandDotNetUnity);
     }
 
-    protected override void SetManyDependancyLib()
+    private void SetManyDependancyLib()
     {
         CRUDCommandHelper = Set(
             "crud-command-helper", "CRUDCommandHelper"

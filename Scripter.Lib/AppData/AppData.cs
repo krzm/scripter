@@ -1,6 +1,7 @@
 namespace Scripter;
 
-public class AppData : LibData
+public class AppData 
+    : LibData
 {
     private ProjectDTO? scripter;
     private ProjectDTO? appStarterData;
@@ -12,8 +13,9 @@ public class AppData : LibData
     private ProjectDTO? gameDataLib;
     private ProjectDTO? gameDataCLIApp;
 
-    protected override void SetApps()
+    protected override void SetAllData()
     {
+        base.SetAllData();
         SetScripter();
         SetAppStarter();
         SetDiyBox();

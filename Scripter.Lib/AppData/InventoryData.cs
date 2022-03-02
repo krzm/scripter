@@ -9,9 +9,9 @@ public class InventoryData : LibData
     private ProjectDTO? modernCLIApp;
     private ProjectDTO? consoleLibCLIApp;
 
-    protected override void SetApps()
+    protected override void SetAllData()
     {
-        base.SetApps();
+        base.SetAllData();
         SetCommon();
         SetModern();
         SetConsole();

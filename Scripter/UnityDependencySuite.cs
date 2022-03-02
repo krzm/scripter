@@ -12,6 +12,11 @@ public class UnityDependencySuite
     {
     }
 
+    protected override void RegisterAppData()
+    {
+        RegisterSet<AppDataSet>();
+    }
+
     protected override void RegisterCommands()
     {
         RegisterSet<AppCommands>();
