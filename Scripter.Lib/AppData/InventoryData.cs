@@ -35,7 +35,7 @@ public class InventoryData : LibData
             "inventory-modern-consoleapp", "Inventory.Modern.ConsoleApp"
             , true
             , ModelHelper, EFCoreHelper, DataToTable, DIHelper
-            , CommandDotNetHelper, CRUDCommandHelper, dataLib, modernLib);
+            , CommandDotNetUnityHelper, CRUDCommandHelper, dataLib, modernLib);
     }
 
     private void SetConsole()
@@ -53,7 +53,7 @@ public class InventoryData : LibData
             , true
             , ModelHelper, EFCoreHelper, DotNetExtension, DataToTable
             , CLIHelper, CLIReader, DIHelper, CRUDCommandHelper
-            , CommandDotNetHelper, CLIWizardHelper, CLIFramework, dataLib
+            , CommandDotNetUnityHelper, CLIWizardHelper, CLIFramework, dataLib
             , wizardLib, modernLib, consoleLib);
     }
 

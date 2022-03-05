@@ -23,5 +23,5 @@ public class UnityDependencySuite
     }
 
     protected override void RegisterProgram() =>
-        Container.RegisterSingleton<IAppProgram, AppProgram>();
+        Container.RegisterSingleton<IAppProgram, AppProg>();
 }

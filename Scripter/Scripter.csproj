@@ -10,6 +10,8 @@
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="10.1.1" />
 		<PackageReference Include="CommandDotNet.DataAnnotations" Version="2.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
 		<PackageReference Include="Unity" Version="5.11.10" />
 		<PackageReference Include="CommandDotNet" Version="6.1.0-alpha.repl" />
 		<PackageReference Include="CommandDotNet.NameCasing" Version="3.0.1" />
@@ -19,18 +21,41 @@
 		<ProjectReference Include="..\Scripter.Lib\Scripter.Lib.csproj" />
 	</ItemGroup>
 
+	<!--Debug refs-->
 	<ItemGroup>
+		<Reference Include="DIHelper">
+			<HintPath>..\..\di-helper\DIHelper\bin\Debug\net6.0\DIHelper.dll</HintPath>
+		</Reference>
+		<Reference Include="CommandDotNet.Helper">
+			<HintPath>..\..\commanddotnet-helper\CommandDotNet.Helper\bin\Debug\net6.0\CommandDotNet.Helper.dll</HintPath>
+		</Reference>
+		<Reference Include="CommandDotNet.IoC.Unity">
+			<HintPath>..\..\commanddotnet-helper\CommandDotNet.IoC.Unity\bin\Debug\net6.0\CommandDotNet.IoC.Unity.dll</HintPath>
+		</Reference>
+		<Reference Include="CommandDotNet.Unity.Helper">
+			<HintPath>..\..\commanddotnet-helper\CommandDotNet.Unity.Helper\bin\Debug\net6.0\CommandDotNet.Unity.Helper.dll</HintPath>
+		</Reference>
+		<Reference Include="DataToTable">
+			<HintPath>..\..\datatotable\DataToTable\bin\Debug\net6.0\DataToTable.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<!--Release refs-->
+	<!-- <ItemGroup>
+		<Reference Include="DIHelper">
+			<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
+		</Reference>
 		<Reference Include="CommandDotNet.Helper">
 			<HintPath>..\..\..\Build\commanddotnet-helper\CommandDotNet.Helper\CommandDotNet.Helper.dll</HintPath>
 		</Reference>
 		<Reference Include="CommandDotNet.IoC.Unity">
-			<HintPath>..\..\..\Build\di-helper\CommandDotNet.IoC.Unity\CommandDotNet.IoC.Unity.dll</HintPath>
+			<HintPath>..\..\..\Build\commanddotnet-helper\CommandDotNet.IoC.Unity\CommandDotNet.IoC.Unity.dll</HintPath>
 		</Reference>
-		<Reference Include="DIHelper">
-			<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
+		<Reference Include="CommandDotNet.Unity.Helper">
+			<HintPath>..\..\..\Build\commanddotnet-helper\CommandDotNet.Unity.Helper\CommandDotNet.Unity.Helper.dll</HintPath>
 		</Reference>
 		<Reference Include="DataToTable">
 			<HintPath>..\..\..\Build\datatotable\DataToTable\DataToTable.dll</HintPath>
 		</Reference>
-	</ItemGroup>
+	</ItemGroup> -->
 </Project>

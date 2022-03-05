@@ -29,9 +29,9 @@ public class AppData
             , "Scripter"
             , true
             , DataToTable
-            , CommandDotNetUnity
+            , CommandDotNetUnityHelper
             , DIHelper
-            , CommandDotNetHelper);
+            , CommandDotNetUnityHelper);
     }
 
     private void SetAppStarter()
@@ -53,7 +53,7 @@ public class AppData
             , DotNetTool
             , DIHelper
             , DataToTable
-            , CommandDotNetHelper
+            , CommandDotNetUnityHelper
             , CRUDCommandHelper
             , CLIFramework
             , appStarterData);
@@ -70,7 +70,7 @@ public class AppData
             , DotNetTool
             , DIHelper
             , DataToTable
-            , CommandDotNetHelper
+            , CommandDotNetUnityHelper
             , CRUDCommandHelper
             , CLIFramework
             , appStarterData
@@ -89,7 +89,7 @@ public class AppData
             , "DiyBox.ConsoleApp"
             , true
             , DIHelper
-            , CommandDotNetHelper
+            , CommandDotNetUnityHelper
             , CLIFramework);
     }
 
@@ -124,7 +124,7 @@ public class AppData
             , CLIReader
             , CRUDCommandHelper
             , DIHelper
-            , CommandDotNetHelper
+            , CommandDotNetUnityHelper
             , CLIWizardHelper
             , CLIFramework
             , gameData

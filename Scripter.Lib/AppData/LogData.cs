@@ -49,7 +49,7 @@ public class LogData : LibData
             , EFCoreHelper
             , DataToTable
             , DIHelper
-            , CommandDotNetHelper
+            , CommandDotNetUnityHelper
             , CRUDCommandHelper
             , dataLib
             , modernLib);
@@ -61,7 +61,7 @@ public class LogData : LibData
             "log-modern-mdi-consoleapp", "Log.Modern.MDI.ConsoleApp"
             , true
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , DataToTable, DIHelper, CommandDotNetHelper, CRUDCommandHelper
+            , DataToTable, DIHelper, CommandDotNetUnityHelper, CRUDCommandHelper
             , dataLib, modernLib);
     }
     
@@ -80,7 +80,7 @@ public class LogData : LibData
             , true
             , ModelHelper, EFCoreHelper, DotNetExtension, DataToTable
             , CLIHelper, CLIReader, DIHelper, CRUDCommandHelper
-            , CommandDotNetHelper, CLIWizardHelper, CLIFramework, dataLib
+            , CommandDotNetUnityHelper, CLIWizardHelper, CLIFramework, dataLib
             , wizardLib, modernLib, consoleLib);
     }
 
@@ -90,7 +90,7 @@ public class LogData : LibData
             "log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"
             , true
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , CLIReader, DataToTable, DIHelper, CommandDotNetHelper
+            , CLIReader, DataToTable, DIHelper, CommandDotNetUnityHelper
             , CLIWizardHelper, CRUDCommandHelper, dataLib, wizardLib
             , modernLib);
     }
