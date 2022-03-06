@@ -1,7 +1,6 @@
 ﻿using CommandDotNet;
 using CommandDotNet.Repl;
 using CommandDotNet.Unity.Helper;
-using Unity;
 
 namespace Scripter;
 
@@ -12,12 +11,6 @@ public class AppProg
 
     [Subcommand]
     public ScriptCommands? ScriptCommands { get; set; }
-
-    public AppProg(
-        IUnityContainer container)
-            : base(container)
-    {
-    }
 
     [DefaultCommand()]
     public void StartSession(

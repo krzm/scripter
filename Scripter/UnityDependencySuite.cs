@@ -1,5 +1,4 @@
-﻿using DIHelper;
-using Unity;
+﻿using Unity;
 
 namespace Scripter;
 
@@ -14,6 +13,7 @@ public class UnityDependencySuite
 
     protected override void RegisterAppData()
     {
+        RegisterSet<AppConfigSet>();
         RegisterSet<AppDataSet>();
     }
 
@@ -22,6 +22,8 @@ public class UnityDependencySuite
         RegisterSet<AppCommands>();
     }
 
-    protected override void RegisterProgram() =>
-        Container.RegisterSingleton<IAppProgram, AppProg>();
+    protected override void RegisterProgram()
+    {
+        RegisterSet<AppProgSet>();
+    }
 }

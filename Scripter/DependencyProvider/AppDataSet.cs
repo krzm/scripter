@@ -14,11 +14,6 @@ public class AppDataSet
 
     public override void Register()
     {
-        SetData();
-    }
-
-    private void SetData()
-    {
         Container.RegisterSingleton<ICodeData, CommanderData>(nameof(CommanderData));
 
         Container.RegisterSingleton<ICodeData, LibData>(nameof(LibData));
