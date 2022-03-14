@@ -1,4 +1,6 @@
-﻿using Unity;
+﻿using CommandDotNet.Unity.Helper;
+using Config.Wrapper;
+using Unity;
 
 namespace Scripter;
 
@@ -24,6 +26,6 @@ public class UnityDependencySuite
 
     protected override void RegisterProgram()
     {
-        RegisterSet<AppProgSet>();
+        RegisterSet<AppProgSet<AppProg>>();
     }
 }

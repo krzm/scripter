@@ -1,13 +1,22 @@
 ﻿using CommandDotNet;
 using CommandDotNet.Repl;
 using CommandDotNet.Unity.Helper;
+using Config.Wrapper;
+using Serilog;
 
 namespace Scripter;
 
-public class AppProg 
+public class AppProg
     : AppProgUnity<AppProg>
 {
     private static bool inSession;
+
+    public AppProg(
+        ILogger log
+        , IConfigReader config) 
+            : base(log, config)
+    {
+    }
 
     [Subcommand]
     public ScriptCommands? ScriptCommands { get; set; }
