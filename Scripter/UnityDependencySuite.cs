@@ -1,5 +1,6 @@
 ﻿using CommandDotNet.Unity.Helper;
 using Config.Wrapper;
+using Serilog.Wrapper;
 using Unity;
 
 namespace Scripter;
@@ -15,6 +16,7 @@ public class UnityDependencySuite
 
     protected override void RegisterAppData()
     {
+        RegisterSet<AppLoggerSet>();
         RegisterSet<AppConfigSet>();
         RegisterSet<AppDataSet>();
     }
