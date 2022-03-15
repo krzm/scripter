@@ -23,6 +23,8 @@ public class LogData : LibData
 
     private void SetCommon()
     {
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
         dataLib = Set(
             "log-data", "Log.Data"
             , ModelHelper, EFCoreHelper);
@@ -30,6 +32,15 @@ public class LogData : LibData
 
     private void SetModern()
     {
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(dataLib);
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         modernLib = Set(
             "log-modern-lib"
             , "Log.Modern.Lib"
@@ -57,6 +68,16 @@ public class LogData : LibData
 
     private void SetModernMDI()
     {
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(dataLib);
+        ArgumentNullException.ThrowIfNull(modernLib);
         modernMDICLIApp =  Set(
             "log-modern-mdi-consoleapp", "Log.Modern.MDI.ConsoleApp"
             , true
@@ -67,6 +88,19 @@ public class LogData : LibData
     
     private void SetConsoleLib()
     {
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(CLIWizardHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(dataLib);
+        ArgumentNullException.ThrowIfNull(modernLib);
+        ArgumentNullException.ThrowIfNull(CLIFramework);
+        ArgumentNullException.ThrowIfNull(CLIReader);
+        ArgumentNullException.ThrowIfNull(DIHelper);
         consoleLib = Set(
             "log-console-lib", "Log.Console.Lib"
             , CLIHelper, CRUDCommandHelper, CLIWizardHelper, CLIFramework
@@ -86,6 +120,19 @@ public class LogData : LibData
 
     private void SetModernWizard()
     {
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(CLIWizardHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(dataLib);
+        ArgumentNullException.ThrowIfNull(modernLib);
+        ArgumentNullException.ThrowIfNull(CLIReader);
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(wizardLib);
         modernWizardCLIApp = Set(
             "log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"
             , true

@@ -4,15 +4,24 @@ public class VersionScript : IScript
 {
     private readonly IScriptParam scriptParam;
 
-    public string File => $"{scriptParam.Project.ProjFolder}.Version.ps1";
+    public string File
+    {
+        get
+        {
+            ArgumentNullException.ThrowIfNull(scriptParam.Project);
+            return $"{scriptParam.Project.ProjFolder}.Version.ps1";
+        }
+    }
 
     public VersionScript(IScriptParam scriptParam)
     {
         this.scriptParam = scriptParam;
+        ArgumentNullException.ThrowIfNull(this.scriptParam);
     }
 
     public string[] GetScript()
     {
+        ArgumentNullException.ThrowIfNull(scriptParam.Project);
         return new string[]
         {
             $"$projectName = \"{scriptParam.Project.ProjFolder}\""

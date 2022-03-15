@@ -24,6 +24,9 @@ public class AppData
 
     private void SetScripter()
     {
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+        ArgumentNullException.ThrowIfNull(DIHelper);
         scripter = Set(
             "scripter"
             , "Scripter"
@@ -36,6 +39,17 @@ public class AppData
 
     private void SetAppStarter()
     {
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(CLIReader);
+        ArgumentNullException.ThrowIfNull(DotNetTool);
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(CLIFramework);
         appStarterData = Set(
             "app-starter"
             , "AppStarter.Data"
@@ -79,6 +93,9 @@ public class AppData
 
     private void SetDiyBox()
     {
+        ArgumentNullException.ThrowIfNull(CLIFramework);
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         diyBoxCore = Set(
             "diy-box"
             , "DiyBox.Core"
@@ -95,6 +112,17 @@ public class AppData
 
     private void SetGameData()
     {
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(CLIReader);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(CLIWizardHelper);
+        ArgumentNullException.ThrowIfNull(CLIFramework);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         gameData = Set(
             "game-data"
             , "GameData.Data.Lib"

@@ -4,11 +4,19 @@ public class CompileScript : IScript
 {
     private readonly IScriptParam scriptParam;
 
-    public string File => $"{scriptParam.Project.ProjFolder}.Compile.ps1";
+    public string File
+    {
+        get
+        {
+            ArgumentNullException.ThrowIfNull(scriptParam.Project);
+            return $"{scriptParam.Project.ProjFolder}.Compile.ps1";
+        }
+    }
 
     public CompileScript(IScriptParam scriptParam)
     {
         this.scriptParam = scriptParam;
+        ArgumentNullException.ThrowIfNull(this.scriptParam);
     }
 
     public string[] GetScript()

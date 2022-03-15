@@ -4,15 +4,24 @@ public class BuildScript : IScript
 {
     private readonly IScriptParam scriptParam;
 
-    public string File => $"{scriptParam.Project.ProjFolder}.Build.ps1";
+    public string File
+    {
+        get
+        {
+            ArgumentNullException.ThrowIfNull(scriptParam.Project);
+            return $"{scriptParam.Project.ProjFolder}.Build.ps1";
+        }
+    }
 
     public BuildScript(IScriptParam scriptParam)
     {
         this.scriptParam = scriptParam;
+        ArgumentNullException.ThrowIfNull(this.scriptParam);
     }
 
     public string[] GetScript()
     {
+        ArgumentNullException.ThrowIfNull(scriptParam.Project);
         var name = scriptParam.Project.ProjFolder;
         var list = new List<string>
         {

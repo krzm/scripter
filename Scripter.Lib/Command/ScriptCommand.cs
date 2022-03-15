@@ -40,6 +40,7 @@ public class ScriptCommand : ICommand
 
     private void WriteProjectScripts()
     {
+        ArgumentNullException.ThrowIfNull(scriptParam.Project);
         foreach (var project in projectList.Projects)
         {
             SetProject(project);

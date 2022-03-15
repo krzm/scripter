@@ -22,6 +22,7 @@ public abstract class ScriptParamTestBase
         IScriptParam scriptParam
         , string name)
     {
+        ArgumentNullException.ThrowIfNull(scriptParam.Project);
         switch(name)
         {
             case nameof(ScriptParam.Project.RepoFolder):

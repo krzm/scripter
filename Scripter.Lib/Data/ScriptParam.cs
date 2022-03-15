@@ -16,5 +16,12 @@ public class ScriptParam : IScriptParam
 
     public string BuildPath => @"C:\kmazanek@gmail.com\Build";
 
-    public string RepoPath => Path.Combine(RootPath, CodeFolder, Project.RepoFolder);
+    public string RepoPath
+    {
+        get
+        {
+            ArgumentNullException.ThrowIfNull(Project);
+            return Path.Combine(RootPath, CodeFolder, Project.RepoFolder);
+        }
+    }
 }

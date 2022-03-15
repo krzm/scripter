@@ -6,15 +6,24 @@ public class CopyAppScript : IScript
 
     private readonly IScriptParam data;
 
-    public string File => $"{data.Project.ProjFolder}.CopyApp.ps1";
+    public string File
+    {
+        get
+        {
+            ArgumentNullException.ThrowIfNull(data.Project);
+            return $"{data.Project.ProjFolder}.CopyApp.ps1";
+        }
+    }
 
     public CopyAppScript(IScriptParam data)
     {
         this.data = data;
+        ArgumentNullException.ThrowIfNull(this.data);
     }
 
     public string[] GetScript()
     {
+        ArgumentNullException.ThrowIfNull(data.Project);
         var projBuildPath = Path.Combine(
             data.BuildPath
             , data.Project.RepoFolder

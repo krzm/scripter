@@ -20,6 +20,8 @@ public class InventoryData : LibData
 
     private void SetCommon()
     {
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
         dataLib = Set(
             "inventory-data", "Inventory.Data"
             , ModelHelper, EFCoreHelper);
@@ -27,6 +29,15 @@ public class InventoryData : LibData
 
     private void SetModern()
     {
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(dataLib);
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         modernLib = Set(
             "inventory-modern-lib", "Inventory.Modern.Lib"
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
@@ -40,6 +51,19 @@ public class InventoryData : LibData
 
     private void SetConsole()
     {
+        ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(CLIWizardHelper);
+        ArgumentNullException.ThrowIfNull(CLIFramework);
+        ArgumentNullException.ThrowIfNull(dataLib);
+        ArgumentNullException.ThrowIfNull(modernLib);
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(CLIReader);
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         consoleLib = Set(
             "inventory-console-lib", "Inventory.Console.Lib"
             , CLIHelper, CRUDCommandHelper, CLIWizardHelper, CLIFramework
