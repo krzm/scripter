@@ -21,7 +21,7 @@ public class ProjBuildAllScript
 
     public override string[] GetScript()
     {
-        Script = new List<string>();
+        Script.Clear();
         var app = codeData[scriptDTO.Project];
         if (app == null) 
             throw new ArgumentException($"{app} not found");

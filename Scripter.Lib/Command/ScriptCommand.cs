@@ -40,10 +40,10 @@ public class ScriptCommand : ICommand
 
     private void WriteProjectScripts()
     {
-        ArgumentNullException.ThrowIfNull(scriptParam.Project);
         foreach (var project in projectList.Projects)
         {
             SetProject(project);
+            ArgumentNullException.ThrowIfNull(scriptParam.Project);
             foreach (var script in projectScripts)
             {
                 if (scriptParam.Project.IsApp == false
@@ -56,9 +56,9 @@ public class ScriptCommand : ICommand
     private void SetProject(ProjectDTO project)
     {
         scriptParam.Project = new ProjectDTO(
-                        project.RepoFolder
-                        , project.ProjFolder
-                        , IsApp: project.IsApp);
+            project.RepoFolder
+            , project.ProjFolder
+            , IsApp: project.IsApp);
     }
 
     private void WriteScript(IScript script)

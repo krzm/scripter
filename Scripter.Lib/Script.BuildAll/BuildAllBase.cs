@@ -20,6 +20,7 @@ public abstract class BuildAllBase
     {
         BuildAllDTO = buildAllDTO;
         ArgumentNullException.ThrowIfNull(BuildAllDTO);
+        Script = new List<string>();
     }
 
     public abstract string[] GetScript();
