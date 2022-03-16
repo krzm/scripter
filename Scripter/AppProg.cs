@@ -11,15 +11,15 @@ public class AppProg
 {
     private static bool inSession;
 
+    [Subcommand]
+    public ScriptCommands? ScriptCommands { get; set; }
+
     public AppProg(
         ILogger log
         , IConfigReader config) 
             : base(log, config)
     {
     }
-
-    [Subcommand]
-    public ScriptCommands? ScriptCommands { get; set; }
 
     [DefaultCommand()]
     public void StartSession(
