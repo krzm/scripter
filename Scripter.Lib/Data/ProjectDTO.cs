@@ -4,4 +4,5 @@ public record ProjectDTO(
     string RepoFolder
     , string ProjFolder
     , List<ProjectDTO>? Dependencies = default
-    , bool IsApp = false);
+    , bool IsApp = false
+    , DateOnly LastCheck = default);

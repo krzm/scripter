@@ -27,6 +27,7 @@ public class LogData : LibData
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         dataLib = Set(
             "log-data", "Log.Data"
+            , new DateOnly()
             , ModelHelper, EFCoreHelper);
     }
 
@@ -44,6 +45,7 @@ public class LogData : LibData
         modernLib = Set(
             "log-modern-lib"
             , "Log.Modern.Lib"
+            , new DateOnly()
             , ModelHelper
             , EFCoreHelper
             , DotNetExtension
@@ -103,10 +105,12 @@ public class LogData : LibData
         ArgumentNullException.ThrowIfNull(DIHelper);
         consoleLib = Set(
             "log-console-lib", "Log.Console.Lib"
+            , new DateOnly()
             , CLIHelper, CRUDCommandHelper, CLIWizardHelper, CLIFramework
             , dataLib, modernLib);
         wizardLib = Set(
             "log-wizard-lib", "Log.Wizard.Lib"
+            , new DateOnly()
             , EFCoreHelper, CLIHelper, CLIReader, CLIWizardHelper
             , dataLib);
         consoleLibCLIApp = Set(

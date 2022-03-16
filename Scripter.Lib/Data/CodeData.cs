@@ -13,9 +13,15 @@ public abstract class CodeData
     
     protected ProjectDTO Set(
         string repo
-        , string project)
+        , string project
+        , DateOnly lastCheck)
     {
-        var proj = new ProjectDTO(repo, project);
+        var proj = new ProjectDTO(
+            repo
+            , project
+            , default
+            , false
+            , lastCheck);
         Add(proj.ProjFolder, proj);
         return proj;
     }
@@ -23,12 +29,15 @@ public abstract class CodeData
     protected ProjectDTO Set(
         string repo
         , string project
+        , DateOnly lastCheck
         , params ProjectDTO[] libs)
     {
         var proj = new ProjectDTO(
             repo
             , project
-            , new List<ProjectDTO>(libs));
+            , new List<ProjectDTO>(libs)
+            , false
+            , lastCheck);
         Add(proj.ProjFolder, proj);
         return proj;
     }

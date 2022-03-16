@@ -19,6 +19,7 @@ public class LibData
         CRUDCommandHelper = Set(
             "crud-command-helper"
             , "CRUDCommandHelper"
+            , new DateOnly()
             , ModelHelper
             , EFCoreHelper
             , CLIHelper
@@ -26,6 +27,7 @@ public class LibData
         CLIWizardHelper = Set(
             "cli-wizard-helper"
             , "CLIWizardHelper"
+            , new DateOnly()
             , ModelHelper
             , EFCoreHelper
             , CLIHelper
@@ -33,6 +35,7 @@ public class LibData
         CLIFramework = Set(
             "cli-framework"
             , "CLIFramework"
+            , new DateOnly()
             , CLIHelper
             , DIHelper
             , CRUDCommandHelper

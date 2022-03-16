@@ -3,7 +3,7 @@ namespace Scripter;
 public class LibCData 
     : LibBData
 {
-    protected ProjectDTO? DIHelper;
+    protected ProjectDTO? CLIReader;
     protected ProjectDTO? CommandDotNetHelper;
     protected ProjectDTO? CommandDotNetMDIHelper;
     protected ProjectDTO? CommandDotNetUnityHelper;
@@ -12,15 +12,17 @@ public class LibCData
     {
         base.SetAllData();
         ArgumentNullException.ThrowIfNull(CLIHelper);
-        ArgumentNullException.ThrowIfNull(CLIReader);
-        DIHelper = Set(
-            "di-helper"
-            , "DIHelper"
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        CLIReader = Set(
+            "cli-reader"
+            , "CLIReader"
+            , new DateOnly(2022, 03, 16)
             , CLIHelper
-            , CLIReader);
+            , DIHelper);
         CommandDotNetHelper = Set(
             "commanddotnet-helper"
             , "CommandDotNet.Helper"
+            , new DateOnly()
             , DIHelper);
         CommandDotNetMDIHelper = Set(
             "commanddotnet-helper"

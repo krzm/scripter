@@ -53,12 +53,14 @@ public class AppData
         appStarterData = Set(
             "app-starter"
             , "AppStarter.Data"
+            , new DateOnly()
             , ModelHelper
             , EFCoreHelper);
 
         appStarterModernLib = Set(
             "app-starter"
             , "AppStarter.Lib"
+            , new DateOnly()
             , ModelHelper
             , EFCoreHelper
             , DotNetExtension
@@ -99,6 +101,7 @@ public class AppData
         diyBoxCore = Set(
             "diy-box"
             , "DiyBox.Core"
+            , new DateOnly()
             , CLIFramework);
 
         diyBoxCLIApp = Set(
@@ -126,12 +129,14 @@ public class AppData
         gameData = Set(
             "game-data"
             , "GameData.Data.Lib"
+            , new DateOnly()
             , ModelHelper
             , EFCoreHelper);
 
         gameDataLib = Set(
             "game-data"
             , "GameData.Lib"
+            , new DateOnly()
             , CLIHelper
             , EFCoreHelper
             , CLIReader

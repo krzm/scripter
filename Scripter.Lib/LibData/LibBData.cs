@@ -3,25 +3,23 @@ namespace Scripter;
 public class LibBData 
     : LibAData
 {
-    protected ProjectDTO? CLIHelper;
     protected ProjectDTO? DataToTable;
-    protected ProjectDTO? CLIReader;
+    protected ProjectDTO? CLIHelper;
     
     protected override void SetAllData()
     {
         base.SetAllData();
         ArgumentNullException.ThrowIfNull(ModelHelper);
-        CLIHelper = Set(
-            "cli-helper"
-            , "CLIHelper"
-            , ModelHelper);
+        ArgumentNullException.ThrowIfNull(DIHelper);
         DataToTable = Set(
             "datatotable"
             , "DataToTable"
+            , new DateOnly(2022, 03, 16)
             , ModelHelper);
-        CLIReader = Set(
-            "cli-reader"
-            , "CLIReader"
-            , CLIHelper);
+         CLIHelper = Set(
+            "cli-helper"
+            , "CLIHelper"
+            , new DateOnly(2022, 03, 16)
+            , DIHelper);
     }
 }

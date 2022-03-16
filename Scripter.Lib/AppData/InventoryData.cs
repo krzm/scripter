@@ -24,6 +24,7 @@ public class InventoryData : LibData
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         dataLib = Set(
             "inventory-data", "Inventory.Data"
+            , new DateOnly()
             , ModelHelper, EFCoreHelper);
     }
 
@@ -40,6 +41,7 @@ public class InventoryData : LibData
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         modernLib = Set(
             "inventory-modern-lib", "Inventory.Modern.Lib"
+            , new DateOnly()
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , DataToTable, CRUDCommandHelper, dataLib);
         modernCLIApp = Set(
@@ -66,10 +68,12 @@ public class InventoryData : LibData
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         consoleLib = Set(
             "inventory-console-lib", "Inventory.Console.Lib"
+            , new DateOnly()
             , CLIHelper, CRUDCommandHelper, CLIWizardHelper, CLIFramework
             , dataLib, modernLib);
         wizardLib = Set(
             "inventory-wizard-lib", "Inventory.Wizard.Lib"
+            , new DateOnly()
             , EFCoreHelper, CLIHelper, CLIReader, CLIWizardHelper
             , dataLib);
         consoleLibCLIApp = Set(
