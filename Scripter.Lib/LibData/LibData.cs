@@ -19,7 +19,7 @@ public class LibData
         CRUDCommandHelper = Set(
             "crud-command-helper"
             , "CRUDCommandHelper"
-            , new DateOnly()
+            , new DateOnly(2022, 3, 20)
             , ModelHelper
             , EFCoreHelper
             , CLIHelper

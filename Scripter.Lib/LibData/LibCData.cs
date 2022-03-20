@@ -4,7 +4,6 @@ public class LibCData
     : LibBData
 {
     protected ProjectDTO? CLIReader;
-    protected ProjectDTO? ConfigWrapper;
     protected ProjectDTO? CommandDotNetHelper;
     protected ProjectDTO? CommandDotNetMDIHelper;
     protected ProjectDTO? CommandDotNetUnityHelper;
@@ -14,16 +13,12 @@ public class LibCData
         base.SetAllData();
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
         CLIReader = Set(
             "cli-reader"
             , "CLIReader"
             , new DateOnly(2022, 03, 16)
             , CLIHelper
-            , DIHelper);
-        ConfigWrapper = Set(
-            "config-wrapper"
-            , "Config.Wrapper"
-            , new DateOnly(2022, 03, 18)
             , DIHelper);
         CommandDotNetHelper = Set(
             "commanddotnet-helper"
@@ -33,9 +28,15 @@ public class LibCData
             , ConfigWrapper);
         CommandDotNetMDIHelper = Set(
             "commanddotnet-helper"
-            , "CommandDotNet.MDI.Helper");
+            , "CommandDotNet.MDI.Helper"
+            , new DateOnly(2022, 03, 20)
+            , ConfigWrapper);
         CommandDotNetUnityHelper = Set(
             "commanddotnet-helper"
-            , "CommandDotNet.Unity.Helper");
+            , "CommandDotNet.Unity.Helper"
+            , new DateOnly(2022, 03, 20)
+            , CLIHelper
+            , DIHelper
+            , ConfigWrapper);
     }
 }
