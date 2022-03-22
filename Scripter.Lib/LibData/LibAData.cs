@@ -7,7 +7,6 @@ public class LibAData
     protected ProjectDTO? DIHelper;
     protected ProjectDTO? DotNetExtension;
     protected ProjectDTO? DotNetTool;
-    protected ProjectDTO? ModelHelper;
     
     protected override void SetAllData()
     {
@@ -26,10 +25,6 @@ public class LibAData
         DotNetTool = Set(
             "dotnet-tool"
             , "DotNetTool"
-            , new DateOnly(2022, 03, 16));
-        ModelHelper = Set(
-            "model-helper"
-            , "ModelHelper"
-            , new DateOnly(2022, 03, 16));
+            , new DateOnly(2022, 03, 16)); 
     }
 }

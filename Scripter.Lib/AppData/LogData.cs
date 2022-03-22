@@ -13,11 +13,13 @@ public abstract class LogData
 
     private void SetCommon()
     {
-        ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(ModelHelper);
         dataLib = Set(
-            "log-data", "Log.Data"
-            , new DateOnly()
-            , ModelHelper, EFCoreHelper);
+            "log-data"
+            , "Log.Data"
+            , new DateOnly(2022, 3, 22)
+            , EFCoreHelper
+            , ModelHelper);
     }
 }

@@ -2,7 +2,7 @@ using System.Windows.Input;
 
 namespace Scripter.Lib;
 
-public class ScriptCommand : ICommand
+public class ScriptCommandWithFolders : ICommand
 {
     public event EventHandler? CanExecuteChanged;
     private readonly IProjectList projectList;
@@ -12,7 +12,7 @@ public class ScriptCommand : ICommand
     private readonly List<IProjBuildAll> projBuildAllScripts;
     private readonly IBuildAll buildAllScript;
 
-    public ScriptCommand(
+    public ScriptCommandWithFolders(
         IProjectList projectList
         , List<ICodeData> codeData
         , IScriptParam scriptParam
@@ -47,6 +47,8 @@ public class ScriptCommand : ICommand
             {
                 if (scriptParam.Project.IsApp == false
                     && script is CopyAppScript) continue;
+                SetDir(Path.Combine(scriptParam.ScriptPath
+                    , scriptParam.Project.ProjFolder));
                 WriteScript(script);
             }
         }
@@ -65,6 +67,7 @@ public class ScriptCommand : ICommand
         ArgumentNullException.ThrowIfNull(scriptParam.Project);
         File.WriteAllLines(
             Path.Combine(scriptParam.ScriptPath
+                , scriptParam.Project.ProjFolder
                 , script.File)
             , script.GetScript());
     }
@@ -80,10 +83,21 @@ public class ScriptCommand : ICommand
     private void WriteScript(IProjBuildAll buildScript)
     {
         ArgumentNullException.ThrowIfNull(scriptParam.Project);
-        File.WriteAllLines(
-            Path.Combine(scriptParam.ScriptPath
-                , buildScript.File)
-                , buildScript.GetScript());
+        if(IsDir( Path.Combine(scriptParam.ScriptPath, buildScript.Data.Project)))
+        {
+            File.WriteAllLines(
+                Path.Combine(scriptParam.ScriptPath
+                    , buildScript.Data.Project
+                    , buildScript.File)
+            , buildScript.GetScript());
+        }
+        else
+        {
+            File.WriteAllLines(
+                Path.Combine(scriptParam.ScriptPath
+                    , buildScript.File)
+            , buildScript.GetScript());
+        }
     }
 
     private void WriteScript(IBuildAll buildScript)
@@ -93,5 +107,16 @@ public class ScriptCommand : ICommand
             Path.Combine(scriptParam.ScriptPath
                 , buildScript.File)
             , buildScript.GetScript());
+    }
+
+    private bool IsDir(string path)
+    {
+        return Directory.Exists(path);
+    }
+
+    private void SetDir(string path)
+    {
+        if(Directory.Exists(path)) return;
+        Directory.CreateDirectory(path);
     }
 }
