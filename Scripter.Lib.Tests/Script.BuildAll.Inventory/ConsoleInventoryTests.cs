@@ -6,7 +6,7 @@ public class ConsoleInventoryTests
     : LibTest
 {
     private static readonly ICodeData codeData
-        = new InventoryData();
+        = new ConsoleInventoryData();
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]

@@ -6,7 +6,7 @@ public class ConsoleLogTests
     : LibTest
 {
     private static readonly ICodeData codeData
-        = new LogData();
+        = new ConsoleLogData();
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]

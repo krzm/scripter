@@ -6,7 +6,7 @@ public class ModernInventoryTests
     : LibTest
 {
     private static ICodeData codeData
-        = new InventoryData();
+        = new ModernInventoryData();
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]

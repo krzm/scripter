@@ -12,9 +12,9 @@ public class BuildAllScriptTests
             , new List<ICodeData> 
             {
                 new LibData()
-                , new AppData()
-                , new LogData(),
-                new InventoryData()
+                , new ScripterData()
+                //, new ModernLogData(),
+                //new ModernInventoryData()
             });
 
     [Theory]
@@ -33,30 +33,30 @@ public class BuildAllScriptTests
     [InlineData(12, $"& \"$PSScriptRoot\\CLIFramework.Build.ps1\"")]
     //
     [InlineData(13, $"& \"$PSScriptRoot\\Scripter.Build.ps1\"")]
-    [InlineData(14, $"& \"$PSScriptRoot\\AppStarter.Data.Build.ps1\"")]
-    [InlineData(15, $"& \"$PSScriptRoot\\AppStarter.Lib.Build.ps1\"")]
-    [InlineData(16, $"& \"$PSScriptRoot\\AppStarter.ConsoleApp.Build.ps1\"")]
-    [InlineData(17, $"& \"$PSScriptRoot\\DiyBox.Core.Build.ps1\"")]
-    [InlineData(18, $"& \"$PSScriptRoot\\DiyBox.ConsoleApp.Build.ps1\"")]
-    [InlineData(19, $"& \"$PSScriptRoot\\GameData.Data.Lib.Build.ps1\"")]
-    [InlineData(20, $"& \"$PSScriptRoot\\GameData.Lib.Build.ps1\"")]
-    [InlineData(21, $"& \"$PSScriptRoot\\GameData.ConsoleApp.Build.ps1\"")]
-    //
-    [InlineData(22, $"& \"$PSScriptRoot\\Log.Data.Build.ps1\"")]
-    [InlineData(23, $"& \"$PSScriptRoot\\Log.Modern.Lib.Build.ps1\"")]
-    [InlineData(24, $"& \"$PSScriptRoot\\Log.Modern.ConsoleApp.Build.ps1\"")]
-    [InlineData(25, $"& \"$PSScriptRoot\\Log.Modern.MDI.ConsoleApp.Build.ps1\"")]
-    [InlineData(26, $"& \"$PSScriptRoot\\Log.Console.Lib.Build.ps1\"")]
-    [InlineData(27, $"& \"$PSScriptRoot\\Log.Wizard.Lib.Build.ps1\"")]
-    [InlineData(28, $"& \"$PSScriptRoot\\Log.ConsoleApp.Build.ps1\"")]
-    [InlineData(29, $"& \"$PSScriptRoot\\Log.Modern.Wizard.ConsoleApp.Build.ps1\"")]
-    //
-    [InlineData(30, $"& \"$PSScriptRoot\\Inventory.Data.Build.ps1\"")]
-    [InlineData(31, $"& \"$PSScriptRoot\\Inventory.Modern.Lib.Build.ps1\"")]
-    [InlineData(32, $"& \"$PSScriptRoot\\Inventory.Modern.ConsoleApp.Build.ps1\"")]
-    [InlineData(33, $"& \"$PSScriptRoot\\Inventory.Console.Lib.Build.ps1\"")]
-    [InlineData(34, $"& \"$PSScriptRoot\\Inventory.Wizard.Lib.Build.ps1\"")]
-    [InlineData(35, $"& \"$PSScriptRoot\\Inventory.ConsoleLib.ConsoleApp.Build.ps1\"")]
+    // [InlineData(14, $"& \"$PSScriptRoot\\AppStarter.Data.Build.ps1\"")]
+    // [InlineData(15, $"& \"$PSScriptRoot\\AppStarter.Lib.Build.ps1\"")]
+    // [InlineData(16, $"& \"$PSScriptRoot\\AppStarter.ConsoleApp.Build.ps1\"")]
+    // [InlineData(17, $"& \"$PSScriptRoot\\DiyBox.Core.Build.ps1\"")]
+    // [InlineData(18, $"& \"$PSScriptRoot\\DiyBox.ConsoleApp.Build.ps1\"")]
+    // [InlineData(19, $"& \"$PSScriptRoot\\GameData.Data.Lib.Build.ps1\"")]
+    // [InlineData(20, $"& \"$PSScriptRoot\\GameData.Lib.Build.ps1\"")]
+    // [InlineData(21, $"& \"$PSScriptRoot\\GameData.ConsoleApp.Build.ps1\"")]
+    // //
+    // [InlineData(22, $"& \"$PSScriptRoot\\Log.Data.Build.ps1\"")]
+    // [InlineData(23, $"& \"$PSScriptRoot\\Log.Modern.Lib.Build.ps1\"")]
+    // [InlineData(24, $"& \"$PSScriptRoot\\Log.Modern.ConsoleApp.Build.ps1\"")]
+    // [InlineData(25, $"& \"$PSScriptRoot\\Log.Modern.MDI.ConsoleApp.Build.ps1\"")]
+    // [InlineData(26, $"& \"$PSScriptRoot\\Log.Console.Lib.Build.ps1\"")]
+    // [InlineData(27, $"& \"$PSScriptRoot\\Log.Wizard.Lib.Build.ps1\"")]
+    // [InlineData(28, $"& \"$PSScriptRoot\\Log.ConsoleApp.Build.ps1\"")]
+    // [InlineData(29, $"& \"$PSScriptRoot\\Log.Modern.Wizard.ConsoleApp.Build.ps1\"")]
+    // //
+    // [InlineData(30, $"& \"$PSScriptRoot\\Inventory.Data.Build.ps1\"")]
+    // [InlineData(31, $"& \"$PSScriptRoot\\Inventory.Modern.Lib.Build.ps1\"")]
+    // [InlineData(32, $"& \"$PSScriptRoot\\Inventory.Modern.ConsoleApp.Build.ps1\"")]
+    // [InlineData(33, $"& \"$PSScriptRoot\\Inventory.Console.Lib.Build.ps1\"")]
+    // [InlineData(34, $"& \"$PSScriptRoot\\Inventory.Wizard.Lib.Build.ps1\"")]
+    // [InlineData(35, $"& \"$PSScriptRoot\\Inventory.ConsoleLib.ConsoleApp.Build.ps1\"")]
     // [InlineData(36, $"& \"$PSScriptRoot\\Commander.Build.ps1\"")]
     // [InlineData(37, $"& \"$PSScriptRoot\\TRMApi.Build.ps1\"")]
     // [InlineData(38, $"& \"$PSScriptRoot\\Portal.Build.ps1\"")]

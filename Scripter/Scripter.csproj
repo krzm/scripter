@@ -27,7 +27,10 @@
 	</ItemGroup>
 
 	<!--Debug refs-->
-	<ItemGroup>
+	<!-- <ItemGroup>
+		<Reference Include="DIHelper">
+			<HintPath>..\..\di-helper\DIHelper\bin\Debug\net6.0\DIHelper.dll</HintPath>
+		</Reference>
 		<Reference Include="CLIHelper">
 			<HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
 		</Reference>
@@ -36,9 +39,6 @@
 		</Reference>
 		<Reference Include="Serilog.Wrapper">
 			<HintPath>..\..\serilog-wrapper\Serilog.Wrapper\bin\Debug\net6.0\Serilog.Wrapper.dll</HintPath>
-		</Reference>
-		<Reference Include="DIHelper">
-			<HintPath>..\..\di-helper\DIHelper\bin\Debug\net6.0\DIHelper.dll</HintPath>
 		</Reference>
 		<Reference Include="CommandDotNet.Helper">
 			<HintPath>..\..\commanddotnet-helper\CommandDotNet.Helper\bin\Debug\net6.0\CommandDotNet.Helper.dll</HintPath>
@@ -52,17 +52,21 @@
 		<Reference Include="DataToTable">
 			<HintPath>..\..\datatotable\DataToTable\bin\Debug\net6.0\DataToTable.dll</HintPath>
 		</Reference>
-	</ItemGroup>
+	</ItemGroup> -->
+	
 	<!--Release refs-->
-	<!-- <ItemGroup>
+	<ItemGroup>
+		<Reference Include="DIHelper">
+			<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
+		</Reference>
 		<Reference Include="CLIHelper">
 			<HintPath>..\..\..\Build\cli-helper\CLIHelper\CLIHelper.dll</HintPath>
 		</Reference>
 		<Reference Include="Config.Wrapper">
 			<HintPath>..\..\..\Build\config-wrapper\Config.Wrapper\Config.Wrapper.dll</HintPath>
 		</Reference>
-		<Reference Include="DIHelper">
-			<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
+		<Reference Include="Serilog.Wrapper">
+			<HintPath>..\..\..\Build\serilog-wrapper\Serilog.Wrapper\Serilog.Wrapper.dll</HintPath>
 		</Reference>
 		<Reference Include="CommandDotNet.Helper">
 			<HintPath>..\..\..\Build\commanddotnet-helper\CommandDotNet.Helper\CommandDotNet.Helper.dll</HintPath>
@@ -76,5 +80,5 @@
 		<Reference Include="DataToTable">
 			<HintPath>..\..\..\Build\datatotable\DataToTable\DataToTable.dll</HintPath>
 		</Reference>
-	</ItemGroup> -->
+	</ItemGroup>
 </Project>

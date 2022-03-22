@@ -41,16 +41,16 @@ public class AppCommands
 
     private void SetProjectBuildAll()
     {
-        RegisterProjBuildAll<AppData>(
+        RegisterProjBuildAll<ScripterData>(
             "Scripter.BuildAll.ps1"
             , "Scripter");
-        RegisterProjBuildAll<AppData>(
+        RegisterProjBuildAll<AppStarterData>(
             "AppStarter.BuildAll.ps1"
             , "AppStarter.ConsoleApp");
-        RegisterProjBuildAll<AppData>(
+        RegisterProjBuildAll<DiyBoxData>(
             "DiyBox.BuildAll.ps1"
             , "DiyBox.ConsoleApp");
-        RegisterProjBuildAll<AppData>(
+        RegisterProjBuildAll<GameData>(
             "GameData.BuildAll.ps1"
             , "GameData.ConsoleApp");
     }
@@ -70,26 +70,26 @@ public class AppCommands
 
     private void SetLogBuildAll()
     {
-        RegisterProjBuildAll<LogData>(
+        RegisterProjBuildAll<ConsoleLogData>(
             "ConsoleLibLog.BuildAll.ps1"
             , "Log.ConsoleApp");
-        RegisterProjBuildAll<LogData>(
+        RegisterProjBuildAll<ModernMDILogData>(
             "ModernMDILog.BuildAll.ps1"
             , "Log.Modern.MDI.ConsoleApp");
-        RegisterProjBuildAll<LogData>(
+        RegisterProjBuildAll<ModernWizardLogData>(
             "ModernLogWizard.BuildAll.ps1"
             , "Log.Modern.Wizard.ConsoleApp");
-        RegisterProjBuildAll<LogData>(
+        RegisterProjBuildAll<ModernLogData>(
             "ModernLog.BuildAll.ps1"
             , "Log.Modern.ConsoleApp");
     }
 
     private void SetInventoryBuildAll()
     {
-        RegisterProjBuildAll<InventoryData>(
+        RegisterProjBuildAll<ConsoleInventoryData>(
             "ConsoleLibInventory.BuildAll.ps1"
             , "Inventory.ConsoleLib.ConsoleApp");
-        RegisterProjBuildAll<InventoryData>(
+        RegisterProjBuildAll<ModernInventoryData>(
             "ModernInventory.BuildAll.ps1"
             , "Inventory.Modern.ConsoleApp");
     }   

@@ -6,6 +6,7 @@ public class LibCData
     protected ProjectDTO? CLIReader;
     protected ProjectDTO? CommandDotNetHelper;
     protected ProjectDTO? CommandDotNetMDIHelper;
+    protected ProjectDTO? CommandDotNetIoCUnity;
     protected ProjectDTO? CommandDotNetUnityHelper;
     
     protected override void SetAllData()
@@ -31,6 +32,9 @@ public class LibCData
             , "CommandDotNet.MDI.Helper"
             , new DateOnly(2022, 03, 20)
             , ConfigWrapper);
+        CommandDotNetIoCUnity = Set(
+            "commanddotnet-helper/"
+            , "CommandDotNet.IoC.Unity");
         CommandDotNetUnityHelper = Set(
             "commanddotnet-helper"
             , "CommandDotNet.Unity.Helper"

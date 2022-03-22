@@ -6,7 +6,7 @@ public class ModernLogTests
     : LibTest
 {
     private static ICodeData codeData
-        = new LogData();
+        = new ModernLogData();
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]

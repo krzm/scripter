@@ -17,9 +17,17 @@ public class AppDataSet
         Container.RegisterSingleton<ICodeData, CommanderData>(nameof(CommanderData));
 
         Container.RegisterSingleton<ICodeData, LibData>(nameof(LibData));
-        Container.RegisterSingleton<ICodeData, AppData>(nameof(AppData));
-        Container.RegisterSingleton<ICodeData, LogData>(nameof(LogData));
-        Container.RegisterSingleton<ICodeData, InventoryData>(nameof(InventoryData));
+        
+        Container.RegisterSingleton<ICodeData, ScripterData>(nameof(ScripterData));
+        Container.RegisterSingleton<ICodeData, AppStarterData>(nameof(AppStarterData));
+        Container.RegisterSingleton<ICodeData, DiyBoxData>(nameof(DiyBoxData));
+        Container.RegisterSingleton<ICodeData, GameData>(nameof(GameData));
+        Container.RegisterSingleton<ICodeData, ConsoleLogData>(nameof(ConsoleLogData));
+        Container.RegisterSingleton<ICodeData, ModernMDILogData>(nameof(ModernMDILogData));
+        Container.RegisterSingleton<ICodeData, ModernWizardLogData>(nameof(ModernWizardLogData));
+        Container.RegisterSingleton<ICodeData, ModernLogData>(nameof(ModernLogData));
+        Container.RegisterSingleton<ICodeData, ConsoleInventoryData>(nameof(ConsoleInventoryData));
+        Container.RegisterSingleton<ICodeData, ModernInventoryData>(nameof(ModernInventoryData));
 
         Container.RegisterType<IProjectExtractor, ProjectExtractor>();
         

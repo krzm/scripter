@@ -46,13 +46,15 @@ public abstract class CodeData
         string repo
         , string project
         , bool isApp = false
+        , DateOnly lastCheck = default
         , params ProjectDTO[] libs)
     {
         var proj = new ProjectDTO(
             repo
             , project
             , new List<ProjectDTO>(libs)
-            , isApp);
+            , isApp
+            , lastCheck);
         Add(proj.ProjFolder, proj);
         return proj;
     }

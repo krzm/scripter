@@ -3,6 +3,7 @@ namespace Scripter;
 public class LibData 
     : LibCData
 {
+    protected ProjectDTO? SerilogWrapper;
     protected ProjectDTO? CRUDCommandHelper;
     protected ProjectDTO? CLIWizardHelper;
     protected ProjectDTO? CLIFramework;
@@ -16,6 +17,14 @@ public class LibData
         ArgumentNullException.ThrowIfNull(DataToTable);
         ArgumentNullException.ThrowIfNull(CLIReader);
         ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        SerilogWrapper = Set(
+            "serilog-wrapper"
+            , "Serilog.Wrapper"
+            , new DateOnly(2022, 3, 20)
+            , DIHelper
+            , CLIHelper
+            , ConfigWrapper);
         CRUDCommandHelper = Set(
             "crud-command-helper"
             , "CRUDCommandHelper"
@@ -27,18 +36,17 @@ public class LibData
         CLIWizardHelper = Set(
             "cli-wizard-helper"
             , "CLIWizardHelper"
-            , new DateOnly()
+            , new DateOnly(2022, 3, 21)
             , ModelHelper
             , EFCoreHelper
-            , CLIHelper
             , CLIReader);
         CLIFramework = Set(
             "cli-framework"
             , "CLIFramework"
-            , new DateOnly()
-            , CLIHelper
+            , new DateOnly(2022, 3, 21)
             , DIHelper
-            , CRUDCommandHelper
-            , CLIWizardHelper);
+            , CLIHelper
+            , CLIWizardHelper
+            , CRUDCommandHelper);
     }
 }

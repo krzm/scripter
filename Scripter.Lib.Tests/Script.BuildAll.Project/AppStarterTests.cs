@@ -6,7 +6,7 @@ public class AppStarterTests
     : LibTest
 {
     private static ICodeData codeData
-        = new AppData();
+        = new AppStarterData();
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]

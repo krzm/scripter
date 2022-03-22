@@ -8,6 +8,7 @@ public class CommanderData
         Set(
             "commander"
             , "Commander"
-            , true);
+            , true
+            , new DateOnly(2022, 3, 21));
     }
 }

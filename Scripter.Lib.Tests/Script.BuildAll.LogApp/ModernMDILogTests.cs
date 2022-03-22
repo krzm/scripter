@@ -6,7 +6,7 @@ public class ModernMDILogTests
     : LibTest
 {
     private static ICodeData codeData
-        = new LogData();
+        = new ModernMDILogData();
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]
