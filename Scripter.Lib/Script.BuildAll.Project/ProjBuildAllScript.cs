@@ -8,6 +8,8 @@ public class ProjBuildAllScript
     private readonly ICodeData codeData;
     private readonly ProjBuildAllDTO scriptDTO;
 
+    public ProjBuildAllDTO Data => scriptDTO;
+
     public ProjBuildAllScript(
         IProjectExtractor projectExtractor
         , ICodeData codeData
