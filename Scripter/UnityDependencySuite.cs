@@ -19,6 +19,10 @@ public class UnityDependencySuite
         RegisterSet<AppLoggerSet>();
         RegisterSet<AppConfigSet>();
         RegisterSet<AppDataSet>();
+        RegisterSet<JoinableScriptSet>();
+        RegisterSet<ProjBuildAllSet>();
+        RegisterSet<LogBuildAllSet>();
+        RegisterSet<InventoryBuildAllSet>();
     }
 
     protected override void RegisterCommands()
