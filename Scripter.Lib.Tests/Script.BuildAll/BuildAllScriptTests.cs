@@ -7,7 +7,7 @@ public class BuildAllScriptTests
     : LibTest
 {
     private static IProjectList codeData
-        = new ProjectList(
+        = new AllProjList(
             new ProjectExtractor()
             , new List<ICodeData> 
             {

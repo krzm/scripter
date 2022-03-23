@@ -23,6 +23,7 @@ public class UnityDependencySuite
         RegisterSet<ProjBuildAllSet>();
         RegisterSet<LogBuildAllSet>();
         RegisterSet<InventoryBuildAllSet>();
+        RegisterSet<BuildAllSet>();
     }
 
     protected override void RegisterCommands()

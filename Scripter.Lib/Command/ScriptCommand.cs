@@ -5,27 +5,34 @@ namespace Scripter.Lib;
 public class ScriptCommand : ICommand
 {
     public event EventHandler? CanExecuteChanged;
-    private readonly IProjectList projectList;
+    private readonly IProjectList projList;
     private readonly List<ICodeData> codeData;
     private readonly IScriptParam scriptParam;
-    private readonly List<IScript> projectScripts;
+    private readonly List<IScript> projScripts;
     private readonly List<IProjBuildAll> projBuildAllScripts;
-    private readonly IBuildAll buildAllScript;
+    private readonly List<IBuildAll> buildAllScripts;
 
     public ScriptCommand(
-        IProjectList projectList
+        IProjectList projList
         , List<ICodeData> codeData
         , IScriptParam scriptParam
         , List<IScript> projectScripts
         , List<IProjBuildAll> projBuildAllScripts
-        , IBuildAll buildAllScript)
+        , List<IBuildAll> buildAllScripts)
     {
-        this.projectList = projectList;
+        this.projList = projList;
         this.codeData = codeData;
         this.scriptParam = scriptParam;
-        this.projectScripts = projectScripts;
+        this.projScripts = projectScripts;
         this.projBuildAllScripts = projBuildAllScripts;
-        this.buildAllScript = buildAllScript;
+        this.buildAllScripts = buildAllScripts;
+
+        ArgumentNullException.ThrowIfNull(this.projList);
+        ArgumentNullException.ThrowIfNull(this.codeData);
+        ArgumentNullException.ThrowIfNull(this.scriptParam);
+        ArgumentNullException.ThrowIfNull(this.projScripts);
+        ArgumentNullException.ThrowIfNull(this.projBuildAllScripts);
+        ArgumentNullException.ThrowIfNull(this.buildAllScripts);
     }
 
     public bool CanExecute(object? parameter) => true;
@@ -34,16 +41,16 @@ public class ScriptCommand : ICommand
     {
         WriteProjectScripts();
         WriteProjBuildAllScripts();
-        WriteScript(buildAllScript);
+        WriteBuildAllScripts();
     }
 
     private void WriteProjectScripts()
     {
-        foreach (var project in projectList.Projects)
+        foreach (var project in projList.Projects)
         {
             SetProject(project);
             ArgumentNullException.ThrowIfNull(scriptParam.Project);
-            foreach (var script in projectScripts)
+            foreach (var script in projScripts)
             {
                 if (scriptParam.Project.IsApp == false
                     && script is CopyAppScript) continue;
@@ -84,6 +91,14 @@ public class ScriptCommand : ICommand
             Path.Combine(scriptParam.ScriptPath
                 , buildScript.File)
                 , buildScript.GetScript());
+    }
+
+    private void WriteBuildAllScripts()
+    {
+        foreach (var script in buildAllScripts)
+        {
+            WriteScript(script);   
+        }
     }
 
     private void WriteScript(IBuildAll buildScript)

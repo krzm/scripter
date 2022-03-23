@@ -1,6 +1,7 @@
 namespace Scripter;
 
-public class ProjectExtractor : IProjectExtractor
+public class ProjectExtractor 
+    : IProjectExtractor
 {
     private List<ProjectDTO> projects;
 
