@@ -21,7 +21,7 @@ public class ModernMDILogData
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
-        ArgumentNullException.ThrowIfNull(dataLib);
+        ArgumentNullException.ThrowIfNull(DataLib);
         ArgumentNullException.ThrowIfNull(ModernLib);
         modernMDICLIApp =  Set(
             "log-modern-mdi-consoleapp", "Log.Modern.MDI.ConsoleApp"
@@ -29,6 +29,6 @@ public class ModernMDILogData
             , new DateOnly()
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , DataToTable, DIHelper, CommandDotNetUnityHelper, CRUDCommandHelper
-            , dataLib, ModernLib);
+            , DataLib, ModernLib);
     }
 }

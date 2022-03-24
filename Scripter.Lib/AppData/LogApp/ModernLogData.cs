@@ -21,7 +21,7 @@ public class ModernLogData
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
-        ArgumentNullException.ThrowIfNull(dataLib);
+        ArgumentNullException.ThrowIfNull(DataLib);
         ModernLib = Set(
             "log-modern-lib"
             , "Log.Modern.Lib"
@@ -33,7 +33,7 @@ public class ModernLogData
             , CLIHelper
             , DataToTable
             , CRUDCommandHelper
-            , dataLib);
+            , DataLib);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         ArgumentNullException.ThrowIfNull(SerilogWrapper);
         ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
@@ -55,7 +55,7 @@ public class ModernLogData
             , CommandDotNetHelper
             , CommandDotNetIoCUnity
             , CommandDotNetUnityHelper
-            , dataLib
+            , DataLib
             , ModernLib);
     }
 }

@@ -23,7 +23,7 @@ public class ConsoleLogData
         ArgumentNullException.ThrowIfNull(CLIWizardHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
-        ArgumentNullException.ThrowIfNull(dataLib);
+        ArgumentNullException.ThrowIfNull(DataLib);
         ArgumentNullException.ThrowIfNull(ModernLib);
         ArgumentNullException.ThrowIfNull(CLIFramework);
         ArgumentNullException.ThrowIfNull(CLIReader);
@@ -32,19 +32,19 @@ public class ConsoleLogData
             "log-console-lib", "Log.Console.Lib"
             , new DateOnly()
             , CLIHelper, CRUDCommandHelper, CLIWizardHelper, CLIFramework
-            , dataLib, ModernLib);
+            , DataLib, ModernLib);
         WizardLib = Set(
             "log-wizard-lib", "Log.Wizard.Lib"
             , new DateOnly()
             , EFCoreHelper, CLIHelper, CLIReader, CLIWizardHelper
-            , dataLib);
+            , DataLib);
         consoleLibCLIApp = Set(
             "log-console-lib-console-app", "Log.ConsoleApp"
             , true
             , new DateOnly()
             , ModelHelper, EFCoreHelper, DotNetExtension, DataToTable
             , CLIHelper, CLIReader, DIHelper, CRUDCommandHelper
-            , CommandDotNetUnityHelper, CLIWizardHelper, CLIFramework, dataLib
+            , CommandDotNetUnityHelper, CLIWizardHelper, CLIFramework, DataLib
             , WizardLib, ModernLib, consoleLib);
     }
 }

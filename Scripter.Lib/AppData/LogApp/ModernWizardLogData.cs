@@ -21,7 +21,7 @@ public class ModernWizardLogData
         ArgumentNullException.ThrowIfNull(CLIWizardHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
-        ArgumentNullException.ThrowIfNull(dataLib);
+        ArgumentNullException.ThrowIfNull(DataLib);
         ArgumentNullException.ThrowIfNull(ModernLib);
         ArgumentNullException.ThrowIfNull(CLIReader);
         ArgumentNullException.ThrowIfNull(DIHelper);
@@ -32,7 +32,7 @@ public class ModernWizardLogData
             , new DateOnly()
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , CLIReader, DataToTable, DIHelper, CommandDotNetUnityHelper
-            , CLIWizardHelper, CRUDCommandHelper, dataLib, WizardLib
+            , CLIWizardHelper, CRUDCommandHelper, DataLib, WizardLib
             , ModernLib);
     }
 }

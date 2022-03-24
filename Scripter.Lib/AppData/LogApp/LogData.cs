@@ -3,7 +3,7 @@ namespace Scripter;
 public abstract class LogData 
     : LibData
 {
-    protected ProjectDTO? dataLib;
+    protected ProjectDTO? DataLib;
     
     protected override void SetAllData()
     {
@@ -15,7 +15,7 @@ public abstract class LogData
     {
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
-        dataLib = Set(
+        DataLib = Set(
             "log-data"
             , "Log.Data"
             , new DateOnly(2022, 3, 22)
