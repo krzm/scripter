@@ -37,9 +37,6 @@
 		<Reference Include="DIHelper">
 			<HintPath>..\..\di-helper\DIHelper\bin\Debug\net6.0\DIHelper.dll</HintPath>
 		</Reference>
-		<Reference Include="CLIHelper">
-			<HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
-		</Reference>
 		<Reference Include="Config.Wrapper">
 			<HintPath>..\..\config-wrapper\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
 		</Reference>
@@ -48,9 +45,6 @@
 		</Reference>
 		<Reference Include="CommandDotNet.Helper">
 			<HintPath>..\..\commanddotnet-helper\CommandDotNet.Helper\bin\Debug\net6.0\CommandDotNet.Helper.dll</HintPath>
-		</Reference>
-		<Reference Include="CommandDotNet.IoC.Unity">
-			<HintPath>..\..\commanddotnet-helper\CommandDotNet.IoC.Unity\bin\Debug\net6.0\CommandDotNet.IoC.Unity.dll</HintPath>
 		</Reference>
 		<Reference Include="CommandDotNet.Unity.Helper">
 			<HintPath>..\..\commanddotnet-helper\CommandDotNet.Unity.Helper\bin\Debug\net6.0\CommandDotNet.Unity.Helper.dll</HintPath>
@@ -65,9 +59,6 @@
 		<Reference Include="DIHelper">
 			<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
 		</Reference>
-		<Reference Include="CLIHelper">
-			<HintPath>..\..\..\Build\cli-helper\CLIHelper\CLIHelper.dll</HintPath>
-		</Reference>
 		<Reference Include="Config.Wrapper">
 			<HintPath>..\..\..\Build\config-wrapper\Config.Wrapper\Config.Wrapper.dll</HintPath>
 		</Reference>
@@ -76,9 +67,6 @@
 		</Reference>
 		<Reference Include="CommandDotNet.Helper">
 			<HintPath>..\..\..\Build\commanddotnet-helper\CommandDotNet.Helper\CommandDotNet.Helper.dll</HintPath>
-		</Reference>
-		<Reference Include="CommandDotNet.IoC.Unity">
-			<HintPath>..\..\..\Build\commanddotnet-helper\CommandDotNet.IoC.Unity\CommandDotNet.IoC.Unity.dll</HintPath>
 		</Reference>
 		<Reference Include="CommandDotNet.Unity.Helper">
 			<HintPath>..\..\..\Build\commanddotnet-helper\CommandDotNet.Unity.Helper\CommandDotNet.Unity.Helper.dll</HintPath>
