@@ -21,18 +21,19 @@ public class ModernWizardLogData
         ArgumentNullException.ThrowIfNull(CLIWizardHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
-        ArgumentNullException.ThrowIfNull(DataLib);
-        ArgumentNullException.ThrowIfNull(ModernLib);
+        ArgumentNullException.ThrowIfNull(Data);
+        //ArgumentNullException.ThrowIfNull(ModernLib);
         ArgumentNullException.ThrowIfNull(CLIReader);
         ArgumentNullException.ThrowIfNull(DIHelper);
-        ArgumentNullException.ThrowIfNull(WizardLib);
+        ArgumentNullException.ThrowIfNull(InputWizards);
         modernWizardCLIApp = Set(
             "log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"
             , true
             , new DateOnly()
             , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
             , CLIReader, DataToTable, DIHelper, CommandDotNetUnityHelper
-            , CLIWizardHelper, CRUDCommandHelper, DataLib, WizardLib
-            , ModernLib);
+            , CLIWizardHelper, CRUDCommandHelper, Data, InputWizards
+            //, ModernLib
+            );
     }
 }

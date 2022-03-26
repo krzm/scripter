@@ -1,50 +1,50 @@
 namespace Scripter;
 
 public class ConsoleLogData 
-    : ModernLogData
+    : LogLibData
 {
-    private ProjectDTO? consoleLib;
-    protected ProjectDTO? WizardLib;
     private ProjectDTO? consoleLibCLIApp;
 
     protected override void SetAllData()
     {
         base.SetAllData();
-        SetConsoleLib();
-    }
-
-    private void SetConsoleLib()
-    {
         ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(DotNetExtension);
-        ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
-        ArgumentNullException.ThrowIfNull(CLIWizardHelper);
-        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
-        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
-        ArgumentNullException.ThrowIfNull(DataLib);
-        ArgumentNullException.ThrowIfNull(ModernLib);
-        ArgumentNullException.ThrowIfNull(CLIFramework);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
+        ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(CLIReader);
         ArgumentNullException.ThrowIfNull(DIHelper);
-        consoleLib = Set(
-            "log-console-lib", "Log.Console.Lib"
-            , new DateOnly()
-            , CLIHelper, CRUDCommandHelper, CLIWizardHelper, CLIFramework
-            , DataLib, ModernLib);
-        WizardLib = Set(
-            "log-wizard-lib", "Log.Wizard.Lib"
-            , new DateOnly()
-            , EFCoreHelper, CLIHelper, CLIReader, CLIWizardHelper
-            , DataLib);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(CLIWizardHelper);
+        ArgumentNullException.ThrowIfNull(CLIFramework);
+        ArgumentNullException.ThrowIfNull(Data);
+        ArgumentNullException.ThrowIfNull(Tables);
+        ArgumentNullException.ThrowIfNull(InputWizards);
+        ArgumentNullException.ThrowIfNull(ConsoleLibCmds);
         consoleLibCLIApp = Set(
-            "log-console-lib-console-app", "Log.ConsoleApp"
+            "log-console-lib-console-app"
+            , "Log.ConsoleApp"
             , true
-            , new DateOnly()
-            , ModelHelper, EFCoreHelper, DotNetExtension, DataToTable
-            , CLIHelper, CLIReader, DIHelper, CRUDCommandHelper
-            , CommandDotNetUnityHelper, CLIWizardHelper, CLIFramework, DataLib
-            , WizardLib, ModernLib, consoleLib);
+            , new DateOnly(2022, 3, 26)
+            , ModelHelper
+            , EFCoreHelper
+            , DotNetExtension
+            , DataToTable
+            , ConfigWrapper
+            , SerilogWrapper
+            , CLIHelper
+            , CLIReader
+            , DIHelper
+            , CRUDCommandHelper
+            , CLIWizardHelper
+            , CLIFramework
+            , Data
+            , Tables
+            , InputWizards
+            , ConsoleLibCmds
+            );
     }
 }

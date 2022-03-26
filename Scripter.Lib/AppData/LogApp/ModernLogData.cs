@@ -1,44 +1,26 @@
 namespace Scripter;
 
 public class ModernLogData 
-    : LogData
+    : LogLibData
 {
-    protected ProjectDTO? ModernLib;
     private ProjectDTO? modernCLIApp;
 
     protected override void SetAllData()
     {
         base.SetAllData();
-        SetModern();
-    }
-
-    private void SetModern()
-    {
-        ArgumentNullException.ThrowIfNull(DotNetExtension);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
-        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
-        ArgumentNullException.ThrowIfNull(DataLib);
-        ModernLib = Set(
-            "log-modern-lib"
-            , "Log.Modern.Lib"
-            , new DateOnly(2022, 3, 22)
-            , DotNetExtension
-            , DIHelper
-            , EFCoreHelper
-            , ModelHelper
-            , CLIHelper
-            , DataToTable
-            , CRUDCommandHelper
-            , DataLib);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         ArgumentNullException.ThrowIfNull(SerilogWrapper);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetIoCUnity);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+        ArgumentNullException.ThrowIfNull(Data);
+        ArgumentNullException.ThrowIfNull(ModernLibCmds);
         modernCLIApp = Set(
             "log-modern-consoleapp"
             , "Log.Modern.ConsoleApp"
@@ -55,7 +37,7 @@ public class ModernLogData
             , CommandDotNetHelper
             , CommandDotNetIoCUnity
             , CommandDotNetUnityHelper
-            , DataLib
-            , ModernLib);
+            , Data
+            , ModernLibCmds);
     }
 }
