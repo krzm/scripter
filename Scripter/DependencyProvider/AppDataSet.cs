@@ -15,8 +15,8 @@ public class AppDataSet
 
     public override void Register()
     {
-        Container.RegisterSingleton<ICodeData, LibData>(
-            nameof(LibData));
+        Container.RegisterSingleton<ICodeData, ManyRefLibData>(
+            nameof(ManyRefLibData));
 
         Container.RegisterSingleton<ICodeData, CommanderData>(
             nameof(CommanderData));
@@ -47,7 +47,7 @@ public class AppDataSet
             , new InjectionConstructor(
                 Container.Resolve<IProjectExtractor>()
                 , Container.Resolve<ICodeData>(
-                    nameof(LibData))));
+                    nameof(ManyRefLibData))));
         Container.RegisterSingleton<IProjectList, AllProjList>(
             nameof(AllProjList));
     }

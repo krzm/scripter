@@ -1,7 +1,7 @@
 namespace Scripter;
 
 public class DiyBoxData 
-    : LibData
+    : ManyRefLibData
 {
     private ProjectDTO? diyBoxCore;
     private ProjectDTO? diyBoxCLIApp;

@@ -1,12 +1,11 @@
 namespace Scripter;
 
-public class LibBData 
-    : LibAData
+public class OneRefLibData 
+    : IndependantLibData
 {
     protected ProjectDTO? CLIHelper;
     protected ProjectDTO? ConfigWrapper;
     protected ProjectDTO? ModelHelper;
-    protected ProjectDTO? DataToTable;
     
     protected override void SetAllData()
     {
@@ -27,10 +26,5 @@ public class LibBData
             , "ModelHelper"
             , new DateOnly(2022, 03, 22)
             , DIHelper);
-        DataToTable = Set(
-            "datatotable"
-            , "DataToTable"
-            , new DateOnly(2022, 03, 16)
-            , ModelHelper);
     }
 }

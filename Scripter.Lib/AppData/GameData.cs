@@ -1,7 +1,7 @@
 namespace Scripter;
 
 public class GameData 
-    : LibData
+    : ManyRefLibData
 {
     private ProjectDTO? gameData;
     private ProjectDTO? gameDataLib;

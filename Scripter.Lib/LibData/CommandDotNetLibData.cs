@@ -1,9 +1,8 @@
 namespace Scripter;
 
-public class LibCData 
-    : LibBData
+public class CommandDotNetLibData 
+    : OneRefLibData
 {
-    protected ProjectDTO? CLIReader;
     protected ProjectDTO? CommandDotNetHelper;
     protected ProjectDTO? CommandDotNetMDIHelper;
     protected ProjectDTO? CommandDotNetIoCUnity;
@@ -15,12 +14,6 @@ public class LibCData
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
-        CLIReader = Set(
-            "cli-reader"
-            , "CLIReader"
-            , new DateOnly(2022, 03, 16)
-            , CLIHelper
-            , DIHelper);
         CommandDotNetHelper = Set(
             "commanddotnet-helper"
             , "CommandDotNet.Helper"

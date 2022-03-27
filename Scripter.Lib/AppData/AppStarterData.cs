@@ -1,7 +1,7 @@
 namespace Scripter;
 
 public class AppStarterData 
-    : LibData
+    : ManyRefLibData
 {
     private ProjectDTO? appStarterData;
     private ProjectDTO? appStarterModernLib;

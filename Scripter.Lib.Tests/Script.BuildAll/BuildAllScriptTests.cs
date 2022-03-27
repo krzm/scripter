@@ -11,7 +11,7 @@ public class BuildAllScriptTests
             new ProjectExtractor()
             , new List<ICodeData> 
             {
-                new LibData()
+                new ManyRefLibData()
                 //, new ScripterData()
                 //, new ModernLogData(),
                 //new ModernInventoryData()

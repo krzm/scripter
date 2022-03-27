@@ -1,6 +1,6 @@
 namespace Scripter;
 
-public class LibAData 
+public class IndependantLibData 
     : CodeData
 {
     protected ProjectDTO? EFCoreHelper;

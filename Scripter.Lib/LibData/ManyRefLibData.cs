@@ -1,7 +1,7 @@
 namespace Scripter;
 
-public class LibData 
-    : LibCData
+public class ManyRefLibData 
+    : TwoRefLibData
 {
     protected ProjectDTO? SerilogWrapper;
     protected ProjectDTO? CRUDCommandHelper;

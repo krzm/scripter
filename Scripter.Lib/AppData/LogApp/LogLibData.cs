@@ -1,7 +1,7 @@
 namespace Scripter;
 
 public abstract class LogLibData 
-    : LibData
+    : ManyRefLibData
 {
     protected ProjectDTO? Data;
     protected ProjectDTO? Tables;
