@@ -21,11 +21,13 @@ public abstract class LogLibData
             , EFCoreHelper
             , ModelHelper
             );
+        ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
         Tables = Set(
             "log-table"
             , "Log.Table"
-            , new DateOnly(2022, 3, 26)
+            , new DateOnly(2022, 3, 27)
+            , DIHelper
             , DataToTable
             , ModelHelper
             , Data

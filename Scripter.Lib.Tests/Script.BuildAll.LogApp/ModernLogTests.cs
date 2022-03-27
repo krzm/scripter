@@ -21,9 +21,10 @@ public class ModernLogTests
     [InlineData(9, $"& \"$PSScriptRoot\\CommandDotNet.IoC.Unity.Build.ps1\"")]
     [InlineData(10, $"& \"$PSScriptRoot\\CommandDotNet.Unity.Helper.Build.ps1\"")]
     [InlineData(11, $"& \"$PSScriptRoot\\Log.Data.Build.ps1\"")]
-    [InlineData(12, $"& \"$PSScriptRoot\\DotNetExtension.Build.ps1\"")]
-    [InlineData(13, $"& \"$PSScriptRoot\\Log.Modern.Lib.Build.ps1\"")]
-    [InlineData(14, $"& \"$PSScriptRoot\\Log.Modern.ConsoleApp.Build.ps1\"")]
+    [InlineData(12, $"& \"$PSScriptRoot\\Log.Table.Build.ps1\"")]
+    [InlineData(13, $"& \"$PSScriptRoot\\DotNetExtension.Build.ps1\"")]
+    [InlineData(14, $"& \"$PSScriptRoot\\Log.Modern.Lib.Build.ps1\"")]
+    [InlineData(15, $"& \"$PSScriptRoot\\Log.Modern.ConsoleApp.Build.ps1\"")]
     public override void TestScriptContent(
         int index
         , string expected)

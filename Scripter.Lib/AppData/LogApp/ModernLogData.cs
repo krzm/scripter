@@ -20,6 +20,7 @@ public class ModernLogData
         ArgumentNullException.ThrowIfNull(CommandDotNetIoCUnity);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         ArgumentNullException.ThrowIfNull(Data);
+        ArgumentNullException.ThrowIfNull(Tables);
         ArgumentNullException.ThrowIfNull(ModernLibCmds);
         modernCLIApp = Set(
             "log-modern-consoleapp"
@@ -38,6 +39,7 @@ public class ModernLogData
             , CommandDotNetIoCUnity
             , CommandDotNetUnityHelper
             , Data
+            , Tables
             , ModernLibCmds);
     }
 }
