@@ -13,26 +13,33 @@ public class ModernMDILogData
         ArgumentNullException.ThrowIfNull(DotNetExtension);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
         ArgumentNullException.ThrowIfNull(DIHelper);
-        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetMDIHelper);
         ArgumentNullException.ThrowIfNull(Data);
+        ArgumentNullException.ThrowIfNull(Tables);
         ArgumentNullException.ThrowIfNull(ModernLibCmds);
-        modernMDICLIApp =  Set(
+        modernMDICLIApp = Set(
             "log-modern-mdi-consoleapp"
             , "Log.Modern.MDI.ConsoleApp"
             , true
-            , new DateOnly()
+            , new DateOnly(2022, 3, 31)
             , ModelHelper
             , EFCoreHelper
             , DotNetExtension
             , CLIHelper
             , DataToTable
+            , ConfigWrapper
+            , SerilogWrapper
             , DIHelper
-            , CommandDotNetUnityHelper
             , CRUDCommandHelper
+            , CommandDotNetHelper
+            , CommandDotNetMDIHelper
             , Data
-            , ModernLibCmds
-            );
+            , Tables
+            , ModernLibCmds);
     }
 }
