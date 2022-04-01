@@ -26,10 +26,10 @@ public abstract class LogLibData
         Tables = Set(
             "log-table"
             , "Log.Table"
-            , new DateOnly(2022, 3, 27)
+            , new DateOnly(2022, 4, 1)
             , DIHelper
-            , DataToTable
             , ModelHelper
+            , DataToTable
             , Data
         );
         ArgumentNullException.ThrowIfNull(CLIHelper);
@@ -39,13 +39,13 @@ public abstract class LogLibData
         ConsoleLibCmds = Set(
             "log-console-lib"
             , "Log.Console.Lib"
-            , new DateOnly(2022, 3, 26)
+            , new DateOnly(2022, 4, 1)
             , EFCoreHelper
             , CLIHelper
+            , DataToTable
             , CRUDCommandHelper
             , CLIWizardHelper
             , CLIFramework
-            , DataToTable
             , Data
             );
         ArgumentNullException.ThrowIfNull(CLIReader);
@@ -63,12 +63,12 @@ public abstract class LogLibData
         ModernLibCmds = Set(
             "log-modern-lib"
             , "Log.Modern.Lib"
-            , new DateOnly(2022, 3, 22)
-            , DotNetExtension
-            , DIHelper
+            , new DateOnly(2022, 4, 1)
             , EFCoreHelper
-            , ModelHelper
+            , DIHelper
+            , DotNetExtension
             , CLIHelper
+            , ModelHelper
             , DataToTable
             , CRUDCommandHelper
             , Data
