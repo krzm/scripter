@@ -23,12 +23,18 @@ public class ScripterData
             "scripter"
             , "Scripter"
             , true
-            , new DateOnly(2022, 03, 24)
+            , new DateOnly(2022, 4, 1)
+            //IndependantLibData
             , DIHelper
+            //OneRefLibData
             , ConfigWrapper
-            , SerilogWrapper
+            //TwoRefLibData
+            , DataToTable
+            //CommandDotNetLibData
             , CommandDotNetHelper
             , CommandDotNetUnityHelper
-            , DataToTable);
+            //ManyRefLibData
+            , SerilogWrapper
+            );
     }
 }

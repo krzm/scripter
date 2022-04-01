@@ -15,14 +15,16 @@ public class TwoRefLibData
         CLIReader = Set(
             "cli-reader"
             , "CLIReader"
-            , new DateOnly(2022, 03, 16)
+            , new DateOnly(2022, 4, 1)
+            , DIHelper
             , CLIHelper
-            , DIHelper);
+            );
         DataToTable = Set(
             "datatotable"
             , "DataToTable"
-            , new DateOnly(2022, 03, 27)
+            , new DateOnly(2022, 4, 1)
+            , DIHelper
             , ModelHelper
-            , DIHelper);
+            );
     }
 }

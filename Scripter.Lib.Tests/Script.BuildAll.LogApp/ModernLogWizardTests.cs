@@ -9,7 +9,7 @@ public class ModernLogWizardTests
         = new ModernWizardLogData();
 
     [Theory]
-      //IndependantLibData
+    //IndependantLibData
     [InlineData(0, "& \"$PSScriptRoot\\EFCoreHelper.Build.ps1\"")]
     [InlineData(1, "& \"$PSScriptRoot\\DIHelper.Build.ps1\"")]
     [InlineData(2, "& \"$PSScriptRoot\\DotNetExtension.Build.ps1\"")]

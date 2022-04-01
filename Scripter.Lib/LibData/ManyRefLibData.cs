@@ -11,12 +11,13 @@ public class ManyRefLibData
     protected override void SetAllData()
     {
         base.SetAllData();
-        ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
-        ArgumentNullException.ThrowIfNull(CLIHelper);
-        ArgumentNullException.ThrowIfNull(DataToTable);
-        ArgumentNullException.ThrowIfNull(CLIReader);
         ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(CLIReader);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         SerilogWrapper = Set(
             "serilog-wrapper"
