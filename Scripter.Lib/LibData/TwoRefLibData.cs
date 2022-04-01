@@ -9,9 +9,9 @@ public class TwoRefLibData
     protected override void SetAllData()
     {
         base.SetAllData();
+        ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
-        ArgumentNullException.ThrowIfNull(DIHelper);
         CLIReader = Set(
             "cli-reader"
             , "CLIReader"
