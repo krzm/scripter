@@ -28,19 +28,24 @@ public class ConsoleLogData
             "log-console-lib-console-app"
             , "Log.ConsoleApp"
             , true
-            , new DateOnly(2022, 3, 26)
-            , ModelHelper
+            , new DateOnly(2022, 4, 1)
+            //IndependantLibData
             , EFCoreHelper
-            , DotNetExtension
-            , DataToTable
-            , ConfigWrapper
-            , SerilogWrapper
-            , CLIHelper
-            , CLIReader
             , DIHelper
+            , DotNetExtension
+            //OneRefLibData
+            , CLIHelper
+            , ConfigWrapper
+            , ModelHelper
+            //TwoRefLibData
+            , CLIReader
+            , DataToTable
+            //ManyRefLibData
+            , SerilogWrapper
             , CRUDCommandHelper
             , CLIWizardHelper
             , CLIFramework
+            //Log
             , Data
             , Tables
             , InputWizards

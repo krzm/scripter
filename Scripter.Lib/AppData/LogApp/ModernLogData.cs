@@ -8,17 +8,22 @@ public class ModernLogData
     protected override void SetAllData()
     {
         base.SetAllData();
-        ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
-        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(DIHelper);
+
         ArgumentNullException.ThrowIfNull(CLIHelper);
-        ArgumentNullException.ThrowIfNull(DataToTable);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
-        ArgumentNullException.ThrowIfNull(SerilogWrapper);
-        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+
+        ArgumentNullException.ThrowIfNull(DataToTable);
+
         ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetIoCUnity);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+       
         ArgumentNullException.ThrowIfNull(Data);
         ArgumentNullException.ThrowIfNull(Tables);
         ArgumentNullException.ThrowIfNull(ModernLibCmds);
@@ -26,18 +31,24 @@ public class ModernLogData
             "log-modern-consoleapp"
             , "Log.Modern.ConsoleApp"
             , true
-            , new DateOnly(2022, 3, 22)
-            , DIHelper
+            , new DateOnly(2022, 4, 1)
+            //IndependantLibData
             , EFCoreHelper
-            , ModelHelper
+            , DIHelper
+            //OneRefLibData
             , CLIHelper
-            , DataToTable
             , ConfigWrapper
-            , SerilogWrapper
-            , CRUDCommandHelper
+            , ModelHelper
+            //TwoRefLibData
+            , DataToTable
+            //CommandDotNetLibData
             , CommandDotNetHelper
             , CommandDotNetIoCUnity
             , CommandDotNetUnityHelper
+            //ManyRefLibData
+            , SerilogWrapper
+            , CRUDCommandHelper
+            //Log
             , Data
             , Tables
             , ModernLibCmds);
