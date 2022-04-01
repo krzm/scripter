@@ -26,18 +26,24 @@ public class ModernMDILogData
             "log-modern-mdi-consoleapp"
             , "Log.Modern.MDI.ConsoleApp"
             , true
-            , new DateOnly(2022, 3, 31)
-            , ModelHelper
+            , new DateOnly(2022, 4, 1)
+            //IndependantLibData
             , EFCoreHelper
-            , DotNetExtension
-            , CLIHelper
-            , DataToTable
-            , ConfigWrapper
-            , SerilogWrapper
             , DIHelper
-            , CRUDCommandHelper
+            , DotNetExtension
+            //OneRefLibData
+            , CLIHelper
+            , ConfigWrapper
+            , ModelHelper
+            //TwoRefLibData
+            , DataToTable
+            //CommandDotNetLibData
             , CommandDotNetHelper
             , CommandDotNetMDIHelper
+            //ManyRefLibData
+            , SerilogWrapper
+            , CRUDCommandHelper
+            //Log
             , Data
             , Tables
             , ModernLibCmds);

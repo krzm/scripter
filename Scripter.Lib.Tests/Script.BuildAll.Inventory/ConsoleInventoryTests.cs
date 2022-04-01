@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace Scripter.Lib.Tests.BuildAll.Log;
+namespace Scripter.Lib.Tests.BuildAll.Inventory;
 
 public class ConsoleInventoryTests 
     : LibTest
