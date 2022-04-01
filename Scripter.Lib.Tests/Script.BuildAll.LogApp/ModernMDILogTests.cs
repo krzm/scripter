@@ -12,7 +12,7 @@ public class ModernMDILogTests
     //IndependantLibData
     [InlineData(0, "& \"$PSScriptRoot\\EFCoreHelper.Build.ps1\"")]
     [InlineData(1, "& \"$PSScriptRoot\\DIHelper.Build.ps1\"")]
-    [InlineData(2, "& \"$PSScriptRoot\\DotNe tExtension.Build.ps1\"")]
+    [InlineData(2, "& \"$PSScriptRoot\\DotNetExtension.Build.ps1\"")]
     //OneRefLibData
     [InlineData(3, "& \"$PSScriptRoot\\CLIHelper.Build.ps1\"")]
     [InlineData(4, "& \"$PSScriptRoot\\Config.Wrapper.Build.ps1\"")]

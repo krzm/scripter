@@ -9,21 +9,30 @@ public class ModernLogWizardTests
         = new ModernWizardLogData();
 
     [Theory]
-    [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]
-    [InlineData(1, $"& \"$PSScriptRoot\\EFCoreHelper.Build.ps1\"")]
-    [InlineData(2, $"& \"$PSScriptRoot\\DotNetExtension.Build.ps1\"")]
-    [InlineData(3, $"& \"$PSScriptRoot\\CLIHelper.Build.ps1\"")]
-    [InlineData(4, $"& \"$PSScriptRoot\\CLIReader.Build.ps1\"")]
-    [InlineData(5, $"& \"$PSScriptRoot\\DataToTable.Build.ps1\"")]
-    [InlineData(6, $"& \"$PSScriptRoot\\DIHelper.Build.ps1\"")]
-    [InlineData(7, $"& \"$PSScriptRoot\\CommandDotNet.IoC.Unity.Build.ps1\"")]
-    [InlineData(8, $"& \"$PSScriptRoot\\CommandDotNet.Helper.Build.ps1\"")]
-    [InlineData(9, $"& \"$PSScriptRoot\\CLIWizardHelper.Build.ps1\"")]
-    [InlineData(10, $"& \"$PSScriptRoot\\CRUDCommandHelper.Build.ps1\"")]
-    [InlineData(11, $"& \"$PSScriptRoot\\Log.Data.Build.ps1\"")]
-    [InlineData(12, $"& \"$PSScriptRoot\\Log.Wizard.Lib.Build.ps1\"")]
-    [InlineData(13, $"& \"$PSScriptRoot\\Log.Modern.Lib.Build.ps1\"")]
-    [InlineData(14, $"& \"$PSScriptRoot\\Log.Modern.Wizard.ConsoleApp.Build.ps1\"")]
+      //IndependantLibData
+    [InlineData(0, "& \"$PSScriptRoot\\EFCoreHelper.Build.ps1\"")]
+    [InlineData(1, "& \"$PSScriptRoot\\DIHelper.Build.ps1\"")]
+    [InlineData(2, "& \"$PSScriptRoot\\DotNetExtension.Build.ps1\"")]
+    //OneRefLibData
+    [InlineData(3, "& \"$PSScriptRoot\\CLIHelper.Build.ps1\"")]
+    [InlineData(4, "& \"$PSScriptRoot\\Config.Wrapper.Build.ps1\"")]
+    [InlineData(5, "& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]
+    //TwoRefLibData
+    [InlineData(6, "& \"$PSScriptRoot\\CLIReader.Build.ps1\"")]
+    [InlineData(7, "& \"$PSScriptRoot\\DataToTable.Build.ps1\"")]
+    //CommandDotNetLibData
+    [InlineData(8, "& \"$PSScriptRoot\\CommandDotNet.Helper.Build.ps1\"")]
+    [InlineData(9, "& \"$PSScriptRoot\\CommandDotNet.IoC.Unity.Build.ps1\"")]
+    [InlineData(10, "& \"$PSScriptRoot\\CommandDotNet.Unity.Helper.Build.ps1\"")]
+    //ManyRefLibData
+    [InlineData(11, "& \"$PSScriptRoot\\Serilog.Wrapper.Build.ps1\"")]
+    [InlineData(12, "& \"$PSScriptRoot\\CRUDCommandHelper.Build.ps1\"")]
+    [InlineData(13, "& \"$PSScriptRoot\\CLIWizardHelper.Build.ps1\"")]
+    //Log
+    [InlineData(14, "& \"$PSScriptRoot\\Log.Data.Build.ps1\"")]
+    [InlineData(15, "& \"$PSScriptRoot\\Log.Table.Build.ps1\"")]
+    [InlineData(16, "& \"$PSScriptRoot\\Log.Wizard.Lib.Build.ps1\"")]
+    [InlineData(17, "& \"$PSScriptRoot\\Log.Modern.Wizard.ConsoleApp.Build.ps1\"")]
     public override void TestScriptContent(
         int index
         , string expected)

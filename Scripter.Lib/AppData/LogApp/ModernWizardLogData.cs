@@ -1,7 +1,7 @@
 namespace Scripter;
 
 public class ModernWizardLogData 
-    : ConsoleLogData
+    : LogLibData
 {
     private ProjectDTO? modernWizardCLIApp;
 
@@ -13,27 +13,57 @@ public class ModernWizardLogData
     
     private void SetModernWizard()
     {
-        ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
-        ArgumentNullException.ThrowIfNull(DotNetExtension);
-        ArgumentNullException.ThrowIfNull(CLIHelper);
-        ArgumentNullException.ThrowIfNull(DataToTable);
-        ArgumentNullException.ThrowIfNull(CLIWizardHelper);
-        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
-        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
-        ArgumentNullException.ThrowIfNull(Data);
-        //ArgumentNullException.ThrowIfNull(ModernLib);
-        ArgumentNullException.ThrowIfNull(CLIReader);
         ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        
+        ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+
+        ArgumentNullException.ThrowIfNull(CLIReader);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+
+        ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetIoCUnity);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
+        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
+        ArgumentNullException.ThrowIfNull(CLIWizardHelper);
+
+        ArgumentNullException.ThrowIfNull(Data);
+        ArgumentNullException.ThrowIfNull(Tables);
         ArgumentNullException.ThrowIfNull(InputWizards);
+        ArgumentNullException.ThrowIfNull(ModernLibCmds);
         modernWizardCLIApp = Set(
-            "log-modern-wizard-consoleapp", "Log.Modern.Wizard.ConsoleApp"
+            "log-modern-wizard-consoleapp"
+            , "Log.Modern.Wizard.ConsoleApp"
             , true
-            , new DateOnly()
-            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , CLIReader, DataToTable, DIHelper, CommandDotNetUnityHelper
-            , CLIWizardHelper, CRUDCommandHelper, Data, InputWizards
-            //, ModernLib
+            , new DateOnly(2022, 4, 1)
+            //IndependantLibData
+            , EFCoreHelper
+            , DIHelper
+            , DotNetExtension
+            //OneRefLibData
+            , CLIHelper
+            , ConfigWrapper
+            , ModelHelper
+            //TwoRefLibData
+            , CLIReader
+            , DataToTable
+            //CommandDotNetLibData
+            , CommandDotNetHelper
+            , CommandDotNetIoCUnity
+            , CommandDotNetUnityHelper
+            //ManyRefLibData
+            , SerilogWrapper
+            , CRUDCommandHelper
+            , CLIWizardHelper
+            //Log
+            , Data
+            , Tables
+            , InputWizards
             );
     }
 }
