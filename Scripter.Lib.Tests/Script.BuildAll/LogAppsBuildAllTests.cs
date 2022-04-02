@@ -6,18 +6,19 @@ namespace Scripter.Lib.Tests;
 public class LogAppsBuildAllTests 
     : LibTest
 {
-    private static IProjectList projList
-        = new AllProjList(
+    private static IProjectList projsLibsList
+        = new ProjsLibsList(
             new ProjectExtractor()
             , new List<ICodeData> 
             {
                 new ModernLogData()
-                //, new ModernWizardLogData()
-                //, new ModernMDILogData()
-                //, new ConsoleLogData()
+                , new ModernWizardLogData()
+                , new ModernMDILogData()
+                , new ConsoleLogData()
             });
 
     [Theory]
+    //ModernApp
     //IndependantLibData
     [InlineData(0, $"& \"$PSScriptRoot\\EFCoreHelper.Build.ps1\"")]
     [InlineData(1, $"& \"$PSScriptRoot\\DIHelper.Build.ps1\"")]
@@ -40,14 +41,35 @@ public class LogAppsBuildAllTests
     [InlineData(13, $"& \"$PSScriptRoot\\DotNetExtension.Build.ps1\"")]
     [InlineData(14, $"& \"$PSScriptRoot\\Log.Modern.Lib.Build.ps1\"")]
     [InlineData(15, $"& \"$PSScriptRoot\\Log.Modern.ConsoleApp.Build.ps1\"")]
+    //ModernWizardApp
+    //IndependantLibData
+    [InlineData(16, "& \"$PSScriptRoot\\DotNetExtension.Build.ps1\"")]
+    //TwoRefLibData
+    [InlineData(17, "& \"$PSScriptRoot\\CLIReader.Build.ps1\"")]
+    //ManyRefLibData
+    [InlineData(18, "& \"$PSScriptRoot\\CLIWizardHelper.Build.ps1\"")]
+    //Log
+    [InlineData(19, "& \"$PSScriptRoot\\Log.Wizard.Lib.Build.ps1\"")]
+    [InlineData(20, "& \"$PSScriptRoot\\Log.Modern.Wizard.ConsoleApp.Build.ps1\"")]
+    //MDIModernApp
+    //CommandDotNetLibData
+    [InlineData(21, "& \"$PSScriptRoot\\CommandDotNet.MDI.Helper.Build.ps1\"")]
+    //Log
+    [InlineData(22, "& \"$PSScriptRoot\\Log.Modern.MDI.ConsoleApp.Build.ps1\"")]
+    //ConsoleFramworkApp
+    //ManyRefLibData
+    [InlineData(23, $"& \"$PSScriptRoot\\CLIFramework.Build.ps1\"")]
+    //Log
+    [InlineData(24, $"& \"$PSScriptRoot\\Log.Console.Lib.Build.ps1\"")]
+    [InlineData(25, $"& \"$PSScriptRoot\\Log.ConsoleApp.Build.ps1\"")]
     public override void TestScriptContent(
         int index
         , string expected)
     {
-        IScript script = new BuildAllScript(
-            projList
-            , new BuildAllDTO("LogAppsBuildAll.ps1"));
-   
+        IScript script = new ProjsBuildAllScript(
+            projsLibsList
+            , new BuildAllDTO("Log.Apps.BuildAll.ps1"));
+
         var acctual = GetLine(script, index);
 
         Assert.Equal(expected, acctual);
