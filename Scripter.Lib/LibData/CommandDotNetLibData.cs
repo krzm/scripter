@@ -3,6 +3,7 @@ namespace Scripter;
 public class CommandDotNetLibData 
     : OneRefLibData
 {
+    private const string Repo = "commanddotnet-helper";
     protected ProjectDTO? CommandDotNetHelper;
     protected ProjectDTO? CommandDotNetMDIHelper;
     protected ProjectDTO? CommandDotNetIoCUnity;
@@ -15,22 +16,22 @@ public class CommandDotNetLibData
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         CommandDotNetHelper = Set(
-            "commanddotnet-helper"
+            Repo
             , "CommandDotNet.Helper"
             , new DateOnly(2022, 3, 18)
             , DIHelper
             , ConfigWrapper);
         CommandDotNetMDIHelper = Set(
-            "commanddotnet-helper"
+            Repo
             , "CommandDotNet.MDI.Helper"
             , new DateOnly(2022, 4, 1)
             , DIHelper
             , ConfigWrapper);
         CommandDotNetIoCUnity = Set(
-            "commanddotnet-helper/"
+            Repo
             , "CommandDotNet.IoC.Unity");
         CommandDotNetUnityHelper = Set(
-            "commanddotnet-helper"
+            Repo
             , "CommandDotNet.Unity.Helper"
             , new DateOnly(2022, 4, 1)
             , DIHelper
