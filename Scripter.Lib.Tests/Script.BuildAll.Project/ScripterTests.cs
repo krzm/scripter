@@ -28,7 +28,7 @@ public class ScripterTests
         , string expected)
     {
         IScript script = new ProjBuildAllScript(
-            new ProjectExtractor()
+            new ResetingProjExtractor()
             , codeData
             , new ProjBuildAllDTO(
                 "Scripter.BuildAll.ps1"

@@ -8,7 +8,7 @@ public class LibsBuildAllTests
 {
     private static IProjectList projList
         = new AllProjList(
-            new ProjectExtractor()
+            new ResetingProjExtractor()
             , new List<ICodeData> 
             {
                 new ManyRefLibData()

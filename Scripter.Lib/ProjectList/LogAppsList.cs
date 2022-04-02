@@ -1,6 +1,6 @@
 namespace Scripter;
 
-public class ProjsLibsList
+public class LogAppsList
     : IProjectList
 {
     private readonly IProjectExtractor projExtractor;
@@ -9,7 +9,7 @@ public class ProjsLibsList
     public List<ProjectDTO> Projects => 
         projExtractor.Projects;
 
-    public ProjsLibsList(
+    public LogAppsList(
         IProjectExtractor projExtractor
         , List<ICodeData> codeData)
     {

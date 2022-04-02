@@ -8,7 +8,7 @@ public class BuildAllScriptTests
 {
     private static IProjectList codeData
         = new AllProjList(
-            new ProjectExtractor()
+            new ResetingProjExtractor()
             , new List<ICodeData> 
             {
                 new ManyRefLibData()

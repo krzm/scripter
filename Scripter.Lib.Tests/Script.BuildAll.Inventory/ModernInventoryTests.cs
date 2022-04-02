@@ -27,7 +27,7 @@ public class ModernInventoryTests
         , string expected)
     {
         IScript script = new ProjBuildAllScript(
-            new ProjectExtractor()
+            new ResetingProjExtractor()
             , codeData
             , new ProjBuildAllDTO(
                 "ModernInventory.BuildAll.ps1"

@@ -41,7 +41,7 @@ public class AppDataSet
         Container.RegisterSingleton<ICodeData, ModernInventoryData>(
             nameof(ModernInventoryData));
 
-        Container.RegisterType<IProjectExtractor, ProjectExtractor>();
+        Container.RegisterType<IProjectExtractor, ResetingProjExtractor>();
         Container.RegisterSingleton<IProjectList, ProjList>(
             nameof(ProjList)
             , new InjectionConstructor(

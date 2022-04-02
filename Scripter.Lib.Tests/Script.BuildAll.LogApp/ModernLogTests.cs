@@ -36,7 +36,7 @@ public class ModernLogTests
         , string expected)
     {
         IScript script = new ProjBuildAllScript(
-            new ProjectExtractor()
+            new ResetingProjExtractor()
             , codeData
             , new ProjBuildAllDTO(
                 "ModernLog.BuildAll.ps1"

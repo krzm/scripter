@@ -30,7 +30,7 @@ public class AppStarterTests
         , string expected)
     {
         IScript script = new ProjBuildAllScript(
-            new ProjectExtractor()
+            new ResetingProjExtractor()
             , codeData
             , new ProjBuildAllDTO(
                 "AppStarter.BuildAll.ps1"

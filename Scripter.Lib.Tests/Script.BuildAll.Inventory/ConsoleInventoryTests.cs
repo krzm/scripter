@@ -31,7 +31,7 @@ public class ConsoleInventoryTests
         , string expected)
     {
         IScript script = new ProjBuildAllScript(
-            new ProjectExtractor()
+            new ResetingProjExtractor()
             , codeData
             , new ProjBuildAllDTO(
                 "ConsoleLibInventory.BuildAll.ps1"

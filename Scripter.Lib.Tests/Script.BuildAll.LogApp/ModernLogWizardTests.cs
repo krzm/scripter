@@ -38,7 +38,7 @@ public class ModernLogWizardTests
         , string expected)
     {
         IScript script = new ProjBuildAllScript(
-            new ProjectExtractor()
+            new ResetingProjExtractor()
             , codeData
             , new ProjBuildAllDTO(
                 "ModernLogWizard.BuildAll.ps1"

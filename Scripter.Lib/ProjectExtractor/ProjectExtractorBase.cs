@@ -1,20 +1,19 @@
 namespace Scripter;
 
-public class ProjectExtractor 
+public abstract class ProjectExtractorBase
     : IProjectExtractor
 {
     private List<ProjectDTO> projects;
 
     public List<ProjectDTO> Projects => projects;
 
-    public ProjectExtractor()
+    protected ProjectExtractorBase()
     {
         this.projects = new List<ProjectDTO>();
     }
 
-    public void ExtractProjects(params ICodeData[] codeData)
+    public virtual void ExtractProjects(params ICodeData[] codeData)
     {
-        projects.Clear();
         foreach (var data in codeData)
         {
             foreach (var proj in data.Values)
@@ -24,13 +23,17 @@ public class ProjectExtractor
         }
     }
 
-    public void ExtractProjects(ProjectDTO project)
+    public virtual void ExtractProjects(ProjectDTO project)
     {
-        projects.Clear();
         SelectProjects(project);
     }
 
-    private void SelectProjects(ProjectDTO project)
+    protected void Clear()
+    {
+        projects.Clear();
+    }
+
+    protected void SelectProjects(ProjectDTO project)
     {
         if (project.Dependencies != null)
         {
@@ -47,6 +50,6 @@ public class ProjectExtractor
 
     private bool IsNotYet(ProjectDTO project)
     {
-        return projects.Contains(project) == false;
+        return projects.Any(p => p.ProjFolder == project.ProjFolder) == false;
     }
 }

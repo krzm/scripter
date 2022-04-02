@@ -7,8 +7,8 @@ public class LogAppsBuildAllTests
     : LibTest
 {
     private static IProjectList projsLibsList
-        = new ProjsLibsList(
-            new ProjectExtractor()
+        = new LogAppsList(
+            new ResetingProjExtractor()
             , new List<ICodeData> 
             {
                 new ModernLogData()
