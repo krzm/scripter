@@ -21,7 +21,8 @@ public abstract class ProjBuildAllSetBase
         Container.RegisterSingleton<IProjBuildAll, ProjBuildAllScript>(
             $"{project}BuildAllScript"
             , new InjectionConstructor(
-                Container.Resolve<IProjectExtractor>()
+                Container.Resolve<IProjectExtractor>(
+                    nameof(ResetingProjExtractor))
                 , Container.Resolve<ICodeData>(typeof(TData).Name)
                 , new ProjBuildAllDTO(scriptfileName, project)));
     }

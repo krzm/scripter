@@ -15,18 +15,38 @@ public class BuildAllSet
 
     public override void Register()
     {
+        RegisterBuildAll();
+        RegisterLibsBuildAll();
+        RegisterLogAppsBuildAll();
+    }
+
+    private void RegisterBuildAll()
+    {
         Container.RegisterSingleton<IBuildAll, BuildAllScript>(
             "BuildAll"
             , new InjectionConstructor(
                 Container.Resolve<IProjectList>(
                     nameof(AllProjList))
                 , new BuildAllDTO("BuildAll.ps1")));
-        
+    }
+
+    private void RegisterLibsBuildAll()
+    {
         Container.RegisterSingleton<IBuildAll, BuildAllScript>(
             "LibBuildAll"
             , new InjectionConstructor(
                 Container.Resolve<IProjectList>(
-                    nameof(ProjList))
+                    nameof(LibsList))
                 , new BuildAllDTO("LibBuildAll.ps1")));
+    }
+
+    private void RegisterLogAppsBuildAll()
+    {
+        Container.RegisterSingleton<IBuildAll, ProjsBuildAllScript>(
+            "LogAppsBuildAll"
+            , new InjectionConstructor(
+                Container.Resolve<IProjectList>(
+                    nameof(LogAppsList))
+                , new BuildAllDTO("Log.Apps.BuildAll.ps1")));
     }
 }
