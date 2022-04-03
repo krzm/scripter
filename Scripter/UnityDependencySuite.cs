@@ -1,6 +1,6 @@
 ﻿using CommandDotNet.Unity.Helper;
-using Config.Wrapper;
-using Serilog.Wrapper;
+using Config.Wrapper.Unity;
+using Serilog.Wrapper.Unity;
 using Unity;
 
 namespace Scripter;
