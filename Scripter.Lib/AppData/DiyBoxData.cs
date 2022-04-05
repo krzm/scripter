@@ -18,7 +18,7 @@ public class DiyBoxData
         diyBoxCore = Set(
             "diy-box"
             , "DiyBox.Core"
-            , new DateOnly(5, 4, 2022)
+            , new DateOnly(2022, 4, 5)
             , CLIFramework);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
@@ -27,7 +27,7 @@ public class DiyBoxData
             "diy-box"
             , "DiyBox.ConsoleApp"
             , true
-            , new DateOnly(5, 4, 2022)
+            , new DateOnly(2022, 4, 5)
             , DIHelper
             , ConfigWrapper
             , SerilogWrapper
