@@ -15,21 +15,22 @@ public class DiyBoxData
     private void SetDiyBox()
     {
         ArgumentNullException.ThrowIfNull(CLIFramework);
-        ArgumentNullException.ThrowIfNull(DIHelper);
-        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         diyBoxCore = Set(
             "diy-box"
             , "DiyBox.Core"
-            , new DateOnly()
+            , new DateOnly(5, 4, 2022)
             , CLIFramework);
-
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
         diyBoxCLIApp = Set(
             "diy-box"
             , "DiyBox.ConsoleApp"
             , true
-            , new DateOnly()
+            , new DateOnly(5, 4, 2022)
             , DIHelper
-            , CommandDotNetUnityHelper
+            , ConfigWrapper
+            , SerilogWrapper
             , CLIFramework);
     }
 }
