@@ -20,7 +20,8 @@ public class DiyBoxTests
     [InlineData(8, $"& \"$PSScriptRoot\\CLIReader.Build.ps1\"")]
     [InlineData(9, $"& \"$PSScriptRoot\\CLIWizardHelper.Build.ps1\"")]
     [InlineData(10, $"& \"$PSScriptRoot\\CLIFramework.Build.ps1\"")]
-    [InlineData(11, $"& \"$PSScriptRoot\\DiyBox.ConsoleApp.Build.ps1\"")]
+    [InlineData(11, $"& \"$PSScriptRoot\\DiyBox.Core.Build.ps1\"")]
+    [InlineData(12, $"& \"$PSScriptRoot\\DiyBox.ConsoleApp.Build.ps1\"")]
     public override void TestScriptContent(
         int index
         , string expected)

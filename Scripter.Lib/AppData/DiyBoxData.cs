@@ -27,10 +27,11 @@ public class DiyBoxData
             "diy-box"
             , "DiyBox.ConsoleApp"
             , true
-            , new DateOnly(2022, 4, 5)
+            , new DateOnly(2022, 4, 6)
             , DIHelper
             , ConfigWrapper
             , SerilogWrapper
-            , CLIFramework);
+            , CLIFramework
+            , diyBoxCore);
     }
 }

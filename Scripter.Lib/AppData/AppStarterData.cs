@@ -17,56 +17,52 @@ public class AppStarterData
     {
         ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
-        ArgumentNullException.ThrowIfNull(DotNetExtension);
-        ArgumentNullException.ThrowIfNull(CLIHelper);
-        ArgumentNullException.ThrowIfNull(CLIReader);
-        ArgumentNullException.ThrowIfNull(DotNetTool);
-        ArgumentNullException.ThrowIfNull(DIHelper);
-        ArgumentNullException.ThrowIfNull(DataToTable);
-        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
-        ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
-        ArgumentNullException.ThrowIfNull(CLIFramework);
         appStarterData = Set(
             "app-starter"
             , "AppStarter.Data"
-            , new DateOnly()
+            , new DateOnly(2022, 4, 6)
+            , EFCoreHelper
             , ModelHelper
-            , EFCoreHelper);
-
+            );
+        ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(CLIReader);
+        ArgumentNullException.ThrowIfNull(DotNetTool);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(CLIFramework);
         appStarterModernLib = Set(
             "app-starter"
             , "AppStarter.Lib"
-            , new DateOnly()
-            , ModelHelper
+            , new DateOnly(2022, 4, 6)
             , EFCoreHelper
-            , DotNetExtension
-            , CLIHelper
-            , CLIReader
             , DotNetTool
-            , DIHelper
+            , CLIHelper
+            , ModelHelper
+            , CLIReader
             , DataToTable
-            , CommandDotNetUnityHelper
-            , CRUDCommandHelper
             , CLIFramework
-            , appStarterData);
-
+            );
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
         appStarterCLIApp = Set(
             "app-starter"
             , "AppStarter.ConsoleApp"
             , true
-            , new DateOnly()
-            , ModelHelper
+            , new DateOnly(2022, 4, 6)
             , EFCoreHelper
-            , DotNetExtension
-            , CLIHelper
-            , CLIReader
-            , DotNetTool
             , DIHelper
+            , DotNetExtension
+            , DotNetTool
+            , CLIHelper
+            , ConfigWrapper
+            , ModelHelper
+            , CLIReader
             , DataToTable
-            , CommandDotNetUnityHelper
-            , CRUDCommandHelper
+            , SerilogWrapper
             , CLIFramework
             , appStarterData
-            , appStarterModernLib);
+            , appStarterModernLib
+            );
     }
 }
