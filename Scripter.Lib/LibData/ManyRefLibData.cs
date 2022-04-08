@@ -11,13 +11,9 @@ public class ManyRefLibData
     protected override void SetAllData()
     {
         base.SetAllData();
-        ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
-        ArgumentNullException.ThrowIfNull(ModelHelper);
-        ArgumentNullException.ThrowIfNull(CLIReader);
-        ArgumentNullException.ThrowIfNull(DataToTable);
         SerilogWrapper = Set(
             "serilog-wrapper"
             , "Serilog.Wrapper"
@@ -25,6 +21,9 @@ public class ManyRefLibData
             , DIHelper
             , CLIHelper
             , ConfigWrapper);
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(DataToTable);
         CRUDCommandHelper = Set(
             "crud-command-helper"
             , "CRUDCommandHelper"
@@ -33,6 +32,7 @@ public class ManyRefLibData
             , CLIHelper
             , ModelHelper
             , DataToTable);
+        ArgumentNullException.ThrowIfNull(CLIReader);
         CLIWizardHelper = Set(
             "cli-wizard-helper"
             , "CLIWizardHelper"

@@ -1,7 +1,7 @@
 using Scripter.Inventory;
 using Xunit;
 
-namespace Scripter.Lib.Tests.Inventory;
+namespace Scripter.Lib.Tests.BuildAll.Inventory;
 
 public class ModernInventoryTests 
     : LibTest
