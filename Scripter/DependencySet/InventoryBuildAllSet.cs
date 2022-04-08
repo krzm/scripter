@@ -1,3 +1,4 @@
+using Scripter.Inventory;
 using Unity;
 
 namespace Scripter;
@@ -13,10 +14,10 @@ public class InventoryBuildAllSet
 
     public override void Register()
     {
-        RegisterProjBuildAll<ConsoleInventoryData>(
+        RegisterProjBuildAll<CliLibAppData>(
             "ConsoleLibInventory.BuildAll.ps1"
             , "Inventory.ConsoleLib.ConsoleApp");
-        RegisterProjBuildAll<ModernInventoryData>(
+        RegisterProjBuildAll<ModernAppData>(
             "ModernInventory.BuildAll.ps1"
             , "Inventory.Modern.ConsoleApp");
     }

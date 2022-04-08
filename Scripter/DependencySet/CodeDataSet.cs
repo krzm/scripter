@@ -1,4 +1,5 @@
 using DIHelper.Unity;
+using Scripter.Inventory;
 using Unity;
 
 namespace Scripter;
@@ -34,9 +35,9 @@ public class CodeDataSet
                 nameof(ModernWizardLogData))
             .RegisterSingleton<ICodeData, ModernLogData>(
                 nameof(ModernLogData))
-            .RegisterSingleton<ICodeData, ConsoleInventoryData>(
-                nameof(ConsoleInventoryData))
-            .RegisterSingleton<ICodeData, ModernInventoryData>(
-                nameof(ModernInventoryData));
+            .RegisterSingleton<ICodeData, CliLibAppData>(
+                nameof(CliLibAppData))
+            .RegisterSingleton<ICodeData, ModernAppData>(
+                nameof(ModernAppData));
     }
 }
