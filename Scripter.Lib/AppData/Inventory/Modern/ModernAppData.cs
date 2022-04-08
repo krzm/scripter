@@ -13,27 +13,41 @@ public class ModernAppData
 
     private void SetModern()
     {
-        ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
-        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetIoCUnity);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
         ArgumentNullException.ThrowIfNull(DataLib);
-        ArgumentNullException.ThrowIfNull(DIHelper);
-        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+        ArgumentNullException.ThrowIfNull(TableLib);
+        ArgumentNullException.ThrowIfNull(ModernLib);
         modernCLIApp = Set(
             "inventory-modern-consoleapp"
             , "Inventory.Modern.ConsoleApp"
             , true
-            , new DateOnly()
-            , ModelHelper
+            , new DateOnly(2022, 4, 9)
             , EFCoreHelper
-            , DataToTable
             , DIHelper
+            , CLIHelper
+            , DotNetExtension
+            , ConfigWrapper
+            , ModelHelper
+            , DataToTable
+            , CommandDotNetHelper
+            , CommandDotNetIoCUnity
             , CommandDotNetUnityHelper
+            , SerilogWrapper
             , CRUDCommandHelper
             , DataLib
-            , ModernLib);
+            , TableLib
+            , ModernLib
+            );
     }
 }
