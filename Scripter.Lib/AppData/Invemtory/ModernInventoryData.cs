@@ -1,7 +1,7 @@
 namespace Scripter;
 
 public class ModernInventoryData 
-    : InventoryData
+    : InventoryCommonLibData
 {
     protected ProjectDTO? ModernLib;
     private ProjectDTO? modernCLIApp;

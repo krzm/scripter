@@ -1,10 +1,8 @@
 namespace Scripter;
 
 public class ConsoleInventoryData 
-    : ModernInventoryData
+    : InventoryConsoleLibData
 {
-    private ProjectDTO? consoleLib;
-    private ProjectDTO? wizardLib;
     private ProjectDTO? consoleLibCLIApp;
 
     protected override void SetAllData()
@@ -15,36 +13,42 @@ public class ConsoleInventoryData
 
     private void SetConsole()
     {
+        ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
         ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(CLIReader);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
         ArgumentNullException.ThrowIfNull(CLIWizardHelper);
         ArgumentNullException.ThrowIfNull(CLIFramework);
         ArgumentNullException.ThrowIfNull(DataLib);
-        ArgumentNullException.ThrowIfNull(ModernLib);
-        ArgumentNullException.ThrowIfNull(EFCoreHelper);
-        ArgumentNullException.ThrowIfNull(CLIReader);
-        ArgumentNullException.ThrowIfNull(ModelHelper);
-        ArgumentNullException.ThrowIfNull(DotNetExtension);
-        ArgumentNullException.ThrowIfNull(DataToTable);
-        ArgumentNullException.ThrowIfNull(DIHelper);
-        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
-        consoleLib = Set(
-            "inventory-console-lib", "Inventory.Console.Lib"
-            , new DateOnly()
-            , CLIHelper, CRUDCommandHelper, CLIWizardHelper, CLIFramework
-            , DataLib, ModernLib);
-        wizardLib = Set(
-            "inventory-wizard-lib", "Inventory.Wizard.Lib"
-            , new DateOnly()
-            , EFCoreHelper, CLIHelper, CLIReader, CLIWizardHelper
-            , DataLib);
+        ArgumentNullException.ThrowIfNull(TableLib);
+        ArgumentNullException.ThrowIfNull(WizardLib);
+        ArgumentNullException.ThrowIfNull(ConsoleLib);
         consoleLibCLIApp = Set(
-            "inventory-consolelib-consoleapp", "Inventory.ConsoleLib.ConsoleApp"
+            "inventory-consolelib-consoleapp"
+            , "Inventory.ConsoleLib.ConsoleApp"
             , true
-            , new DateOnly()
-            , ModelHelper, EFCoreHelper, DotNetExtension, DataToTable
-            , CLIHelper, CLIReader, DIHelper, CRUDCommandHelper
-            , CommandDotNetUnityHelper, CLIWizardHelper, CLIFramework, DataLib
-            , wizardLib, ModernLib, consoleLib);
+            , new DateOnly(2022, 4, 8)
+            , EFCoreHelper
+            , DIHelper
+            , DotNetExtension
+            , CLIHelper
+            , ConfigWrapper
+            , ModelHelper
+            , CLIReader
+            , DataToTable
+            , SerilogWrapper
+            , CRUDCommandHelper
+            , CLIWizardHelper
+            , CLIFramework
+            , DataLib
+            , TableLib
+            , WizardLib
+            , ConsoleLib);
     }
 }
