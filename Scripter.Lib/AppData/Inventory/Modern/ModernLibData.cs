@@ -13,25 +13,26 @@ public class ModernLibData
 
     private void SetModern()
     {
-        ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(DotNetExtension);
         ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
         ArgumentNullException.ThrowIfNull(DataLib);
-        ArgumentNullException.ThrowIfNull(DIHelper);
-        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         ModernLib = Set(
             "inventory-modern-lib"
             , "Inventory.Modern.Lib"
-            , new DateOnly()
-            , ModelHelper
+            , new DateOnly(2022, 4, 9)
             , EFCoreHelper
+            , DIHelper
             , DotNetExtension
             , CLIHelper
+            , ModelHelper
             , DataToTable
             , CRUDCommandHelper
-            , DataLib);
+            , DataLib
+            );
     }
 }
