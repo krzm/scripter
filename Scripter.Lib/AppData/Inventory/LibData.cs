@@ -1,6 +1,6 @@
-namespace Scripter;
+namespace Scripter.Inventory;
 
-public abstract class InventoryCommonLibData
+public abstract class LibData
     : ManyRefLibData
 {
     protected ProjectDTO? DataLib;

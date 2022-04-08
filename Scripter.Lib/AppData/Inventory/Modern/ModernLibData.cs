@@ -1,10 +1,9 @@
-namespace Scripter;
+namespace Scripter.Inventory;
 
-public class ModernInventoryData 
-    : InventoryCommonLibData
+public class ModernLibData 
+    : LibData
 {
     protected ProjectDTO? ModernLib;
-    private ProjectDTO? modernCLIApp;
 
     protected override void SetAllData()
     {
@@ -24,15 +23,15 @@ public class ModernInventoryData
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         ModernLib = Set(
-            "inventory-modern-lib", "Inventory.Modern.Lib"
+            "inventory-modern-lib"
+            , "Inventory.Modern.Lib"
             , new DateOnly()
-            , ModelHelper, EFCoreHelper, DotNetExtension, CLIHelper
-            , DataToTable, CRUDCommandHelper, DataLib);
-        modernCLIApp = Set(
-            "inventory-modern-consoleapp", "Inventory.Modern.ConsoleApp"
-            , true
-            , new DateOnly()
-            , ModelHelper, EFCoreHelper, DataToTable, DIHelper
-            , CommandDotNetUnityHelper, CRUDCommandHelper, DataLib, ModernLib);
+            , ModelHelper
+            , EFCoreHelper
+            , DotNetExtension
+            , CLIHelper
+            , DataToTable
+            , CRUDCommandHelper
+            , DataLib);
     }
 }

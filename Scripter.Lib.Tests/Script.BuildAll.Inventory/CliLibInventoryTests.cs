@@ -1,12 +1,13 @@
+using Scripter.Inventory;
 using Xunit;
 
 namespace Scripter.Lib.Tests.BuildAll.Inventory;
 
-public class ConsoleInventoryTests 
+public class CliLibInventoryTests 
     : LibTest
 {
     private static readonly ICodeData codeData
-        = new ConsoleInventoryData();
+        = new CliLibAppData();
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]

@@ -1,7 +1,7 @@
-namespace Scripter;
+namespace Scripter.Inventory;
 
-public class InventoryConsoleLibData 
-    : InventoryCommonLibData
+public class CliLibData 
+    : LibData
 {
     protected ProjectDTO? ConsoleLib;
     protected ProjectDTO? WizardLib;

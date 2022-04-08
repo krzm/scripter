@@ -1,3 +1,4 @@
+using Scripter.Inventory;
 using Xunit;
 
 namespace Scripter.Lib.Tests.Inventory;
@@ -6,7 +7,7 @@ public class ModernInventoryTests
     : LibTest
 {
     private static ICodeData codeData
-        = new ModernInventoryData();
+        = new ModernAppData();
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]

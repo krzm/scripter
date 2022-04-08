@@ -1,7 +1,7 @@
-namespace Scripter;
+namespace Scripter.Inventory;
 
-public class ConsoleInventoryData 
-    : InventoryConsoleLibData
+public class CliLibAppData 
+    : CliLibData
 {
     private ProjectDTO? consoleLibCLIApp;
 
