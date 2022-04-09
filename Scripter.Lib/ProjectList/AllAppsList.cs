@@ -26,12 +26,13 @@ public class AllAppsList
         GetData(1, "AppStarter.ConsoleApp");
         GetData(2, "Commander");
         GetData(3, "DiyBox.ConsoleApp");
-        GetData(4, "Log.Modern.ConsoleApp");
-        GetData(5, "Log.Modern.MDI.ConsoleApp");
-        GetData(6, "Log.Modern.Wizard.ConsoleApp");
-        GetData(7, "Log.ConsoleApp");
-        GetData(8, "Inventory.Modern.ConsoleApp");
-        GetData(9, "Inventory.ConsoleLib.ConsoleApp");
+        GetData(4, "GameData.ConsoleApp");
+        GetData(5, "Log.Modern.ConsoleApp");
+        GetData(6, "Log.Modern.MDI.ConsoleApp");
+        GetData(7, "Log.Modern.Wizard.ConsoleApp");
+        GetData(8, "Log.ConsoleApp");
+        GetData(9, "Inventory.Modern.ConsoleApp");
+        GetData(10, "Inventory.ConsoleLib.ConsoleApp");
     }
 
     private void GetData(
