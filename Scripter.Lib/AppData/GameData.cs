@@ -15,50 +15,51 @@ public class GameData
 
     private void SetGameData()
     {
-        ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        gameData = Set(
+            "game-data"
+            , "GameData.Data.Lib"
+            , new DateOnly(2022, 4, 9)
+            , EFCoreHelper
+            , ModelHelper
+            );
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(CLIReader);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
         ArgumentNullException.ThrowIfNull(CLIWizardHelper);
         ArgumentNullException.ThrowIfNull(CLIFramework);
-        ArgumentNullException.ThrowIfNull(DotNetExtension);
-        ArgumentNullException.ThrowIfNull(DataToTable);
-        ArgumentNullException.ThrowIfNull(DIHelper);
-        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
-        gameData = Set(
-            "game-data"
-            , "GameData.Data.Lib"
-            , new DateOnly()
-            , ModelHelper
-            , EFCoreHelper);
-
         gameDataLib = Set(
             "game-data"
             , "GameData.Lib"
-            , new DateOnly()
-            , CLIHelper
+            , new DateOnly(2022, 4, 9)
             , EFCoreHelper
+            , CLIHelper
             , CLIReader
             , CRUDCommandHelper
             , CLIWizardHelper
             , CLIFramework
             , gameData);
-
+        ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
         gameDataCLIApp = Set(
             "game-data"
             , "GameData.ConsoleApp"
             , true
-            , new DateOnly()
-            , ModelHelper
+            , new DateOnly(2022, 4, 9)
             , EFCoreHelper
+            , DIHelper
             , DotNetExtension
             , CLIHelper
-            , DataToTable
+            , ConfigWrapper
+            , ModelHelper
             , CLIReader
+            , DataToTable
+            , SerilogWrapper
             , CRUDCommandHelper
-            , DIHelper
-            , CommandDotNetUnityHelper
             , CLIWizardHelper
             , CLIFramework
             , gameData
