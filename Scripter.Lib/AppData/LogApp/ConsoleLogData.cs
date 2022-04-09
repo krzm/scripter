@@ -8,15 +8,15 @@ public class ConsoleLogData
     protected override void SetAllData()
     {
         base.SetAllData();
-        ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
-        ArgumentNullException.ThrowIfNull(DotNetExtension);
-        ArgumentNullException.ThrowIfNull(DataToTable);
-        ArgumentNullException.ThrowIfNull(ConfigWrapper);
-        ArgumentNullException.ThrowIfNull(SerilogWrapper);
-        ArgumentNullException.ThrowIfNull(CLIHelper);
-        ArgumentNullException.ThrowIfNull(CLIReader);
         ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(DotNetExtension);
+        ArgumentNullException.ThrowIfNull(CLIHelper);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(CLIReader);
+        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
         ArgumentNullException.ThrowIfNull(CLIWizardHelper);
         ArgumentNullException.ThrowIfNull(CLIFramework);
@@ -29,23 +29,18 @@ public class ConsoleLogData
             , "Log.ConsoleApp"
             , true
             , new DateOnly(2022, 4, 1)
-            //IndependantLibData
             , EFCoreHelper
             , DIHelper
             , DotNetExtension
-            //OneRefLibData
             , CLIHelper
             , ConfigWrapper
             , ModelHelper
-            //TwoRefLibData
             , CLIReader
             , DataToTable
-            //ManyRefLibData
             , SerilogWrapper
             , CRUDCommandHelper
             , CLIWizardHelper
             , CLIFramework
-            //Log
             , Data
             , Tables
             , InputWizards

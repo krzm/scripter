@@ -24,16 +24,11 @@ public class ScripterData
             , "Scripter"
             , true
             , new DateOnly(2022, 4, 1)
-            //IndependantLibData
             , DIHelper
-            //OneRefLibData
             , ConfigWrapper
-            //TwoRefLibData
             , DataToTable
-            //CommandDotNetLibData
             , CommandDotNetHelper
             , CommandDotNetUnityHelper
-            //ManyRefLibData
             , SerilogWrapper
             );
     }
