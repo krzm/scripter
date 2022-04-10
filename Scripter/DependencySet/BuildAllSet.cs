@@ -26,7 +26,7 @@ public class BuildAllSet
             "BuildAll"
             , new InjectionConstructor(
                 Container.Resolve<IProjectList>(
-                    nameof(AllProjList))
+                    nameof(AllAppsList))
                 , new BuildAllDTO("BuildAll.ps1")));
     }
 
