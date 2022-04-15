@@ -16,6 +16,7 @@ public class JoinableScriptSet
     {
         Container.RegisterSingleton<IScriptParam, ScriptParam>();
 
+        Container.RegisterSingleton<IScript, PullScript>(nameof(PullScript));
         Container.RegisterSingleton<IScript, CompileScript>(nameof(CompileScript));
         Container.RegisterSingleton<IScript, VersionScript>(nameof(VersionScript));
         Container.RegisterSingleton<IScript, CopyScript>(nameof(CopyScript));
