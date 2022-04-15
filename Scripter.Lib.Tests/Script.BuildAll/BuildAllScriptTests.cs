@@ -4,7 +4,7 @@ using Xunit;
 namespace Scripter.Lib.Tests;
 
 public class BuildAllScriptTests 
-    : LibTest
+    : ScriptTest
 {
     private static IProjectList codeData
         = new AllAppsList(

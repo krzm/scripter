@@ -4,7 +4,7 @@ using Xunit;
 namespace Scripter.Lib.Tests;
 
 public class PullScriptTests 
-    : LibTest
+    : ScriptTest
 {
     [Theory]
     [InlineData(0, "$repoPath = \"C:\\kmazanek@gmail.com\\Code\\cli-helper\"")]

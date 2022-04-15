@@ -3,7 +3,7 @@ using Xunit;
 namespace Scripter.Lib.Tests.BuildAll.GameData;
 
 public class GameDataTests 
-    : LibTest
+    : ScriptTest
 {
     private static readonly ICodeData codeData
         = new Scripter.GameData();

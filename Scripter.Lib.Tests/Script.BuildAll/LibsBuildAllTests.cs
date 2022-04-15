@@ -4,7 +4,7 @@ using Xunit;
 namespace Scripter.Lib.Tests;
 
 public class LibsBuildAllTests 
-    : LibTest
+    : ScriptTest
 {
     private static IProjectList projList
         = new AllProjList(

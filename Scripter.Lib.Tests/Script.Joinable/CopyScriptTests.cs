@@ -4,7 +4,7 @@ using Xunit;
 namespace Scripter.Lib.Tests;
 
 public class CopyScriptTests 
-    : LibTest
+    : ScriptTest
 {
     private const string buildPath = @"C:\kmazanek@gmail.com\Build";
     private const string repoFolder = "cli-helper";

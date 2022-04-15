@@ -3,11 +3,12 @@ using System.IO;
 
 namespace Scripter.Lib.Tests;
 
-public abstract class LibTest
+public abstract class ScriptTest
     : ScriptTestBase
 {
     protected override void SetupParams(
-       Mock<IScriptParam> moq)
+       Mock<IScriptParam> moq
+       , bool isApp = false)
     {
         var repoFolder = "cli-helper";
         var appProjFolder = "CLIHelper";
@@ -15,8 +16,8 @@ public abstract class LibTest
         var rootPath = @"C:\kmazanek@gmail.com";
         var codeFolder = "Code";
         var repoPath = Path.Combine(rootPath, codeFolder, repoFolder);
-
-        moq.Setup(m => m.Project).Returns(new ProjectDTO(repoFolder, appProjFolder));
+        moq.Setup(m => m.Project).Returns(
+            new ProjectDTO(repoFolder, appProjFolder, IsApp: isApp));
         moq.Setup(m => m.VersionFileName).Returns(versionFileName);
         moq.Setup(m => m.BuildPath).Returns(@"C:\kmazanek@gmail.com\Build");
         moq.Setup(m => m.ScriptPath).Returns(@"C:\kmazanek@gmail.com\Build.Script");

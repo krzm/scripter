@@ -3,7 +3,7 @@ using Xunit;
 namespace Scripter.Lib.Tests.BuildAll.Log;
 
 public class ModernMDILogTests 
-    : LibTest
+    : ScriptTest
 {
     private static ICodeData codeData
         = new ModernMDILogData();

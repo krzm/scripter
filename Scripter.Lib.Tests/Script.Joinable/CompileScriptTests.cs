@@ -4,7 +4,7 @@ using Xunit;
 namespace Scripter.Lib.Tests;
 
 public class CompileScriptTests 
-    : LibTest
+    : ScriptTest
 {
     [Theory]
     [InlineData(0, $"Set-Location -Path \"C:\\kmazanek@gmail.com\\Code\\cli-helper\"")]

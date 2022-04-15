@@ -4,7 +4,7 @@ using Xunit;
 namespace Scripter.Lib.Tests.BuildAll.Inventory;
 
 public class ModernInventoryTests 
-    : LibTest
+    : ScriptTest
 {
     private static ICodeData codeData
         = new ModernAppData();

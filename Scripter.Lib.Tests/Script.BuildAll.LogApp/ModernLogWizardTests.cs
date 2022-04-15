@@ -3,7 +3,7 @@ using Xunit;
 namespace Scripter.Lib.Tests.BuildAll.Log;
 
 public class ModernLogWizardTests 
-    : LibTest
+    : ScriptTest
 {
     private static ICodeData codeData
         = new ModernWizardLogData();

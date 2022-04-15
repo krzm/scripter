@@ -4,7 +4,7 @@ using Xunit;
 namespace Scripter.Lib.Tests;
 
 public class LogAppsBuildAllTests 
-    : LibTest
+    : ScriptTest
 {
     private static IProjectList projsLibsList
         = new LogAppsList(
