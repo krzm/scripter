@@ -28,6 +28,7 @@ public class AllAppsList
         GetData(3, "CommandsService");
         GetData(3, "PlatformService");
         GetData(4, "DiyBox.ConsoleApp");
+        GetData(4, "DiyBox.Modern.CliApp");
         GetData(5, "GameData.ConsoleApp");
         GetData(6, "Log.Modern.ConsoleApp");
         GetData(7, "Log.Modern.MDI.ConsoleApp");
