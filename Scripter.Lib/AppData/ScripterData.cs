@@ -15,10 +15,10 @@ public class ScripterData
     {
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
-        ArgumentNullException.ThrowIfNull(SerilogWrapper);
+        ArgumentNullException.ThrowIfNull(DataToTable);
         ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
-        ArgumentNullException.ThrowIfNull(DataToTable);
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
         scripter = Set(
             "scripter"
             , "Scripter"

@@ -14,6 +14,7 @@ public class BuildAllScriptTests
                 new ScripterData()
                 , new AppStarterData()
                 , new CommanderData()
+                , new MicroservicesData()
                 , new DiyBoxData()
                 , new GameData()
                 , new ModernLogData()
@@ -45,29 +46,31 @@ public class BuildAllScriptTests
     [InlineData(17, $"& \"$PSScriptRoot\\AppStarter.Lib.Build.ps1\"")]
     [InlineData(18, $"& \"$PSScriptRoot\\AppStarter.ConsoleApp.Build.ps1\"")]
     [InlineData(19, $"& \"$PSScriptRoot\\Commander.Build.ps1\"")]
-    [InlineData(20, $"& \"$PSScriptRoot\\DiyBox.Core.Build.ps1\"")]
-    [InlineData(21, $"& \"$PSScriptRoot\\DiyBox.ConsoleApp.Build.ps1\"")]
-    [InlineData(22, $"& \"$PSScriptRoot\\GameData.Data.Lib.Build.ps1\"")]
-    [InlineData(23, $"& \"$PSScriptRoot\\GameData.Lib.Build.ps1\"")]
-    [InlineData(24, $"& \"$PSScriptRoot\\GameData.ConsoleApp.Build.ps1\"")]
-    [InlineData(25, $"& \"$PSScriptRoot\\CommandDotNet.IoC.Unity.Build.ps1\"")]
-    [InlineData(26, $"& \"$PSScriptRoot\\Log.Data.Build.ps1\"")]
-    [InlineData(27, $"& \"$PSScriptRoot\\Log.Table.Build.ps1\"")]
-    [InlineData(28, $"& \"$PSScriptRoot\\Log.Modern.Lib.Build.ps1\"")]
-    [InlineData(29, $"& \"$PSScriptRoot\\Log.Modern.ConsoleApp.Build.ps1\"")]
-    [InlineData(30, "& \"$PSScriptRoot\\CommandDotNet.MDI.Helper.Build.ps1\"")]
-    [InlineData(31, "& \"$PSScriptRoot\\Log.Modern.MDI.ConsoleApp.Build.ps1\"")]
-    [InlineData(32, "& \"$PSScriptRoot\\Log.Wizard.Lib.Build.ps1\"")]
-    [InlineData(33, "& \"$PSScriptRoot\\Log.Modern.Wizard.ConsoleApp.Build.ps1\"")]
-    [InlineData(34, $"& \"$PSScriptRoot\\Log.Console.Lib.Build.ps1\"")]
-    [InlineData(35, $"& \"$PSScriptRoot\\Log.ConsoleApp.Build.ps1\"")]
-    [InlineData(36, $"& \"$PSScriptRoot\\Inventory.Data.Build.ps1\"")]
-    [InlineData(37, $"& \"$PSScriptRoot\\Inventory.Table.Build.ps1\"")]
-    [InlineData(38, $"& \"$PSScriptRoot\\Inventory.Modern.Lib.Build.ps1\"")]
-    [InlineData(39, $"& \"$PSScriptRoot\\Inventory.Modern.ConsoleApp.Build.ps1\"")]
-    [InlineData(40, $"& \"$PSScriptRoot\\Inventory.Wizard.Lib.Build.ps1\"")]
-    [InlineData(41, $"& \"$PSScriptRoot\\Inventory.Console.Lib.Build.ps1\"")]
-    [InlineData(42, $"& \"$PSScriptRoot\\Inventory.ConsoleLib.ConsoleApp.Build.ps1\"")]
+    [InlineData(20, $"& \"$PSScriptRoot\\CommandsService.Build.ps1\"")]
+    [InlineData(21, $"& \"$PSScriptRoot\\PlatformService.Build.ps1\"")]
+    [InlineData(22, $"& \"$PSScriptRoot\\DiyBox.Core.Build.ps1\"")]
+    [InlineData(23, $"& \"$PSScriptRoot\\DiyBox.ConsoleApp.Build.ps1\"")]
+    [InlineData(24, $"& \"$PSScriptRoot\\GameData.Data.Lib.Build.ps1\"")]
+    [InlineData(25, $"& \"$PSScriptRoot\\GameData.Lib.Build.ps1\"")]
+    [InlineData(26, $"& \"$PSScriptRoot\\GameData.ConsoleApp.Build.ps1\"")]
+    [InlineData(27, $"& \"$PSScriptRoot\\CommandDotNet.IoC.Unity.Build.ps1\"")]
+    [InlineData(28, $"& \"$PSScriptRoot\\Log.Data.Build.ps1\"")]
+    [InlineData(29, $"& \"$PSScriptRoot\\Log.Table.Build.ps1\"")]
+    [InlineData(30, $"& \"$PSScriptRoot\\Log.Modern.Lib.Build.ps1\"")]
+    [InlineData(31, $"& \"$PSScriptRoot\\Log.Modern.ConsoleApp.Build.ps1\"")]
+    [InlineData(32, "& \"$PSScriptRoot\\CommandDotNet.MDI.Helper.Build.ps1\"")]
+    [InlineData(33, "& \"$PSScriptRoot\\Log.Modern.MDI.ConsoleApp.Build.ps1\"")]
+    [InlineData(34, "& \"$PSScriptRoot\\Log.Wizard.Lib.Build.ps1\"")]
+    [InlineData(35, "& \"$PSScriptRoot\\Log.Modern.Wizard.ConsoleApp.Build.ps1\"")]
+    [InlineData(36, $"& \"$PSScriptRoot\\Log.Console.Lib.Build.ps1\"")]
+    [InlineData(37, $"& \"$PSScriptRoot\\Log.ConsoleApp.Build.ps1\"")]
+    [InlineData(38, $"& \"$PSScriptRoot\\Inventory.Data.Build.ps1\"")]
+    [InlineData(39, $"& \"$PSScriptRoot\\Inventory.Table.Build.ps1\"")]
+    [InlineData(40, $"& \"$PSScriptRoot\\Inventory.Modern.Lib.Build.ps1\"")]
+    [InlineData(41, $"& \"$PSScriptRoot\\Inventory.Modern.ConsoleApp.Build.ps1\"")]
+    [InlineData(42, $"& \"$PSScriptRoot\\Inventory.Wizard.Lib.Build.ps1\"")]
+    [InlineData(43, $"& \"$PSScriptRoot\\Inventory.Console.Lib.Build.ps1\"")]
+    [InlineData(44, $"& \"$PSScriptRoot\\Inventory.ConsoleLib.ConsoleApp.Build.ps1\"")]
     public override void TestScriptContent(
         int index
         , string expected)

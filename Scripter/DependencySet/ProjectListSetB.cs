@@ -40,6 +40,7 @@ public class ProjectListSetB
                 c.Resolve<ICodeData>(nameof(ScripterData))
                 , c.Resolve<ICodeData>(nameof(AppStarterData))
                 , c.Resolve<ICodeData>(nameof(CommanderData))
+                , c.Resolve<ICodeData>(nameof(MicroservicesData))
                 , c.Resolve<ICodeData>(nameof(DiyBoxData))
                 , c.Resolve<ICodeData>(nameof(GameData))
                 , c.Resolve<ICodeData>(nameof(ModernLogData))

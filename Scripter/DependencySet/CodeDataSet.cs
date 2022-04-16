@@ -22,8 +22,10 @@ public class CodeDataSet
                 nameof(ScripterData))
             .RegisterSingleton<ICodeData, AppStarterData>(
                 nameof(AppStarterData))
-             .RegisterSingleton<ICodeData, CommanderData>(
+            .RegisterSingleton<ICodeData, CommanderData>(
                 nameof(CommanderData))
+            .RegisterSingleton<ICodeData, MicroservicesData>(
+                nameof(MicroservicesData))
             .RegisterSingleton<ICodeData, DiyBoxData>(
                 nameof(DiyBoxData))
             .RegisterSingleton<ICodeData, GameData>(
