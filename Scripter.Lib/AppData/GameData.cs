@@ -3,10 +3,6 @@ namespace Scripter;
 public class GameData 
     : ManyRefLibData
 {
-    private ProjectDTO? gameData;
-    private ProjectDTO? gameDataLib;
-    private ProjectDTO? gameDataCLIApp;
-
     protected override void SetAllData()
     {
         base.SetAllData();
@@ -17,7 +13,7 @@ public class GameData
     {
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
-        gameData = Set(
+        var gameData = Set(
             "game-data"
             , "GameData.Data.Lib"
             , new DateOnly(2022, 4, 9)
@@ -29,7 +25,7 @@ public class GameData
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
         ArgumentNullException.ThrowIfNull(CLIWizardHelper);
         ArgumentNullException.ThrowIfNull(CLIFramework);
-        gameDataLib = Set(
+        var gameDataLib = Set(
             "game-data"
             , "GameData.Lib"
             , new DateOnly(2022, 4, 9)
@@ -45,7 +41,7 @@ public class GameData
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         ArgumentNullException.ThrowIfNull(DataToTable);
         ArgumentNullException.ThrowIfNull(SerilogWrapper);
-        gameDataCLIApp = Set(
+        var gameDataCLIApp = Set(
             "game-data"
             , "GameData.ConsoleApp"
             , true

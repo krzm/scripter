@@ -20,6 +20,8 @@ public class CodeDataSet
                 nameof(ManyRefLibData))
             .RegisterSingleton<ICodeData, ScripterData>(
                 nameof(ScripterData))
+            .RegisterSingleton<ICodeData, CliAppTemplateData>(
+                nameof(CliAppTemplateData))
             .RegisterSingleton<ICodeData, AppStarterData>(
                 nameof(AppStarterData))
             .RegisterSingleton<ICodeData, CommanderData>(

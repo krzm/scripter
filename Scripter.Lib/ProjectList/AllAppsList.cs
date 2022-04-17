@@ -23,19 +23,20 @@ public class AllAppsList
     private void Create()
     {
         GetData(0, "Scripter");
-        GetData(1, "AppStarter.ConsoleApp");
-        GetData(2, "Commander");
-        GetData(3, "CommandsService");
-        GetData(3, "PlatformService");
-        GetData(4, "DiyBox.ConsoleApp");
-        GetData(4, "DiyBox.Modern.CliApp");
-        GetData(5, "GameData.ConsoleApp");
-        GetData(6, "Log.Modern.ConsoleApp");
-        GetData(7, "Log.Modern.MDI.ConsoleApp");
-        GetData(8, "Log.Modern.Wizard.ConsoleApp");
-        GetData(9, "Log.ConsoleApp");
-        GetData(10, "Inventory.Modern.ConsoleApp");
-        GetData(11, "Inventory.ConsoleLib.ConsoleApp");
+        GetData(1, "CLI.App.Template");
+        GetData(2, "AppStarter.ConsoleApp");
+        GetData(3, "Commander");
+        GetData(4, "CommandsService");
+        GetData(4, "PlatformService");
+        GetData(5, "DiyBox.ConsoleApp");
+        GetData(5, "DiyBox.Modern.CliApp");
+        GetData(6, "GameData.ConsoleApp");
+        GetData(7, "Log.Modern.ConsoleApp");
+        GetData(8, "Log.Modern.MDI.ConsoleApp");
+        GetData(9, "Log.Modern.Wizard.ConsoleApp");
+        GetData(10, "Log.ConsoleApp");
+        GetData(11, "Inventory.Modern.ConsoleApp");
+        GetData(12, "Inventory.ConsoleLib.ConsoleApp");
     }
 
     private void GetData(
