@@ -38,6 +38,7 @@ public class ProjectListSetB
             new List<ICodeData>
             {
                 c.Resolve<ICodeData>(nameof(ScripterData))
+                , c.Resolve<ICodeData>(nameof(CliAppTemplateData))
                 , c.Resolve<ICodeData>(nameof(AppStarterData))
                 , c.Resolve<ICodeData>(nameof(CommanderData))
                 , c.Resolve<ICodeData>(nameof(MicroservicesData))
