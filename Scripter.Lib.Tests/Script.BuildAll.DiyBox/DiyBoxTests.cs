@@ -10,8 +10,8 @@ public class DiyBoxTests
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\DIHelper.Build.ps1\"")]
-    [InlineData(1, $"& \"$PSScriptRoot\\Config.Wrapper.Build.ps1\"")]
-    [InlineData(2, $"& \"$PSScriptRoot\\CLIHelper.Build.ps1\"")]
+    [InlineData(1, $"& \"$PSScriptRoot\\CLIHelper.Build.ps1\"")]
+    [InlineData(2, $"& \"$PSScriptRoot\\Config.Wrapper.Build.ps1\"")]
     [InlineData(3, $"& \"$PSScriptRoot\\Serilog.Wrapper.Build.ps1\"")]
     [InlineData(4, $"& \"$PSScriptRoot\\EFCoreHelper.Build.ps1\"")]
     [InlineData(5, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]

@@ -22,6 +22,9 @@ public class ProjBuildAllSet
         RegisterProjBuildAll<DiyBoxData>(
             "DiyBox.BuildAll.ps1"
             , "DiyBox.ConsoleApp");
+        RegisterProjBuildAll<DiyBoxData>(
+            "DiyBox.Modern.CliApp.BuildAll.ps1"
+            , "DiyBox.Modern.CliApp");
         RegisterProjBuildAll<GameData>(
             "GameData.BuildAll.ps1"
             , "GameData.ConsoleApp");

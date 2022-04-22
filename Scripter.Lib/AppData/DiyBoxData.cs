@@ -12,11 +12,13 @@ public class DiyBoxData
     private void SetDiyBox()
     {
         ArgumentNullException.ThrowIfNull(DIHelper);
+        ArgumentNullException.ThrowIfNull(CLIHelper);
         var diyBoxCore = Set(
             "diy-box"
             , "DiyBox.Core"
-            , new DateOnly(2022, 4, 17)
-            , DIHelper);
+            , new DateOnly(2022, 4, 22)
+            , DIHelper
+            , CLIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         ArgumentNullException.ThrowIfNull(SerilogWrapper);
         ArgumentNullException.ThrowIfNull(CLIFramework);
@@ -24,8 +26,9 @@ public class DiyBoxData
             "diy-box-cli-app"
             , "DiyBox.ConsoleApp"
             , true
-            , new DateOnly(2022, 4, 17)
+            , new DateOnly(2022, 4, 22)
             , DIHelper
+            , CLIHelper
             , ConfigWrapper
             , SerilogWrapper
             , CLIFramework
@@ -33,7 +36,7 @@ public class DiyBoxData
         var diyBoxCmdDotNet = Set(
             "diy-box"
             , "DiyBox.CommandDotNet"
-            , new DateOnly(2022, 4, 17));
+            , new DateOnly(2022, 4, 22));
         ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetIoCUnity);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
@@ -41,8 +44,9 @@ public class DiyBoxData
             "diy-box-modern-cli-app"
             , "DiyBox.Modern.CliApp"
             , true
-            , new DateOnly(2022, 4, 17)
+            , new DateOnly(2022, 4, 22)
             , DIHelper
+            , CLIHelper
             , ConfigWrapper
             , CommandDotNetHelper
             , CommandDotNetIoCUnity
