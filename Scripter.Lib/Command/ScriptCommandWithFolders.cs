@@ -28,6 +28,11 @@ public class ScriptCommandWithFolders : ICommand
         this.buildAllScript = buildAllScript;
     }
 
+    public void Invalidate()
+    {
+        CanExecuteChanged?.BeginInvoke(this, new EventArgs(), null, null);
+    }
+    
     public bool CanExecute(object? parameter) => true;
 
     public void Execute(object? parameter)

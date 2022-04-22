@@ -35,6 +35,11 @@ public class ScriptCommand : ICommand
         ArgumentNullException.ThrowIfNull(this.buildAllScripts);
     }
 
+    public void Invalidate()
+    {
+        CanExecuteChanged?.BeginInvoke(this, new EventArgs(), null, null);
+    }
+
     public bool CanExecute(object? parameter) => true;
 
     public void Execute(object? parameter)
