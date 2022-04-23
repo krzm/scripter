@@ -1,26 +1,29 @@
 using Moq;
-using System.IO;
 
 namespace Scripter.Lib.Tests;
 
 public abstract class ScriptTest
     : ScriptTestBase
 {
-    protected override void SetupParams(
-       Mock<IScriptParam> moq
-       , bool isApp = false)
+    protected override Mock<IScriptParam> SetupParamsMock(
+        ParamsMockData d)
     {
-        var repoFolder = "cli-helper";
-        var appProjFolder = "CLIHelper";
-        var versionFileName = "Version.xml";
-        var rootPath = @"C:\kmazanek@gmail.com";
-        var codeFolder = "Code";
-        var repoPath = Path.Combine(rootPath, codeFolder, repoFolder);
+        var moq = new Mock<IScriptParam>();
         moq.Setup(m => m.Project).Returns(
-            new ProjectDTO(repoFolder, appProjFolder, IsApp: isApp));
-        moq.Setup(m => m.VersionFileName).Returns(versionFileName);
-        moq.Setup(m => m.BuildPath).Returns(@"C:\kmazanek@gmail.com\Build");
-        moq.Setup(m => m.ScriptPath).Returns(@"C:\kmazanek@gmail.com\Build.Script");
-        moq.Setup(m => m.RepoPath).Returns(repoPath);
+            new ProjectDTO(
+                d.RepoFolder
+                , d.AppProjFolder
+                , IsApp: d.IsApp));
+        moq.Setup(m => m.VersionFileName)
+            .Returns(d.VersionFileName);
+        moq.Setup(m => m.CodePath)
+            .Returns(d.CodePath);
+        moq.Setup(m => m.BuildPath)
+            .Returns(d.BuildPath);
+        moq.Setup(m => m.ScriptPath)
+            .Returns(d.ScriptPath);
+        moq.Setup(m => m.RepoPath)
+            .Returns(d.RepoPath);
+        return moq;
     }
 }

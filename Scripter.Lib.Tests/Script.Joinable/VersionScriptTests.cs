@@ -1,4 +1,3 @@
-using Moq;
 using Xunit;
 
 namespace Scripter.Lib.Tests;
@@ -39,8 +38,7 @@ public class VersionScriptTests
         int index
         , string expected)
     {
-        var moq = new Mock<IScriptParam>();
-        SetupParams(moq);
+        var moq = SetupParamsMock(new ParamsMockData());
         IScript script = new VersionScript(moq.Object);
 
         var acctual = GetLine(script, index);

@@ -1,6 +1,7 @@
 namespace Scripter;
 
-public class ScriptParam : IScriptParam
+public class ScriptParam 
+    : IScriptParam
 {
     private const string RootPath = @"C:\kmazanek@gmail.com";
     private const string CodeFolder = "Code";
@@ -10,7 +11,7 @@ public class ScriptParam : IScriptParam
 
     public string VersionFileName => VersionFile;
 
-    public string CodePath => @"C:\kmazanek@gmail.com\Code";
+    public string CodePath => Path.Combine(RootPath, CodeFolder);
 
     public string BuildPath => @"C:\kmazanek@gmail.com\Build";
 

@@ -1,4 +1,3 @@
-using Moq;
 using Xunit;
 
 namespace Scripter.Lib.Tests;
@@ -19,8 +18,7 @@ public class CopyAppScriptTests
         int index
         , string expected)
     {
-        var moq = new Mock<IScriptParam>();
-        SetupParams(moq);
+        var moq = SetupParamsMock(new ParamsMockData());
         IScript script = new CopyAppScript(moq.Object);
 
         var acctual = GetLine(script, index);

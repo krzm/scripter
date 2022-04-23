@@ -4,7 +4,7 @@ namespace Scripter.Lib.Tests;
 
 public abstract class ScriptParamTestBase
 {
-    public abstract void TestScriptParamContent(
+    public abstract void TestParams(
         string propName
         , string expected);
 
@@ -29,14 +29,16 @@ public abstract class ScriptParamTestBase
                 return scriptParam.Project.RepoFolder;
             case nameof(ScriptParam.Project.ProjFolder):
                 return scriptParam.Project.ProjFolder;
+            case nameof(ScriptParam.VersionFileName):
+                return scriptParam.VersionFileName;
+            case nameof(ScriptParam.CodePath):
+                return scriptParam.CodePath;
             case nameof(ScriptParam.BuildPath):
                 return scriptParam.BuildPath;
             case nameof(ScriptParam.RepoPath):
                 return scriptParam.RepoPath;
             case nameof(ScriptParam.ScriptPath):
                 return scriptParam.ScriptPath;
-            case nameof(ScriptParam.VersionFileName):
-                return scriptParam.VersionFileName;
         }
         throw new Exception($"{nameof(SelectProp)} problem");
     }

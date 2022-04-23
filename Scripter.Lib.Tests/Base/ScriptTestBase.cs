@@ -8,9 +8,8 @@ public abstract class ScriptTestBase
         int index
         , string expected);
 
-    protected abstract void SetupParams(
-       Mock<IScriptParam> moq
-       , bool isApp = false);
+    protected abstract Mock<IScriptParam> SetupParamsMock(
+        ParamsMockData d);
 
     protected static string GetLine(
         IScript script

@@ -8,15 +8,18 @@ public class ScriptParamTests : ScriptParamTestBase
     [InlineData(nameof(ScriptParam.Project.RepoFolder), "cli-helper")]
     [InlineData(nameof(ScriptParam.Project.ProjFolder), "CLIHelper")]
     [InlineData(nameof(ScriptParam.VersionFileName), "Version.xml")]
-    [InlineData(nameof(ScriptParam.ScriptPath), @"C:\kmazanek@gmail.com\Build.Script")]
+    [InlineData(nameof(ScriptParam.CodePath), @"C:\kmazanek@gmail.com\Code")]
     [InlineData(nameof(ScriptParam.BuildPath), @"C:\kmazanek@gmail.com\Build")]
     [InlineData(nameof(ScriptParam.RepoPath), @"C:\kmazanek@gmail.com\Code\cli-helper")]
-    public override void TestScriptParamContent(
+    [InlineData(nameof(ScriptParam.ScriptPath), @"C:\kmazanek@gmail.com\Build.Script")]
+    public override void TestParams(
         string propName
         , string expected)
     {
         var sut = GetSut();
 
-        Assert.Equal(expected, SelectProp(sut, propName));
+        var acctual = SelectProp(sut, propName);
+
+        Assert.Equal(expected, acctual);
     }    
 }
