@@ -1,4 +1,3 @@
-using Moq;
 using Xunit;
 
 namespace Scripter.Lib.Tests;
@@ -8,8 +7,8 @@ public class CloneScriptTests
 {
     [Theory]
     [InlineData(0, "$repoPath = \"C:\\kmazanek@gmail.com\\Code\\cli-helper\"")]
-    [InlineData(1, "$codePath = \"C:\\kmazanek@gmail.com\\Code")]
-    [InlineData(2, "$scriptPath = \"C:\\kmazanek@gmail.com\\Build.Script")]
+    [InlineData(1, "$codePath = \"C:\\kmazanek@gmail.com\\Code\"")]
+    [InlineData(2, "$scriptPath = \"C:\\kmazanek@gmail.com\\Build.Script\"")]
     [InlineData(3, "$proj = \"cli-helper\"")]
     [InlineData(4, "$http = \"https://github.com/krzm/\"")]
     [InlineData(5, "$end = \".git\"")]
@@ -29,11 +28,10 @@ public class CloneScriptTests
         int index
         , string expected)
     {
-        var moq = new Mock<IScriptParam>();
-        SetupParams(moq);
-        IScript script = new CloneScript(moq.Object);
+        var moq = SetupParamsMock(new ParamsMockData());
+        IScript sut = new CloneScript(moq.Object);
 
-        var acctual = GetLine(script, index);
+        var acctual = GetLine(sut, index);
 
         Assert.Equal(expected, acctual);
     }
