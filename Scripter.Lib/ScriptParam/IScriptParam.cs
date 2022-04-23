@@ -6,6 +6,8 @@ public interface IScriptParam
 
     string VersionFileName { get; }
 
+    string CodePath { get; }
+
     string BuildPath { get; }
 
     string RepoPath { get; }
