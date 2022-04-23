@@ -13,4 +13,10 @@ public interface IScriptParam
     string RepoPath { get; }
         
     string ScriptPath { get; }
+
+    string CloneUrlStart { get; }
+
+    string CloneUrlEnd { get; }
+
+    string CloneUrl { get; }
 }

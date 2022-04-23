@@ -20,9 +20,27 @@ public class ScriptParam
         get
         {
             ArgumentNullException.ThrowIfNull(Project);
-            return Path.Combine(RootPath, CodeFolder, Project.RepoFolder);
+            return Path.Combine(
+                RootPath
+                , CodeFolder
+                , Project.RepoFolder);
         }
     }
 
     public string ScriptPath => @"C:\kmazanek@gmail.com\Build.Script";
+
+    public string CloneUrlStart => @"https://github.com/krzm/";
+    
+    public string CloneUrlEnd => ".git";
+    
+    public string CloneUrl
+    {
+        get
+        {
+            ArgumentNullException.ThrowIfNull(Project);
+            return Path.Combine(
+                CloneUrlStart
+                , Project.RepoFolder + CloneUrlEnd);
+        }
+    }
 }

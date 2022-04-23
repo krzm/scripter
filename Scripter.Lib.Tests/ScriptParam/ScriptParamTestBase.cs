@@ -39,6 +39,12 @@ public abstract class ScriptParamTestBase
                 return scriptParam.RepoPath;
             case nameof(ScriptParam.ScriptPath):
                 return scriptParam.ScriptPath;
+            case nameof(ScriptParam.CloneUrlStart):
+                return scriptParam.CloneUrlStart;
+            case nameof(ScriptParam.CloneUrlEnd):
+                return scriptParam.CloneUrlEnd;
+            case nameof(ScriptParam.CloneUrl):
+                return scriptParam.CloneUrl;
         }
         throw new Exception($"{nameof(SelectProp)} problem");
     }

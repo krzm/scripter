@@ -12,6 +12,9 @@ public class ScriptParamTests : ScriptParamTestBase
     [InlineData(nameof(ScriptParam.BuildPath), @"C:\kmazanek@gmail.com\Build")]
     [InlineData(nameof(ScriptParam.RepoPath), @"C:\kmazanek@gmail.com\Code\cli-helper")]
     [InlineData(nameof(ScriptParam.ScriptPath), @"C:\kmazanek@gmail.com\Build.Script")]
+    [InlineData(nameof(ScriptParam.CloneUrlStart), @"https://github.com/krzm/")]
+    [InlineData(nameof(ScriptParam.CloneUrlEnd), ".git")]
+    [InlineData(nameof(ScriptParam.CloneUrl), @"https://github.com/krzm/cli-helper.git")]
     public override void TestParams(
         string propName
         , string expected)

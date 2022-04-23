@@ -11,5 +11,8 @@ public record ParamsMockData
     , string BuildPath = @"C:\kmazanek@gmail.com\Build"
     , string RepoPath = @"C:\kmazanek@gmail.com\Code\cli-helper"
     , string ScriptPath = @"C:\kmazanek@gmail.com\Build.Script"
+    , string CloneUrlStart = @"https://github.com/krzm/"
+    , string CloneUrlEnd = ".git"
+    , string CloneUrl = @"https://github.com/krzm/cli-helper.git"
     , bool IsApp = false
 );

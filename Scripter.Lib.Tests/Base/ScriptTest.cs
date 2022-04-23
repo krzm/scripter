@@ -20,10 +20,16 @@ public abstract class ScriptTest
             .Returns(d.CodePath);
         moq.Setup(m => m.BuildPath)
             .Returns(d.BuildPath);
-        moq.Setup(m => m.ScriptPath)
-            .Returns(d.ScriptPath);
         moq.Setup(m => m.RepoPath)
             .Returns(d.RepoPath);
+        moq.Setup(m => m.ScriptPath)
+            .Returns(d.ScriptPath);
+        moq.Setup(m => m.CloneUrlStart)
+            .Returns(d.CloneUrlStart);
+        moq.Setup(m => m.CloneUrlEnd)
+            .Returns(d.CloneUrlEnd);
+        moq.Setup(m => m.CloneUrl)
+            .Returns(d.CloneUrl);
         return moq;
     }
 }
