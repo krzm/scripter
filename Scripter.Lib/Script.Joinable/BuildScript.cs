@@ -25,7 +25,8 @@ public class BuildScript : IScript
         var name = scriptParam.Project.ProjFolder;
         var list = new List<string>
         {
-            $"& \"$PSScriptRoot\\{name}.Pull.ps1\""
+            $"& \"$PSScriptRoot\\{name}.Clone.ps1\""
+            , $"& \"$PSScriptRoot\\{name}.Pull.ps1\""
             , $"& \"$PSScriptRoot\\{name}.Compile.ps1\""
             , $"& \"$PSScriptRoot\\{name}.Version.ps1\""
             , $"& \"$PSScriptRoot\\{name}.Copy.ps1\""
