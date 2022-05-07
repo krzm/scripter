@@ -14,17 +14,17 @@ public class OneRefLibData
         CLIHelper = Set(
             "cli-helper"
             , "CLIHelper"
-            , new DateOnly(2022, 03, 16)
+            , new DateOnly(2022, 3, 16)
             , DIHelper);
         ConfigWrapper = Set(
             "config-wrapper"
             , "Config.Wrapper"
-            , new DateOnly(2022, 03, 18)
+            , new DateOnly(2022, 3, 18)
             , DIHelper);
         ModelHelper = Set(
             "model-helper"
             , "ModelHelper"
-            , new DateOnly(2022, 03, 22)
+            , new DateOnly(2022, 3, 22)
             , DIHelper);
     }
 }
