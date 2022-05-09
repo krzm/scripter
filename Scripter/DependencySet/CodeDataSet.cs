@@ -45,5 +45,16 @@ public class CodeDataSet
                 nameof(ModernInventoryAppData))
             .RegisterSingleton<ICodeData, MyCliLibInventoryAppData>(
                 nameof(MyCliLibInventoryAppData));
+            
+        RegisterCodeData<ShapeEngineData>();
+    }
+
+    //todo: test nameof(TData) with logger
+    private void RegisterCodeData<TData>()
+        where TData : ICodeData
+    {
+        Container
+            .RegisterSingleton<ICodeData, TData>(
+                nameof(TData));
     }
 }
