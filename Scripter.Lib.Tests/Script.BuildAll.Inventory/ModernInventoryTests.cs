@@ -1,4 +1,5 @@
-using Scripter.Inventory;
+using Scripter.Data;
+using Scripter.Data.Helper;
 using Xunit;
 
 namespace Scripter.Lib.Tests.BuildAll.Inventory;
@@ -7,7 +8,7 @@ public class ModernInventoryTests
     : ScriptTest
 {
     private static ICodeData codeData
-        = new ModernAppData();
+        = new ModernInventoryAppData();
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\EFCoreHelper.Build.ps1\"")]

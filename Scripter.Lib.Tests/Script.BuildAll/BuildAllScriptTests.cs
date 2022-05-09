@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Scripter.Data;
+using Scripter.Data.Helper;
 using Xunit;
 
 namespace Scripter.Lib.Tests;
@@ -22,8 +24,8 @@ public class BuildAllScriptTests
                 , new ModernMDILogData()
                 , new ModernWizardLogData()
                 , new ConsoleLogData()
-                , new Inventory.ModernAppData()
-                , new Inventory.CliLibAppData()
+                , new ModernInventoryAppData()
+                , new MyCliLibInventoryAppData()
             });
 
     [Theory]

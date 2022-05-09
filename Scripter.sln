@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scripter.Lib.Tests", "Scrip
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scripter.Lib", "Scripter.Lib\Scripter.Lib.csproj", "{1FB57882-6340-4665-999B-CD0B21D1C89D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scripter.Data", "Scripter.Data\Scripter.Data.csproj", "{C28B880F-50EE-4A34-96A7-C485EE174AB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scripter.Data.Helper", "Scripter.Data.Helper\Scripter.Data.Helper.csproj", "{1F93F084-6302-499A-8EAA-F2806258D535}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{1FB57882-6340-4665-999B-CD0B21D1C89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FB57882-6340-4665-999B-CD0B21D1C89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FB57882-6340-4665-999B-CD0B21D1C89D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C28B880F-50EE-4A34-96A7-C485EE174AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28B880F-50EE-4A34-96A7-C485EE174AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28B880F-50EE-4A34-96A7-C485EE174AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28B880F-50EE-4A34-96A7-C485EE174AB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F93F084-6302-499A-8EAA-F2806258D535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F93F084-6302-499A-8EAA-F2806258D535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F93F084-6302-499A-8EAA-F2806258D535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F93F084-6302-499A-8EAA-F2806258D535}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

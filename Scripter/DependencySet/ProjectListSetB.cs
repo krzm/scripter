@@ -1,4 +1,6 @@
 using DIHelper.Unity;
+using Scripter.Data;
+using Scripter.Data.Helper;
 using Unity;
 using Unity.Injection;
 
@@ -48,8 +50,8 @@ public class ProjectListSetB
                 , c.Resolve<ICodeData>(nameof(ModernMDILogData))
                 , c.Resolve<ICodeData>(nameof(ModernWizardLogData))
                 , c.Resolve<ICodeData>(nameof(ConsoleLogData))
-                , c.Resolve<ICodeData>(nameof(Inventory.ModernAppData))
-                , c.Resolve<ICodeData>(nameof(Inventory.CliLibAppData))
+                , c.Resolve<ICodeData>(nameof(ModernInventoryAppData))
+                , c.Resolve<ICodeData>(nameof(MyCliLibInventoryAppData))
             });
     }
 

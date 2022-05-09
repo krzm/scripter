@@ -1,3 +1,4 @@
+using Scripter.Data.Helper;
 using Xunit;
 
 namespace Scripter.Lib.Tests.BuildAll.GameData;
@@ -6,7 +7,7 @@ public class GameDataTests
     : ScriptTest
 {
     private static readonly ICodeData codeData
-        = new Scripter.GameData();
+        = new Data.GameData();
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\EFCoreHelper.Build.ps1\"")]

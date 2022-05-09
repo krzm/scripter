@@ -1,4 +1,6 @@
-﻿namespace Scripter;
+﻿using Scripter.Data.Helper;
+
+namespace Scripter;
 
 public interface IScriptParam
 {

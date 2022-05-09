@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Scripter.Data;
+using Scripter.Data.Helper;
 using Xunit;
 
 namespace Scripter.Lib.Tests;

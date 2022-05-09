@@ -23,6 +23,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Scripter.Lib\Scripter.Lib.csproj" />
+    <ProjectReference Include="..\Scripter.Data.Helper\Scripter.Data.Helper.csproj" />
+    <ProjectReference Include="..\Scripter.Data\Scripter.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 using Moq;
+using Scripter.Data.Helper;
 
 namespace Scripter.Lib.Tests;
 
