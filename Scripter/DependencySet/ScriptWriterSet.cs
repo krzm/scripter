@@ -17,14 +17,15 @@ public class ScriptWriterSet
 	public override void Register()
 	{
 		RegisterScriptWriter<ProjectScriptWriter>(
-			ScriptWriters.Project);
+			ScriptWriters.Project
+            , GetProjectScriptWriterCtor());
         RegisterScriptWriter<ProjectBuildAllScriptWriter>(
 			ScriptWriters.ProjectBuildAll);
         RegisterScriptWriter<BuildAllScriptWriter>(
 			ScriptWriters.BuildAll);
 	}
 
-	private void RegisterScriptWriter<TWriter>(
+    private void RegisterScriptWriter<TWriter>(
 		ScriptWriters writer)
 		where TWriter : IScriptWriter
 	{
@@ -41,4 +42,13 @@ public class ScriptWriterSet
 			writer.ToString()
 			, injectionConstructor);
 	}
+
+    private InjectionConstructor GetProjectScriptWriterCtor()
+    {
+        return new InjectionConstructor(
+            Container.Resolve<IProjectList>(nameof(AllAppsList))
+            , Container.Resolve<IScriptParam>()
+            , Container.Resolve<List<IScript>>()
+        );
+    }
 }
