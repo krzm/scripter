@@ -18,16 +18,6 @@ public class AppCommands
 
     public override void Register()
     {
-        Container.RegisterSingleton<ICommand, ScriptCommand>(
-            new InjectionConstructor(
-                Container.Resolve<IProjectList>(
-                    nameof(AllProjList))
-                , Container.Resolve<List<ICodeData>>()
-                , Container.Resolve<IScriptParam>()
-                , Container.Resolve<List<IScript>>()
-                , Container.Resolve<List<IProjBuildAll>>()
-                , Container.Resolve<List<IBuildAll>>()
-            )
-        );
+        Container.RegisterSingleton<ICommand, ScriptCommand>();
     }
 }
