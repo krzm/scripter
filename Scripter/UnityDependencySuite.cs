@@ -26,6 +26,8 @@ public class UnityDependencySuite
         RegisterSet<LogBuildAllSet>();
         RegisterSet<InventoryBuildAllSet>();
         RegisterSet<BuildAllSet>();
+        RegisterSet<ScriptWriterSet>();
+        RegisterSet<ScriptWriterDictionarySet>();
     }
 
     protected override void RegisterCommands()
