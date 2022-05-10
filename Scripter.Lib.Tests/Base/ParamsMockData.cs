@@ -15,4 +15,5 @@ public record ParamsMockData
     , string CloneUrlEnd = ".git"
     , string CloneUrl = @"https://github.com/krzm/cli-helper.git"
     , bool IsApp = false
+    , bool IsWpf = false
 );

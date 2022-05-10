@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Scripter.Lib.Tests;
 
-public class CopyScriptData
+public class WpfProjCopyScriptData
     : CopyScriptConstant
 {
     public static IEnumerable<object[]> Data =>
@@ -22,6 +22,6 @@ public class CopyScriptData
             , new object[] { 11, "{" }
             , new object[] { 12, $"Remove-Item \"{AppBuildPath}\\*\" -Recurse" }
             , new object[] { 13, "}" }
-            , new object[] { 14, $"Copy-Item -Path \"{SourcePath}\" -Destination \"{AppBuildPath}\" -Recurse" }
+            , new object[] { 14, $"Copy-Item -Path \"{WpfProjSourcePath}\" -Destination \"{AppBuildPath}\" -Recurse" }
         };
 }

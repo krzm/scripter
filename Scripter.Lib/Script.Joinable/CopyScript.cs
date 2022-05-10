@@ -1,6 +1,7 @@
 ﻿namespace Scripter;
 
-public class CopyScript : IScript
+public class CopyScript
+    : IScript
 {
     private readonly IScriptParam scriptParam;
 
@@ -45,8 +46,10 @@ public class CopyScript : IScript
             , "{"
             , $"Remove-Item \"{appProjBuildPath}\\*\" -Recurse"
             , "}"
-            , $"Copy-Item -Path \"{appProjPath}\\bin\\Release\\net6.0\\publish\\*\" "
+            , $"Copy-Item -Path \"{appProjPath}\\bin\\Release\\{GetNetVer()}\\publish\\*\" "
                 + $"-Destination \"{appProjBuildPath}\" -Recurse"
         };
     }
+
+    protected virtual string GetNetVer() => "net6.0";
 }
