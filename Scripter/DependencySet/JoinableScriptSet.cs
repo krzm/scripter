@@ -16,12 +16,22 @@ public class JoinableScriptSet
     {
         Container.RegisterSingleton<IScriptParam, ScriptParam>();
 
-        Container.RegisterSingleton<IScript, CloneScript>(nameof(CloneScript));
-        Container.RegisterSingleton<IScript, PullScript>(nameof(PullScript));
-        Container.RegisterSingleton<IScript, CompileScript>(nameof(CompileScript));
-        Container.RegisterSingleton<IScript, VersionScript>(nameof(VersionScript));
-        Container.RegisterSingleton<IScript, CopyScript>(nameof(CopyScript));
-        Container.RegisterSingleton<IScript, CopyAppScript>(nameof(CopyAppScript));
-        Container.RegisterSingleton<IScript, BuildScript>(nameof(BuildScript));
+        RegisterScript<CloneScript>();
+        RegisterScript<PullScript>();
+        RegisterScript<CompileScript>();
+        RegisterScript<VersionScript>();
+        RegisterScript<CopyScript>();
+        RegisterScript<CopyAppScript>();
+        RegisterScript<BuildScript>();
+
+        RegisterScript<WpfProjCopyScript>();;
+    }
+
+    private void RegisterScript<TData>()
+        where TData : IScript
+    {
+        Container
+            .RegisterSingleton<IScript, TData>(
+                nameof(TData));
     }
 }
