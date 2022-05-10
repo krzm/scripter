@@ -38,6 +38,6 @@ public class CodeDataSet
     {
         Container
             .RegisterSingleton<ICodeData, TData>(
-                nameof(TData));
+                typeof(TData).Name);
     }
 }

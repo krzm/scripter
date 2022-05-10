@@ -32,6 +32,6 @@ public class JoinableScriptSet
     {
         Container
             .RegisterSingleton<IScript, TData>(
-                nameof(TData));
+                typeof(TData).Name);
     }
 }
