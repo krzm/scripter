@@ -4,13 +4,14 @@ namespace Scripter.Lib.Tests;
 
 public class CopyScriptData
 {
-    private const string BuildPath = @"C:\kmazanek@gmail.com\Build";
+    private const string RootPath = @"C:\kmazanek@gmail.com";
+    private const string BuildPath = @$"{RootPath}\Build";
+    private const string CodePath = @$"{RootPath}\Code";
     private const string RepoFolder = "cli-helper";
     private const string RepoBuildPath = @$"{BuildPath}\{RepoFolder}";
     private const string AppProjFolder = "CLIHelper";
     private const string AppBuildPath = $@"{RepoBuildPath}\{AppProjFolder}";  
-    private const string SourcePath = "\"C:\\kmazanek@gmail.com\\Code\\cli-helper\\CLIHelper\\bin\\Release\\net6.0\\publish\\*\"";
-    private const string TargetPath = "\"C:\\kmazanek@gmail.com\\Build\\cli-helper\\CLIHelper\"";
+    private const string SourcePath = @$"{CodePath}\{RepoFolder}\{AppProjFolder}\bin\Release\net6.0\publish\*";
 
     public static IEnumerable<object[]> Data =>
         new List<object[]>
@@ -29,6 +30,6 @@ public class CopyScriptData
             , new object[] { 11, "{" }
             , new object[] { 12, $"Remove-Item \"{AppBuildPath}\\*\" -Recurse" }
             , new object[] { 13, "}" }
-            , new object[] { 14, $"Copy-Item -Path {SourcePath} -Destination {TargetPath} -Recurse" }
+            , new object[] { 14, $"Copy-Item -Path \"{SourcePath}\" -Destination \"{AppBuildPath}\" -Recurse" }
         };
 }
