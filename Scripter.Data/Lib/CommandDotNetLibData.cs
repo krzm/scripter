@@ -30,8 +30,9 @@ public class CommandDotNetLibData
             , DIHelper
             , ConfigWrapper);
         CommandDotNetIoCUnity = Set(
-            Repo
-            , "CommandDotNet.IoC.Unity");
+            repo: Repo
+            , project: "CommandDotNet.IoC.Unity"
+            , new DateOnly(2022, 4, 1));
         CommandDotNetUnityHelper = Set(
             Repo
             , "CommandDotNet.Unity.Helper"

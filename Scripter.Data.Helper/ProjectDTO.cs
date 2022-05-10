@@ -5,4 +5,5 @@ public record ProjectDTO(
     , string ProjFolder
     , List<ProjectDTO>? Dependencies = default
     , bool IsApp = false
+    , bool IsWpf = false
     , DateOnly LastCheck = default);

@@ -17,11 +17,12 @@ public abstract class CodeData
         , DateOnly lastCheck)
     {
         var proj = new ProjectDTO(
-            repo
-            , project
-            , default
-            , false
-            , lastCheck);
+            RepoFolder: repo
+            , ProjFolder: project
+            , Dependencies: new List<ProjectDTO>()
+            , IsApp: false
+            , IsWpf: false
+            , LastCheck: lastCheck);
         Add(proj.ProjFolder, proj);
         return proj;
     }
@@ -33,11 +34,12 @@ public abstract class CodeData
         , params ProjectDTO[] libs)
     {
         var proj = new ProjectDTO(
-            repo
-            , project
-            , new List<ProjectDTO>(libs)
-            , false
-            , lastCheck);
+            RepoFolder: repo
+            , ProjFolder: project
+            , Dependencies: new List<ProjectDTO>(libs)
+            , IsApp: false
+            , IsWpf: false
+            , LastCheck: lastCheck);
         Add(proj.ProjFolder, proj);
         return proj;
     }
@@ -50,11 +52,31 @@ public abstract class CodeData
         , params ProjectDTO[] libs)
     {
         var proj = new ProjectDTO(
-            repo
-            , project
-            , new List<ProjectDTO>(libs)
-            , isApp
-            , lastCheck);
+            RepoFolder: repo
+            , ProjFolder: project
+            , Dependencies: new List<ProjectDTO>(libs)
+            , IsApp: isApp
+            , IsWpf: false
+            , LastCheck: lastCheck);
+        Add(proj.ProjFolder, proj);
+        return proj;
+    }
+
+    protected ProjectDTO Set(
+        string repo
+        , string project
+        , bool isApp = false
+        , bool isWpf = false
+        , DateOnly lastCheck = default
+        , params ProjectDTO[] libs)
+    {
+        var proj = new ProjectDTO(
+            RepoFolder: repo
+            , ProjFolder: project
+            , Dependencies: new List<ProjectDTO>(libs)
+            , IsApp: isApp
+            , IsWpf: isWpf
+            , LastCheck: lastCheck);
         Add(proj.ProjFolder, proj);
         return proj;
     }
