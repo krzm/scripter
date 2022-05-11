@@ -2,7 +2,7 @@ using Scripter.Data.Helper;
 
 namespace Scripter.Lib;
 
-public interface IProjDataValidatorBase
+public interface IProjDataValidator
 {
     bool Validate(ProjectDTO project);
 }
