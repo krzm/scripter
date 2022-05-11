@@ -14,7 +14,7 @@ public class ShapeEngineData
         shapeModel = Set(
             repo: "shape-model"
             , project:  "Shape.Model"
-            , isApp: true
+            , isApp: false
             , isWpf: true
             , lastCheck: new DateOnly(2022, 5, 9)
             , libs: Vector2
