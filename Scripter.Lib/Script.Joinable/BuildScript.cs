@@ -1,8 +1,12 @@
 ﻿namespace Scripter;
 
-public class BuildScript : IScript
+public class BuildScript 
+    : IScript
 {
     private readonly IScriptParam scriptParam;
+    private string? projName;
+
+    protected string? ProjName => projName;
 
     public string File
     {
@@ -17,22 +21,19 @@ public class BuildScript : IScript
     {
         this.scriptParam = scriptParam;
         ArgumentNullException.ThrowIfNull(this.scriptParam);
+        ArgumentNullException.ThrowIfNull(this.scriptParam.Project);
+        projName = this.scriptParam.Project.ProjFolder;
     }
 
-    public string[] GetScript()
+    public virtual string[] GetScript()
     {
-        ArgumentNullException.ThrowIfNull(scriptParam.Project);
-        var name = scriptParam.Project.ProjFolder;
-        var list = new List<string>
+        return new string[]
         {
-            $"& \"$PSScriptRoot\\{name}.Clone.ps1\""
-            , $"& \"$PSScriptRoot\\{name}.Pull.ps1\""
-            , $"& \"$PSScriptRoot\\{name}.Compile.ps1\""
-            , $"& \"$PSScriptRoot\\{name}.Version.ps1\""
-            , $"& \"$PSScriptRoot\\{name}.Copy.ps1\""
+            $"& \"$PSScriptRoot\\{projName}.Clone.ps1\""
+            , $"& \"$PSScriptRoot\\{projName}.Pull.ps1\""
+            , $"& \"$PSScriptRoot\\{projName}.Compile.ps1\""
+            , $"& \"$PSScriptRoot\\{projName}.Version.ps1\""
+            , $"& \"$PSScriptRoot\\{projName}.Copy.ps1\""
         };
-        if(scriptParam.Project.IsApp)
-            list.Add($"& \"$PSScriptRoot\\{name}.CopyApp.ps1\"");
-        return list.ToArray();
     }
 }

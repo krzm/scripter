@@ -32,6 +32,7 @@ public class JoinableScriptDictionarySet
 		Add(store, JoinableScripts.CopyBuildWpf);
 		Add(store, JoinableScripts.CopyApp);
 		Add(store, JoinableScripts.Build);
+		Add(store, JoinableScripts.BuildApp);
 		return store;
     }
 
