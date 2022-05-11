@@ -29,6 +29,8 @@ public class UnityDependencySuite
         RegisterSet<BuildAllSet>();
         RegisterSet<ProjDataValidatorSet>();
         RegisterSet<ProjDataValidatorDictionarySet>();
+        RegisterSet<JoinableScriptSequencerSet>();
+        RegisterSet<JoinableScriptSequencerDictionarySet>();
         RegisterSet<ScriptWriterSet>();
         RegisterSet<ScriptWriterDictionarySet>();
     }

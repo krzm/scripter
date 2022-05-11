@@ -15,31 +15,31 @@ public class ProjDataValidatorDictionarySet
 
 	public override void Register()
 	{
-		Container.RegisterFactory<IDictionary<ProjDataValidators, IProjDataValidator>>(
+		Container.RegisterFactory<IDictionary<ProjectTypes, IProjDataValidator>>(
 			c => FillDictionary(
-                new Dictionary<ProjDataValidators, IProjDataValidator>()));
+                new Dictionary<ProjectTypes, IProjDataValidator>()));
 	}
 
-    private IDictionary<ProjDataValidators, IProjDataValidator> FillDictionary(
-        IDictionary<ProjDataValidators, IProjDataValidator> store)
+    private IDictionary<ProjectTypes, IProjDataValidator> FillDictionary(
+        IDictionary<ProjectTypes, IProjDataValidator> store)
     {
 		if(store.Count > 0) 
 			return store;
-		Add(store, ProjDataValidators.Default);
-		Add(store, ProjDataValidators.App);
-		Add(store, ProjDataValidators.Wpf);
-		Add(store, ProjDataValidators.WpfApp);
+		Add(store, ProjectTypes.Default);
+		Add(store, ProjectTypes.App);
+		Add(store, ProjectTypes.Wpf);
+		Add(store, ProjectTypes.WpfApp);
 		return store;
     }
 
 	private void Add(
-        IDictionary<ProjDataValidators, IProjDataValidator> store
-		, ProjDataValidators validator)
+        IDictionary<ProjectTypes, IProjDataValidator> store
+		, ProjectTypes validator)
 	{
         store.Add(validator, ResolveScript(validator));
 	}
 
-    private IProjDataValidator ResolveScript(ProjDataValidators validator)
+    private IProjDataValidator ResolveScript(ProjectTypes validator)
 	{
 		return Container.Resolve<IProjDataValidator>(
 			validator.ToString());

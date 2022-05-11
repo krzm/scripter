@@ -16,17 +16,17 @@ public class ProjDataValidatorSet
 	public override void Register()
 	{
 		RegisterValidator<DefaultProjValidator>(
-			ProjDataValidators.Default);
+			ProjectTypes.Default);
         RegisterValidator<AppProjValidator>(
-			ProjDataValidators.App);
+			ProjectTypes.App);
         RegisterValidator<WpfProjValidator>(
-			ProjDataValidators.Wpf);
+			ProjectTypes.Wpf);
         RegisterValidator<WpfAppProjValidator>(
-			ProjDataValidators.WpfApp);
+			ProjectTypes.WpfApp);
 	}
 
     private void RegisterValidator<TValidator>(
-		ProjDataValidators validator)
+		ProjectTypes validator)
 		where TValidator : IProjDataValidator
 	{
 		Container.RegisterSingleton<IProjDataValidator, TValidator>(
