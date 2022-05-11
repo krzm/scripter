@@ -8,7 +8,7 @@ public class AppBuildScript
     {
     }
 
-    public override string[] GetScript()
+    protected override string[] GetScriptContent()
     {
         return new string[]
         {

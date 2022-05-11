@@ -18,7 +18,7 @@ public class ScriptWriterSet
 	{
 		RegisterScriptWriter<JoinableScriptWriter>(
 			ScriptWriters.JoinableScript
-            , GetProjectScriptWriterCtor());
+            , GetJoinableScriptWriterCtor());
         RegisterScriptWriter<ProjectBuildAllScriptWriter>(
 			ScriptWriters.ProjectBuildAll);
         RegisterScriptWriter<BuildAllScriptWriter>(
@@ -43,12 +43,14 @@ public class ScriptWriterSet
 			, injectionConstructor);
 	}
 
-    private InjectionConstructor GetProjectScriptWriterCtor()
+    private InjectionConstructor GetJoinableScriptWriterCtor()
     {
         return new InjectionConstructor(
             Container.Resolve<IProjectList>(nameof(AllAppsList))
             , Container.Resolve<IScriptParam>()
-            , Container.Resolve<List<IScript>>()
+            , Container.Resolve<IDictionary<ProjectTypes, IProjDataValidator>>()
+            , Container.Resolve<IDictionary<ProjectTypes, IJoinableScriptSequencer>>()
+            , Container.Resolve<IDictionary<JoinableScripts, IScript>>()
         );
     }
 }

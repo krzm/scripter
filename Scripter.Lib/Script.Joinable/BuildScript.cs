@@ -21,11 +21,16 @@ public class BuildScript
     {
         this.scriptParam = scriptParam;
         ArgumentNullException.ThrowIfNull(this.scriptParam);
-        ArgumentNullException.ThrowIfNull(this.scriptParam.Project);
-        projName = this.scriptParam.Project.ProjFolder;
     }
 
-    public virtual string[] GetScript()
+    public string[] GetScript()
+    {
+        ArgumentNullException.ThrowIfNull(this.scriptParam.Project);
+        projName = this.scriptParam.Project.ProjFolder;
+        return GetScriptContent();
+    }
+
+    protected virtual string[] GetScriptContent()
     {
         return new string[]
         {
