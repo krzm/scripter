@@ -20,6 +20,7 @@ public class UnityDependencySuite
         RegisterSet<AppConfigSet>();
         RegisterSet<CodeDataSet>();
         RegisterSet<JoinableScriptSet>();
+        RegisterSet<JoinableScriptDictionarySet>();
         RegisterSet<ProjectListSetA>();
         RegisterSet<ProjectListSetB>();
         RegisterSet<ProjBuildAllSet>();
