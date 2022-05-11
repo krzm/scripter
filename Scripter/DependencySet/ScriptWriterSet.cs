@@ -46,7 +46,7 @@ public class ScriptWriterSet
     private InjectionConstructor GetJoinableScriptWriterCtor()
     {
         return new InjectionConstructor(
-            Container.Resolve<IProjectList>(nameof(AllAppsList))
+            Container.Resolve<IProjectList>(nameof(AllProjList))
             , Container.Resolve<IScriptParam>()
             , Container.Resolve<IDictionary<ProjectTypes, IProjDataValidator>>()
             , Container.Resolve<IDictionary<ProjectTypes, IJoinableScriptSequencer>>()
