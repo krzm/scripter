@@ -1,6 +1,6 @@
 ﻿namespace Scripter;
 
-public class CopyScript
+public class CopyBuildScript
     : IScript
 {
     private readonly IScriptParam scriptParam;
@@ -14,7 +14,7 @@ public class CopyScript
         }
     }
 
-    public CopyScript(IScriptParam scriptParam)
+    public CopyBuildScript(IScriptParam scriptParam)
     {
         this.scriptParam = scriptParam;
         ArgumentNullException.ThrowIfNull(this.scriptParam);

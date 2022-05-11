@@ -20,11 +20,10 @@ public class JoinableScriptSet
         RegisterScript<PullScript>();
         RegisterScript<CompileScript>();
         RegisterScript<VersionScript>();
-        RegisterScript<CopyScript>();
+        RegisterScript<CopyBuildScript>();
+        RegisterScript<CopyBuildWpfScript>();
         RegisterScript<CopyAppScript>();
         RegisterScript<BuildScript>();
-
-        RegisterScript<WpfProjCopyScript>();;
     }
 
     private void RegisterScript<TData>()

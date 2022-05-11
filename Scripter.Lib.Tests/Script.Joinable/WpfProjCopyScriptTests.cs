@@ -12,7 +12,7 @@ public class WpfProjCopyScriptTests
         , string expected)
     {
         var moq = SetupParamsMock(new ParamsMockData(IsWpf:true));
-        IScript script = new WpfProjCopyScript(moq.Object);
+        IScript script = new CopyBuildWpfScript(moq.Object);
 
         var acctual = GetLine(script, index);
 

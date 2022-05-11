@@ -7,5 +7,7 @@ public enum JoinableScripts
     , Compile
     , VersionFile
     , CopyBuild
+    , CopyBuildWpf
     , CopyApp
+    , Build
 }

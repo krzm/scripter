@@ -12,7 +12,7 @@ public class CopyScriptTests
         , string expected)
     {
         var moq = SetupParamsMock(new ParamsMockData());
-        IScript script = new CopyScript(moq.Object);
+        IScript script = new CopyBuildScript(moq.Object);
 
         var acctual = GetLine(script, index);
 

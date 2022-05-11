@@ -1,9 +1,9 @@
 namespace Scripter;
 
-public class WpfProjCopyScript
-    : CopyScript
+public class CopyBuildWpfScript
+    : CopyBuildScript
 {
-    public WpfProjCopyScript(
+    public CopyBuildWpfScript(
         IScriptParam scriptParam) 
             : base(scriptParam)
     {
