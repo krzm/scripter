@@ -22,7 +22,7 @@ public class ScriptCommand : ICommand
 
     public void Execute(object? parameter)
     {
-        writerStore[ScriptWriters.Project].WriteScripts();
+        writerStore[ScriptWriters.JoinableScript].WriteScripts();
         writerStore[ScriptWriters.ProjectBuildAll].WriteScripts();
         writerStore[ScriptWriters.BuildAll].WriteScripts();
     }

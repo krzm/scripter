@@ -16,8 +16,8 @@ public class ScriptWriterSet
 
 	public override void Register()
 	{
-		RegisterScriptWriter<ProjectScriptWriter>(
-			ScriptWriters.Project
+		RegisterScriptWriter<JoinableScriptWriter>(
+			ScriptWriters.JoinableScript
             , GetProjectScriptWriterCtor());
         RegisterScriptWriter<ProjectBuildAllScriptWriter>(
 			ScriptWriters.ProjectBuildAll);

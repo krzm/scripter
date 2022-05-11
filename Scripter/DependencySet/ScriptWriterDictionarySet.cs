@@ -25,7 +25,7 @@ public class ScriptWriterDictionarySet
     {
 		if(store.Count > 0) 
 			return store;
-		Add(store, ScriptWriters.Project);
+		Add(store, ScriptWriters.JoinableScript);
 		Add(store, ScriptWriters.ProjectBuildAll);
 		Add(store, ScriptWriters.BuildAll);
 		return store;

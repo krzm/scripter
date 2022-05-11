@@ -2,7 +2,7 @@ namespace Scripter.Lib;
 
 public enum ScriptWriters
 {
-    Project
+    JoinableScript
     , ProjectBuildAll
     , BuildAll
 }

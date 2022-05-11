@@ -2,22 +2,28 @@ using Scripter.Data.Helper;
 
 namespace Scripter.Lib;
 
-public class ProjectScriptWriter
+public class JoinableScriptWriter
     : ScriptWriter
 {
     private readonly IProjectList? projList;
     private readonly IScriptParam? scriptParam;
-    private readonly List<IScript>? projScripts;
+    private readonly IDictionary<ProjectTypes, IProjDataValidator> validators;
+    private readonly IDictionary<ProjectTypes, IJoinableScriptSequencer> sequencers;
+    private readonly IDictionary<JoinableScripts, IScript>? scripts;
 
-    public ProjectScriptWriter(
+    public JoinableScriptWriter(
         IProjectList projList
         , IScriptParam scriptParam
-        , List<IScript> projectScripts
+        , IDictionary<ProjectTypes, IProjDataValidator> validators
+        , IDictionary<ProjectTypes, IJoinableScriptSequencer> sequencers
+        , IDictionary<JoinableScripts, IScript> scripts
         )
     {
         this.projList = projList;
         this.scriptParam = scriptParam;
-        this.projScripts = projectScripts;
+        this.validators = validators;
+        this.sequencers = sequencers;
+        this.scripts = scripts;
 
         ArgumentNullException.ThrowIfNull(this.projList);
     }
@@ -26,17 +32,20 @@ public class ProjectScriptWriter
     {
         var projects = projList?.Projects;
         ArgumentNullException.ThrowIfNull(projects);
+        ArgumentNullException.ThrowIfNull(scripts);
         foreach (var project in projects)
         {
             SetProject(project);
-            ArgumentNullException.ThrowIfNull(scriptParam);
-            ArgumentNullException.ThrowIfNull(scriptParam.Project);
-            ArgumentNullException.ThrowIfNull(projScripts);
-            foreach (var script in projScripts)
+            foreach (var validator in validators)
             {
-                if (scriptParam.Project.IsApp == false
-                    && script is CopyAppScript) continue;
-                WriteScript(script);
+                if(validator.Value.Validate(project))
+                {
+                    var scriptSequence = sequencers[validator.Key].GetProjScriptSequence();
+                    foreach (var scriptKey in scriptSequence)
+                    {
+                        WriteScript(scripts[scriptKey]);
+                    }
+                }
             }
         }
     }
@@ -47,7 +56,9 @@ public class ProjectScriptWriter
         scriptParam.Project = new ProjectDTO(
             project.RepoFolder
             , project.ProjFolder
-            , IsApp: project.IsApp);
+            , IsApp: project.IsApp
+            , IsWpf: project.IsWpf
+            , LastCheck: project.LastCheck);
     }
 
     private void WriteScript(IScript script)
