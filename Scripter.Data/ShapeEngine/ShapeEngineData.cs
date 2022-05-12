@@ -6,6 +6,7 @@ public class ShapeEngineData
     : IndependantLibData
 {
     private ProjectDTO? shapeModel;
+    private ProjectDTO? simCore;
 
     protected override void SetAllData()
     {
@@ -17,6 +18,14 @@ public class ShapeEngineData
             , isApp: false
             , isWpf: true
             , lastCheck: new DateOnly(2022, 5, 9)
+            , libs: Vector2
+            );
+        simCore = Set(
+            repo: "sim-core"
+            , project:  "Sim.Core"
+            , isApp: false
+            , isWpf: true
+            , lastCheck: new DateOnly(2022, 5, 12)
             , libs: Vector2
             );
     }
