@@ -13,7 +13,7 @@ public class AppProjScriptSequence
             , JoinableScripts.CopyBuild
             , JoinableScripts.CopyApp
             , JoinableScripts.VersionFile
-            , JoinableScripts.Build
+            , JoinableScripts.BuildApp
         };
     }
 }
