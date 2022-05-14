@@ -10,6 +10,7 @@ public class IndependantLibData
     protected ProjectDTO? DotNetExtension;
     protected ProjectDTO? DotNetTool;
     protected ProjectDTO? Vector2;
+    protected ProjectDTO? XmlGenerator;
     
     protected override void SetAllData()
     {
@@ -33,5 +34,9 @@ public class IndependantLibData
             "vector-lib"
             , "Vector.Lib"
             , new DateOnly(2022, 5, 7));
+        XmlGenerator = Set(
+            "xml-generator"
+            , "Xml.Generator"
+            , new DateOnly(2022, 5, 14));
     }
 }

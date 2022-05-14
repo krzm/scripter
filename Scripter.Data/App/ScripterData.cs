@@ -22,10 +22,10 @@ public class ScripterData
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         ArgumentNullException.ThrowIfNull(SerilogWrapper);
         scripter = Set(
-            "scripter"
-            , "Scripter"
-            , true
-            , new DateOnly(2022, 4, 1)
+            repo: "scripter"
+            , project: "Scripter"
+            , isApp: true
+            , lastCheck: new DateOnly(2022, 4, 1)
             , DIHelper
             , ConfigWrapper
             , DataToTable
