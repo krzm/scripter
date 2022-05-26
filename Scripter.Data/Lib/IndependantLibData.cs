@@ -16,8 +16,8 @@ public class IndependantLibData
     {
         EFCoreHelper = Set(
             "efcore-helper"
-            , "EFCoreHelper"
-            , new DateOnly(2022, 3, 16));
+            , "EFCore.Helper"
+            , new DateOnly(2022, 5, 26));
         DIHelper = Set(
             "di-helper"
             , "DIHelper"
