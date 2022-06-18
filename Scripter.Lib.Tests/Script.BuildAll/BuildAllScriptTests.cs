@@ -39,7 +39,7 @@ public class BuildAllScriptTests
     [InlineData(7, $"& \"$PSScriptRoot\\Serilog.Wrapper.Build.ps1\"")]
     [InlineData(8, $"& \"$PSScriptRoot\\Scripter.Build.ps1\"")]
     [InlineData(9, $"& \"$PSScriptRoot\\CLI.App.Template.Build.ps1\"")]
-    [InlineData(10, $"& \"$PSScriptRoot\\EFCoreHelper.Build.ps1\"")]
+    [InlineData(10, $"& \"$PSScriptRoot\\EFCore.Helper.Build.ps1\"")]
     [InlineData(11, $"& \"$PSScriptRoot\\DotNetExtension.Build.ps1\"")]
     [InlineData(12, $"& \"$PSScriptRoot\\DotNetTool.Build.ps1\"")]
     [InlineData(13, $"& \"$PSScriptRoot\\CLIReader.Build.ps1\"")]
