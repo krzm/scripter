@@ -18,8 +18,8 @@ public class ScripterData
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         ArgumentNullException.ThrowIfNull(DataToTable);
-        ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
         ArgumentNullException.ThrowIfNull(SerilogWrapper);
         scripter = Set(
             repo: "scripter"
@@ -29,8 +29,8 @@ public class ScripterData
             , DIHelper
             , ConfigWrapper
             , DataToTable
-            , CommandDotNetHelper
             , CommandDotNetUnityHelper
+            , CommandDotNetHelper
             , SerilogWrapper
             );
     }

@@ -15,7 +15,6 @@ public class CommandDotNetLibData
     {
         base.SetAllData();
         ArgumentNullException.ThrowIfNull(DIHelper);
-        ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         CommandDotNetHelper = Set(
             Repo
@@ -33,13 +32,15 @@ public class CommandDotNetLibData
             repo: Repo
             , project: "CommandDotNet.IoC.Unity"
             , new DateOnly(2022, 4, 1));
+        ArgumentNullException.ThrowIfNull(CLIHelper);
         CommandDotNetUnityHelper = Set(
             Repo
             , "CommandDotNet.Unity.Helper"
-            , new DateOnly(2022, 4, 1)
+            , new DateOnly(2022, 4, 24)
             , DIHelper
             , CLIHelper
             , ConfigWrapper
+            , CommandDotNetHelper
             );
     }
 }
