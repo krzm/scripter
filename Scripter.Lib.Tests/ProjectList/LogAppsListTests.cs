@@ -20,7 +20,7 @@ public class LogAppsListTests
             });
 
     [Theory]
-    [InlineData(0, "EFCoreHelper")]
+    [InlineData(0, "EFCore.Helper")]
     [InlineData(1, "DIHelper")]
     [InlineData(2, "CLIHelper")]
     [InlineData(3, "Config.Wrapper")]

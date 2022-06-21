@@ -10,7 +10,7 @@ public class GameDataTests
         = new Data.GameData();
 
     [Theory]
-    [InlineData(0, $"& \"$PSScriptRoot\\EFCoreHelper.Build.ps1\"")]
+    [InlineData(0, $"& \"$PSScriptRoot\\EFCore.Helper.Build.ps1\"")]
     [InlineData(1, $"& \"$PSScriptRoot\\DIHelper.Build.ps1\"")]
     [InlineData(2, $"& \"$PSScriptRoot\\DotNetExtension.Build.ps1\"")]
     [InlineData(3, $"& \"$PSScriptRoot\\CLIHelper.Build.ps1\"")]
