@@ -14,30 +14,34 @@ public class IndependantLibData
     
     protected override void SetAllData()
     {
+        var lastUpd = new DateOnly(2022, 6, 22);
         EFCoreHelper = Set(
             "efcore-helper"
             , "EFCore.Helper"
-            , new DateOnly(2022, 5, 26));
+            , lastUpd);
         DIHelper = SetProjAndTests(
             "di-helper"
             , "DIHelper"
-            , new DateOnly(2022, 3, 16)
+            , lastUpd
             , SetTest("DIHelper.Tests"));
         DotNetExtension = Set(
             "dotnet-extension"
             , "DotNetExtension"
-            , new DateOnly(2022, 3, 16));
+            , lastUpd
+            , SetTest("DotNetExtension.Tests"));
         DotNetTool = Set(
             "dotnet-tool"
             , "DotNetTool"
-            , new DateOnly(2022, 3, 16));
+            , lastUpd);
         Vector2 = Set(
             "vector-lib"
             , "Vector.Lib"
-            , new DateOnly(2022, 5, 7));
+            , lastUpd
+            , SetTest("Vector.Lib.Tests"));
         XmlGenerator = Set(
             "xml-generator"
             , "Xml.Generator"
-            , new DateOnly(2022, 5, 14));
+            , lastUpd
+            , SetTest("Xml.Generator.Tests"));
     }
 }
