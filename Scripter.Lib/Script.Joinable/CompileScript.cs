@@ -26,7 +26,6 @@ public class CompileScript : IScript
             $"Set-Location -Path \"{scriptParam.RepoPath}\""
             , $"dotnet build"
             , $"dotnet build --configuration Release"
-            , $"dotnet test"
             , $"dotnet publish -c Release"
             , $"Set-Location -Path \"{scriptParam.ScriptPath}\""
         };
