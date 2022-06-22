@@ -24,7 +24,7 @@ public class IndependantLibData
             , "DIHelper"
             , lastUpd
             , SetTest("DIHelper.Tests"));
-        DotNetExtension = Set(
+        DotNetExtension = SetProjAndTests(
             "dotnet-extension"
             , "DotNetExtension"
             , lastUpd
@@ -33,12 +33,12 @@ public class IndependantLibData
             "dotnet-tool"
             , "DotNetTool"
             , lastUpd);
-        Vector2 = Set(
+        Vector2 = SetProjAndTests(
             "vector-lib"
             , "Vector.Lib"
             , lastUpd
             , SetTest("Vector.Lib.Tests"));
-        XmlGenerator = Set(
+        XmlGenerator = SetProjAndTests(
             "xml-generator"
             , "Xml.Generator"
             , lastUpd

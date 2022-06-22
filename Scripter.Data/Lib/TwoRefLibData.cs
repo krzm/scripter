@@ -15,7 +15,7 @@ public class TwoRefLibData
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
-        CLIReader = Set(
+        CLIReader = SetProjectDepsAndTests(
             "cli-reader"
             , "CLIReader"
             , lastUpd
@@ -23,7 +23,7 @@ public class TwoRefLibData
             , DIHelper
             , CLIHelper
             );
-        DataToTable = Set(
+        DataToTable = SetProjectDepsAndTests(
             "datatotable"
             , "DataToTable"
             , lastUpd

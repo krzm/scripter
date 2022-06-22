@@ -34,7 +34,7 @@ public class ManyRefLibData
             , ModelHelper
             , CLIReader);
         ArgumentNullException.ThrowIfNull(DIHelper);
-        CLIFramework = Set(
+        CLIFramework = SetProjectDepsAndTests(
             "cli-framework"
             , "CLIFramework"
             , lastUpd

@@ -17,7 +17,7 @@ public class CommandDotNetLibData
         var lastUpd = new DateOnly(2022, 6, 22);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
-        CommandDotNetHelper = Set(
+        CommandDotNetHelper = SetProjectDepsAndTests(
             Repo
             , "CommandDotNet.Helper"
             , lastUpd

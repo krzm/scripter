@@ -85,7 +85,7 @@ public abstract class CodeData
         return proj;
     }
 
-    protected ProjectDTO SetProjectAndTests(
+    protected ProjectDTO SetProjectDepsAndTests(
         string repo
         , string project
         , DateOnly lastCheck

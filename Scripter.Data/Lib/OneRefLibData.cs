@@ -15,13 +15,13 @@ public class OneRefLibData
         base.SetAllData();
         var lastUpd = new DateOnly(2022, 6, 22);
         ArgumentNullException.ThrowIfNull(DIHelper);
-        CLIHelper = SetProjectAndTests(
+        CLIHelper = SetProjectDepsAndTests(
             "cli-helper"
             , "CLIHelper"
             , lastUpd
             , SetTests("CLIHelper.Tests")
             , DIHelper);
-        ConfigWrapper = Set(
+        ConfigWrapper = SetProjectDepsAndTests(
             "config-wrapper"
             , "Config.Wrapper"
             , lastUpd
