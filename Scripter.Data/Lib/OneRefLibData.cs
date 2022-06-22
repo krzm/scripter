@@ -7,26 +7,37 @@ public class OneRefLibData
 {
     protected ProjectDTO? CLIHelper;
     protected ProjectDTO? ConfigWrapper;
+    protected ProjectDTO? SerilogWrapper;
     protected ProjectDTO? ModelHelper;
     
     protected override void SetAllData()
     {
         base.SetAllData();
+        var lastUpd = new DateOnly(2022, 6, 22);
         ArgumentNullException.ThrowIfNull(DIHelper);
-        CLIHelper = Set(
+        CLIHelper = SetProjectAndTests(
             "cli-helper"
             , "CLIHelper"
-            , new DateOnly(2022, 3, 16)
+            , lastUpd
+            , SetTests("CLIHelper.Tests")
             , DIHelper);
         ConfigWrapper = Set(
             "config-wrapper"
             , "Config.Wrapper"
-            , new DateOnly(2022, 3, 18)
+            , lastUpd
+            , SetTests("Config.Wrapper.Tests")
             , DIHelper);
+        SerilogWrapper = Set(
+            "serilog-wrapper"
+            , "Serilog.Wrapper"
+            , lastUpd
+            , DIHelper
+            , CLIHelper
+            , ConfigWrapper);
         ModelHelper = Set(
             "model-helper"
             , "ModelHelper"
-            , new DateOnly(2022, 3, 22)
+            , lastUpd
             , DIHelper);
     }
 }

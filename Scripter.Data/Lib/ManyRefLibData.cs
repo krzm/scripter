@@ -5,7 +5,6 @@ namespace Scripter.Data;
 public class ManyRefLibData 
     : TwoRefLibData
 {
-    protected ProjectDTO? SerilogWrapper;
     protected ProjectDTO? CRUDCommandHelper;
     protected ProjectDTO? CLIWizardHelper;
     protected ProjectDTO? CLIFramework;
@@ -13,23 +12,15 @@ public class ManyRefLibData
     protected override void SetAllData()
     {
         base.SetAllData();
-        ArgumentNullException.ThrowIfNull(DIHelper);
+        var lastUpd = new DateOnly(2022, 6, 22);
         ArgumentNullException.ThrowIfNull(CLIHelper);
-        ArgumentNullException.ThrowIfNull(ConfigWrapper);
-        SerilogWrapper = Set(
-            "serilog-wrapper"
-            , "Serilog.Wrapper"
-            , new DateOnly(2022, 3, 20)
-            , DIHelper
-            , CLIHelper
-            , ConfigWrapper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
         CRUDCommandHelper = Set(
             "crud-command-helper"
             , "CRUDCommandHelper"
-            , new DateOnly(2022, 3, 20)
+            , lastUpd
             , EFCoreHelper
             , CLIHelper
             , ModelHelper
@@ -38,14 +29,16 @@ public class ManyRefLibData
         CLIWizardHelper = Set(
             "cli-wizard-helper"
             , "CLIWizardHelper"
-            , new DateOnly(2022, 3, 21)
+            , lastUpd
             , EFCoreHelper
             , ModelHelper
             , CLIReader);
+        ArgumentNullException.ThrowIfNull(DIHelper);
         CLIFramework = Set(
             "cli-framework"
             , "CLIFramework"
-            , new DateOnly(2022, 4, 1)
+            , lastUpd
+            , SetTests("CLIFramework.Tests")
             , DIHelper
             , CLIHelper
             , CRUDCommandHelper

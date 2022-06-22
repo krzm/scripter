@@ -23,6 +23,17 @@ public abstract class CodeData
             , LastCheck: DateOnly.FromDateTime(DateTime.Now));
     }
 
+    protected ProjectDTO[] SetTests(
+        params string[] projects)
+    {
+        var list = new List<ProjectDTO>();
+        foreach (var proj in projects)
+        {
+            list.Add(SetTest(proj));
+        }
+        return list.ToArray();
+    }
+
     protected ProjectDTO Set(
         string repo
         , string project
@@ -70,6 +81,25 @@ public abstract class CodeData
             , IsApp: false
             , IsWpf: false
             , LastCheck: lastCheck);
+        Add(proj.ProjFolder, proj);
+        return proj;
+    }
+
+    protected ProjectDTO SetProjectAndTests(
+        string repo
+        , string project
+        , DateOnly lastCheck
+        , ProjectDTO[] tests
+        , params ProjectDTO[] libs)
+    {
+        var proj = new ProjectDTO(
+            RepoFolder: repo
+            , ProjFolder: project
+            , Dependencies: new List<ProjectDTO>(libs)
+            , IsApp: false
+            , IsWpf: false
+            , LastCheck: lastCheck
+            , Tests : new List<ProjectDTO>(tests));
         Add(proj.ProjFolder, proj);
         return proj;
     }

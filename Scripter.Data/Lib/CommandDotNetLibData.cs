@@ -14,33 +14,34 @@ public class CommandDotNetLibData
     protected override void SetAllData()
     {
         base.SetAllData();
+        var lastUpd = new DateOnly(2022, 6, 22);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         CommandDotNetHelper = Set(
             Repo
             , "CommandDotNet.Helper"
-            , new DateOnly(2022, 3, 18)
+            , lastUpd
+            , SetTests("CommandDotNet.Helpers.Tests")
             , DIHelper
             , ConfigWrapper);
         CommandDotNetMDIHelper = Set(
             Repo
             , "CommandDotNet.MDI.Helper"
-            , new DateOnly(2022, 4, 1)
+            , lastUpd
             , DIHelper
             , ConfigWrapper);
         CommandDotNetIoCUnity = Set(
             repo: Repo
             , project: "CommandDotNet.IoC.Unity"
-            , new DateOnly(2022, 4, 1));
+            , lastUpd);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         CommandDotNetUnityHelper = Set(
             Repo
             , "CommandDotNet.Unity.Helper"
-            , new DateOnly(2022, 4, 24)
+            , lastUpd
             , DIHelper
             , CLIHelper
             , ConfigWrapper
-            , CommandDotNetHelper
             );
     }
 }
