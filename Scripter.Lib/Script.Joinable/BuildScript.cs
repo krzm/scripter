@@ -36,6 +36,7 @@ public class BuildScript
         {
             $"& \"$PSScriptRoot\\{projName}.Clone.ps1\""
             , $"& \"$PSScriptRoot\\{projName}.Pull.ps1\""
+            , $"& \"$PSScriptRoot\\{projName}.Test.ps1\""
             , $"& \"$PSScriptRoot\\{projName}.Compile.ps1\""
             , $"& \"$PSScriptRoot\\{projName}.Version.ps1\""
             , $"& \"$PSScriptRoot\\{projName}.Copy.ps1\""

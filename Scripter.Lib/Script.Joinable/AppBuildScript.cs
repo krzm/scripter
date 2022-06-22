@@ -14,6 +14,7 @@ public class AppBuildScript
         {
             $"& \"$PSScriptRoot\\{ProjName}.Clone.ps1\""
             , $"& \"$PSScriptRoot\\{ProjName}.Pull.ps1\""
+            , $"& \"$PSScriptRoot\\{ProjName}.Test.ps1\""
             , $"& \"$PSScriptRoot\\{ProjName}.Compile.ps1\""
             , $"& \"$PSScriptRoot\\{ProjName}.Version.ps1\""
             , $"& \"$PSScriptRoot\\{ProjName}.Copy.ps1\""
