@@ -53,12 +53,7 @@ public class JoinableScriptWriter
     private void SetProject(ProjectDTO project)
     {
         ArgumentNullException.ThrowIfNull(scriptParam);
-        scriptParam.Project = new ProjectDTO(
-            project.RepoFolder
-            , project.ProjFolder
-            , IsApp: project.IsApp
-            , IsWpf: project.IsWpf
-            , LastCheck: project.LastCheck);
+        scriptParam.Project = project;
     }
 
     private void WriteScript(IScript script)

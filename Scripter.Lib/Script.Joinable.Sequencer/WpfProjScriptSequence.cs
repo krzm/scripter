@@ -9,6 +9,7 @@ public class WpfProjScriptSequence
         {
             JoinableScripts.Clone
             , JoinableScripts.Pull
+            , JoinableScripts.Test
             , JoinableScripts.Compile
             , JoinableScripts.CopyBuildWpf
             , JoinableScripts.VersionFile

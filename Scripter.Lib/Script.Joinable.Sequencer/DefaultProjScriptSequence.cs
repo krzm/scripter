@@ -9,6 +9,7 @@ public class DefaultProjScriptSequence
         {
             JoinableScripts.Clone
             , JoinableScripts.Pull
+            , JoinableScripts.Test
             , JoinableScripts.Compile
             , JoinableScripts.CopyBuild
             , JoinableScripts.VersionFile

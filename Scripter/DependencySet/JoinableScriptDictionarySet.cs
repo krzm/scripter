@@ -26,6 +26,7 @@ public class JoinableScriptDictionarySet
 			return store;
 		Add(store, JoinableScripts.Clone);
 		Add(store, JoinableScripts.Pull);
+		Add(store, JoinableScripts.Test);
 		Add(store, JoinableScripts.Compile);
 		Add(store, JoinableScripts.VersionFile);
 		Add(store, JoinableScripts.CopyBuild);

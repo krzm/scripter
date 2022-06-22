@@ -18,6 +18,7 @@ public class JoinableScriptSet
 
         RegisterScript<CloneScript>(JoinableScripts.Clone);
         RegisterScript<PullScript>(JoinableScripts.Pull);
+        RegisterScript<TestScript>(JoinableScripts.Test);
         RegisterScript<CompileScript>(JoinableScripts.Compile);
         RegisterScript<VersionScript>(JoinableScripts.VersionFile);
         RegisterScript<CopyBuildScript>(JoinableScripts.CopyBuild);

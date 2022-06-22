@@ -4,6 +4,7 @@ public enum JoinableScripts
 {
     Clone
     , Pull
+    , Test
     , Compile
     , VersionFile
     , CopyBuild

@@ -11,6 +11,18 @@ public abstract class CodeData
 
     protected abstract void SetAllData();
     
+    protected ProjectDTO SetTest(
+        string project)
+    {
+        return new ProjectDTO(
+            RepoFolder: string.Empty
+            , ProjFolder: project
+            , Dependencies : new List<ProjectDTO>()
+            , IsApp: false
+            , IsWpf: false
+            , LastCheck: DateOnly.FromDateTime(DateTime.Now));
+    }
+
     protected ProjectDTO Set(
         string repo
         , string project
@@ -19,10 +31,28 @@ public abstract class CodeData
         var proj = new ProjectDTO(
             RepoFolder: repo
             , ProjFolder: project
-            , Dependencies: new List<ProjectDTO>()
+            , Dependencies : new List<ProjectDTO>()
             , IsApp: false
             , IsWpf: false
             , LastCheck: lastCheck);
+        Add(proj.ProjFolder, proj);
+        return proj;
+    }
+
+    protected ProjectDTO SetProjAndTests(
+        string repo
+        , string project
+        , DateOnly lastCheck
+        , params ProjectDTO[] tests)
+    {
+        var proj = new ProjectDTO(
+            RepoFolder: repo
+            , ProjFolder: project
+            , Dependencies : new List<ProjectDTO>()
+            , IsApp: false
+            , IsWpf: false
+            , LastCheck: lastCheck
+            , Tests : new List<ProjectDTO>(tests));
         Add(proj.ProjFolder, proj);
         return proj;
     }
@@ -40,6 +70,25 @@ public abstract class CodeData
             , IsApp: false
             , IsWpf: false
             , LastCheck: lastCheck);
+        Add(proj.ProjFolder, proj);
+        return proj;
+    }
+
+    protected ProjectDTO Set(
+        string repo
+        , string project
+        , DateOnly lastCheck
+        , ProjectDTO[] tests
+        , params ProjectDTO[] libs)
+    {
+        var proj = new ProjectDTO(
+            RepoFolder: repo
+            , ProjFolder: project
+            , Dependencies: new List<ProjectDTO>(libs)
+            , IsApp: false
+            , IsWpf: false
+            , LastCheck: lastCheck
+            , Tests : new List<ProjectDTO>(tests));
         Add(proj.ProjFolder, proj);
         return proj;
     }

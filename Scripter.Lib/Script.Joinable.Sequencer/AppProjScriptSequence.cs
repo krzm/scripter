@@ -9,6 +9,7 @@ public class AppProjScriptSequence
         {
             JoinableScripts.Clone
             , JoinableScripts.Pull
+            , JoinableScripts.Test
             , JoinableScripts.Compile
             , JoinableScripts.CopyBuild
             , JoinableScripts.CopyApp

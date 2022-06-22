@@ -18,10 +18,11 @@ public class IndependantLibData
             "efcore-helper"
             , "EFCore.Helper"
             , new DateOnly(2022, 5, 26));
-        DIHelper = Set(
+        DIHelper = SetProjAndTests(
             "di-helper"
             , "DIHelper"
-            , new DateOnly(2022, 3, 16));
+            , new DateOnly(2022, 3, 16)
+            , SetTest("DIHelper.Tests"));
         DotNetExtension = Set(
             "dotnet-extension"
             , "DotNetExtension"
