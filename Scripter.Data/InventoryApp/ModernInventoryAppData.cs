@@ -15,6 +15,7 @@ public class ModernInventoryAppData
 
     private void SetModern()
     {
+        var lastUpd = new DateOnly(2022, 6, 24);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
@@ -30,11 +31,15 @@ public class ModernInventoryAppData
         ArgumentNullException.ThrowIfNull(DataLib);
         ArgumentNullException.ThrowIfNull(TableLib);
         ArgumentNullException.ThrowIfNull(ModernLib);
-        modernCLIApp = Set(
+        modernCLIApp = SetProjectDepsAndTests(
             "inventory-modern-consoleapp"
             , "Inventory.Modern.ConsoleApp"
-            , true
-            , new DateOnly(2022, 4, 9)
+            , IsApp: true
+            , lastUpd
+            , SetTests(
+                "Inventory.Modern.CliApp.TestApi"
+                , "Inventory.Modern.CliApp.Tests"
+                , "Inventory.Modern.CliApp.UseCase.Tests")
             , EFCoreHelper
             , DIHelper
             , CLIHelper
