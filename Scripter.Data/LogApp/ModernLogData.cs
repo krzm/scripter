@@ -27,8 +27,8 @@ public class ModernLogData
         modernCLIApp = Set(
             "log-modern-consoleapp"
             , "Log.Modern.ConsoleApp"
-            , true
-            , new DateOnly(2022, 4, 1)
+            , isApp: true
+            , new DateOnly(2022, 6, 26)
             , EFCoreHelper
             , DIHelper
             , CLIHelper

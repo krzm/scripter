@@ -10,11 +10,6 @@ public class ModernWizardLogData
     protected override void SetAllData()
     {
         base.SetAllData();
-        SetModernWizard();
-    }
-    
-    private void SetModernWizard()
-    {
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(DotNetExtension);
@@ -36,8 +31,8 @@ public class ModernWizardLogData
         modernWizardCLIApp = Set(
             "log-modern-wizard-consoleapp"
             , "Log.Modern.Wizard.ConsoleApp"
-            , true
-            , new DateOnly(2022, 4, 1)
+            , isApp: true
+            , new DateOnly(2022, 6, 26)
             , EFCoreHelper
             , DIHelper
             , DotNetExtension

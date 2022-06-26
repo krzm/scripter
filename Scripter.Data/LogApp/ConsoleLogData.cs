@@ -29,8 +29,8 @@ public class ConsoleLogData
         consoleLibCLIApp = Set(
             "log-console-lib-console-app"
             , "Log.ConsoleApp"
-            , true
-            , new DateOnly(2022, 4, 1)
+            , isApp: true
+            , new DateOnly(2022, 6, 26)
             , EFCoreHelper
             , DIHelper
             , DotNetExtension

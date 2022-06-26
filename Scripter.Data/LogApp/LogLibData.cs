@@ -14,12 +14,13 @@ public abstract class LogLibData
     protected override void SetAllData()
     {
         base.SetAllData();
+        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
         Data = Set(
             "log-data"
             , "Log.Data"
-            , new DateOnly(2022, 3, 22)
+            , lastUpd
             , EFCoreHelper
             , ModelHelper
             );
@@ -28,12 +29,12 @@ public abstract class LogLibData
         Tables = Set(
             "log-table"
             , "Log.Table"
-            , new DateOnly(2022, 4, 1)
+            , lastUpd
             , DIHelper
             , ModelHelper
             , DataToTable
             , Data
-        );
+            );
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
         ArgumentNullException.ThrowIfNull(CLIWizardHelper);
@@ -41,7 +42,7 @@ public abstract class LogLibData
         ConsoleLibCmds = Set(
             "log-console-lib"
             , "Log.Console.Lib"
-            , new DateOnly(2022, 4, 1)
+            , lastUpd
             , EFCoreHelper
             , CLIHelper
             , DataToTable
@@ -54,7 +55,7 @@ public abstract class LogLibData
         InputWizards = Set(
             "log-wizard-lib"
             , "Log.Wizard.Lib"
-            , new DateOnly(2022, 3, 26)
+            , lastUpd
             , EFCoreHelper
             , CLIReader
             , CLIWizardHelper
@@ -62,10 +63,11 @@ public abstract class LogLibData
             );
         ArgumentNullException.ThrowIfNull(DotNetExtension);
         ArgumentNullException.ThrowIfNull(DIHelper);
-        ModernLibCmds = Set(
+        ModernLibCmds = SetProjectDepsAndTests(
             "log-modern-lib"
             , "Log.Modern.Lib"
-            , new DateOnly(2022, 4, 1)
+            , lastUpd
+            , SetTests("Log.Modern.Lib.Tests")
             , EFCoreHelper
             , DIHelper
             , DotNetExtension
