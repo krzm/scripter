@@ -1,0 +1,16 @@
+Procedure "Complete Reset of the Build"
+
+1. Remove content of folders 
+    kmazanek@gmail.com/Apps
+    kmazanek@gmail.com/Build
+    kmazanek@gmail.com/Build.Script
+
+2. Pull scripter
+
+3. Switch to debug refs
+
+4. Run in debug and generate powershell scripts
+
+5. Switch scripter back to release refs, close it
+
+5. Run BuildAll.ps1 powershell

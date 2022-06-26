@@ -26,6 +26,7 @@ public class BuildAllScriptTests
                 , new ConsoleLogData()
                 , new ModernInventoryAppData()
                 , new MyCliLibInventoryAppData()
+                , new ShapeEngineData()
             });
 
     [Theory]
@@ -34,8 +35,8 @@ public class BuildAllScriptTests
     [InlineData(2, $"& \"$PSScriptRoot\\ModelHelper.Build.ps1\"")]
     [InlineData(3, $"& \"$PSScriptRoot\\DataToTable.Build.ps1\"")]
     [InlineData(4, $"& \"$PSScriptRoot\\CLIHelper.Build.ps1\"")]
-    [InlineData(5, $"& \"$PSScriptRoot\\CommandDotNet.Helper.Build.ps1\"")]
-    [InlineData(6, $"& \"$PSScriptRoot\\CommandDotNet.Unity.Helper.Build.ps1\"")]
+    [InlineData(5, $"& \"$PSScriptRoot\\CommandDotNet.Unity.Helper.Build.ps1\"")]
+    [InlineData(6, $"& \"$PSScriptRoot\\CommandDotNet.Helper.Build.ps1\"")]
     [InlineData(7, $"& \"$PSScriptRoot\\Serilog.Wrapper.Build.ps1\"")]
     [InlineData(8, $"& \"$PSScriptRoot\\Scripter.Build.ps1\"")]
     [InlineData(9, $"& \"$PSScriptRoot\\CLI.App.Template.Build.ps1\"")]
@@ -77,6 +78,11 @@ public class BuildAllScriptTests
     [InlineData(45, $"& \"$PSScriptRoot\\Inventory.Wizard.Lib.Build.ps1\"")]
     [InlineData(46, $"& \"$PSScriptRoot\\Inventory.Console.Lib.Build.ps1\"")]
     [InlineData(47, $"& \"$PSScriptRoot\\Inventory.ConsoleLib.ConsoleApp.Build.ps1\"")]
+    [InlineData(48, $"& \"$PSScriptRoot\\Vector.Lib.Build.ps1\"")]
+    [InlineData(49, $"& \"$PSScriptRoot\\Sim.Core.Build.ps1\"")]
+    [InlineData(50, $"& \"$PSScriptRoot\\Shape.Model.Build.ps1\"")]
+    [InlineData(51, $"& \"$PSScriptRoot\\Canvas.App.Build.ps1\"")]
+    [InlineData(52, $"& \"$PSScriptRoot\\Pool.App.Build.ps1\"")]
     public override void TestScriptContent(
         int index
         , string expected)

@@ -52,6 +52,7 @@ public class ProjectListSetB
                 , c.Resolve<ICodeData>(nameof(ConsoleLogData))
                 , c.Resolve<ICodeData>(nameof(ModernInventoryAppData))
                 , c.Resolve<ICodeData>(nameof(MyCliLibInventoryAppData))
+                , c.Resolve<ICodeData>(nameof(ShapeEngineData))
             });
     }
 

@@ -28,6 +28,7 @@ public class JoinableScriptSequencerDictionarySet
 		Add(store, ProjectTypes.Default);
 		Add(store, ProjectTypes.App);
 		Add(store, ProjectTypes.Wpf);
+		Add(store, ProjectTypes.WpfApp);
 		return store;
     }
 

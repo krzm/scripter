@@ -39,6 +39,8 @@ public class AllAppsList
         GetData(10, "Log.ConsoleApp");
         GetData(11, "Inventory.Modern.ConsoleApp");
         GetData(12, "Inventory.ConsoleLib.ConsoleApp");
+        GetData(13, "Canvas.App");
+        GetData(13, "Pool.App");
     }
 
     private void GetData(
