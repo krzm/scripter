@@ -10,11 +10,6 @@ public class ModernInventoryLibData
     protected override void SetAllData()
     {
         base.SetAllData();
-        SetModern();
-    }
-
-    private void SetModern()
-    {
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(DotNetExtension);
@@ -26,7 +21,7 @@ public class ModernInventoryLibData
         ModernLib = Set(
             "inventory-modern-lib"
             , "Inventory.Modern.Lib"
-            , new DateOnly(2022, 4, 9)
+            , new DateOnly(2022, 6, 26)
             , EFCoreHelper
             , DIHelper
             , DotNetExtension

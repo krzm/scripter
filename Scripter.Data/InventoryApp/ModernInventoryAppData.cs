@@ -15,7 +15,7 @@ public class ModernInventoryAppData
 
     private void SetModern()
     {
-        var lastUpd = new DateOnly(2022, 6, 24);
+        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);

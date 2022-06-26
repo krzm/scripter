@@ -11,27 +11,25 @@ public abstract class InventoryLibData
     protected override void SetAllData()
     {
         base.SetAllData();
-        SetCommon();
-    }
-
-    private void SetCommon()
-    {
+        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
         DataLib = Set(
             "inventory-data"
             , "Inventory.Data"
-            , new DateOnly(2022, 4, 8)
+            , lastUpd
             , EFCoreHelper
             , DIHelper
             , ModelHelper
+            , ConfigWrapper
         );
         ArgumentNullException.ThrowIfNull(DataToTable);
         TableLib = Set(
             "inventory-table"
             , "Inventory.Table"
-            , new DateOnly(2022, 4, 8)
+            , lastUpd
             , DIHelper
             , ModelHelper
             , DataToTable

@@ -11,11 +11,7 @@ public class MyCliLibInventoryLibData
     protected override void SetAllData()
     {
         base.SetAllData();
-        SetConsole();
-    }
-
-    private void SetConsole()
-    {
+        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
@@ -26,7 +22,7 @@ public class MyCliLibInventoryLibData
         ConsoleLib = Set(
             "inventory-console-lib"
             , "Inventory.Console.Lib"
-            , new DateOnly(2022, 4, 8)
+            , lastUpd
             , EFCoreHelper
             , CLIHelper
             , DataToTable
@@ -39,7 +35,7 @@ public class MyCliLibInventoryLibData
         WizardLib = Set(
             "inventory-wizard-lib"
             , "Inventory.Wizard.Lib"
-            , new DateOnly(2022, 4, 8)
+            , lastUpd
             , EFCoreHelper
             , CLIHelper
             , CLIReader

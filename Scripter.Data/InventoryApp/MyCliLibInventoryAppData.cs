@@ -10,11 +10,6 @@ public class MyCliLibInventoryAppData
     protected override void SetAllData()
     {
         base.SetAllData();
-        SetConsole();
-    }
-
-    private void SetConsole()
-    {
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(DotNetExtension);
@@ -34,8 +29,8 @@ public class MyCliLibInventoryAppData
         consoleLibCLIApp = Set(
             "inventory-consolelib-consoleapp"
             , "Inventory.ConsoleLib.ConsoleApp"
-            , true
-            , new DateOnly(2022, 4, 8)
+            , isApp: true
+            , new DateOnly(2022, 6, 26)
             , EFCoreHelper
             , DIHelper
             , DotNetExtension
