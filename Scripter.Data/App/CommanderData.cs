@@ -10,7 +10,7 @@ public class CommanderData
         Set(
             "commander"
             , "Commander"
-            , true
-            , new DateOnly(2022, 3, 21));
+            , isApp: true
+            , new DateOnly(2022, 6, 26));
     }
 }

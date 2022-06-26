@@ -3,20 +3,21 @@ namespace Scripter.Data;
 public class DiyBoxData 
     : ManyRefLibData
 {
+    private const string Repo = "diy-box";
+
     protected override void SetAllData()
     {
         base.SetAllData();
-        SetDiyBox();
-    }
-    
-    private void SetDiyBox()
-    {
+        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
-        var diyBoxCore = Set(
-            "diy-box"
+        var diyBoxCore = SetProjectDepsAndTests(
+            Repo
             , "DiyBox.Core"
-            , new DateOnly(2022, 4, 22)
+            , lastUpd
+            , SetTests(
+                "DiyBox.Tests"
+                , "DiyBox.Integration.Tests")
             , DIHelper
             , CLIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
@@ -25,8 +26,8 @@ public class DiyBoxData
         Set(
             "diy-box-cli-app"
             , "DiyBox.ConsoleApp"
-            , true
-            , new DateOnly(2022, 4, 22)
+            , isApp: true
+            , lastUpd
             , DIHelper
             , CLIHelper
             , ConfigWrapper
@@ -34,17 +35,17 @@ public class DiyBoxData
             , CLIFramework
             , diyBoxCore);
         var diyBoxCmdDotNet = Set(
-            "diy-box"
+            Repo
             , "DiyBox.CommandDotNet"
-            , new DateOnly(2022, 4, 22));
+            , lastUpd);
         ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetIoCUnity);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
         Set(
             "diy-box-modern-cli-app"
             , "DiyBox.Modern.CliApp"
-            , true
-            , new DateOnly(2022, 4, 22)
+            , isApp: true
+            , lastUpd
             , DIHelper
             , CLIHelper
             , ConfigWrapper
@@ -53,6 +54,6 @@ public class DiyBoxData
             , CommandDotNetUnityHelper
             , SerilogWrapper
             , diyBoxCore
-            , diyBoxCmdDotNet);
+            , diyBoxCmdDotNet); 
     }
 }

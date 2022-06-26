@@ -6,17 +6,13 @@ public class GameData
     protected override void SetAllData()
     {
         base.SetAllData();
-        SetGameData();
-    }
-
-    private void SetGameData()
-    {
+        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
         var gameData = Set(
             "game-data"
             , "GameData.Data.Lib"
-            , new DateOnly(2022, 4, 9)
+            , lastUpd
             , EFCoreHelper
             , ModelHelper
             );
@@ -28,7 +24,7 @@ public class GameData
         var gameDataLib = Set(
             "game-data"
             , "GameData.Lib"
-            , new DateOnly(2022, 4, 9)
+            , lastUpd
             , EFCoreHelper
             , CLIHelper
             , CLIReader
@@ -44,8 +40,8 @@ public class GameData
         var gameDataCLIApp = Set(
             "game-data"
             , "GameData.ConsoleApp"
-            , true
-            , new DateOnly(2022, 4, 9)
+            , isApp: true
+            , lastUpd
             , EFCoreHelper
             , DIHelper
             , DotNetExtension
@@ -60,5 +56,5 @@ public class GameData
             , CLIFramework
             , gameData
             , gameDataLib);
-    }  
+    }
 }

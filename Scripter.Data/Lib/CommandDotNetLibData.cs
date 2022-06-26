@@ -14,7 +14,7 @@ public class CommandDotNetLibData
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 22);
+        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         CommandDotNetHelper = SetProjectDepsAndTests(
@@ -31,7 +31,7 @@ public class CommandDotNetLibData
             , DIHelper
             , ConfigWrapper);
         CommandDotNetIoCUnity = Set(
-            repo: Repo
+            Repo
             , project: "CommandDotNet.IoC.Unity"
             , lastUpd);
         ArgumentNullException.ThrowIfNull(CLIHelper);

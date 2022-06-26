@@ -107,7 +107,7 @@ public abstract class CodeData
     protected ProjectDTO SetProjectDepsAndTests(
         string repo
         , string project
-        , bool IsApp
+        , bool isApp
         , DateOnly lastCheck
         , ProjectDTO[] tests
         , params ProjectDTO[] libs)
@@ -116,7 +116,7 @@ public abstract class CodeData
             RepoFolder: repo
             , ProjFolder: project
             , Dependencies: new List<ProjectDTO>(libs)
-            , IsApp: IsApp
+            , IsApp: isApp
             , IsWpf: false
             , LastCheck: lastCheck
             , Tests : new List<ProjectDTO>(tests));

@@ -7,15 +7,16 @@ public class MicroservicesData
 {
     protected override void SetAllData()
     {
+        var lastUpd = new DateOnly(2022, 6, 26);
         Set(
             "microservices"
             , "CommandsService"
-            , true
-            , new DateOnly(2022, 4, 16));
+            , isApp: true
+            , lastUpd);
          Set(
             "microservices"
             , "PlatformService"
-            , true
-            , new DateOnly(2022, 4, 16));
+            , isApp: true
+            , lastUpd);
     }
 }

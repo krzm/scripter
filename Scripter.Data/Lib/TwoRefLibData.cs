@@ -11,7 +11,7 @@ public class TwoRefLibData
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 22);
+        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);

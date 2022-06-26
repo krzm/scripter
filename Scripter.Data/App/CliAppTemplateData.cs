@@ -6,11 +6,6 @@ public class CliAppTemplateData
     protected override void SetAllData()
     {
         base.SetAllData();
-        SetGameData();
-    }
-
-    private void SetGameData()
-    {
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
@@ -20,12 +15,12 @@ public class CliAppTemplateData
         Set(
             "modern-cli-app-template"
             , "CLI.App.Template"
-            , new DateOnly(2022, 4, 17)
+            , new DateOnly(2022, 6, 26)
             , DIHelper
             , ConfigWrapper
             , CommandDotNetHelper
             , CommandDotNetUnityHelper
             , SerilogWrapper
             );
-    }  
+    }
 }

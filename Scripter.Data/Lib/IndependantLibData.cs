@@ -14,7 +14,7 @@ public class IndependantLibData
     
     protected override void SetAllData()
     {
-        var lastUpd = new DateOnly(2022, 6, 22);
+        var lastUpd = new DateOnly(2022, 6, 26);
         EFCoreHelper = Set(
             "efcore-helper"
             , "EFCore.Helper"

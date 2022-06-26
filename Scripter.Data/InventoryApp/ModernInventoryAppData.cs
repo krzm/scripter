@@ -34,7 +34,7 @@ public class ModernInventoryAppData
         modernCLIApp = SetProjectDepsAndTests(
             "inventory-modern-consoleapp"
             , "Inventory.Modern.ConsoleApp"
-            , IsApp: true
+            , isApp: true
             , lastUpd
             , SetTests(
                 "Inventory.Modern.CliApp.TestApi"

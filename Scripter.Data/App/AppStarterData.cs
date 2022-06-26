@@ -5,6 +5,7 @@ namespace Scripter.Data;
 public class AppStarterData 
     : ManyRefLibData
 {
+    private const string Repo = "app-starter";
     private ProjectDTO? appStarterData;
     private ProjectDTO? appStarterModernLib;
     private ProjectDTO? appStarterCLIApp;
@@ -12,17 +13,13 @@ public class AppStarterData
     protected override void SetAllData()
     {
         base.SetAllData();
-        SetAppStarter();
-    }
-    
-    private void SetAppStarter()
-    {
+        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         appStarterData = Set(
-            "app-starter"
+            Repo
             , "AppStarter.Data"
-            , new DateOnly(2022, 4, 6)
+            , lastUpd
             , EFCoreHelper
             , ModelHelper
             );
@@ -32,9 +29,9 @@ public class AppStarterData
         ArgumentNullException.ThrowIfNull(DataToTable);
         ArgumentNullException.ThrowIfNull(CLIFramework);
         appStarterModernLib = Set(
-            "app-starter"
+            Repo
             , "AppStarter.Lib"
-            , new DateOnly(2022, 4, 6)
+            , lastUpd
             , EFCoreHelper
             , DotNetTool
             , CLIHelper
@@ -48,10 +45,10 @@ public class AppStarterData
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         ArgumentNullException.ThrowIfNull(SerilogWrapper);
         appStarterCLIApp = Set(
-            "app-starter"
+            Repo
             , "AppStarter.ConsoleApp"
-            , true
-            , new DateOnly(2022, 4, 6)
+            , isApp: true
+            , lastUpd
             , EFCoreHelper
             , DIHelper
             , DotNetExtension
