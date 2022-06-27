@@ -14,7 +14,7 @@ public class WpfAppProjScriptSequence
             , JoinableScripts.CopyBuildWpf
             , JoinableScripts.CopyApp
             , JoinableScripts.VersionFile
-            , JoinableScripts.Build
+            , JoinableScripts.BuildApp
         };
     }
 }
