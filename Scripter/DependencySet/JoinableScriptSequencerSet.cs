@@ -21,7 +21,7 @@ public class JoinableScriptSequencerSet
 			ProjectTypes.App);
         RegisterValidator<WpfProjScriptSequence>(
 			ProjectTypes.Wpf);
-        RegisterValidator<WpfProjScriptSequence>(
+        RegisterValidator<WpfAppProjScriptSequence>(
 			ProjectTypes.WpfApp);
 	}
 
