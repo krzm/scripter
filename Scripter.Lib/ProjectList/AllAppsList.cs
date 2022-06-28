@@ -28,6 +28,8 @@ public class AllAppsList
         GetData(nameof(ScripterData), "Scripter");
         GetData(nameof(CliAppTemplateData), "CLI.App.Template");
         GetData(nameof(TestAppsData), "CLIFramework.TestApp");
+        GetData(nameof(TestAppsData), "Config.Wrapper.CLI.TestApp");
+        GetData(nameof(TestAppsData), "Serilog.Wrapper.CLI.TestApp");
         GetData(nameof(AppStarterData), "AppStarter.ConsoleApp");
         GetData(nameof(CommanderData), "Commander");
         GetData(nameof(MicroservicesData), "CommandsService");

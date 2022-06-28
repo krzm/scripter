@@ -22,5 +22,19 @@ public class TestAppsData
             , DataToTable
             , ModelHelper
             , CLIReader);
+        var configTestApp = Set(
+            "config-wrapper"
+            , "Config.Wrapper.CLI.TestApp"
+            , isApp: true
+            , lastUpd
+        );
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        var serilogTestApp = Set(
+            "serilog-wrapper"
+            , "Serilog.Wrapper.CLI.TestApp"
+            , isApp: true
+            , lastUpd
+            , ConfigWrapper
+        );
     }
 }
