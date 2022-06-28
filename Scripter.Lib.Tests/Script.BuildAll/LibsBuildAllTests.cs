@@ -1,20 +1,17 @@
-using System.Collections.Generic;
-using Scripter.Data;
-using Scripter.Data.Helper;
 using Xunit;
 
 namespace Scripter.Lib.Tests;
 
 public class LibsBuildAllTests 
     : ScriptTest
+        , IClassFixture<LibsListFixture>
 {
-    private static IProjectList projList
-        = new AllProjList(
-            new ResetingProjExtractor()
-            , new List<ICodeData> 
-            {
-                new ManyRefLibData()
-            });
+    private readonly LibsListFixture fixture;
+
+    public LibsBuildAllTests(LibsListFixture fixture)
+    {
+        this.fixture = fixture;
+    }
 
     [Theory]
     [InlineData(0, $"& \"$PSScriptRoot\\EFCore.Helper.Build.ps1\"")]
@@ -41,7 +38,7 @@ public class LibsBuildAllTests
         , string expected)
     {
         IScript script = new BuildAllScript(
-            projList
+            fixture.CodeData
             , new BuildAllDTO("LibBuildAll.ps1"));
    
         var acctual = GetLine(script, index);

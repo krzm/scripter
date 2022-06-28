@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Scripter.Data\Scripter.Data.csproj" />
         <ProjectReference Include="..\Scripter.Data.Helper\Scripter.Data.Helper.csproj" />
     </ItemGroup>
 

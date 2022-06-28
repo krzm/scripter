@@ -6,14 +6,14 @@ public class AllProjList
     : IProjectList
 {
     private readonly IProjectExtractor projExtractor;
-    private readonly List<ICodeData> codeData;
+    private readonly IDictionary<string, ICodeData> codeData;
 
     public List<ProjectDTO> Projects => 
         projExtractor.Projects;
 
     public AllProjList(
         IProjectExtractor projExtractor
-        , List<ICodeData> codeData)
+        , IDictionary<string, ICodeData> codeData)
     {
         this.projExtractor = projExtractor;
         this.codeData = codeData;
@@ -25,6 +25,6 @@ public class AllProjList
     private void Create()
     {
         projExtractor.ExtractProjects(
-            codeData.ToArray());
+            codeData.Values.ToArray());
     }
 }

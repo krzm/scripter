@@ -1,4 +1,5 @@
 using Scripter.Data.Helper;
+using Scripter.Data;
 
 namespace Scripter;
 
@@ -6,14 +7,14 @@ public class AllAppsList
     : IProjectList
 {
     private readonly IProjectExtractor projExtractor;
-    private readonly List<ICodeData> codeData;
+    private readonly IDictionary<string, ICodeData> codeData;
 
     public List<ProjectDTO> Projects => 
         projExtractor.Projects;
 
     public AllAppsList(
         IProjectExtractor projExtractor
-        , List<ICodeData> codeData)
+        , IDictionary<string, ICodeData> codeData)
     {
         this.projExtractor = projExtractor;
         this.codeData = codeData;
@@ -24,30 +25,31 @@ public class AllAppsList
 
     private void Create()
     {
-        GetData(0, "Scripter");
-        GetData(1, "CLI.App.Template");
-        GetData(2, "AppStarter.ConsoleApp");
-        GetData(3, "Commander");
-        GetData(4, "CommandsService");
-        GetData(4, "PlatformService");
-        GetData(5, "DiyBox.ConsoleApp");
-        GetData(5, "DiyBox.Modern.CliApp");
-        GetData(6, "GameData.ConsoleApp");
-        GetData(7, "Log.Modern.ConsoleApp");
-        GetData(8, "Log.Modern.MDI.ConsoleApp");
-        GetData(9, "Log.Modern.Wizard.ConsoleApp");
-        GetData(10, "Log.ConsoleApp");
-        GetData(11, "Inventory.Modern.ConsoleApp");
-        GetData(12, "Inventory.ConsoleLib.ConsoleApp");
-        GetData(13, "Canvas.App");
-        GetData(13, "Pool.App");
+        GetData(nameof(ScripterData), "Scripter");
+        GetData(nameof(CliAppTemplateData), "CLI.App.Template");
+        GetData(nameof(TestAppsData), "CLIFramework.TestApp");
+        GetData(nameof(AppStarterData), "AppStarter.ConsoleApp");
+        GetData(nameof(CommanderData), "Commander");
+        GetData(nameof(MicroservicesData), "CommandsService");
+        GetData(nameof(MicroservicesData), "PlatformService");
+        GetData(nameof(DiyBoxData), "DiyBox.ConsoleApp");
+        GetData(nameof(DiyBoxData), "DiyBox.Modern.CliApp");
+        GetData(nameof(GameData), "GameData.ConsoleApp");
+        GetData(nameof(ModernLogData), "Log.Modern.ConsoleApp");
+        GetData(nameof(ModernMDILogData), "Log.Modern.MDI.ConsoleApp");
+        GetData(nameof(ModernWizardLogData), "Log.Modern.Wizard.ConsoleApp");
+        GetData(nameof(ConsoleLogData), "Log.ConsoleApp");
+        GetData(nameof(ModernInventoryAppData), "Inventory.Modern.ConsoleApp");
+        GetData(nameof(MyCliLibInventoryAppData), "Inventory.ConsoleLib.ConsoleApp");
+        GetData(nameof(ShapeEngineData), "Canvas.App");
+        GetData(nameof(ShapeEngineData), "Pool.App");
     }
 
     private void GetData(
-        int i
+        string dataSetName
         , string appName)
     {
         projExtractor.ExtractProjects(
-            codeData[i][appName]);
+            codeData[dataSetName][appName]);
     }
 }

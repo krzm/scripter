@@ -16,10 +16,18 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
+		<PackageReference Include="Unity" Version="5.11.10"/>
 	</ItemGroup>
 	<ItemGroup>
+		<ProjectReference Include="..\Scripter\Scripter.csproj"/>
 		<ProjectReference Include="..\Scripter.Lib\Scripter.Lib.csproj"/>
 		<ProjectReference Include="..\Scripter.Data.Helper\Scripter.Data.Helper.csproj"/>
 		<ProjectReference Include="..\Scripter.Data\Scripter.Data.csproj"/>
+	</ItemGroup>
+    <!--Debug refs-->
+	<ItemGroup>
+		<Reference Include="DIHelper">
+			<HintPath>..\..\di-helper\DIHelper\bin\Debug\net6.0\DIHelper.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 </Project>

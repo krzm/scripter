@@ -31,14 +31,19 @@ public abstract class BuildAllBase
     {
         foreach (var line in Script)
         {
-            if(line.Contains(project.ProjFolder)) return false;
+            if (line == GetScriptLine(project)) return false;
         }
         return true;
+    }
+
+    private static string GetScriptLine(ProjectDTO project)
+    {
+        return $"& \"$PSScriptRoot\\{project.ProjFolder}.Build.ps1\"";
     }
 
     protected void AddLine(ProjectDTO project)
     {
         if(IsNotInScript(project))
-            Script.Add($"& \"$PSScriptRoot\\{project.ProjFolder}.Build.ps1\"");
+            Script.Add(GetScriptLine(project));
     }
 }
