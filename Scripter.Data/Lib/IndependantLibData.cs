@@ -14,7 +14,7 @@ public class IndependantLibData
     
     protected override void SetAllData()
     {
-        var lastUpd = new DateOnly(2022, 6, 26);
+        var lastUpd = new DateOnly(2022, 6, 29);
         EFCoreHelper = Set(
             "efcore-helper"
             , "EFCore.Helper"
@@ -43,5 +43,25 @@ public class IndependantLibData
             , "Xml.Generator"
             , lastUpd
             , SetTest("Xml.Generator.Tests"));
+        var wpfHelper = Set(
+            "wpf-helper"
+            , "WpfHelper"
+            , isApp: false
+            , isWpf: true
+            , lastUpd);
+        var unityTests = SetProjAndTests(
+            "unitycontainer-examples"
+            , "UnityContainer.Tests"
+            , lastUpd
+            , SetTest("UnityContainer.Tests"));
+        var pattern = Set(
+            "pattern"
+            , "Pattern"
+            , lastUpd);
+        var netExamples = SetProjAndTests(
+            "dotnet-examples"
+            , "Net.Examples"
+            , lastUpd
+            , SetTest("Net.Tests"));
     }
 }

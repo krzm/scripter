@@ -1,3 +1,5 @@
+using Scripter.Data.Helper;
+
 namespace Scripter.Data;
 
 public class TestAppsData 
@@ -6,7 +8,7 @@ public class TestAppsData
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 28);
+        var lastUpd = new DateOnly(2022, 6, 29);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
@@ -22,19 +24,5 @@ public class TestAppsData
             , DataToTable
             , ModelHelper
             , CLIReader);
-        var configTestApp = Set(
-            "config-wrapper"
-            , "Config.Wrapper.CLI.TestApp"
-            , isApp: true
-            , lastUpd
-        );
-        ArgumentNullException.ThrowIfNull(ConfigWrapper);
-        var serilogTestApp = Set(
-            "serilog-wrapper"
-            , "Serilog.Wrapper.CLI.TestApp"
-            , isApp: true
-            , lastUpd
-            , ConfigWrapper
-        );
     }
 }
