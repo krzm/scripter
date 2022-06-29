@@ -18,6 +18,7 @@ public class CodeDataSet
     {
         RegisterCodeData<ManyRefLibData>();
         RegisterCodeData<TestAppsData>();
+        RegisterCodeData<WrapperAppsData>();
         RegisterCodeData<ScripterData>();
         RegisterCodeData<CliAppTemplateData>();
         RegisterCodeData<AppStarterData>();
