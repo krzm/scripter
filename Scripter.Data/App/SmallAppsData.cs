@@ -22,5 +22,12 @@ public class SmallAppsData
             , CommandDotNetHelper
             , CommandDotNetUnityHelper
             , SerilogWrapper);
+        SetProjectDepsAndTests(
+            "git-path"
+            , "GitPath.ConsoleApp"
+            , isApp: true
+            , lastUpd
+            , SetTests("GitPath.Tests")
+            , DIHelper);
     }
 }

@@ -32,6 +32,7 @@ public class AllAppsList
         GetData(nameof(WrapperAppsData), "Serilog.Wrapper.CLI.TestApp");
         GetData(nameof(SampleAppsData), "CommandDotNet.Examples.App");
         GetData(nameof(SmallAppsData), "Refactor.App");
+        GetData(nameof(SmallAppsData), "GitPath.ConsoleApp");
         GetData(nameof(AppStarterData), "AppStarter.ConsoleApp");
         GetData(nameof(CommanderData), "Commander");
         GetData(nameof(MicroservicesData), "CommandsService");
