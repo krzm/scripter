@@ -30,6 +30,7 @@ public class CodeDataDictionarySet
 		Add(store, nameof(TestAppsData));
 		Add(store, nameof(WrapperAppsData));
 		Add(store, nameof(SampleAppsData));
+		Add(store, nameof(SmallAppsData));
 		Add(store, nameof(ScripterData));
 		Add(store, nameof(CliAppTemplateData));
 		Add(store, nameof(AppStarterData));
