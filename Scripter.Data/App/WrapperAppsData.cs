@@ -22,12 +22,5 @@ public class WrapperAppsData
             , lastUpd
             , ConfigWrapper
         );
-        var commanddotnetexamples = SetProjAndTests(
-            "commanddotnet-examples"
-            , "CommandDotNet.Examples.App"
-            , isApp: true
-            , lastUpd
-            , SetTest("CommandDotNet.Examples.Tests")
-        );
     }
 }

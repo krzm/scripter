@@ -29,6 +29,7 @@ public class CodeDataDictionarySet
 		Add(store, nameof(ManyRefLibData));
 		Add(store, nameof(TestAppsData));
 		Add(store, nameof(WrapperAppsData));
+		Add(store, nameof(SampleAppsData));
 		Add(store, nameof(ScripterData));
 		Add(store, nameof(CliAppTemplateData));
 		Add(store, nameof(AppStarterData));
