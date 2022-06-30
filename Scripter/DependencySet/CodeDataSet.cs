@@ -20,12 +20,11 @@ public class CodeDataSet
         RegisterCodeData<TestAppsData>();
         RegisterCodeData<WrapperAppsData>();
         RegisterCodeData<SampleAppsData>();
+        RegisterCodeData<TutorialAppsData>();
         RegisterCodeData<SmallAppsData>();
         RegisterCodeData<ScripterData>();
         RegisterCodeData<CliAppTemplateData>();
         RegisterCodeData<AppStarterData>();
-        RegisterCodeData<CommanderData>();
-        RegisterCodeData<MicroservicesData>();
         RegisterCodeData<DiyBoxData>();
         RegisterCodeData<GameData>();
         RegisterCodeData<ModernLogData>();

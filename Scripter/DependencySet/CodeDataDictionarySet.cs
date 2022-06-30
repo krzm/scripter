@@ -30,12 +30,11 @@ public class CodeDataDictionarySet
 		Add(store, nameof(TestAppsData));
 		Add(store, nameof(WrapperAppsData));
 		Add(store, nameof(SampleAppsData));
+		Add(store, nameof(TutorialAppsData));
 		Add(store, nameof(SmallAppsData));
 		Add(store, nameof(ScripterData));
 		Add(store, nameof(CliAppTemplateData));
 		Add(store, nameof(AppStarterData));
-		Add(store, nameof(CommanderData));
-		Add(store, nameof(MicroservicesData));
 		Add(store, nameof(DiyBoxData));
 		Add(store, nameof(GameData));
 		Add(store, nameof(ModernLogData));
