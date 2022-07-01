@@ -2,7 +2,7 @@ namespace Scripter.Lib.Tests;
 
 public abstract class CopyScriptConstant
 {
-    protected const string RootPath = @"C:\kmazanek@gmail.com";
+    protected const string RootPath = @"C:\kmazanek.gmail.com";
     protected const string BuildPath = @$"{RootPath}\Build";
     protected const string CodePath = @$"{RootPath}\Code";
     protected const string RepoFolder = "cli-helper";

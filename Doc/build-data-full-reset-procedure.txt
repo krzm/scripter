@@ -1,9 +1,9 @@
 Procedure "Complete Reset of the Build"
 
 1. Remove content of folders 
-    kmazanek@gmail.com/Apps
-    kmazanek@gmail.com/Build
-    kmazanek@gmail.com/Build.Script
+    kmazanek.gmail.com/Apps
+    kmazanek.gmail.com/Build
+    kmazanek.gmail.com/Build.Script
 
 2. Pull scripter
 

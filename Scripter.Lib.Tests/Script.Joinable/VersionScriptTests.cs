@@ -8,9 +8,9 @@ public class VersionScriptTests
     [Theory]
     [InlineData(0, "$projectName = \"CLIHelper\"")]
     [InlineData(1, "$versionFileName = \"Version.xml\"")]
-    [InlineData(2, "$buildPath = \"C:\\kmazanek@gmail.com\\Build\"")]
-    [InlineData(3, "$scriptPath = \"C:\\kmazanek@gmail.com\\Build.Script\"")]
-    [InlineData(4, "$repoPath = \"C:\\kmazanek@gmail.com\\Code\\cli-helper\"")]
+    [InlineData(2, "$buildPath = \"C:\\kmazanek.gmail.com\\Build\"")]
+    [InlineData(3, "$scriptPath = \"C:\\kmazanek.gmail.com\\Build.Script\"")]
+    [InlineData(4, "$repoPath = \"C:\\kmazanek.gmail.com\\Code\\cli-helper\"")]
     [InlineData(5, "")]
     [InlineData(6, "Set-Location -Path $repoPath")]
     [InlineData(7, "$sh1 = git rev-parse HEAD")]
@@ -38,8 +38,7 @@ public class VersionScriptTests
         int index
         , string expected)
     {
-        var moq = SetupParamsMock(new ParamsMockData());
-        IScript script = new VersionScript(moq.Object);
+        IScript script = new VersionScript(GetParams());
 
         var acctual = GetLine(script, index);
 

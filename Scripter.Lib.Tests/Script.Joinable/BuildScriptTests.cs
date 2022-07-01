@@ -16,8 +16,7 @@ public class BuildScriptTests
         int index
         , string expected)
     {
-        var moq = SetupParamsMock(new ParamsMockData());
-        IScript script = new BuildScript(moq.Object);
+        IScript script = new BuildScript(GetParams());
 
         var acctual = GetLine(script, index);
 
@@ -36,8 +35,7 @@ public class BuildScriptTests
         int index
         , string expected)
     {
-        var moq = SetupParamsMock(new ParamsMockData(IsApp:true));
-        IScript script = new AppBuildScript(moq.Object);
+        IScript script = new AppBuildScript(GetParams(isApp: true));
 
         var acctual = GetLine(script, index);
 

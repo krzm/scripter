@@ -11,8 +11,7 @@ public class WpfProjCopyScriptTests
         int index
         , string expected)
     {
-        var moq = SetupParamsMock(new ParamsMockData(IsWpf:true));
-        IScript script = new CopyBuildWpfScript(moq.Object);
+        IScript script = new CopyBuildWpfScript(GetParams(isWpf: true));
 
         var acctual = GetLine(script, index);
 

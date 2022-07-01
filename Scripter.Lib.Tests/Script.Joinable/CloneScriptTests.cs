@@ -6,9 +6,9 @@ public class CloneScriptTests
     : ScriptTest
 {
     [Theory]
-    [InlineData(0, "$repoPath = \"C:\\kmazanek@gmail.com\\Code\\cli-helper\"")]
-    [InlineData(1, "$codePath = \"C:\\kmazanek@gmail.com\\Code\"")]
-    [InlineData(2, "$scriptPath = \"C:\\kmazanek@gmail.com\\Build.Script\"")]
+    [InlineData(0, "$repoPath = \"C:\\kmazanek.gmail.com\\Code\\cli-helper\"")]
+    [InlineData(1, "$codePath = \"C:\\kmazanek.gmail.com\\Code\"")]
+    [InlineData(2, "$scriptPath = \"C:\\kmazanek.gmail.com\\Build.Script\"")]
     [InlineData(3, "$proj = \"cli-helper\"")]
     [InlineData(4, "$http = \"https://github.com/krzm/\"")]
     [InlineData(5, "$end = \".git\"")]
@@ -28,8 +28,7 @@ public class CloneScriptTests
         int index
         , string expected)
     {
-        var moq = SetupParamsMock(new ParamsMockData());
-        IScript sut = new CloneScript(moq.Object);
+        IScript sut = new CloneScript(GetParams());
 
         var acctual = GetLine(sut, index);
 

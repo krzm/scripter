@@ -25,7 +25,7 @@ public class VersionScript : IScript
         return new string[]
         {
             $"$projectName = \"{scriptParam.Project.ProjFolder}\""
-            , $"$versionFileName = \"{scriptParam.VersionFileName}\""
+            , $"$versionFileName = \"{scriptParam.XmlVersionFile}\""
             , $"$buildPath = \"{scriptParam.BuildPath}\""
             , $"$scriptPath = \"{scriptParam.ScriptPath}\""
             , $"$repoPath = \"{scriptParam.RepoPath}\""

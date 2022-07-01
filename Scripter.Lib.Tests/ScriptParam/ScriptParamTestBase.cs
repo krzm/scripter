@@ -30,8 +30,8 @@ public abstract class ScriptParamTestBase
                 return scriptParam.Project.RepoFolder;
             case nameof(ScriptParam.Project.ProjFolder):
                 return scriptParam.Project.ProjFolder;
-            case nameof(ScriptParam.VersionFileName):
-                return scriptParam.VersionFileName;
+            case nameof(ScriptParam.XmlVersionFile):
+                return scriptParam.XmlVersionFile;
             case nameof(ScriptParam.CodePath):
                 return scriptParam.CodePath;
             case nameof(ScriptParam.BuildPath):

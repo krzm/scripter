@@ -6,17 +6,16 @@ public class CompileScriptTests
     : ScriptTest
 {
     [Theory]
-    [InlineData(0, $"Set-Location -Path \"C:\\kmazanek@gmail.com\\Code\\cli-helper\"")]
+    [InlineData(0, $"Set-Location -Path \"C:\\kmazanek.gmail.com\\Code\\cli-helper\"")]
     [InlineData(1, $"dotnet build")]
     [InlineData(2, $"dotnet build --configuration Release")]
     [InlineData(3, $"dotnet publish -c Release")]
-    [InlineData(4, $"Set-Location -Path \"C:\\kmazanek@gmail.com\\Build.Script\"")]
+    [InlineData(4, $"Set-Location -Path \"C:\\kmazanek.gmail.com\\Build.Script\"")]
     public override void TestScriptContent(
         int index
         , string expected)
     {
-        var moq = SetupParamsMock(new ParamsMockData());
-        IScript script = new CompileScript(moq.Object);
+        IScript script = new CompileScript(GetParams());
 
         var acctual = GetLine(script, index);
 

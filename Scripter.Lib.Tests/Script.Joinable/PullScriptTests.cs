@@ -6,8 +6,8 @@ public class PullScriptTests
     : ScriptTest
 {
     [Theory]
-    [InlineData(0, "$repoPath = \"C:\\kmazanek@gmail.com\\Code\\cli-helper\"")]
-    [InlineData(1, "$scriptPath = \"C:\\kmazanek@gmail.com\\Build.Script\"")]
+    [InlineData(0, "$repoPath = \"C:\\kmazanek.gmail.com\\Code\\cli-helper\"")]
+    [InlineData(1, "$scriptPath = \"C:\\kmazanek.gmail.com\\Build.Script\"")]
     [InlineData(2, "$proj = \"cli-helper\"")]
     [InlineData(3, "if(-not (Test-Path $repoPath))")]
     [InlineData(4, "{")]
@@ -24,8 +24,7 @@ public class PullScriptTests
         int index
         , string expected)
     {
-        var moq = SetupParamsMock(new ParamsMockData());
-        IScript script = new PullScript(moq.Object);
+        IScript script = new PullScript(GetParams());
 
         var acctual = GetLine(script, index);
 
