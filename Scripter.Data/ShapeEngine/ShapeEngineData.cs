@@ -6,14 +6,12 @@ public class ShapeEngineData
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(Vector2);
         var simCore = Set(
             repo: "sim-core"
             , project:  "Sim.Core"
             , isApp: false
             , isWpf: true
-            , lastCheck: lastUpd
             , libs: Vector2
             );
         var shapeModel = SetProjectDepsAndTests(
@@ -21,7 +19,6 @@ public class ShapeEngineData
             , project:  "Shape.Model"
             , isApp: false
             , isWpf: true
-            , lastCheck: lastUpd
             , SetTests("Shape.Model.Tests")
             , Vector2
             , simCore
@@ -31,7 +28,6 @@ public class ShapeEngineData
             , project:  "Canvas"
             , isApp: false
             , isWpf: true
-            , lastCheck: lastUpd
             , Vector2
             , simCore
             , shapeModel
@@ -41,7 +37,6 @@ public class ShapeEngineData
             , project:  "Canvas.App"
             , isApp: true
             , isWpf: true
-            , lastCheck: lastUpd
             , Vector2
             , simCore
             , shapeModel
@@ -49,14 +44,12 @@ public class ShapeEngineData
         var poolResource = Set(
             repo: "pool-game"
             , project:  "Pool.Resource"
-            , lastCheck: lastUpd
             );
         var poolPhysics = Set(
             repo: "pool-game"
             , project:  "Pool.Physic"
             , isApp: false
             , isWpf: true
-            , lastCheck: lastUpd
             , Vector2
             , simCore
             );
@@ -65,7 +58,6 @@ public class ShapeEngineData
             , project:  "Pool.Logic"
             , isApp: false
             , isWpf: true
-            , lastCheck: lastUpd
             , Vector2
             , simCore
             );
@@ -74,7 +66,6 @@ public class ShapeEngineData
             , project:  "Pool.Engine"
             , isApp: false
             , isWpf: true
-            , lastCheck: lastUpd
             , Vector2
             , simCore
             );
@@ -83,7 +74,6 @@ public class ShapeEngineData
             , project:  "Pool.Control"
             , isApp: false
             , isWpf: true
-            , lastCheck: lastUpd
             , Vector2
             , simCore
             );
@@ -92,7 +82,6 @@ public class ShapeEngineData
             , project:  "Pool.Container"
             , isApp: false
             , isWpf: true
-            , lastCheck: lastUpd
             , Vector2
             , simCore
             , canvas
@@ -103,7 +92,6 @@ public class ShapeEngineData
             , project:  "Pool.App"
             , isApp: true
             , isWpf: true
-            , lastCheck: lastUpd
             , Vector2
             , simCore
             , canvas

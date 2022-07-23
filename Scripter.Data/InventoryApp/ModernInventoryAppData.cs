@@ -15,7 +15,6 @@ public class ModernInventoryAppData
 
     private void SetModern()
     {
-        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
@@ -35,7 +34,6 @@ public class ModernInventoryAppData
             "inventory-modern-consoleapp"
             , "Inventory.Modern.ConsoleApp"
             , isApp: true
-            , lastUpd
             , SetTests(
                 "Inventory.Modern.CliApp.TestApi"
                 , "Inventory.Modern.CliApp.Tests"

@@ -7,57 +7,48 @@ public class TutorialAppsData
 {
     protected override void SetAllData()
     {
-        var lastUpd = new DateOnly(2022, 6, 30);
-        SetTimCoreyTutorials(lastUpd);
-        SetLesJacksonTutorials(lastUpd);
+        SetTimCoreyTutorials();
+        SetLesJacksonTutorials();
     }
 
-    private void SetTimCoreyTutorials(DateOnly lastUpd)
+    private void SetTimCoreyTutorials()
     {
         Set(
             "timco-retail"
             , "TRMApi"
-            , isApp: true
-            , lastUpd);
+            , isApp: true);
         Set(
             "timco-retail"
             , "TRMDesktopUI"
             , isApp: true
-            , isWpf: true
-            , lastUpd);
+            , isWpf: true);
         Set(
             "timco-retail"
             , "Portal"
-            , isApp: true
-            , lastUpd);
+            , isApp: true);
         Set(
             "timco-suggestion-site-app"
             , "SuggestionAppUI"
-            , isApp: true
-            , lastUpd);
+            , isApp: true);
     }
 
-    private void SetLesJacksonTutorials(DateOnly lastUpd)
+    private void SetLesJacksonTutorials()
     {
         Set(
             "docker-api"
             , "DockerAPI"
-            , isApp: true
-            , lastUpd);
+            , isApp: true);
         Set(
             "commander"
             , "Commander"
-            , isApp: true
-            , new DateOnly(2022, 6, 26));
+            , isApp: true);
         Set(
             "microservices"
             , "CommandsService"
-            , isApp: true
-            , lastUpd);
+            , isApp: true);
         Set(
             "microservices"
             , "PlatformService"
-            , isApp: true
-            , lastUpd);
+            , isApp: true);
     }
 }

@@ -21,7 +21,6 @@ public class ModernInventoryLibData
         ModernLib = Set(
             "inventory-modern-lib"
             , "Inventory.Modern.Lib"
-            , new DateOnly(2022, 6, 26)
             , EFCoreHelper
             , DIHelper
             , DotNetExtension

@@ -1,20 +1,18 @@
 namespace Scripter.Data;
 
 public class DiyBoxData 
-    : ManyRefLibData
+    : AllLibsData
 {
     private const string Repo = "diy-box";
 
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         var diyBoxCore = SetProjectDepsAndTests(
             Repo
             , "DiyBox.Core"
-            , lastUpd
             , SetTests(
                 "DiyBox.Tests"
                 , "DiyBox.Integration.Tests")
@@ -27,7 +25,6 @@ public class DiyBoxData
             "diy-box-cli-app"
             , "DiyBox.ConsoleApp"
             , isApp: true
-            , lastUpd
             , DIHelper
             , CLIHelper
             , ConfigWrapper
@@ -36,8 +33,7 @@ public class DiyBoxData
             , diyBoxCore);
         var diyBoxCmdDotNet = Set(
             Repo
-            , "DiyBox.CommandDotNet"
-            , lastUpd);
+            , "DiyBox.CommandDotNet");
         ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
         ArgumentNullException.ThrowIfNull(CommandDotNetIoCUnity);
         ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
@@ -45,7 +41,6 @@ public class DiyBoxData
             "diy-box-modern-cli-app"
             , "DiyBox.Modern.CliApp"
             , isApp: true
-            , lastUpd
             , DIHelper
             , CLIHelper
             , ConfigWrapper

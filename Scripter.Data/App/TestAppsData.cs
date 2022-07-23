@@ -1,14 +1,11 @@
-using Scripter.Data.Helper;
-
 namespace Scripter.Data;
 
 public class TestAppsData 
-    : ManyRefLibData
+    : AllLibsData
 {
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 29);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
@@ -18,7 +15,6 @@ public class TestAppsData
             "cli-framework"
             , "CLIFramework.TestApp"
             , isApp: true
-            , lastUpd
             , DIHelper
             , CLIHelper
             , DataToTable

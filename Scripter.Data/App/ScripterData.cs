@@ -1,7 +1,7 @@
 namespace Scripter.Data;
 
 public class ScripterData 
-    : ManyRefLibData
+    : AllLibsData
 {
     protected override void SetAllData()
     {
@@ -16,7 +16,6 @@ public class ScripterData
             repo: "scripter"
             , project: "Scripter"
             , isApp: true
-            , lastCheck: new DateOnly(2022, 6, 26)
             , SetTests("Scripter.Lib.Tests")
             , DIHelper
             , ConfigWrapper

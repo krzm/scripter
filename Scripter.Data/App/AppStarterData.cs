@@ -3,7 +3,7 @@ using Scripter.Data.Helper;
 namespace Scripter.Data;
 
 public class AppStarterData 
-    : ManyRefLibData
+    : AllLibsData
 {
     private const string Repo = "app-starter";
     private ProjectDTO? appStarterData;
@@ -13,13 +13,11 @@ public class AppStarterData
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(ModelHelper);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         appStarterData = Set(
             Repo
             , "AppStarter.Data"
-            , lastUpd
             , EFCoreHelper
             , ModelHelper
             );
@@ -31,7 +29,6 @@ public class AppStarterData
         appStarterModernLib = Set(
             Repo
             , "AppStarter.Lib"
-            , lastUpd
             , EFCoreHelper
             , DotNetTool
             , CLIHelper
@@ -48,7 +45,6 @@ public class AppStarterData
             Repo
             , "AppStarter.ConsoleApp"
             , isApp: true
-            , lastUpd
             , EFCoreHelper
             , DIHelper
             , DotNetExtension

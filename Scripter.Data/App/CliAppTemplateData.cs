@@ -1,7 +1,7 @@
 namespace Scripter.Data;
 
 public class CliAppTemplateData 
-    : ManyRefLibData
+    : AllLibsData
 {
     protected override void SetAllData()
     {
@@ -15,7 +15,6 @@ public class CliAppTemplateData
         Set(
             "modern-cli-app-template"
             , "CLI.App.Template"
-            , new DateOnly(2022, 6, 26)
             , DIHelper
             , ConfigWrapper
             , CommandDotNetHelper

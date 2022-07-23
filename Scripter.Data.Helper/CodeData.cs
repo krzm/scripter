@@ -19,8 +19,7 @@ public abstract class CodeData
             , ProjFolder: project
             , Dependencies : new List<ProjectDTO>()
             , IsApp: false
-            , IsWpf: false
-            , LastCheck: DateOnly.FromDateTime(DateTime.Now));
+            , IsWpf: false);
     }
 
     protected ProjectDTO[] SetTests(
@@ -36,16 +35,14 @@ public abstract class CodeData
 
     protected ProjectDTO Set(
         string repo
-        , string project
-        , DateOnly lastCheck)
+        , string project)
     {
         var proj = new ProjectDTO(
             RepoFolder: repo
             , ProjFolder: project
             , Dependencies : new List<ProjectDTO>()
             , IsApp: false
-            , IsWpf: false
-            , LastCheck: lastCheck);
+            , IsWpf: false);
         Add(proj.ProjFolder, proj);
         return proj;
     }
@@ -53,7 +50,6 @@ public abstract class CodeData
     protected ProjectDTO SetProjAndTests(
         string repo
         , string project
-        , DateOnly lastCheck
         , params ProjectDTO[] tests)
     {
         var proj = new ProjectDTO(
@@ -62,7 +58,6 @@ public abstract class CodeData
             , Dependencies : new List<ProjectDTO>()
             , IsApp: false
             , IsWpf: false
-            , LastCheck: lastCheck
             , Tests : new List<ProjectDTO>(tests));
         Add(proj.ProjFolder, proj);
         return proj;
@@ -72,7 +67,6 @@ public abstract class CodeData
         string repo
         , string project
         , bool isApp
-        , DateOnly lastCheck
         , params ProjectDTO[] tests)
     {
         var proj = new ProjectDTO(
@@ -81,7 +75,6 @@ public abstract class CodeData
             , Dependencies : new List<ProjectDTO>()
             , IsApp: isApp
             , IsWpf: false
-            , LastCheck: lastCheck
             , Tests : new List<ProjectDTO>(tests));
         Add(proj.ProjFolder, proj);
         return proj;
@@ -90,7 +83,6 @@ public abstract class CodeData
     protected ProjectDTO Set(
         string repo
         , string project
-        , DateOnly lastCheck
         , params ProjectDTO[] libs)
     {
         var proj = new ProjectDTO(
@@ -98,8 +90,7 @@ public abstract class CodeData
             , ProjFolder: project
             , Dependencies: new List<ProjectDTO>(libs)
             , IsApp: false
-            , IsWpf: false
-            , LastCheck: lastCheck);
+            , IsWpf: false);
         Add(proj.ProjFolder, proj);
         return proj;
     }
@@ -107,7 +98,6 @@ public abstract class CodeData
     protected ProjectDTO SetProjectDepsAndTests(
         string repo
         , string project
-        , DateOnly lastCheck
         , ProjectDTO[] tests
         , params ProjectDTO[] libs)
     {
@@ -117,7 +107,6 @@ public abstract class CodeData
             , Dependencies: new List<ProjectDTO>(libs)
             , IsApp: false
             , IsWpf: false
-            , LastCheck: lastCheck
             , Tests : new List<ProjectDTO>(tests));
         Add(proj.ProjFolder, proj);
         return proj;
@@ -127,7 +116,6 @@ public abstract class CodeData
         string repo
         , string project
         , bool isApp
-        , DateOnly lastCheck
         , ProjectDTO[] tests
         , params ProjectDTO[] libs)
     {
@@ -137,7 +125,6 @@ public abstract class CodeData
             , Dependencies: new List<ProjectDTO>(libs)
             , IsApp: isApp
             , IsWpf: false
-            , LastCheck: lastCheck
             , Tests : new List<ProjectDTO>(tests));
         Add(proj.ProjFolder, proj);
         return proj;
@@ -148,7 +135,6 @@ public abstract class CodeData
         , string project
         , bool isApp
         , bool isWpf
-        , DateOnly lastCheck
         , ProjectDTO[] tests
         , params ProjectDTO[] libs)
     {
@@ -158,7 +144,6 @@ public abstract class CodeData
             , Dependencies: new List<ProjectDTO>(libs)
             , IsApp: isApp
             , IsWpf: isWpf
-            , LastCheck: lastCheck
             , Tests : new List<ProjectDTO>(tests));
         Add(proj.ProjFolder, proj);
         return proj;
@@ -167,7 +152,6 @@ public abstract class CodeData
     protected ProjectDTO Set(
         string repo
         , string project
-        , DateOnly lastCheck
         , ProjectDTO[] tests
         , params ProjectDTO[] libs)
     {
@@ -177,7 +161,6 @@ public abstract class CodeData
             , Dependencies: new List<ProjectDTO>(libs)
             , IsApp: false
             , IsWpf: false
-            , LastCheck: lastCheck
             , Tests : new List<ProjectDTO>(tests));
         Add(proj.ProjFolder, proj);
         return proj;
@@ -187,7 +170,6 @@ public abstract class CodeData
         string repo
         , string project
         , bool isApp = false
-        , DateOnly lastCheck = default
         , params ProjectDTO[] libs)
     {
         var proj = new ProjectDTO(
@@ -195,8 +177,7 @@ public abstract class CodeData
             , ProjFolder: project
             , Dependencies: new List<ProjectDTO>(libs)
             , IsApp: isApp
-            , IsWpf: false
-            , LastCheck: lastCheck);
+            , IsWpf: false);
         Add(proj.ProjFolder, proj);
         return proj;
     }
@@ -206,7 +187,6 @@ public abstract class CodeData
         , string project
         , bool isApp = false
         , bool isWpf = false
-        , DateOnly lastCheck = default
         , params ProjectDTO[] libs)
     {
         var proj = new ProjectDTO(
@@ -214,8 +194,7 @@ public abstract class CodeData
             , ProjFolder: project
             , Dependencies: new List<ProjectDTO>(libs)
             , IsApp: isApp
-            , IsWpf: isWpf
-            , LastCheck: lastCheck);
+            , IsWpf: isWpf);
         Add(proj.ProjFolder, proj);
         return proj;
     }

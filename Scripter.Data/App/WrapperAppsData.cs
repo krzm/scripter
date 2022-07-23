@@ -1,25 +1,22 @@
 namespace Scripter.Data;
 
 public class WrapperAppsData 
-    : CommandDotNetLibData
+    : AllLibsData
 {
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 29);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         var configTestApp = Set(
             "config-wrapper"
             , "Config.Wrapper.CLI.TestApp"
             , isApp: true
-            , lastUpd
         );
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         var serilogTestApp = Set(
             "serilog-wrapper"
             , "Serilog.Wrapper.CLI.TestApp"
             , isApp: true
-            , lastUpd
             , ConfigWrapper
         );
     }

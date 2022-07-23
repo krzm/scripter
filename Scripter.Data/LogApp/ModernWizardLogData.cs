@@ -32,7 +32,6 @@ public class ModernWizardLogData
             "log-modern-wizard-consoleapp"
             , "Log.Modern.Wizard.ConsoleApp"
             , isApp: true
-            , new DateOnly(2022, 6, 26)
             , EFCoreHelper
             , DIHelper
             , DotNetExtension

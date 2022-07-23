@@ -28,7 +28,6 @@ public class ModernLogData
             "log-modern-consoleapp"
             , "Log.Modern.ConsoleApp"
             , isApp: true
-            , new DateOnly(2022, 6, 26)
             , EFCoreHelper
             , DIHelper
             , CLIHelper

@@ -18,51 +18,41 @@ public class IndependantLibData
         DIHelper = SetProjAndTests(
             "di-helper"
             , "DIHelper"
-            , lastUpd
             , SetTest("DIHelper.Tests"));
         DotNetExtension = SetProjAndTests(
             "dotnet-extension"
             , "DotNetExtension"
-            , lastUpd
             , SetTest("DotNetExtension.Tests"));
         DotNetTool = Set(
             "dotnet-tool"
-            , "DotNetTool"
-            , lastUpd);
+            , "DotNetTool");
         Vector2 = SetProjAndTests(
             "vector-lib"
             , "Vector.Lib"
-            , lastUpd
             , SetTest("Vector.Lib.Tests"));
         XmlGenerator = SetProjAndTests(
             "xml-generator"
             , "Xml.Generator"
-            , lastUpd
             , SetTest("Xml.Generator.Tests"));
         var wpfHelper = Set(
             "wpf-helper"
             , "WpfHelper"
             , isApp: false
-            , isWpf: true
-            , lastUpd);
+            , isWpf: true);
         var unityTests = SetProjAndTests(
             "unitycontainer-examples"
             , "UnityContainer.Tests"
-            , lastUpd
             , SetTest("UnityContainer.Tests"));
         var pattern = Set(
             "pattern"
-            , "Pattern"
-            , lastUpd);
+            , "Pattern");
         var netExamples = SetProjAndTests(
             "dotnet-examples"
             , "Net.Examples"
-            , lastUpd
             , SetTest("Net.Tests"));
         XUnitHelper = SetProjAndTests(
             "xunit-helper"
             , "XUnit.Helper"
-            , lastUpd
             , SetTest("XUnit.Helper"));
     }
 }

@@ -1,18 +1,16 @@
 namespace Scripter.Data;
 
 public class GameData 
-    : ManyRefLibData
+    : AllLibsData
 {
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
         var gameData = Set(
             "game-data"
             , "GameData.Data.Lib"
-            , lastUpd
             , EFCoreHelper
             , ModelHelper
             );
@@ -24,7 +22,6 @@ public class GameData
         var gameDataLib = Set(
             "game-data"
             , "GameData.Lib"
-            , lastUpd
             , EFCoreHelper
             , CLIHelper
             , CLIReader
@@ -41,7 +38,6 @@ public class GameData
             "game-data"
             , "GameData.ConsoleApp"
             , isApp: true
-            , lastUpd
             , EFCoreHelper
             , DIHelper
             , DotNetExtension

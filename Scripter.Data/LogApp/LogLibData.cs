@@ -3,7 +3,7 @@ using Scripter.Data.Helper;
 namespace Scripter.Data;
 
 public abstract class LogLibData 
-    : ManyRefLibData
+    : AllLibsData
 {
     protected ProjectDTO? Data;
     protected ProjectDTO? Tables;
@@ -14,13 +14,11 @@ public abstract class LogLibData
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
         Data = Set(
             "log-data"
             , "Log.Data"
-            , lastUpd
             , EFCoreHelper
             , ModelHelper
             );
@@ -29,7 +27,6 @@ public abstract class LogLibData
         Tables = Set(
             "log-table"
             , "Log.Table"
-            , lastUpd
             , DIHelper
             , ModelHelper
             , DataToTable
@@ -42,7 +39,6 @@ public abstract class LogLibData
         ConsoleLibCmds = Set(
             "log-console-lib"
             , "Log.Console.Lib"
-            , lastUpd
             , EFCoreHelper
             , CLIHelper
             , DataToTable
@@ -55,7 +51,6 @@ public abstract class LogLibData
         InputWizards = Set(
             "log-wizard-lib"
             , "Log.Wizard.Lib"
-            , lastUpd
             , EFCoreHelper
             , CLIReader
             , CLIWizardHelper
@@ -66,7 +61,6 @@ public abstract class LogLibData
         ModernLibCmds = SetProjectDepsAndTests(
             "log-modern-lib"
             , "Log.Modern.Lib"
-            , lastUpd
             , SetTests("Log.Modern.Lib.Tests")
             , EFCoreHelper
             , DIHelper

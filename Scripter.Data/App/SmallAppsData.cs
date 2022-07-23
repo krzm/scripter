@@ -1,12 +1,11 @@
 namespace Scripter.Data;
 
 public class SmallAppsData 
-    : ManyRefLibData
+    : AllLibsData
 {
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 29);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(ConfigWrapper);
         ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
@@ -16,7 +15,6 @@ public class SmallAppsData
             "refactor-app"
             , "Refactor.App"
             , isApp: true
-            , lastUpd
             , DIHelper
             , ConfigWrapper
             , CommandDotNetHelper
@@ -26,7 +24,6 @@ public class SmallAppsData
             "git-path"
             , "GitPath.ConsoleApp"
             , isApp: true
-            , lastUpd
             , SetTests("GitPath.Tests")
             , DIHelper);
     }

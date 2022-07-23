@@ -22,7 +22,6 @@ public class MyCliLibInventoryLibData
         ConsoleLib = Set(
             "inventory-console-lib"
             , "Inventory.Console.Lib"
-            , lastUpd
             , EFCoreHelper
             , CLIHelper
             , DataToTable
@@ -35,7 +34,6 @@ public class MyCliLibInventoryLibData
         WizardLib = Set(
             "inventory-wizard-lib"
             , "Inventory.Wizard.Lib"
-            , lastUpd
             , EFCoreHelper
             , CLIHelper
             , CLIReader

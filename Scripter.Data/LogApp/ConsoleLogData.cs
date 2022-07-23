@@ -30,7 +30,6 @@ public class ConsoleLogData
             "log-console-lib-console-app"
             , "Log.ConsoleApp"
             , isApp: true
-            , new DateOnly(2022, 6, 26)
             , EFCoreHelper
             , DIHelper
             , DotNetExtension

@@ -6,5 +6,4 @@ public record ProjectDTO(
     , List<ProjectDTO>? Dependencies = default
     , bool IsApp = false
     , bool IsWpf = false
-    , DateOnly LastCheck = default
     , List<ProjectDTO>? Tests = default);

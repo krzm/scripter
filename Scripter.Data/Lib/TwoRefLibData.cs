@@ -11,14 +11,12 @@ public class TwoRefLibData
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
         CLIReader = SetProjectDepsAndTests(
             "cli-reader"
             , "CLIReader"
-            , lastUpd
             , SetTests("CLIReader.Tests")
             , DIHelper
             , CLIHelper
@@ -26,7 +24,6 @@ public class TwoRefLibData
         DataToTable = SetProjectDepsAndTests(
             "datatotable"
             , "DataToTable"
-            , lastUpd
             , SetTests("DataToTable.Tests")
             , DIHelper
             , ModelHelper

@@ -3,7 +3,7 @@ using Scripter.Data.Helper;
 namespace Scripter.Data;
 
 public abstract class InventoryLibData
-    : ManyRefLibData
+    : AllLibsData
 {
     protected ProjectDTO? DataLib;
     protected ProjectDTO? TableLib;
@@ -11,7 +11,6 @@ public abstract class InventoryLibData
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 26);
         ArgumentNullException.ThrowIfNull(EFCoreHelper);
         ArgumentNullException.ThrowIfNull(DIHelper);
         ArgumentNullException.ThrowIfNull(ModelHelper);
@@ -19,7 +18,6 @@ public abstract class InventoryLibData
         DataLib = Set(
             "inventory-data"
             , "Inventory.Data"
-            , lastUpd
             , EFCoreHelper
             , DIHelper
             , ModelHelper
@@ -29,7 +27,6 @@ public abstract class InventoryLibData
         TableLib = Set(
             "inventory-table"
             , "Inventory.Table"
-            , lastUpd
             , DIHelper
             , ModelHelper
             , DataToTable

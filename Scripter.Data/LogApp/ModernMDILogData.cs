@@ -28,7 +28,6 @@ public class ModernMDILogData
             "log-modern-mdi-consoleapp"
             , "Log.Modern.MDI.ConsoleApp"
             , isApp: true
-            , new DateOnly(2022, 6, 26)
             , EFCoreHelper
             , DIHelper
             , DotNetExtension
