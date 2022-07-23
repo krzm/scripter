@@ -7,13 +7,13 @@ public class OneRefLibData
 {
     protected ProjectDTO? CLIHelper;
     protected ProjectDTO? ConfigWrapper;
-    protected ProjectDTO? SerilogWrapper;
+    protected ProjectDTO? EFCoreHelper;
     protected ProjectDTO? ModelHelper;
     
     protected override void SetAllData()
     {
         base.SetAllData();
-        var lastUpd = new DateOnly(2022, 6, 26);
+        var lastUpd = new DateOnly(2022, 7, 23);
         ArgumentNullException.ThrowIfNull(DIHelper);
         CLIHelper = SetProjectDepsAndTests(
             "cli-helper"
@@ -27,22 +27,14 @@ public class OneRefLibData
             , lastUpd
             , SetTests("Config.Wrapper.Tests")
             , DIHelper);
-        SetLoggerExceptionNeddedAtThisIndex(lastUpd);
+        EFCoreHelper = Set(
+            "efcore-helper"
+            , "EFCore.Helper"
+            , lastUpd);
         ModelHelper = Set(
             "model-helper"
             , "ModelHelper"
             , lastUpd
             , DIHelper);
-    }
-
-    private void SetLoggerExceptionNeddedAtThisIndex(DateOnly lastUpd)
-    {
-        SerilogWrapper = Set(
-            "serilog-wrapper"
-            , "Serilog.Wrapper"
-            , lastUpd
-            , DIHelper!
-            , CLIHelper!
-            , ConfigWrapper!);
     }
 }

@@ -5,20 +5,16 @@ namespace Scripter.Data;
 public class IndependantLibData 
     : CodeData
 {
-    protected ProjectDTO? EFCoreHelper;
     protected ProjectDTO? DIHelper;
     protected ProjectDTO? DotNetExtension;
     protected ProjectDTO? DotNetTool;
     protected ProjectDTO? Vector2;
     protected ProjectDTO? XmlGenerator;
+    protected ProjectDTO? XUnitHelper;
     
     protected override void SetAllData()
     {
-        var lastUpd = new DateOnly(2022, 6, 29);
-        EFCoreHelper = Set(
-            "efcore-helper"
-            , "EFCore.Helper"
-            , lastUpd);
+        var lastUpd = new DateOnly(2022, 7, 16);
         DIHelper = SetProjAndTests(
             "di-helper"
             , "DIHelper"
@@ -63,5 +59,10 @@ public class IndependantLibData
             , "Net.Examples"
             , lastUpd
             , SetTest("Net.Tests"));
+        XUnitHelper = SetProjAndTests(
+            "xunit-helper"
+            , "XUnit.Helper"
+            , lastUpd
+            , SetTest("XUnit.Helper"));
     }
 }

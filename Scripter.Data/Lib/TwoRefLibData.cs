@@ -3,7 +3,7 @@ using Scripter.Data.Helper;
 namespace Scripter.Data;
 
 public class TwoRefLibData 
-    : CommandDotNetLibData
+    : OneRefLibData
 {
     protected ProjectDTO? CLIReader;
     protected ProjectDTO? DataToTable;

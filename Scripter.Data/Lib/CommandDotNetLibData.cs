@@ -3,7 +3,7 @@ using Scripter.Data.Helper;
 namespace Scripter.Data;
 
 public class CommandDotNetLibData 
-    : OneRefLibData
+    : ManyRefLibData
 {
     private const string Repo = "commanddotnet-helper";
     protected ProjectDTO? CommandDotNetHelper;
