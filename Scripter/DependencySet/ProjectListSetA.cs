@@ -40,7 +40,7 @@ public class ProjectListSetA
                 Container.Resolve<IProjectExtractor>(
                     nameof(ResetingProjExtractor))
                 , Container.Resolve<ICodeData>(
-                    nameof(ManyRefLibData))));
+                    nameof(AllLibsData))));
     }
 
     private void RegisterLogAppsData()

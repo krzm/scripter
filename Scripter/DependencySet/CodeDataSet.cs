@@ -16,7 +16,7 @@ public class CodeDataSet
 
     public override void Register()
     {
-        RegisterCodeData<ManyRefLibData>();
+        RegisterCodeData<AllLibsData>();
         RegisterCodeData<TestAppsData>();
         RegisterCodeData<WrapperAppsData>();
         RegisterCodeData<SampleAppsData>();
