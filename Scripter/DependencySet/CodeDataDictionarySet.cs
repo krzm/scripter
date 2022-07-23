@@ -26,7 +26,7 @@ public class CodeDataDictionarySet
     {
 		if(store.Count > 0) 
 			return store;
-		Add(store, nameof(ManyRefLibData));
+		Add(store, nameof(AllLibsData));
 		Add(store, nameof(TestAppsData));
 		Add(store, nameof(WrapperAppsData));
 		Add(store, nameof(SampleAppsData));
