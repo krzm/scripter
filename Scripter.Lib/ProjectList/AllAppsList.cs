@@ -53,6 +53,7 @@ public class AllAppsList
         GetData(nameof(MyCliLibInventoryAppData), "Inventory.ConsoleLib.ConsoleApp");
         GetData(nameof(ShapeEngineData), "Canvas.App");
         GetData(nameof(ShapeEngineData), "Pool.App");
+        GetData(nameof(LogMinCliAppData), "Log.Min.Cli.App");
     }
 
     private void GetData(

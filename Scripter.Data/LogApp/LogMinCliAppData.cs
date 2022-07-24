@@ -1,7 +1,7 @@
 namespace Scripter.Data;
 
 public class LogMinCliAppData 
-    : LogLibData
+    : AllLibsData
 {
     protected override void SetAllData()
     {
@@ -13,7 +13,11 @@ public class LogMinCliAppData
         ArgumentNullException.ThrowIfNull(CLIHelper);
         ArgumentNullException.ThrowIfNull(DataToTable);
         ArgumentNullException.ThrowIfNull(CRUDCommandHelper);
-        ArgumentNullException.ThrowIfNull(Data);
+        ArgumentNullException.ThrowIfNull(ConfigWrapper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetHelper);
+        ArgumentNullException.ThrowIfNull(CommandDotNetIoCUnity);
+        ArgumentNullException.ThrowIfNull(CommandDotNetUnityHelper);
+        ArgumentNullException.ThrowIfNull(SerilogWrapper);
         var logmindata = Set(
             "log-min-data"
             , "Log.Min.Data"
@@ -23,7 +27,6 @@ public class LogMinCliAppData
         var logminlib = Set(
             "log-min-lib"
             , "Log.Min.Lib"
-            , isApp: true
             , EFCoreHelper
             , DIHelper
             , DotNetExtension
@@ -32,6 +35,32 @@ public class LogMinCliAppData
             , DataToTable
             , CRUDCommandHelper
             , logmindata
+            );
+        var logmintable = Set(
+            "log-min-table"
+            , "Log.Min.Table"
+            , DIHelper
+            , ModelHelper
+            , DataToTable
+            , logmindata);
+        var logmincliapp = Set(
+            "log-min-cli-app"
+            , "Log.Min.Cli.App"
+            , isApp: true
+            , EFCoreHelper
+            , DIHelper
+            , CLIHelper
+            , ConfigWrapper
+            , ModelHelper
+            , DataToTable
+            , CommandDotNetHelper
+            , CommandDotNetIoCUnity
+            , CommandDotNetUnityHelper
+            , SerilogWrapper
+            , CRUDCommandHelper
+            , logmindata
+            , logmintable
+            , logminlib
             );
     }
 }
