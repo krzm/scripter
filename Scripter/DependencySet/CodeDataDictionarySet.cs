@@ -44,6 +44,7 @@ public class CodeDataDictionarySet
 		Add(store, nameof(ModernInventoryAppData));
 		Add(store, nameof(MyCliLibInventoryAppData));
 		Add(store, nameof(ShapeEngineData));
+		Add(store, nameof(LogMinCliAppData));
 		return store;
     }
 

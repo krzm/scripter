@@ -34,6 +34,7 @@ public class CodeDataSet
         RegisterCodeData<ModernInventoryAppData>();
         RegisterCodeData<MyCliLibInventoryAppData>();
         RegisterCodeData<ShapeEngineData>();
+        RegisterCodeData<LogMinCliAppData>();
     }
     
     private void RegisterCodeData<TData>()
